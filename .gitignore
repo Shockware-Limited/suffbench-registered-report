@@ -3,3 +3,5 @@ main.log
 main.bbl
 main.blg
 main.out
+harness/contexts/
+harness/results/*.log
