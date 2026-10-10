@@ -27,10 +27,17 @@ replacement lines
 Rules: SEARCH text must match the file exactly (including indentation). Keep edits minimal. Do not modify
 test files. Do not add explanations outside the blocks."""
 
-BLOCK = re.compile(r"<<<< FILE: (?P<path>[^\n]+)\n<<<<<<< SEARCH\n(?P<search>.*?)\n=======\n(?P<replace>.*?)\n>>>>>>> REPLACE", re.S)
+BLOCK = re.compile(r"(?:<<<< FILE: (?P<path>[^\n]+)\n)?<<<<<<< SEARCH\n(?P<search>.*?)\n=======\n(?P<replace>.*?)\n>>>>>>> REPLACE", re.S)
 
 def parse_blocks(text):
-    return [(m.group("path").strip(), m.group("search"), m.group("replace")) for m in BLOCK.finditer(text)]
+    """SEARCH/REPLACE blocks; a block without a FILE header inherits the previous block's path."""
+    out, last = [], None
+    for m in BLOCK.finditer(text):
+        path = (m.group("path") or last or "").strip()
+        if not path: continue
+        last = path
+        out.append((path, m.group("search"), m.group("replace")))
+    return out
 
 def apply_blocks(repo, blocks):
     """Apply in order; return (ok, error_message)."""
@@ -109,6 +116,9 @@ def main():
                 if rec["builds"]:
                     t = run([GO, "test", "-count=1", "-json", "-run", "|".join(inst["fail_to_pass"]), inst["test_pkg"]], repo, timeout=900)
                     st = parse_test_json(t.stdout); rec["delta_pass"] = all(v == "pass" for v in st.values()) and bool(st)
+                    if not rec["delta_pass"]:
+                        fail_lines = [json.loads(l).get("Output", "") for l in t.stdout.splitlines() if l.startswith("{") and '"Output"' in l]
+                        rec["test_output"] = "".join(fail_lines)[-2500:]
                     if rec["delta_pass"] and a.full_suite:
                         tt = run([GO, "test", "./...", "-count=1", "-json"], repo, timeout=2400)
                         stf = parse_test_json(tt.stdout)
