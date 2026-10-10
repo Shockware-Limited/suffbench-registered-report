@@ -23,7 +23,7 @@ To be registered on OSF (embargoed) at the time of the MSR 2027 Registered Repor
 - Population: fail-to-pass commits after the latest documented cutoff of the evaluated models, in 5–8 single-module Go repositories with green Linux baselines.
 - Exclusions: fail-to-pass tests that do not compile at the parent; tests referencing identifiers introduced by the gold patch (unless signatures supplied, flagged); flaky tests (fail ≥1 of 3 clean reruns); under-specified or leaking task text (manual screen).
 - Sample size: ≥300 confirmatory instances; 30 disjoint pilot instances. Justification: with n = 300, one-sided α = 0.05, π_d = 0.2, power at true difference 0 is 0.90 for ε = 0.075 and 0.61 for ε = 0.05 (analysis/power.py). Stopping rule: none; fixed n.
-- Margin: ε is fixed after the pilot: at least twice the measured temperature-0 flip rate, and such that power ≥ 0.80 at the pilot's π_d; primary candidate 0.075; if pilot π_d > 0.3 the primary margin becomes 0.10. The chosen ε is recorded here before the confirmatory run.
+- Margin: ε is fixed after the pilot: at least twice the larger of the measured run-to-run flip rates (temperature 0 for open-weights models; default sampling for the frontier model, whose sampling parameters cannot be set), and such that power ≥ 0.80 at the pilot's π_d; primary candidate 0.075; if pilot π_d > 0.3 the primary margin becomes 0.10. The chosen ε is recorded here before the confirmatory run.
 
 ## 5. Variables
 - Manipulated: context arm (A∅, A0, A1, A1b, A1F, A2, A4s, A4l, P32, P64, P128, P200 × 3 padding types).
