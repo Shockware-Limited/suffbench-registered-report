@@ -2,6 +2,7 @@
 \usepackage[a4paper,margin=0.95in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \PassOptionsToPackage{hyphens}{url}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
@@ -41,7 +42,7 @@ This pilot measures both questions on a small scale, with the purpose of fixing 
 
 \begin{table}[t]
 \centering\footnotesize
-\begin{tabular}{llr}
+\resizebox{\textwidth}{!}{\begin{tabular}{llr}
 \toprule
 Arm & Content & Median prompt tokens \\
 \midrule
@@ -52,7 +53,7 @@ A1b & W + bodies of direct deps & 119{,}753 \\
 A1F & A1 + \texttt{go doc -all} and test names of dependents & 51{,}783 \\
 P32--P200 & A1 padded to 32k / 64k / 128k / 198k & as named \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Arms. System prompt and task are included in the token counts.}
 \label{tab:arms}
 \end{table}
@@ -71,7 +72,7 @@ P32--P200 & A1 padded to 32k / 64k / 128k / 198k & as named \\
 
 \begin{table}[t]
 \centering\small
-\begin{tabular}{lrcccc}
+\resizebox{\textwidth}{!}{\begin{tabular}{lrcccc}
 \toprule
 Arm & Tokens & $\Delta$-pass [95\%] & $\Delta$-pass $\wedge$ frame & build err. & frame fail. \\
 \midrule
@@ -81,7 +82,7 @@ A1 & 40{,}840 & \textbf{0.646} [0.467, 0.817] & \textbf{0.604} & 2 & 10 \\
 A1b & 119{,}753 & 0.604 [0.433, 0.775] & 0.550 & 4 & 13 \\
 A1F & 51{,}783 & 0.600 [0.425, 0.771] & 0.567 & 3 & 8 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Base arms, Claude Haiku 5.5, 24 instances, 10 samples per cell. Counts are over 240 samples per arm.}
 \label{tab:base}
 \end{table}
@@ -90,7 +91,7 @@ A1F & 51{,}783 & 0.600 [0.425, 0.771] & 0.567 & 3 & 8 \\
 
 \begin{table}[t]
 \centering\small
-\begin{tabular}{lrcrcr}
+\resizebox{\textwidth}{!}{\begin{tabular}{lrcrcr}
 \toprule
 & \multicolumn{2}{c}{Haiku 5.5 ($k=10$)} & & \multicolumn{2}{c}{Sonnet 5.5 ($k=3$)} \\
 \cmidrule{2-3}\cmidrule{5-6}
@@ -103,7 +104,7 @@ P200 & 18 & $+0.033$ [$-0.094$, $+0.150$] & & 9 & $-0.037$ [$-0.333$, $+0.222$] 
 \midrule
 \multicolumn{6}{l}{\footnotesize Including task-only-solvable instances: Haiku $+0.03$, $+0.02$, $+0.02$, $+0.03$ ($n$=11, 18, 23, 22); Sonnet --, $-0.06$, $-0.03$, $-0.02$ ($n$=18, 23, 22).}\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Change in $\Delta$-pass when A1 is padded to the stated load, excluding instances the model solved from task text alone. $n$ is the number of instances with that arm built.}
 \label{tab:curve}
 \end{table}
