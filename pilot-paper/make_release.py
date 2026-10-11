@@ -13,9 +13,11 @@ meta = {"metadata": {
                             {"identifier": "10.5281/zenodo.23282863", "relation": "references", "scheme": "doi"},
                             {"identifier": "https://github.com/Shockware-Limited/suffbench", "relation": "isSupplementedBy", "resource_type": "software", "scheme": "url"}],
     "version": "0.1.1-pilot", "language": "eng", "contributors": [{"name": "Shockware Limited", "type": "HostingInstitution"}],
-    "notes": "Exploratory pilot on one repository and two models; it fixes the design of a preregistered study and makes no confirmatory claim. The data zip includes instances, the mining log, the harness and all verdict records."}}
+    "notes": "Exploratory pilot on one repository and three models of one vendor; it fixes the design of a preregistered study and makes no confirmatory claim. The data zip includes instances, the mining log, the harness and all verdict records."}}
 json.dump(meta, open("pilot-paper/zenodo-metadata.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-import shutil; shutil.copy("pilot-paper/main.pdf", "pilot-release/paper/main.pdf"); shutil.copy("pilot-paper/main.tex", "pilot-release/paper/main.tex")
+import shutil, glob; shutil.copy("pilot-paper/main.pdf", "pilot-release/paper/main.pdf"); shutil.copy("pilot-paper/main.tex", "pilot-release/paper/main.tex")
+for f in glob.glob("harness/results/cli__cli-*-claude-*.jsonl") + glob.glob("harness/results/pilot_*") + ["harness/results/PILOT-REPORT.md"]: shutil.copy(f, "pilot-release/results/")
+open("pilot-release/README.md", "w", encoding="utf-8").write("# SuffBench pilot v0.1.1-pilot\n\n24-instance pilot measurement of ε-sufficient context on cli/cli (June–October 2026): Claude Haiku 5.5 (9 arms, k=10, all 24), Claude Sonnet 5.5 (5 arms, k=3, all 24), Claude Opus 5 (3 arms, k=3, the 10 instances Sonnet did not solve from task text alone). See paper/main.pdf. Instances: `instances/`; mining log with every rejection: `instances/rejected.jsonl`; verdict records: `results/*.jsonl`; aggregate: `results/PILOT-REPORT.md`, `results/pilot_cells.csv`; harness and analysis: `harness/`. Exploratory pilot: no confirmatory claim. Data and text CC-BY-4.0; code Apache-2.0.\n")
 z = "pilot-paper/suffbench-pilot-v0.1.1.zip"
 with zipfile.ZipFile(z, "w", zipfile.ZIP_DEFLATED) as zf:
     for root, _, files in os.walk("pilot-release"):

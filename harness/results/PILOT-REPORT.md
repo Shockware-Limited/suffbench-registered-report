@@ -1,6 +1,6 @@
 # Pilot report (auto-generated; private until Stage 1 submission)
 
-Records: 2273. Models: claude-haiku-5-5, claude-sonnet-5-5. Instances: 24.
+Records: 2360. Models: claude-haiku-5-5, claude-opus-5, claude-sonnet-5-5. Instances: 24.
 
 
 ## claude-haiku-5-5
@@ -71,6 +71,66 @@ Ceiling rate (W alone passes every sample): 9/24
 | P64 | 109 | 66 | 0 | 1 | 2 | 2 | 0 | 0 |
 | P128 | 141 | 58 | 9 | 8 | 5 | 9 | 0 | 0 |
 | P200 | 141 | 48 | 8 | 1 | 12 | 10 | 0 | 0 |
+
+## claude-opus-5
+
+Instances: 10. A0 (task-only) solved on 0 instance(s): [] — excluded from the curve below (reported both ways).
+
+Spend (list prices in PRICES, verify): $27.00; tokens in=57,612 cache_read=4,340,563 cache_write=2,071,269 out=463,698
+
+
+### Degradation curve (excluding A0-solved; n_inst=10)
+
+| load arm | median prompt tokens | p̂ Δ-pass [boot 95%] | p̂ Δ∧frame | paired drop vs A1 [95%] | cells |
+|---|---|---|---|---|---|
+| A1 | 25,879 | 0.467 [0.167, 0.767] | 0.467 | +0.000 [+0.000, +0.000] | 10 |
+| P32 | – | – | – | – | 0 |
+| P64 | – | – | – | – | 0 |
+| P128 | – | – | – | – | 0 |
+| P200 | 198,051 | 0.481 [0.148, 0.815] | 0.481 | -0.074 [-0.185, +0.000] | 9 |
+
+### Degradation curve (including A0-solved; n_inst=10)
+
+| load arm | median prompt tokens | p̂ Δ-pass [boot 95%] | p̂ Δ∧frame | paired drop vs A1 [95%] | cells |
+|---|---|---|---|---|---|
+| A1 | 25,879 | 0.467 [0.167, 0.767] | 0.467 | +0.000 [+0.000, +0.000] | 10 |
+| P32 | – | – | – | – | 0 |
+| P64 | – | – | – | – | 0 |
+| P128 | – | – | – | – | 0 |
+| P200 | 198,051 | 0.481 [0.148, 0.815] | 0.481 | -0.074 [-0.185, +0.000] | 9 |
+
+Minimal sufficient load at ε=0.05: A1=7, P200=2 (k-granularity limits resolution)
+
+Minimal sufficient load at ε=0.1: A1=7, P200=2 (k-granularity limits resolution)
+
+
+Flip rate (cells with ≥3 samples, non-unanimous Δ-pass): 2/29 = 0.069; mean minority share 0.333
+
+
+### Base-load arms (descriptive)
+
+| arm | median tokens | p̂ Δ-pass [boot 95%] | pooled Wilson | p̂ Δ∧frame | n_inst |
+|---|---|---|---|---|---|
+| A0 | 547 | 0.000 [0.000, 0.000] | [-0.000, 0.114] | 0.000 | 10 |
+| A1 | 25,879 | 0.467 [0.167, 0.767] | [0.302, 0.639] | 0.467 | 10 |
+
+Paired A1−A1b: +nan [+nan, +nan] over 0 instances; majority-outcome disagreement π_d = 0/0
+
+Paired A1−A1F: +nan [+nan, +nan] over 0 instances; majority-outcome disagreement π_d = 0/0
+
+Paired A1−W: +nan [+nan, +nan] over 0 instances; majority-outcome disagreement π_d = 0/0
+
+
+Ceiling rate (W alone passes every sample): 0/10
+
+
+### Outcome taxonomy per arm
+
+| arm | pass | delta_fail | frame_fail | build_error | apply_error | no_blocks | api_error | exceeds_window |
+|---|---|---|---|---|---|---|---|---|
+| A0 | 0 | 7 | 0 | 0 | 15 | 8 | 0 | 0 |
+| A1 | 14 | 16 | 0 | 0 | 0 | 0 | 0 | 0 |
+| P200 | 13 | 13 | 0 | 1 | 0 | 0 | 0 | 0 |
 
 ## claude-sonnet-5-5
 
