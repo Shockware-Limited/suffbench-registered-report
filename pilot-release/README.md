@@ -1,0 +1,3 @@
+# SuffBench pilot v0.1.1-pilot
+
+24-instance pilot measurement of ε-sufficient context on cli/cli (June–October 2026), Claude Haiku 5.5 (9 arms, k=10) and Claude Sonnet 5.5 (5 arms, k=3). See paper/main.pdf. Instances: `instances/` (task text, gold patch, hidden tests, write-set, slices, validity); mining log with every rejection: `instances/rejected.jsonl`; verdict records: `results/*.jsonl`; aggregate: `results/PILOT-REPORT.md`, `results/pilot_cells.csv`; harness and analysis: `harness/`. Exploratory pilot: no confirmatory claim. Data and text CC-BY-4.0; code Apache-2.0. The two Opus 5 pipeline-demonstration runs reported in the private design repository are not part of this release.

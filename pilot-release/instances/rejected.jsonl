@@ -1,0 +1,282 @@
+{"commit": "ec5b512045db67e5a2a4ff4a1b02660b2fb24390", "reason": "touches_go_mod_or_vendor"}
+{"commit": "afbc62c9cdf7bb15c8aab1c6198cd6531108d44b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "581392e6aea8df94b1fde390d920a4b0d99c12a2", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a45729e87739152888e3d4ab708c18721dc2d028", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "b637d4c558f4eddcb30e1600307bb2df8943dbd7", "reason": "needs_source_and_test_change"}
+{"commit": "8db3c3107a174c51de4758f53d5b27911650931b", "reason": "needs_source_and_test_change"}
+{"commit": "2c7ec97fddb8da331803e18e8c33395a3b6537ee", "reason": "touches_go_mod_or_vendor"}
+{"commit": "31d9601e292365301cb5d66c73b4e12334895be1", "reason": "needs_source_and_test_change"}
+{"commit": "996be976cad960a726aabb94be67dfc7e31e317b", "reason": "needs_source_and_test_change"}
+{"commit": "17142e08db2e300b37e6da1ddcfb651eb6d9c587", "reason": "needs_source_and_test_change"}
+{"commit": "6fc1c29d5477bfe71da7af290eb481c0df7811f1", "reason": "touches_go_mod_or_vendor"}
+{"commit": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd", "reason": "more_than_2_packages", "n": 7}
+{"commit": "c601748945c7f2390b6a4e99f874b1ce8e47533a", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "5092057373a101c8706be0590856c13aaefd62ad", "reason": "valid", "instance_id": "cli__cli-9ee0afb43414", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestNewEnforcementCriteria", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatching", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingObservedCertificate", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingObservedNestedRef", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingPinnedRef", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingRepositoryValue", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestValidateSignerWorkflow"], "churn": 40, "nF": 6, "task": "spec_pending"}
+{"commit": "9ee0afb43414a411a214995ac3cb84dec6043b13", "reason": "valid", "instance_id": "cli__cli-1863cb7c0f1d", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification:TestVerifyCertExtensions"], "churn": 3, "nF": 20, "task": "spec_pending"}
+{"commit": "1863cb7c0f1d27e9479a95edb30ba97fcc6c01b1", "reason": "needs_source_and_test_change"}
+{"commit": "0706fa4d513426c0961720732198d6e0f7b54cdd", "reason": "needs_source_and_test_change"}
+{"commit": "0f6de7b4f0aef53a94505efc2d57e87c578196f7", "reason": "valid", "instance_id": "cli__cli-1cd39adbf03b", "W": ["github.com/cli/cli/v2/pkg/cmd/repo/setdefault"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/repo/setdefault:TestNewCmdSetDefault"], "churn": 2, "nF": 6, "task": "issue"}
+{"commit": "1cd39adbf03b0afc7c4600ad829fd3f196335800", "reason": "needs_source_and_test_change"}
+{"commit": "b85b62f0766e317581bdae212bc58999fc776256", "reason": "touches_go_mod_or_vendor"}
+{"commit": "cfc615f110b10840f64b843eabd887e1c474ee5c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "9b031151a825bda919203c5202876a725d637368", "reason": "valid", "instance_id": "cli__cli-babd691446b9", "W": ["github.com/cli/cli/v2/internal/attachments"], "f2p": ["github.com/cli/cli/v2/internal/attachments:TestNewUploader"], "churn": 4, "nF": 44, "task": "issue"}
+{"commit": "babd691446b9c935574771ef31e85e88f1362e4a", "reason": "needs_source_and_test_change"}
+{"commit": "b6770c8bc54c72e74e785c307850446b8e10be9d", "reason": "more_than_2_packages", "n": 5}
+{"commit": "8eba304d7da2417869797f0a61e416a769b281b3", "reason": "more_than_2_packages", "n": 9}
+{"commit": "6f7893163bb67716e27ab38261d06dc1fc47057b", "reason": "needs_source_and_test_change"}
+{"commit": "a3d31e2764f110dd03c46136177360bc78dc3f63", "reason": "needs_source_and_test_change"}
+{"commit": "5e5cd85ea40988abf5c15ec83d90f545151d220e", "reason": "needs_source_and_test_change"}
+{"commit": "724ae6d9a6e84ba4ad7eb3734dfe64250d4bf2fa", "reason": "needs_source_and_test_change"}
+{"commit": "0cf1092493af067646fc5f3db9421c6a6ec9c938", "reason": "needs_source_and_test_change"}
+{"commit": "9eb4db2ba89017ea9dbcaed4f712dc4881f7f37b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "adeb51e2f094d848111100a543dd1941b4f4255d", "reason": "needs_source_and_test_change"}
+{"commit": "cac0dd795eeb5b9a448474fad7e295272fc5c486", "reason": "touches_go_mod_or_vendor"}
+{"commit": "0baa362572d70f11e34e50fedd26ef0b5e89963f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "04d01ccc389fc93cbc82ba2d97f1ddd2f3f79e13", "reason": "touches_go_mod_or_vendor"}
+{"commit": "339257b11b712b1427f50ad8be0b22065a7ed2b8", "reason": "needs_source_and_test_change"}
+{"commit": "35b55f8cb2a10f57b1fa38721041fbf97c74da83", "reason": "needs_source_and_test_change"}
+{"commit": "38316c1c4f275030e3df6666382922e75410d68b", "reason": "needs_source_and_test_change"}
+{"commit": "9909db87c400abf1e5f01215ee8cae8d69d65045", "reason": "touches_go_mod_or_vendor"}
+{"commit": "97de969621be4915a607fcbb6e8e63a72494e138", "reason": "needs_source_and_test_change"}
+{"commit": "4595165dfeeed3fed5670445af393037ed4359d5", "reason": "needs_source_and_test_change"}
+{"commit": "ba51bb47799e308109a980fca846a90d164f5811", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "8fcd6a643f993ee12b70ad0edeab741ed133c9f1", "reason": "valid", "instance_id": "cli__cli-7f0590c2b805", "W": ["github.com/cli/cli/v2/pkg/cmd/pr/merge"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/pr/merge:TestDeleteRemoteBranchTreatsOwnerCaseAsSameRepository"], "churn": 4, "nF": 6, "task": "issue"}
+{"commit": "7f0590c2b8050bb04c5af52291062e6825dda9df", "reason": "needs_source_and_test_change"}
+{"commit": "7b2de63c49c0d6717930415d2100a56103360509", "reason": "deletes_or_renames_source"}
+{"commit": "6dec969630e037ed4f31fcdccdbc8d5add7d159b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "b62199679892c634658ef802ab95b25290628e68", "reason": "touches_go_mod_or_vendor"}
+{"commit": "2a9fb1d64877c51132b987e25f3c45940afb8e22", "reason": "touches_go_mod_or_vendor"}
+{"commit": "66ae8d8c65c093ccdaa9d57aadc11ca756195972", "reason": "touches_go_mod_or_vendor"}
+{"commit": "abd3967b98c6594237e78178c7e0052f05505cb0", "reason": "touches_go_mod_or_vendor"}
+{"commit": "411dce4784e5da1d38ffd53ff19fc7a2c1bf1d6e", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f073783a4224a952a66a365e2a7273fc3467e431", "reason": "needs_source_and_test_change"}
+{"commit": "0ba226a27ca148f1df40402e328e847efb14821a", "reason": "needs_source_and_test_change"}
+{"commit": "c265dd86f7b50eb788f7fc9432148a60ea7517f9", "reason": "needs_source_and_test_change"}
+{"commit": "cebba8ca6c71e85a6bbac445de411690802298ac", "reason": "needs_source_and_test_change"}
+{"commit": "093c348510736308b88e6ca3dd0adc801e291a8b", "reason": "needs_source_and_test_change"}
+{"commit": "ae1ba32887ab1233824f159774cda4b36f249ac5", "reason": "more_than_2_packages", "n": 21}
+{"commit": "e18cc33299fedb85c7f849bf338a63e34f7b7db7", "reason": "needs_source_and_test_change"}
+{"commit": "9174ffb070f71162601f4a07ac643c73d00f133d", "reason": "valid", "instance_id": "cli__cli-9b6585be5218", "W": ["github.com/cli/cli/v2/pkg/cmd/repo/create"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/repo/create:Test_createRun"], "churn": 3, "nF": 6, "task": "issue"}
+{"commit": "9b6585be521825220f712599cad9416a923fc485", "reason": "needs_source_and_test_change"}
+{"commit": "707514fdaea01d51886a99d2941bd8ad62d84234", "reason": "needs_source_and_test_change"}
+{"commit": "38a05c97bfabd199e5705d9983f9727a181a449d", "reason": "needs_source_and_test_change"}
+{"commit": "111b2549d46bff7187d236af0081db1487918c09", "reason": "needs_source_and_test_change"}
+{"commit": "0d121e8c31204cdbe02b4a4b1be5e88bdc3c4662", "reason": "needs_source_and_test_change"}
+{"commit": "c9dd6db9e12fcc53ab7f5cc272a1724d8adc9444", "reason": "needs_source_and_test_change"}
+{"commit": "31e17047d1b82244d11a780e250440a6f855a205", "reason": "valid", "instance_id": "cli__cli-cba9646b8c25", "W": ["github.com/cli/cli/v2/api", "github.com/cli/cli/v2/pkg/cmd/repo/clone"], "f2p": ["github.com/cli/cli/v2/api:TestBaseRepoQuerySelections", "github.com/cli/cli/v2/pkg/cmd/repo/clone:Test_RepoClone"], "churn": 21, "nF": 255, "task": "issue"}
+{"commit": "cba9646b8c254a5711ef9e19e1dfc1455e88feaa", "reason": "needs_source_and_test_change"}
+{"commit": "965c3dd723ac6677279220f71b4b9c3b1a907a01", "reason": "more_than_2_packages", "n": 7}
+{"commit": "400c0844954c8f42507b1d967c5bdcb1ee958a77", "reason": "needs_source_and_test_change"}
+{"commit": "e63f6149ef34757aa1d54dfd2b9324b03a055d88", "reason": "needs_source_and_test_change"}
+{"commit": "45437bc7eeeb3359bbfddd1742f79de7652fd3e2", "reason": "more_than_2_packages", "n": 3}
+{"commit": "bac1b1b38d5e74d9f72917f652ef31a1eed46a36", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6e82bc505d81f8f294491b5ff448d69f79abc44f", "reason": "more_than_2_packages", "n": 10}
+{"commit": "9a6b96d6a133687faf188cad7791c2668c0f19e7", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "a609c2b1b9208e13c181b509c027dc382f9f79c7", "reason": "touches_go_mod_or_vendor"}
+{"commit": "636cbb6ddb93c1f63f3ba01c74f94705787561f1", "reason": "valid", "instance_id": "cli__cli-8e556081de66", "W": ["github.com/cli/cli/v2/pkg/extensions"], "f2p": ["github.com/cli/cli/v2/pkg/extensions:TestIsOfficial"], "churn": 1, "nF": 239, "task": "spec_pending"}
+{"commit": "8e556081de6699429382a765a85ec38ba9ceaa35", "reason": "touches_go_mod_or_vendor"}
+{"commit": "adda317c11b892da5e5ed3fbbf26b69a5c163cc6", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a82d1e998dc0369a16975a074e2eecdd272cc026", "reason": "needs_source_and_test_change"}
+{"commit": "9d36fee5e3ffd7364fca4878ab98f2110600e4d6", "reason": "needs_source_and_test_change"}
+{"commit": "0da5ee860830f552798b7417e6eada84e131c885", "reason": "needs_source_and_test_change"}
+{"commit": "71eac351e185b08ed5ac679a65bff4a654fae6cd", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "d528f20f2ee02f6703773e9f56c90e3c3f5d46b0", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "e909b95874de06cbe8f00e0e874711abf409ac44", "reason": "valid", "instance_id": "cli__cli-a8460b5af8cd", "W": ["github.com/cli/cli/v2/internal/skills/registry"], "f2p": ["github.com/cli/cli/v2/internal/skills/registry:TestInstallDir"], "churn": 2, "nF": 12, "task": "issue"}
+{"commit": "a8460b5af8cde6f31b732d8907e7170ccaa16571", "reason": "needs_source_and_test_change"}
+{"commit": "35f596de9837caa24d8806b15c146a53b442144a", "reason": "needs_source_and_test_change"}
+{"commit": "0574bc5bb590d073e539abc3109876ec9e2c1872", "reason": "touches_go_mod_or_vendor"}
+{"commit": "40b742f76d68e6b1f472942a6368db4b5d765641", "reason": "more_than_2_packages", "n": 7}
+{"commit": "9b323de8005a9988f398ce547697bf43b944e505", "reason": "touches_go_mod_or_vendor"}
+{"commit": "8d17165d4e2b759dd4d07f2b498c2981f85ed41f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "679018a0249592dbc7e47d49c9c7b9449b0fad9a", "reason": "touches_go_mod_or_vendor"}
+{"commit": "2ea46117e59a9fbcb31f673565eb2b5207e08aae", "reason": "more_than_2_packages", "n": 101}
+{"commit": "d76da6081d16388e4abdd4e0a21258f1921fef3a", "reason": "needs_source_and_test_change"}
+{"commit": "2c5ff72f937ff1873a4e348bea9e430f1684f4c3", "reason": "needs_source_and_test_change"}
+{"commit": "3bc8eaa3d5ad5744d4089852fb3c54af8dedd4cb", "reason": "needs_source_and_test_change"}
+{"commit": "e248b928b682578cf1dca78e4880226507a86b3f", "reason": "needs_source_and_test_change"}
+{"commit": "3d634711ee85f5690bf47a37aefb9741772b08d0", "reason": "touches_go_mod_or_vendor"}
+{"commit": "19b17f9785f3e94ff119f4bc35e297e9d4abb533", "reason": "needs_source_and_test_change"}
+{"commit": "2e9fccbc4a9e41070d3f117a925d4091c887f3fd", "reason": "touches_go_mod_or_vendor"}
+{"commit": "09bf3ff700fe6f3e8ac0ca417fb5b5176abeb050", "reason": "touches_go_mod_or_vendor"}
+{"commit": "7ca1a75182e3593b5df9a19edd638f70a6c22fab", "reason": "more_than_2_packages", "n": 3}
+{"commit": "606cda4a9b1a703ad7c2e353a77bce0d93d21b0e", "reason": "needs_source_and_test_change"}
+{"commit": "a2fd23c6a92172c18e2ba6264f39619f3dda68c7", "reason": "more_than_2_packages", "n": 3}
+{"commit": "9e69e88539a0d7078c2282d430f3d3446660a664", "reason": "not_green_at_child_testpkgs"}
+{"commit": "cc831722b71c3fc1603e6473bd1d9da27c0605e5", "reason": "more_than_2_packages", "n": 16}
+{"commit": "5d3c4817f1619213951dbf15031bad04acb88392", "reason": "valid", "instance_id": "cli__cli-62e3e719a483", "W": ["github.com/cli/cli/v2/pkg/cmd/copilot"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/copilot:TestRunCopilot"], "churn": 2, "nF": 5, "task": "issue"}
+{"commit": "62e3e719a483d9e2b9be2b7dba7e2bb4a7f91c8c", "reason": "more_than_2_packages", "n": 3}
+{"commit": "d9cba2af43d85420a9577870c132df82237e4a22", "reason": "churn_over_120", "churn": 168}
+{"commit": "7fff140bad992d8e18f6116fe81116c523ea1bcc", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "a255baf71d13fe5947a4eb7ad521ffd412d64cee", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "fadd4efb7daddd8afd8a5517a0cb5f5f39af6ada", "reason": "needs_source_and_test_change"}
+{"commit": "b9336cfe33f29d80fcaf5b78ca7ce53299aeb2fe", "reason": "touches_go_mod_or_vendor"}
+{"commit": "fba16675d264355f83676de4ab36d3769cc9d627", "reason": "touches_go_mod_or_vendor"}
+{"commit": "25470f2fa9e8eb7080b953a73f72bf0d3d2e3483", "reason": "needs_source_and_test_change"}
+{"commit": "fc9c44c6a2d72a543c531a6e3193245d32366c9f", "reason": "needs_source_and_test_change"}
+{"commit": "a0a1392e61fc6cac9aa720d2151c787c7d285e46", "reason": "touches_go_mod_or_vendor"}
+{"commit": "3963b735b757b45d083f43ebac97b67821d0c946", "reason": "touches_go_mod_or_vendor"}
+{"commit": "856ad9dfa9c2b10f9f322e69a476b48e45364f99", "reason": "needs_source_and_test_change"}
+{"commit": "450bb68b7d0272ba4d4fd2d835058370aaadaeef", "reason": "needs_source_and_test_change"}
+{"commit": "95d3a1db45abd547c2dafbee4f8a68ca53fb9c80", "reason": "needs_source_and_test_change"}
+{"commit": "9d1ebccf0f216ac9921e8c3cc13da415755469a4", "reason": "needs_source_and_test_change"}
+{"commit": "0eeec0b92edbe70199f9768522f831d3534f41ad", "reason": "needs_source_and_test_change"}
+{"commit": "de84d017dfa3ac63624dbce790e8f0fcc83e62b9", "reason": "touches_go_mod_or_vendor"}
+{"commit": "b4c571af82757a6e714e3793f1584c1e76925a42", "reason": "touches_go_mod_or_vendor"}
+{"commit": "62b87a75a9ef54fd0e7999e26dd56c4055291cf4", "reason": "touches_go_mod_or_vendor"}
+{"commit": "fdca974187d95f1020cf3378f8c269703c9cab5b", "reason": "needs_source_and_test_change"}
+{"commit": "b9f99e85254629a7771a43bfa73b423d3b3e3836", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c613912ec412b67e9330641cc5a7e0c4333558a0", "reason": "needs_source_and_test_change"}
+{"commit": "a7059d5dab3c680189b266d9c15dd8a5624e8237", "reason": "more_than_2_packages", "n": 3}
+{"commit": "a526307b621c90dca18734bfedaa5533318edd1a", "reason": "deletes_or_renames_source"}
+{"commit": "c624f0ac79b2923a98a451aa9b7eebffca9c1222", "reason": "needs_source_and_test_change"}
+{"commit": "7db9c203607e227de838f6d6744b3c3175143542", "reason": "needs_source_and_test_change"}
+{"commit": "78de8634435243cb2db1735a4874dce7fdfb5c98", "reason": "valid", "instance_id": "cli__cli-2bcdfbb1ac02", "W": ["github.com/cli/cli/v2/pkg/cmd/project/item-add"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/project/item-add:TestRunAddItem_User"], "churn": 7, "nF": 6, "task": "issue"}
+{"commit": "2bcdfbb1ac0206f8e4ad31e231d218ee37e5b884", "reason": "needs_source_and_test_change"}
+{"commit": "144728803d9cd4c540d33a26ece728db65e2b357", "reason": "needs_source_and_test_change"}
+{"commit": "21139c33c7a7ec3fa6f7d0b7d46d50dac3d33991", "reason": "needs_source_and_test_change"}
+{"commit": "961606cf775dcd9f57e93b426128ea25cce0cb62", "reason": "needs_source_and_test_change"}
+{"commit": "237aab06b7943494019e2f9d377f75c48d9ad887", "reason": "needs_source_and_test_change"}
+{"commit": "9fc0f70e0ef97446de9166febce546e955675bc3", "reason": "needs_source_and_test_change"}
+{"commit": "62efc15e8d43159ce729b9ce80cafb4f2e48c7ce", "reason": "needs_source_and_test_change"}
+{"commit": "696fc1c2d1b8097a1b4597960a8e0fc9b963da72", "reason": "needs_source_and_test_change"}
+{"commit": "4c5f76fefc2cf714f9cb86a22c8f2c42aabe68d9", "reason": "needs_source_and_test_change"}
+{"commit": "83c6321b8faba2ec6202af70b1cc0e2ed936495e", "reason": "needs_source_and_test_change"}
+{"commit": "1cb245f83556fb2749c8665eb376d58c582ae0a8", "reason": "needs_source_and_test_change"}
+{"commit": "5c39f803f10777aea7f37c62b1299f20f5637c60", "reason": "needs_source_and_test_change"}
+{"commit": "608dff7b80386a10962397852ff138f8ba567b08", "reason": "more_than_2_packages", "n": 6}
+{"commit": "8b72a8e75a1103284ae43d2e472871a46f6f75f3", "reason": "touches_go_mod_or_vendor"}
+{"commit": "50b1933be80b2d976e48594a85944ab3b341b2f0", "reason": "touches_go_mod_or_vendor"}
+{"commit": "1d467689d5e909c6b5e6e43f204ca7cb2c5230d7", "reason": "needs_source_and_test_change"}
+{"commit": "1df3650a10f6736d45ff208346dcdb561fab72be", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ae253a8ab985c2e10359b7b2bca560913540f340", "reason": "needs_source_and_test_change"}
+{"commit": "5ccd971df4421952a7448e62547b77bf6c9e1ef7", "reason": "valid", "instance_id": "cli__cli-ff28e72b59be", "W": ["github.com/cli/cli/v2/pkg/cmd/extension", "github.com/cli/cli/v2/pkg/cmd/root"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/extension:TestManager_Dispatch_ghExtensionEnv"], "churn": 7, "nF": 8, "task": "issue"}
+{"commit": "ff28e72b59be874a76243cb954607bf612db5cb3", "reason": "needs_source_and_test_change"}
+{"commit": "c6f4067da80ffa6195a1c99694a59e405a193908", "reason": "churn_over_120", "churn": 184}
+{"commit": "0f0e7fdd43065a07feb9f09ad9bf7f683c8aa41b", "reason": "no_failing_test_at_parent"}
+{"commit": "fdad95fb54b228d382d711f72c7fb1dd25a85172", "reason": "more_than_2_packages", "n": 4}
+{"commit": "8f22883b557feb78f7de35ac7f7a838d6b5d07c6", "reason": "valid", "instance_id": "cli__cli-8f7afbdbdbd6", "W": ["github.com/cli/cli/v2/pkg/cmd/release/create"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/release/create:TestTokenHasWorkflowScope", "github.com/cli/cli/v2/pkg/cmd/release/create:Test_createRun"], "churn": 10, "nF": 6, "task": "issue"}
+{"commit": "8f7afbdbdbd6c648009be64f94d1167857253cf7", "reason": "churn_over_120", "churn": 264}
+{"commit": "a3ed50ad5fafddd0e15ab8838c2136c8d25572df", "reason": "more_than_2_packages", "n": 3}
+{"commit": "8d81d0341005775e25375819cfa0f67529c4c66c", "reason": "more_than_2_packages", "n": 3}
+{"commit": "ddc7d465379c7d857faf2ac0b9cb43cea5f48d97", "reason": "more_than_2_packages", "n": 3}
+{"commit": "e83adbc0642994fae7c39a9a012eb34b8c81f4f1", "reason": "valid", "instance_id": "cli__cli-ad2a33837712", "W": ["github.com/cli/cli/v2/api"], "f2p": ["github.com/cli/cli/v2/api:TestRESTAndRESTWithNextErrorTypeParity", "github.com/cli/cli/v2/api:TestRESTWithNextError", "github.com/cli/cli/v2/pkg/cmd/attestation/api:TestGetAttestationsRetriesRESTWithNextError", "github.com/cli/cli/v2/pkg/cmd/status:TestStatusRun"], "churn": 7, "nF": 255, "task": "spec_pending"}
+{"commit": "ad2a3383771268dd5584127aa9f0615af8bf46d2", "reason": "needs_source_and_test_change"}
+{"commit": "5131aafb83895e2855888435ffe1203f98d81e1f", "reason": "needs_source_and_test_change"}
+{"commit": "c96f0dbfac7bc94eb6180638bb70c2ab39994976", "reason": "touches_go_mod_or_vendor"}
+{"commit": "2914e2f1a336d820b6c0656ab4678a727366d065", "reason": "needs_source_and_test_change"}
+{"commit": "4dee7a5ebe0e83f44225707e0ac4966d8984dc92", "reason": "needs_source_and_test_change"}
+{"commit": "55dbb4dc6b7edb10b48e3d7fc5bccd32318d1b55", "reason": "valid", "instance_id": "cli__cli-3f6a16a9f8c7", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestNewEnforcementCriteria", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestValidateSignerWorkflow"], "churn": 6, "nF": 6, "task": "spec_pending"}
+{"commit": "3f6a16a9f8c7fe9676aa8d8f47b399310dd231c3", "reason": "valid", "instance_id": "cli__cli-0c2eea6338a2", "W": ["github.com/cli/cli/v2/pkg/cmd/auth/status"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/auth/status:TestMaskToken", "github.com/cli/cli/v2/pkg/cmd/auth/status:Test_statusRun"], "churn": 13, "nF": 6, "task": "spec_pending"}
+{"commit": "0c2eea6338a2323cfff000160b9b5a56a38d2a06", "reason": "more_than_2_packages", "n": 77}
+{"commit": "2a1409fe88d416cc85fc96fb5bc473f83ed5a054", "reason": "more_than_2_packages", "n": 19}
+{"commit": "ba0b7d98b5a8eb6c30e2b9f1cff168b301237eb7", "reason": "needs_source_and_test_change"}
+{"commit": "c6aa32727c82f2828337437125d7a895bcacae77", "reason": "needs_source_and_test_change"}
+{"commit": "c2ad3b0eb7ead66eec3a8a61239e10a765332ec7", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "11a5ef817f10bcdc6f5de511e90836dab93a58c4", "reason": "needs_source_and_test_change"}
+{"commit": "b1c84bb939db25cf38ec3fe277e08a060c255365", "reason": "needs_source_and_test_change"}
+{"commit": "89f3699581659f514c4276bef0820d8caadbb67d", "reason": "valid", "instance_id": "cli__cli-b87e58a1d390", "W": ["github.com/cli/cli/v2/internal/skills/registry", "github.com/cli/cli/v2/pkg/cmd/skills/install"], "f2p": ["github.com/cli/cli/v2/internal/skills/registry:TestFindByID", "github.com/cli/cli/v2/internal/skills/registry:TestInstallDir"], "churn": 14, "nF": 11, "task": "issue"}
+{"commit": "b87e58a1d390689198d83c3d02389d2e046a0b44", "reason": "needs_source_and_test_change"}
+{"commit": "511a45ffb03b1f13ca2544d45766d967c3ee97e9", "reason": "needs_source_and_test_change"}
+{"commit": "b1a9f7b183c12ae111ea63048d49aad2a53e9101", "reason": "needs_source_and_test_change"}
+{"commit": "86ecf311b4a90ca963d355fddb1772c0ba816ea3", "reason": "needs_source_and_test_change"}
+{"commit": "9f7998c4dac06d85f5325f4c09a5ebfaa894fbd8", "reason": "needs_source_and_test_change"}
+{"commit": "8c20102cc77fcec46fd34e52dfa031bab2111944", "reason": "touches_go_mod_or_vendor"}
+{"commit": "29792d3cc7261836ef22e9be3b2f3c3906fad689", "reason": "needs_source_and_test_change"}
+{"commit": "a3ff8e0a926bacd01564a5323bc17a574b9a3d14", "reason": "touches_go_mod_or_vendor"}
+{"commit": "92da47f7b4e65b828dc6348ae971f81031d41f02", "reason": "needs_source_and_test_change"}
+{"commit": "592255318aa6a68944a534765bacbf4c52de5741", "reason": "needs_source_and_test_change"}
+{"commit": "01b79dd983af0859e4e3d7454961ad3f08cf88b4", "reason": "needs_source_and_test_change"}
+{"commit": "4369988e617bd6489a63ff638a1390d9e4e700d4", "reason": "needs_source_and_test_change"}
+{"commit": "e0eac3bb90b9aa1b9f4a598b25e184940d628448", "reason": "touches_go_mod_or_vendor"}
+{"commit": "2c87c82fa2484f26c7181cbf31be406c943fdaaf", "reason": "no_failing_test_at_parent"}
+{"commit": "c28f55d51e3ccfb913abca073ed46cfbbb11fe8e", "reason": "needs_source_and_test_change"}
+{"commit": "efe3f165dd297c85fff11473dbf586f2d39fbf86", "reason": "churn_over_120", "churn": 135}
+{"commit": "ae66a1c02e08366858f3070664f493afbe0cdf18", "reason": "needs_source_and_test_change"}
+{"commit": "2f012c2da1adf9cd943edac3514d6bbf56717565", "reason": "touches_go_mod_or_vendor"}
+{"commit": "0e277a0e8615df0e1646f24ed6280d146f724ab6", "reason": "needs_source_and_test_change"}
+{"commit": "dd45e5b200f1cd9dc117051374b15d590c63159e", "reason": "needs_source_and_test_change"}
+{"commit": "82dc5ed6c009913eedd3c96c87600346a91ab788", "reason": "needs_source_and_test_change"}
+{"commit": "bba0816a3808c7f7ea0a7e75be9d365b3410c524", "reason": "needs_source_and_test_change"}
+{"commit": "400e24818605ec1e2345bfc81ccc32657f046ad4", "reason": "needs_source_and_test_change"}
+{"commit": "ed600930da83048f6b6ddab104bed71ae52ff86a", "reason": "touches_go_mod_or_vendor"}
+{"commit": "457f377cab4c3966176071364ee619f75be97839", "reason": "needs_source_and_test_change"}
+{"commit": "a5a326f5f13cd168e9f4f0bc92cde9c765b3bf90", "reason": "needs_source_and_test_change"}
+{"commit": "4b04d7d80ac31e347a1bf63be3b0e04b23469d97", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ab07d0c000d3c0d3ad859c3867617c65bacad73e", "reason": "needs_source_and_test_change"}
+{"commit": "a6947991b62f22dd7c49ba0459252b7f0b8153a6", "reason": "needs_source_and_test_change"}
+{"commit": "340c0de975ebeb9a119815550870c42b10b61715", "reason": "needs_source_and_test_change"}
+{"commit": "34a264f25a8a3801754a4bc4b5280bd437d75b5f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "64bc042c65c111e092e6339fdcb4bceb48719b07", "reason": "touches_go_mod_or_vendor"}
+{"commit": "713fc708ec86eed19ab3ece50ac2e7dd913d2c10", "reason": "needs_source_and_test_change"}
+{"commit": "dcd1adc54b5bab9dac7553cec7fae615e4c92a3c", "reason": "needs_source_and_test_change"}
+{"commit": "949313430cabc799bf17b72d0a04a16980729fc8", "reason": "needs_source_and_test_change"}
+{"commit": "54a0440414b7b4da14faccca8043b5aa5722126c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "4007349ce6e4e8fdcbe9a39517d4b7a8fad7efa3", "reason": "needs_source_and_test_change"}
+{"commit": "d1897f89b294fc172e5b2993325ad1a0184f711d", "reason": "churn_over_120", "churn": 490}
+{"commit": "2af8c115be240a8018add33bf5c7a9ba5070a62c", "reason": "needs_source_and_test_change"}
+{"commit": "c14cbaa24a75272958161751240fd538a68e6c04", "reason": "needs_source_and_test_change"}
+{"commit": "9d95dd7344abe6388b59e25b8db54a3c7371cd6a", "reason": "more_than_2_packages", "n": 3}
+{"commit": "10c3f78c1f43bd609001ef30ff4c23ac57d74ffc", "reason": "needs_source_and_test_change"}
+{"commit": "2b970995a3c63b7a7600f242d55d15185a82ed8b", "reason": "needs_source_and_test_change"}
+{"commit": "d51b72243a01729cdc76a5b57a0866a2f1bfd2bc", "reason": "valid", "instance_id": "cli__cli-bd81afda9ab6", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification:TestChooseVerifierWithNilGitHub"], "churn": 3, "nF": 20, "task": "spec_pending"}
+{"commit": "bd81afda9ab653bd880298e6cfbf143541522a2f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "fba5ab9983adc2e5f859338d9d23e90ff7f62db4", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a48397752654beab906e9ce333c96eee2302975a", "reason": "needs_source_and_test_change"}
+{"commit": "9c980dc323efdebc2c24c0c0f7c49b71a45844da", "reason": "needs_source_and_test_change"}
+{"commit": "989c466f02865b26995a16be3bb1f154899fce94", "reason": "touches_go_mod_or_vendor"}
+{"commit": "9ea7e69d548204997e20dcc2d4551e3adff2a562", "reason": "touches_go_mod_or_vendor"}
+{"commit": "0611eb6f92805df9d46a12c6535da8856a43e1d9", "reason": "touches_go_mod_or_vendor"}
+{"commit": "eb42db6853a392f5ab6b2b58d39642acaeea899d", "reason": "needs_source_and_test_change"}
+{"commit": "5d4c548ab5622485a955fb644dd6e4706b4e04bd", "reason": "needs_source_and_test_change"}
+{"commit": "12fb220b31c578387b3e69af47f35d7d22b5e780", "reason": "touches_go_mod_or_vendor"}
+{"commit": "27762fcfe431924c1a6c0baab994ef755ddc73dc", "reason": "touches_go_mod_or_vendor"}
+{"commit": "4e40c245e3046929247fc3d6b0e1f14677b6b894", "reason": "touches_go_mod_or_vendor"}
+{"commit": "cfa2cadffa4bc424af488e2339d84b617506e6df", "reason": "touches_go_mod_or_vendor"}
+{"commit": "b300f2ec7ec9dc9addc39b2ad88c54097ded7ca0", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "74e779140c472bc380ce57978853480805dc16b7", "reason": "no_failing_test_at_parent"}
+{"commit": "6dae3077b89c9858c5778c0b37a116b1091f8782", "reason": "needs_source_and_test_change"}
+{"commit": "5cb1b08cbdd15a19fade43cc37a494a0558a604f", "reason": "needs_source_and_test_change"}
+{"commit": "fd8bbbdf0f6ffcc546efac6c5f4e73eb9a861107", "reason": "needs_source_and_test_change"}
+{"commit": "f1d112104821b055bb0c5656f2989f9213db71f6", "reason": "valid", "instance_id": "cli__cli-326faaac8b5c", "W": ["github.com/cli/cli/v2/pkg/cmd/skills/install"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/skills/install:TestInstallRun"], "churn": 10, "nF": 6, "task": "issue"}
+{"commit": "326faaac8b5c3b736ddc6bfa573cc97dc6452a24", "reason": "valid", "instance_id": "cli__cli-397876d3dc28", "W": ["github.com/cli/cli/v2/internal/skills/registry"], "f2p": ["github.com/cli/cli/v2/internal/skills/registry:TestFindByID", "github.com/cli/cli/v2/internal/skills/registry:TestInstallDir"], "churn": 19, "nF": 12, "task": "issue"}
+{"commit": "397876d3dc2828f1c932c651b31ab78e72506da4", "reason": "needs_source_and_test_change"}
+{"commit": "ff4e4a255006ca98e3036bd0f8d98374a405835f", "reason": "needs_source_and_test_change"}
+{"commit": "b7195a53258ae3109867f2a59aa87427c89442a9", "reason": "needs_source_and_test_change"}
+{"commit": "19201f36367ebd32188556fad7899e55655bbc00", "reason": "needs_source_and_test_change"}
+{"commit": "f843011fd2777e26650558a56124a2bfa5ffdb99", "reason": "needs_source_and_test_change"}
+{"commit": "a0c0773812ad0f3d94a95d0c0fdc3674321931f2", "reason": "touches_go_mod_or_vendor"}
+{"commit": "047f43e971ee6b5c0007aaa6f1c1a65adc4ffa92", "reason": "needs_source_and_test_change"}
+{"commit": "71fb4f5f4358c44c9328637752f0c15a47d84139", "reason": "more_than_2_packages", "n": 3}
+{"commit": "954ffc37e5931a9621868a50f05c8fb17e288f19", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "561d9f919cbdadc22f886a3eadb260ba0b4f49c5", "reason": "valid", "instance_id": "cli__cli-015e6cf6ac39", "W": ["github.com/cli/cli/v2/internal/agents"], "f2p": ["github.com/cli/cli/v2/internal/agents:TestDetectWith"], "churn": 108, "nF": 2, "task": "spec_pending"}
+{"commit": "015e6cf6ac39ad18138f868545f02359c3c8d3ef", "reason": "touches_go_mod_or_vendor"}
+{"commit": "dd26eb39b04db5bd282509787d2b8fbff11ba694", "reason": "needs_source_and_test_change"}
+{"commit": "cd68c69dbd5ea0793cece6355f0911ca6a68ffc1", "reason": "valid", "instance_id": "cli__cli-9ad0bccb4778", "W": ["github.com/cli/cli/v2/internal/skills/registry"], "f2p": ["github.com/cli/cli/v2/internal/skills/registry:TestInstallDir"], "churn": 2, "nF": 12, "task": "issue"}
+{"commit": "9ad0bccb4778a344f918d33d4eb7924eddaed9ac", "reason": "needs_source_and_test_change"}
+{"commit": "23f83e6ae18998fcd6ac0497f57a1d9ebd95862a", "reason": "valid", "instance_id": "cli__cli-0274077b56a5", "W": ["github.com/cli/cli/v2/pkg/cmd/pr/checks"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/pr/checks:TestPrintSummary"], "churn": 2, "nF": 6, "task": "spec_pending"}
+{"commit": "0274077b56a5ef8e575358721149cd02888b2a5f", "reason": "more_than_2_packages", "n": 14}
+{"commit": "f4a29a3d22335936f577e889c0b44d4f314fc794", "reason": "needs_source_and_test_change"}
+{"commit": "70bb306bd25eb407f90eabefd98824aed62cf519", "reason": "valid", "instance_id": "cli__cli-01bcd474447b", "W": ["github.com/cli/cli/v2/pkg/cmd/skills/install"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/skills/install:TestInstallRun", "github.com/cli/cli/v2/pkg/cmd/skills/install:TestRunLocalInstall"], "churn": 67, "nF": 6, "task": "spec_pending"}
+{"commit": "01bcd474447b5034da20686c838ae4b0cf2b23f5", "reason": "churn_over_120", "churn": 162}
+{"commit": "733e35c04c4141468f8882d17b063414ffe36c57", "reason": "more_than_2_packages", "n": 4}
+{"commit": "a6012aca41ffa2d943ea9f12094a7398ce2e4b7e", "reason": "needs_source_and_test_change"}
+{"commit": "d05c71a9da4bce4d57f622aacc6a8ee24e5e158e", "reason": "needs_source_and_test_change"}
+{"commit": "f15dce85056f12cb83f902ab38a35b358676f612", "reason": "touches_go_mod_or_vendor"}
+{"commit": "54fa0c628cf20aaae3ab78abe49760c827a27d9f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e66c2c4741b049db799d0755f403f53b46666bb8", "reason": "needs_source_and_test_change"}
+{"commit": "1e449a2338e75ebb505acac536d3620b82787c39", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f4cab89a423c31a156c2f21dda5e6eb7df538e32", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a834c677235216410b3977eec60504acefa6c4d4", "reason": "touches_go_mod_or_vendor"}
+{"commit": "412c5fae63239705c0120e76ec9508307d2709a0", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "57b9b207d900114092f30d78020c193b40621dfa", "reason": "needs_source_and_test_change"}
+{"commit": "cac0ba166220017af1d299001b698e811077d5a6", "reason": "needs_source_and_test_change"}
+{"commit": "52e8e7427702e023d743318f748fceda4c0dcf37", "reason": "more_than_2_packages", "n": 9}
+{"commit": "da68cb8f6f597cfc3838cf40f89ecc01f4e53233", "reason": "needs_source_and_test_change"}
+{"commit": "5c9ec1c5f51d682dbf65b0c16f856d8b9303adff", "reason": "needs_source_and_test_change"}
+{"commit": "ea722406033a9965fc37a9496650dd59d126c28b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "898d97296c4a710185ed2c9c95ebd75336da6427", "reason": "touches_go_mod_or_vendor"}
+{"commit": "19ac156fda27f6cb0580bb58d26a4f4a1b753b84", "reason": "needs_source_and_test_change"}
+{"commit": "db66865b94be007465f34f14cc24881c434438e6", "reason": "needs_source_and_test_change"}
+{"commit": "674e02a56b020549b45f970808ce7c20e179824a", "reason": "churn_over_120", "churn": 588}
+{"commit": "0faf4b09c16dae7a59ce0794dd98308bba6b01c9", "reason": "needs_source_and_test_change"}
+{"commit": "7ef9c54bf87fb17516e93a7ddb932efb7c660a35", "reason": "valid", "instance_id": "cli__cli-20147bf81fed", "W": ["github.com/cli/cli/v2/pkg/cmd/root"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/root:TestOfficialExtensionStubRun"], "churn": 42, "nF": 4, "task": "spec_pending"}

@@ -1,0 +1,77 @@
+{
+ "repo": "cli/cli",
+ "repo_path": "<local checkout of github.com/cli/cli>",
+ "baseline_fail_pkgs": [
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/internal/zip",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/safepaths",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/download",
+  "github.com/cli/cli/v2/pkg/cmd/copilot",
+  "github.com/cli/cli/v2/pkg/cmd/codespace",
+  "github.com/cli/cli/v2/pkg/cmd/issue/develop",
+  "github.com/cli/cli/v2/pkg/cmd/pr/shared",
+  "github.com/cli/cli/v2/pkg/cmd/release/download",
+  "github.com/cli/cli/v2/pkg/cmd/repo/read-file",
+  "github.com/cli/cli/v2/pkg/cmd/run/download",
+  "github.com/cli/cli/v2/pkg/cmd/skills/list"
+ ],
+ "instance_id": "cli__cli-1863cb7c0f1d",
+ "base_commit": "1863cb7c0f1d27e9479a95edb30ba97fcc6c01b1",
+ "gold_commit": "9ee0afb43414a411a214995ac3cb84dec6043b13",
+ "created_at": "2026-09-29T20:15:54-06:00",
+ "pr_number": null,
+ "pr_title": null,
+ "pr_body": null,
+ "commit_message": "Merge commit from fork\nMake SourceRepositoryRef check case-sensitive",
+ "task_text": "The verification step that checks the source repository ref on an attestation's signing certificate currently compares it case-insensitively, so a ref that differs from the expected one only in letter case is accepted. This is incorrect because Git refs are case-sensitive. A branch name with different capitalization is a different branch and should not satisfy the policy.\n\nThe comparison must be an exact, case-sensitive match. When the certificate's ref differs from the expected ref in letter case, verification must fail. The error must state both the expected value and the value actually found. Exact matches must continue to pass, and mismatches in other certificate fields must behave as they do now.",
+ "task_text_source": "rewritten_spec",
+ "task_text_url": null,
+ "gold_patch": "diff --git a/pkg/cmd/attestation/verification/extensions.go b/pkg/cmd/attestation/verification/extensions.go\nindex 3ac9ac0a0..2708e1f4a 100644\n--- a/pkg/cmd/attestation/verification/extensions.go\n+++ b/pkg/cmd/attestation/verification/extensions.go\n@@ -65,7 +65,8 @@ func verifyCertExtensions(given, expected certificate.Summary) error {\n \tif expected.SourceRepositoryDigest != \"\" && !strings.EqualFold(expected.SourceRepositoryDigest, given.SourceRepositoryDigest) {\n \t\treturn fmt.Errorf(\"expected SourceRepositoryDigest to be %s, got %s\", expected.SourceRepositoryDigest, given.SourceRepositoryDigest)\n \t}\n-\tif expected.SourceRepositoryRef != \"\" && !strings.EqualFold(expected.SourceRepositoryRef, given.SourceRepositoryRef) {\n+\t// SourceRepositoryRef must be a case-sensitive comparison\n+\tif expected.SourceRepositoryRef != \"\" && expected.SourceRepositoryRef != given.SourceRepositoryRef {\n \t\treturn fmt.Errorf(\"expected SourceRepositoryRef to be %s, got %s\", expected.SourceRepositoryRef, given.SourceRepositoryRef)\n \t}\n \n",
+ "test_patch": "diff --git a/pkg/cmd/attestation/verification/extensions_test.go b/pkg/cmd/attestation/verification/extensions_test.go\nindex de00abcef..af2e50c7f 100644\n--- a/pkg/cmd/attestation/verification/extensions_test.go\n+++ b/pkg/cmd/attestation/verification/extensions_test.go\n@@ -16,6 +16,7 @@ func createSampleResult() *AttestationProcessingResult {\n \t\t\t\t\tSourceRepositoryOwnerURI: \"https://github.com/owner\",\n \t\t\t\t\tSourceRepositoryURI:      \"https://github.com/owner/repo\",\n \t\t\t\t\tIssuer:                   \"https://token.actions.githubusercontent.com\",\n+\t\t\t\t\tSourceRepositoryRef:      \"refs/heads/main\",\n \t\t\t\t},\n \t\t\t},\n \t\t},\n@@ -28,7 +29,9 @@ func TestVerifyCertExtensions(t *testing.T) {\n \tcertSummary := certificate.Summary{\n \t\tSourceRepositoryOwnerURI: \"https://github.com/owner\",\n \t\tSourceRepositoryURI:      \"https://github.com/owner/repo\",\n-\t\tIssuer:                   GitHubOIDCIssuer}\n+\t\tIssuer:                   GitHubOIDCIssuer,\n+\t\tSourceRepositoryRef:      \"refs/heads/main\",\n+\t}\n \n \tc := EnforcementCriteria{\n \t\tCertificate: certSummary,\n@@ -86,10 +89,18 @@ func TestVerifyCertExtensions(t *testing.T) {\n \t})\n \n \tt.Run(\"with partial OIDCIssuer match\", func(t *testing.T) {\n-\t\texpectedResults := results\n+\t\texpectedResults := []*AttestationProcessingResult{createSampleResult()}\n \t\texpectedResults[0].VerificationResult.Signature.Certificate.Extensions.Issuer = \"https://token.actions.githubusercontent.com/foo-bar\"\n \t\tverified, err := VerifyCertExtensions(expectedResults, c)\n \t\trequire.ErrorContains(t, err, \"expected Issuer to be https://token.actions.githubusercontent.com, got https://token.actions.githubusercontent.com/foo-bar -- if you have a custom OIDC issuer\")\n \t\trequire.Nil(t, verified)\n \t})\n+\n+\tt.Run(\"with wrong case-sensitive SourceRepositoryRef\", func(t *testing.T) {\n+\t\texpectedResults := []*AttestationProcessingResult{createSampleResult()}\n+\t\texpectedResults[0].VerificationResult.Signature.Certificate.Extensions.SourceRepositoryRef = \"refs/heads/MAIN\"\n+\t\tverified, err := VerifyCertExtensions(expectedResults, c)\n+\t\trequire.ErrorContains(t, err, \"expected SourceRepositoryRef to be refs/heads/main, got refs/heads/MAIN\")\n+\t\trequire.Nil(t, verified)\n+\t})\n }\n",
+ "test_files": {
+  "pkg/cmd/attestation/verification/extensions_test.go": "package verification\n\nimport (\n\t\"testing\"\n\n\t\"github.com/sigstore/sigstore-go/pkg/fulcio/certificate\"\n\t\"github.com/sigstore/sigstore-go/pkg/verify\"\n\t\"github.com/stretchr/testify/require\"\n)\n\nfunc createSampleResult() *AttestationProcessingResult {\n\treturn &AttestationProcessingResult{\n\t\tVerificationResult: &verify.VerificationResult{\n\t\t\tSignature: &verify.SignatureVerificationResult{\n\t\t\t\tCertificate: &certificate.Summary{\n\t\t\t\t\tSourceRepositoryOwnerURI: \"https://github.com/owner\",\n\t\t\t\t\tSourceRepositoryURI:      \"https://github.com/owner/repo\",\n\t\t\t\t\tIssuer:                   \"https://token.actions.githubusercontent.com\",\n\t\t\t\t\tSourceRepositoryRef:      \"refs/heads/main\",\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n}\n\nfunc TestVerifyCertExtensions(t *testing.T) {\n\tresults := []*AttestationProcessingResult{createSampleResult()}\n\n\tcertSummary := certificate.Summary{\n\t\tSourceRepositoryOwnerURI: \"https://github.com/owner\",\n\t\tSourceRepositoryURI:      \"https://github.com/owner/repo\",\n\t\tIssuer:                   GitHubOIDCIssuer,\n\t\tSourceRepositoryRef:      \"refs/heads/main\",\n\t}\n\n\tc := EnforcementCriteria{\n\t\tCertificate: certSummary,\n\t}\n\n\tt.Run(\"passes with one result\", func(t *testing.T) {\n\t\tverified, err := VerifyCertExtensions(results, c)\n\t\trequire.NoError(t, err)\n\t\trequire.Len(t, verified, 1)\n\t})\n\n\tt.Run(\"passes with 1/2 valid results\", func(t *testing.T) {\n\t\ttwoResults := []*AttestationProcessingResult{createSampleResult(), createSampleResult()}\n\t\trequire.Len(t, twoResults, 2)\n\t\ttwoResults[1].VerificationResult.Signature.Certificate.Extensions.SourceRepositoryOwnerURI = \"https://github.com/wrong\"\n\n\t\tverified, err := VerifyCertExtensions(twoResults, c)\n\t\trequire.NoError(t, err)\n\t\trequire.Len(t, verified, 1)\n\t})\n\n\tt.Run(\"fails when all results fail verification\", func(t *testing.T) {\n\t\ttwoResults := []*AttestationProcessingResult{createSampleResult(), createSampleResult()}\n\t\trequire.Len(t, twoResults, 2)\n\t\ttwoResults[0].VerificationResult.Signature.Certificate.Extensions.SourceRepositoryOwnerURI = \"https://github.com/wrong\"\n\t\ttwoResults[1].VerificationResult.Signature.Certificate.Extensions.SourceRepositoryOwnerURI = \"https://github.com/wrong\"\n\n\t\tverified, err := VerifyCertExtensions(twoResults, c)\n\t\trequire.Error(t, err)\n\t\trequire.Nil(t, verified)\n\t})\n\n\tt.Run(\"with wrong SourceRepositoryOwnerURI\", func(t *testing.T) {\n\t\texpectedCriteria := c\n\t\texpectedCriteria.Certificate.SourceRepositoryOwnerURI = \"https://github.com/wrong\"\n\t\tverified, err := VerifyCertExtensions(results, expectedCriteria)\n\t\trequire.ErrorContains(t, err, \"expected SourceRepositoryOwnerURI to be https://github.com/wrong, got https://github.com/owner\")\n\t\trequire.Nil(t, verified)\n\t})\n\n\tt.Run(\"with wrong SourceRepositoryURI\", func(t *testing.T) {\n\t\texpectedCriteria := c\n\t\texpectedCriteria.Certificate.SourceRepositoryURI = \"https://github.com/foo/wrong\"\n\t\tverified, err := VerifyCertExtensions(results, expectedCriteria)\n\t\trequire.ErrorContains(t, err, \"expected SourceRepositoryURI to be https://github.com/foo/wrong, got https://github.com/owner/repo\")\n\t\trequire.Nil(t, verified)\n\t})\n\n\tt.Run(\"with wrong OIDCIssuer\", func(t *testing.T) {\n\t\texpectedCriteria := c\n\t\texpectedCriteria.Certificate.Issuer = \"wrong\"\n\t\tverified, err := VerifyCertExtensions(results, expectedCriteria)\n\t\trequire.ErrorContains(t, err, \"expected Issuer to be wrong, got https://token.actions.githubusercontent.com\")\n\t\trequire.Nil(t, verified)\n\t})\n\n\tt.Run(\"with partial OIDCIssuer match\", func(t *testing.T) {\n\t\texpectedResults := []*AttestationProcessingResult{createSampleResult()}\n\t\texpectedResults[0].VerificationResult.Signature.Certificate.Extensions.Issuer = \"https://token.actions.githubusercontent.com/foo-bar\"\n\t\tverified, err := VerifyCertExtensions(expectedResults, c)\n\t\trequire.ErrorContains(t, err, \"expected Issuer to be https://token.actions.githubusercontent.com, got https://token.actions.githubusercontent.com/foo-bar -- if you have a custom OIDC issuer\")\n\t\trequire.Nil(t, verified)\n\t})\n\n\tt.Run(\"with wrong case-sensitive SourceRepositoryRef\", func(t *testing.T) {\n\t\texpectedResults := []*AttestationProcessingResult{createSampleResult()}\n\t\texpectedResults[0].VerificationResult.Signature.Certificate.Extensions.SourceRepositoryRef = \"refs/heads/MAIN\"\n\t\tverified, err := VerifyCertExtensions(expectedResults, c)\n\t\trequire.ErrorContains(t, err, \"expected SourceRepositoryRef to be refs/heads/main, got refs/heads/MAIN\")\n\t\trequire.Nil(t, verified)\n\t})\n}\n"
+ },
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verification"
+ ],
+ "interface_write_set": [],
+ "test_pkgs": [
+  "./pkg/cmd/attestation/verification/"
+ ],
+ "fail_to_pass": [
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verification:TestVerifyCertExtensions"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/attestation",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/inspect",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/trustedroot",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verify",
+  "github.com/cli/cli/v2/pkg/cmd/release",
+  "github.com/cli/cli/v2/pkg/cmd/release/create",
+  "github.com/cli/cli/v2/pkg/cmd/release/delete",
+  "github.com/cli/cli/v2/pkg/cmd/release/delete-asset",
+  "github.com/cli/cli/v2/pkg/cmd/release/download",
+  "github.com/cli/cli/v2/pkg/cmd/release/edit",
+  "github.com/cli/cli/v2/pkg/cmd/release/shared",
+  "github.com/cli/cli/v2/pkg/cmd/release/upload",
+  "github.com/cli/cli/v2/pkg/cmd/release/verify",
+  "github.com/cli/cli/v2/pkg/cmd/release/verify-asset",
+  "github.com/cli/cli/v2/pkg/cmd/release/view",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "gold_new_identifiers": [],
+ "churn": 3,
+ "cutoff_flags": {
+  "note": "model cutoffs recorded at analysis; instance postdates 2026-09-01"
+ },
+ "validity": {
+  "status": "valid_pilot",
+  "checks": "M1-M4 passed by pilot_mine.py",
+  "task_text_review": "pending_author"
+ }
+}

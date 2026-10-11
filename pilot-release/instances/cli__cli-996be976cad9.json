@@ -1,0 +1,46 @@
+{
+ "repo": "cli/cli",
+ "repo_path": "<local checkout of github.com/cli/cli>",
+ "baseline_fail_pkgs": [
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/internal/zip",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/safepaths",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/download",
+  "github.com/cli/cli/v2/pkg/cmd/copilot",
+  "github.com/cli/cli/v2/pkg/cmd/codespace",
+  "github.com/cli/cli/v2/pkg/cmd/issue/develop",
+  "github.com/cli/cli/v2/pkg/cmd/pr/shared",
+  "github.com/cli/cli/v2/pkg/cmd/release/download",
+  "github.com/cli/cli/v2/pkg/cmd/repo/read-file",
+  "github.com/cli/cli/v2/pkg/cmd/run/download",
+  "github.com/cli/cli/v2/pkg/cmd/skills/list"
+ ],
+ "interface_write_set": [],
+ "instance_id": "cli__cli-996be976cad9",
+ "base_commit": "996be976cad960a726aabb94be67dfc7e31e317b",
+ "gold_commit": "731e9b50e46abbc19c3f78ae0631ada7c773feac",
+ "created_at": "2026-10-07T16:22:14+02:00",
+ "task_text": "`gh` checks whether each installed extension is official on every startup to decide whether to disable telemetry for it. Currently the check calls `IsOfficial(ext.Name(), ext.Owner())` with two string parameters. For git-installed extensions, `ext.Owner()` spawns git every time. Since official extension names are unique, the check should call `ext.Owner()` only after a name match, not for every extension on every invocation.\n\nRefactor `IsOfficial` to take an Extension parameter instead of two strings, and call `ext.Owner()` only when the name matches.",
+ "task_text_source": "rewritten_spec",
+ "task_text_url": null,
+ "gold_patch": "diff --git a/pkg/cmd/root/extension.go b/pkg/cmd/root/extension.go\nindex df846195a..657913605 100644\n--- a/pkg/cmd/root/extension.go\n+++ b/pkg/cmd/root/extension.go\n@@ -83,7 +83,7 @@ func NewCmdExtension(io *iostreams.IOStreams, em extensions.ExtensionManager, ex\n \t// organization names), so we must not record telemetry for them by\n \t// default. Official GitHub-owned extensions are a known, fixed set and\n \t// can safely contribute their command name to telemetry.\n-\tif !extensions.IsOfficial(ext.Name(), ext.Owner()) {\n+\tif !extensions.IsOfficial(ext) {\n \t\tcmdutil.DisableTelemetry(cmd)\n \t}\n \ndiff --git a/pkg/extensions/official.go b/pkg/extensions/official.go\nindex c45ddc031..507664452 100644\n--- a/pkg/extensions/official.go\n+++ b/pkg/extensions/official.go\n@@ -41,13 +41,16 @@ var OfficialExtensions = []OfficialExtension{\n // `gh-STACK`), and we must not treat that as official. Owner comparison\n // is case-insensitive because GitHub usernames and organization names\n // are themselves case-insensitive.\n-func IsOfficial(name, owner string) bool {\n-\tif owner == \"\" {\n-\t\treturn false\n-\t}\n-\tfor _, ext := range OfficialExtensions {\n-\t\tif ext.Name == name && strings.EqualFold(ext.Owner, owner) {\n-\t\t\treturn true\n+//\n+// The owner is resolved only after a name match because resolving it for a\n+// git-installed extension spawns git, and this is called for every installed\n+// extension on every gh invocation. Official extension names are unique.\n+func IsOfficial(ext Extension) bool {\n+\tname := ext.Name()\n+\tfor _, official := range OfficialExtensions {\n+\t\tif official.Name == name {\n+\t\t\towner := ext.Owner()\n+\t\t\treturn owner != \"\" && strings.EqualFold(official.Owner, owner)\n \t\t}\n \t}\n \treturn false\n",
+ "test_files": {
+  "pkg/extensions/official_test.go": "package extensions\n\nimport (\n\t\"testing\"\n\n\t\"github.com/stretchr/testify/assert\"\n)\n\nfunc TestOfficialExtension_Repository(t *testing.T) {\n\text := &OfficialExtension{Name: \"stack\", Owner: \"github\", Repo: \"gh-stack\"}\n\trepo := ext.Repository()\n\tassert.Equal(t, \"github\", repo.RepoOwner())\n\tassert.Equal(t, \"gh-stack\", repo.RepoName())\n\tassert.Equal(t, \"github.com\", repo.RepoHost())\n}\n\nfunc TestIsOfficial(t *testing.T) {\n\ttests := []struct {\n\t\tname     string\n\t\textName  string\n\t\textOwner string\n\t\twant     bool\n\t}{\n\t\t{\n\t\t\tname:     \"known official extension matches\",\n\t\t\textName:  \"stack\",\n\t\t\textOwner: \"github\",\n\t\t\twant:     true,\n\t\t},\n\t\t{\n\t\t\tname:     \"known official extension owned by cli matches\",\n\t\t\textName:  \"webhook\",\n\t\t\textOwner: \"cli\",\n\t\t\twant:     true,\n\t\t},\n\t\t{\n\t\t\tname:     \"official name with different owner is not official\",\n\t\t\textName:  \"stack\",\n\t\t\textOwner: \"williammartin\",\n\t\t\twant:     false,\n\t\t},\n\t\t{\n\t\t\tname:     \"official name with empty owner is not official\",\n\t\t\textName:  \"stack\",\n\t\t\textOwner: \"\",\n\t\t\twant:     false,\n\t\t},\n\t\t{\n\t\t\tname:     \"owner comparison is case-insensitive\",\n\t\t\textName:  \"stack\",\n\t\t\textOwner: \"GitHub\",\n\t\t\twant:     true,\n\t\t},\n\t\t{\n\t\t\tname:     \"mixed-case name does not match\",\n\t\t\textName:  \"STACK\",\n\t\t\textOwner: \"github\",\n\t\t\twant:     false,\n\t\t},\n\t\t{\n\t\t\tname:     \"unknown name is not official\",\n\t\t\textName:  \"not-a-real-extension\",\n\t\t\textOwner: \"github\",\n\t\t\twant:     false,\n\t\t},\n\t\t{\n\t\t\tname:     \"empty name is not official\",\n\t\t\textName:  \"\",\n\t\t\textOwner: \"github\",\n\t\t\twant:     false,\n\t\t},\n\t}\n\n\tfor _, tt := range tests {\n\t\tt.Run(tt.name, func(t *testing.T) {\n\t\t\text := &ExtensionMock{\n\t\t\t\tNameFunc:  func() string { return tt.extName },\n\t\t\t\tOwnerFunc: func() string { return tt.extOwner },\n\t\t\t}\n\t\t\tassert.Equal(t, tt.want, IsOfficial(ext))\n\t\t})\n\t}\n}\n\nfunc TestIsOfficial_DoesNotResolveOwnerForUnofficialNames(t *testing.T) {\n\text := &ExtensionMock{\n\t\tNameFunc:  func() string { return \"my-custom-ext\" },\n\t\tOwnerFunc: func() string { return \"someone\" },\n\t}\n\n\tassert.False(t, IsOfficial(ext))\n\tassert.Empty(t, ext.OwnerCalls())\n}\n"
+ },
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/extensions"
+ ],
+ "test_pkg": "./pkg/extensions/",
+ "fail_to_pass": [
+  "TestIsOfficial"
+ ],
+ "cutoff_flags": {
+  "note": "model training cutoffs not verified; instance date 2026-10-07"
+ },
+ "validity": {
+  "status": "invalid_misconfigured",
+  "reason": "gold patch changes pkg/extensions and pkg/cmd/root but write_set listed only pkg/extensions, so no context contained the caller; task text omitted the signature change; transitive context (2.88M tokens) exceeded the 1M window (api_error, not a model outcome). The 9 build failures are a configuration artefact.",
+  "use": "none; superseded by HANDOFF-pilot-haiku.md fixes F1/F3"
+ }
+}

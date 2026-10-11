@@ -1,0 +1,54 @@
+{
+ "metadata": {
+  "title": "Interfaces or Bodies? A 24-Instance Pilot Measurement of ε-Sufficient Context for Language-Model Code Editing in Go",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "publication_date": "2026-10-11",
+  "description": "<p>A recent note defines a context as ε-sufficient for a code-editing language model when the model's pass rate on it is within ε of its pass rate on the best context in a stated family, and proves that under a bounded reader this property is not closed under superset. This report gives the first measurements. From 282 trunk commits of the GitHub CLI (June--October 2026) screened by fixed, logged rules, 24 fail-to-pass instances were obtained. Holding localisation at the gold write-set, two models edited each instance under nine contexts: task text only; the write-set alone; the write-set plus the exported interfaces of its direct dependencies (A1); the same with full bodies (A1b); A1 plus the interfaces of dependent packages (A1F); and A1 padded with unrelated same-repository code to 32k, 64k, 128k and 200k prompt tokens. Patches were verified by hidden fail-to-pass tests and by the tests of the write-set and its dependents. On Claude Haiku 5.5 (10 samples per cell) interfaces outperformed bodies by +0.04 [+0.01, +0.08] at one third of the tokens, outperformed the write-set alone by +0.07 [+0.02, +0.13], and adding dependent-package interfaces did not help (-0.05). Padding to 200k tokens changed the pass rate by +0.03 [-0.09, +0.15] on Haiku and -0.04 [-0.33, +0.22] on Claude Sonnet 5.5 (3 samples per cell): the degradation curve is flat within the resolution of this pilot. Sonnet solved 14 of 24 instances at least once from the task text alone, Haiku 4 of 24, which makes a task-only control essential for any confirmatory study. Run-to-run variation at default sampling was substantial (25% of Haiku cells non-unanimous). The whole measurement cost about 34 in API calls. Instances, contexts, harness and all 2,273 verdicts are released. This is an exploratory pilot on one repository; it fixes the design of a preregistered study and makes no confirmatory claim.</p>",
+  "creators": [
+   {
+    "name": "Johansen, Jude Castiel",
+    "affiliation": "Shockware Limited, independent researcher",
+    "orcid": "0009-0002-5644-3073"
+   }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+   "context sufficiency",
+   "language model code editing",
+   "SuffBench",
+   "Go",
+   "prompt length",
+   "interfaces",
+   "pilot study"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "10.5281/zenodo.23282195",
+    "relation": "isSupplementTo",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23282863",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://github.com/Shockware-Limited/suffbench",
+    "relation": "isSupplementedBy",
+    "resource_type": "software",
+    "scheme": "url"
+   }
+  ],
+  "version": "0.1.1-pilot",
+  "language": "eng",
+  "contributors": [
+   {
+    "name": "Shockware Limited",
+    "type": "HostingInstitution"
+   }
+  ],
+  "notes": "Exploratory pilot on one repository and two models; it fixes the design of a preregistered study and makes no confirmatory claim. The data zip includes instances, the mining log, the harness and all verdict records."
+ }
+}
