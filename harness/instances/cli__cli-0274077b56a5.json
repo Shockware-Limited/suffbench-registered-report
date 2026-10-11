@@ -1,0 +1,64 @@
+{
+ "repo": "cli/cli",
+ "repo_path": "C:/Users/visci/tools/corpus/wt2",
+ "api_key_file": "C:/Users/visci/.config/context-sufficiency-note/anthropic.key",
+ "baseline_fail_pkgs": [
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/internal/zip",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/safepaths",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/download",
+  "github.com/cli/cli/v2/pkg/cmd/copilot",
+  "github.com/cli/cli/v2/pkg/cmd/codespace",
+  "github.com/cli/cli/v2/pkg/cmd/issue/develop",
+  "github.com/cli/cli/v2/pkg/cmd/pr/shared",
+  "github.com/cli/cli/v2/pkg/cmd/release/download",
+  "github.com/cli/cli/v2/pkg/cmd/repo/read-file",
+  "github.com/cli/cli/v2/pkg/cmd/run/download",
+  "github.com/cli/cli/v2/pkg/cmd/skills/list"
+ ],
+ "instance_id": "cli__cli-0274077b56a5",
+ "base_commit": "0274077b56a5ef8e575358721149cd02888b2a5f",
+ "gold_commit": "23f83e6ae18998fcd6ac0497f57a1d9ebd95862a",
+ "created_at": "2026-06-22T13:10:26+01:00",
+ "pr_number": "13679",
+ "pr_title": "fix: show checks summary when all checks were cancelled",
+ "pr_body": "### Description\n\n`gh pr checks` prints a blank summary when a PR's only checks were **cancelled**.\n\n`printSummary` (`pkg/cmd/pr/checks/output.go`) gates the summary block on:\n\n```go\nif counts.Failed+counts.Passed+counts.Skipping+counts.Pending > 0 {\n```\n\n`counts.Canceled` is omitted, so a cancelled-only result sums to 0, the block is skipped, and the `else if counts.Canceled > 0 { \"Some checks were cancelled\" }` branch becomes unreachable in exactly the case it was written for. The existing \"some cancelled\" test masked this by pairing a cancelled check with passing ones.\n\n### Fix\n\nAdd `counts.Canceled` to the guard.\n\n### Testing\n\nAdded `TestPrintSummary` (`output_test.go`) with a cancelled-only case asserting the \"Some checks were cancelled\" summary renders. Fails before, passes after; `go test ./pkg/cmd/pr/checks/` green.\n\nReported in #13680.",
+ "commit_message": "Merge pull request #13679 from s3onghyun/fix-checks-cancelled-only\nfix: show checks summary when all checks were cancelled",
+ "task_text": "When every check on a pull request has been cancelled, the `gh pr checks` command prints no summary. The output shows the individual check rows but no overall status line and no count line, so the user gets no explanation of the result.\n\nThe command should print a summary for this case. The summary should state that some checks were cancelled, followed by a count line that reports the number of cancelled checks and zero for every other category. It should use the same position and format as the summary for other outcomes.\n\nA pull request with a mix of cancelled and passing checks already shows the summary correctly, which is why the problem went unnoticed. Only the case where all checks are cancelled is affected.",
+ "task_text_source": "rewritten_spec",
+ "task_text_url": null,
+ "gold_patch": "diff --git a/pkg/cmd/pr/checks/output.go b/pkg/cmd/pr/checks/output.go\nindex 24105c3e2..581a8a884 100644\n--- a/pkg/cmd/pr/checks/output.go\n+++ b/pkg/cmd/pr/checks/output.go\n@@ -68,7 +68,7 @@ func addRow(tp *tableprinter.TablePrinter, io *iostreams.IOStreams, o check) {\n \n func printSummary(io *iostreams.IOStreams, counts checkCounts) {\n \tsummary := \"\"\n-\tif counts.Failed+counts.Passed+counts.Skipping+counts.Pending > 0 {\n+\tif counts.Failed+counts.Passed+counts.Skipping+counts.Pending+counts.Canceled > 0 {\n \t\tif counts.Failed > 0 {\n \t\t\tsummary = \"Some checks were not successful\"\n \t\t} else if counts.Pending > 0 {\n",
+ "test_patch": "diff --git a/pkg/cmd/pr/checks/output_test.go b/pkg/cmd/pr/checks/output_test.go\nnew file mode 100644\nindex 000000000..aa3eed047\n--- /dev/null\n+++ b/pkg/cmd/pr/checks/output_test.go\n@@ -0,0 +1,55 @@\n+package checks\n+\n+import (\n+\t\"testing\"\n+\n+\t\"github.com/cli/cli/v2/pkg/iostreams\"\n+\t\"github.com/stretchr/testify/require\"\n+)\n+\n+func TestPrintSummary(t *testing.T) {\n+\ttests := []struct {\n+\t\tname   string\n+\t\tcounts checkCounts\n+\t\twant   string\n+\t}{\n+\t\t{\n+\t\t\tname:   \"no checks\",\n+\t\t\tcounts: checkCounts{},\n+\t\t\twant:   \"\\n\\n\",\n+\t\t},\n+\t\t{\n+\t\t\tname:   \"all successful\",\n+\t\t\tcounts: checkCounts{Passed: 3},\n+\t\t\twant:   \"All checks were successful\\n0 cancelled, 0 failing, 3 successful, 0 skipped, and 0 pending checks\\n\\n\",\n+\t\t},\n+\t\t{\n+\t\t\tname:   \"some failed\",\n+\t\t\tcounts: checkCounts{Failed: 1, Passed: 2},\n+\t\t\twant:   \"Some checks were not successful\\n0 cancelled, 1 failing, 2 successful, 0 skipped, and 0 pending checks\\n\\n\",\n+\t\t},\n+\t\t{\n+\t\t\tname:   \"some pending\",\n+\t\t\tcounts: checkCounts{Pending: 1, Passed: 2},\n+\t\t\twant:   \"Some checks are still pending\\n0 cancelled, 0 failing, 2 successful, 0 skipped, and 1 pending checks\\n\\n\",\n+\t\t},\n+\t\t{\n+\t\t\t// Regression: before the fix, the guard omitted counts.Canceled, so a\n+\t\t\t// cancelled-only result printed an empty summary.\n+\t\t\tname:   \"only cancelled\",\n+\t\t\tcounts: checkCounts{Canceled: 2},\n+\t\t\twant:   \"Some checks were cancelled\\n2 cancelled, 0 failing, 0 successful, 0 skipped, and 0 pending checks\\n\\n\",\n+\t\t},\n+\t}\n+\n+\tfor _, tt := range tests {\n+\t\tt.Run(tt.name, func(t *testing.T) {\n+\t\t\tios, _, stdout, _ := iostreams.Test()\n+\t\t\tios.SetStdoutTTY(true)\n+\n+\t\t\tprintSummary(ios, tt.counts)\n+\n+\t\t\trequire.Equal(t, tt.want, stdout.String())\n+\t\t})\n+\t}\n+}\n",
+ "test_files": {
+  "pkg/cmd/pr/checks/output_test.go": "package checks\n\nimport (\n\t\"testing\"\n\n\t\"github.com/cli/cli/v2/pkg/iostreams\"\n\t\"github.com/stretchr/testify/require\"\n)\n\nfunc TestPrintSummary(t *testing.T) {\n\ttests := []struct {\n\t\tname   string\n\t\tcounts checkCounts\n\t\twant   string\n\t}{\n\t\t{\n\t\t\tname:   \"no checks\",\n\t\t\tcounts: checkCounts{},\n\t\t\twant:   \"\\n\\n\",\n\t\t},\n\t\t{\n\t\t\tname:   \"all successful\",\n\t\t\tcounts: checkCounts{Passed: 3},\n\t\t\twant:   \"All checks were successful\\n0 cancelled, 0 failing, 3 successful, 0 skipped, and 0 pending checks\\n\\n\",\n\t\t},\n\t\t{\n\t\t\tname:   \"some failed\",\n\t\t\tcounts: checkCounts{Failed: 1, Passed: 2},\n\t\t\twant:   \"Some checks were not successful\\n0 cancelled, 1 failing, 2 successful, 0 skipped, and 0 pending checks\\n\\n\",\n\t\t},\n\t\t{\n\t\t\tname:   \"some pending\",\n\t\t\tcounts: checkCounts{Pending: 1, Passed: 2},\n\t\t\twant:   \"Some checks are still pending\\n0 cancelled, 0 failing, 2 successful, 0 skipped, and 1 pending checks\\n\\n\",\n\t\t},\n\t\t{\n\t\t\t// Regression: before the fix, the guard omitted counts.Canceled, so a\n\t\t\t// cancelled-only result printed an empty summary.\n\t\t\tname:   \"only cancelled\",\n\t\t\tcounts: checkCounts{Canceled: 2},\n\t\t\twant:   \"Some checks were cancelled\\n2 cancelled, 0 failing, 0 successful, 0 skipped, and 0 pending checks\\n\\n\",\n\t\t},\n\t}\n\n\tfor _, tt := range tests {\n\t\tt.Run(tt.name, func(t *testing.T) {\n\t\t\tios, _, stdout, _ := iostreams.Test()\n\t\t\tios.SetStdoutTTY(true)\n\n\t\t\tprintSummary(ios, tt.counts)\n\n\t\t\trequire.Equal(t, tt.want, stdout.String())\n\t\t})\n\t}\n}\n"
+ },
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/pr/checks"
+ ],
+ "interface_write_set": [],
+ "test_pkgs": [
+  "./pkg/cmd/pr/checks/"
+ ],
+ "fail_to_pass": [
+  "github.com/cli/cli/v2/pkg/cmd/pr/checks:TestPrintSummary"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/pr",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "gold_new_identifiers": [],
+ "churn": 2,
+ "cutoff_flags": {
+  "note": "model cutoffs recorded at analysis; instance postdates 2026-09-01"
+ },
+ "validity": {
+  "status": "valid_pilot",
+  "checks": "M1-M4 passed by pilot_mine.py",
+  "task_text_review": "pending_author"
+ }
+}
