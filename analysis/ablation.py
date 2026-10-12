@@ -17,16 +17,21 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", default="harness/results-abl"); ap.add_argument("--contexts-root", default="harness")
     ap.add_argument("--out", default="harness/results-abl"); ap.add_argument("--eps", type=float, default=0.05)
-    ap.add_argument("--pilot-results", default="harness/results"); a = ap.parse_args()
+    ap.add_argument("--pilot-results", default="harness/results"); ap.add_argument("--contexts-prefix", default="abl-")
+    ap.add_argument("--model-filter", default=None); a = ap.parse_args()
     recs = []
-    for f in glob.glob(os.path.join(a.results, "cli__cli-*-*.jsonl")):
+    for f in glob.glob(os.path.join(a.results, "*-claude-*.jsonl")):
         for l in open(f, encoding="utf-8"):
             try: r = json.loads(l)
             except Exception: continue
-            if "arm" in r: recs.append(r)
+            if "arm" in r and (a.model_filter is None or r["model"] == a.model_filter): recs.append(r)
     models = sorted({r["model"] for r in recs}); rep = ["# Ablation report (auto-generated)\n"]
     insts = sorted({r["instance_id"] for r in recs})
-    meta = {i: json.load(open(os.path.join(a.contexts_root, f"abl-{i}", "contexts.json"), encoding="utf-8")) for i in insts}
+    def ctxdir(i):
+        for pre in (a.contexts_prefix, "ablr-", "abl-"):
+            if os.path.exists(os.path.join(a.contexts_root, pre + i, "contexts.json")): return os.path.join(a.contexts_root, pre + i)
+        raise FileNotFoundError(i)
+    meta = {i: json.load(open(os.path.join(ctxdir(i), "contexts.json"), encoding="utf-8")) for i in insts}
     rep.append(f"Records: {len(recs)}. Models: {', '.join(models)}. Instances: {len(insts)}. eps={a.eps}.\n")
     cw = csv.writer(open(os.path.join(a.out, "ablation_cells.csv"), "w", newline="", encoding="utf-8"))
     cw.writerow(["model", "instance", "arm", "n", "delta_pass", "frame_pass", "n_tokens_prompt", "removed", "same_as"])
@@ -50,7 +55,7 @@ def main():
         rep.append(f"\n## {m}\n\nSpend at list prices: ${cost:.2f}. Samples: {len(R)}.\n")
         # A1 drift vs pilot
         pilot = collections.defaultdict(list)
-        for f in glob.glob(os.path.join(a.pilot_results, f"cli__cli-*-{m}.jsonl")):
+        for f in glob.glob(os.path.join(a.pilot_results, f"*-{m}.jsonl")):
             for l in open(f, encoding="utf-8"):
                 try: r = json.loads(l)
                 except Exception: continue

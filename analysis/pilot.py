@@ -6,7 +6,8 @@ import argparse, glob, json, os, math, random, collections
 import csv
 
 PRICES = {  # $/M tokens: input, output, cache_read, cache_write. Vendor page 2026-10-12. Haiku 5.5 has a second tier for prompts >100k tokens.
-    "claude-haiku-5-5": (0.10, 0.50, 0.01, 0.125), "claude-sonnet-5-5": (2.0, 10.0, 0.10, 2.5), "claude-opus-5": (5.0, 25.0, 0.50, 6.25)}
+    "claude-haiku-5-5": (0.10, 0.50, 0.01, 0.125), "claude-sonnet-5-5": (2.0, 10.0, 0.10, 2.5), "claude-opus-5": (5.0, 25.0, 0.50, 6.25),
+    "claude-haiku-4-5-20251001": (1.0, 5.0, 0.10, 1.25), "claude-opus-5-5": (4.0, 20.0, 0.20, 5.0), "claude-sonnet-4-6": (3.0, 15.0, 0.30, 3.75)}
 PRICES_OVER_100K = {"claude-haiku-5-5": (0.50, 2.50, 0.05, 0.625)}
 
 def price_for(model, u):

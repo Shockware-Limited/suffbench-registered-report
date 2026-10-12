@@ -16,3 +16,5 @@ harness/phase1*
 harness/rv_*
 harness/abl_ids*
 analysis/__pycache__/
+harness/results-p2smoke/
+harness/ablr-*/*.txt

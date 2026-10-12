@@ -1,0 +1,9 @@
+{
+ "repo": "uber-go/zap",
+ "repo_path": "zap-wt",
+ "baseline_fail_pkgs": [
+  "go.uber.org/zap",
+  "go.uber.org/zap/zapcore"
+ ],
+ "baseline_pkgs": 15
+}

@@ -63,7 +63,7 @@ def main():
     ap.add_argument("--target", type=int, default=24); ap.add_argument("--out", default="instances"); ap.add_argument("--template", required=True)
     ap.add_argument("--max-commits", type=int, default=80); ap.add_argument("--branch", default=None)
     a = ap.parse_args()
-    tpl = json.load(open(a.template, encoding="utf-8"))
+    tpl = json.load(open(a.template, encoding="utf-8")); repo = tpl["repo"]; prefix = repo.replace("/", "__")
     branch = a.branch or next(b for b in ("origin/trunk", "origin/main", "HEAD") if run(["git", "rev-parse", "--verify", b], a.clone).returncode == 0)
     commits = git(a.clone, "log", f"--since={a.since}", "--first-parent", "--format=%H", branch).split()
     rej = open(os.path.join(a.out, "rejected.jsonl"), "a", encoding="utf-8")
@@ -143,25 +143,25 @@ def main():
         if leak: log(C, "test_references_gold_identifiers", leak=leak[:10]); continue
         # M5: task text
         subj = git(a.clone, "show", "-s", "--format=%s%n%b", C)
-        m = re.search(r"#(\d+)", subj); pr = gh_api(f"/repos/cli/cli/pulls/{m.group(1)}") if m else {}
+        m = re.search(r"#(\d+)", subj); pr = gh_api(f"/repos/{repo}/pulls/{m.group(1)}") if m else {}
         issue_no = None
-        for pat in (r"(?:[Ff]ix(?:es|ed)?|[Cc]lose[sd]?|[Rr]esolve[sd]?)\s*:?\s*(?:https://github.com/cli/cli/issues/)?#?(\d+)",):
+        for pat in (r"(?:[Ff]ix(?:es|ed)?|[Cc]lose[sd]?|[Rr]esolve[sd]?)\s*:?\s*(?:https://github.com/" + re.escape(repo) + r"/issues/)?#?(\d+)",):
             mm = re.search(pat, (pr.get("body") or "") + "\n" + subj)
             if mm: issue_no = mm.group(1); break
         task_text, src_kind, url = None, None, None
         if issue_no:
-            iss = gh_api(f"/repos/cli/cli/issues/{issue_no}")
+            iss = gh_api(f"/repos/{repo}/issues/{issue_no}")
             if iss.get("body") and "pull_request" not in iss:
                 task_text = f"# {iss['title']}\n\n{iss['body']}"; src_kind = "issue"; url = iss.get("html_url")
-        inst_id = f"cli__cli-{P[:12]}"
-        d = {k: tpl[k] for k in ("repo", "repo_path", "api_key_file", "baseline_fail_pkgs")}
+        inst_id = f"{prefix}-{P[:12]}"
+        d = {k: tpl[k] for k in ("repo", "repo_path", "baseline_fail_pkgs")}
         d.update({"instance_id": inst_id, "base_commit": P, "gold_commit": C, "created_at": git(a.clone, "show", "-s", "--format=%cI", C).strip(),
                   "pr_number": m.group(1) if m else None, "pr_title": pr.get("title"), "pr_body": pr.get("body"), "commit_message": subj.strip(),
                   "task_text": task_text, "task_text_source": src_kind or "rewritten_spec_pending", "task_text_url": url,
                   "gold_patch": gold_patch, "test_patch": test_patch, "test_files": test_files, "write_set": W, "interface_write_set": [],
                   "test_pkgs": tpkgs, "fail_to_pass": f2p, "forward_slice": F, "gold_new_identifiers": sorted(new),
-                  "churn": churn, "cutoff_flags": {"note": "model cutoffs recorded at analysis; instance postdates 2026-09-01"},
-                  "validity": {"status": "valid_pilot", "checks": "M1-M4 passed by pilot_mine.py", "task_text_review": "pending_author"}})
+                  "churn": churn, "cutoff_flags": {"note": f"model cutoffs recorded at analysis; instance postdates {a.since}"},
+                  "validity": {"status": "valid_mined", "checks": "M1-M4 passed by pilot_mine.py", "task_text_review": "pending_author"}})
         json.dump(d, open(os.path.join(a.out, inst_id + ".json"), "w", encoding="utf-8"), indent=1)
         valid += 1; log(C, "valid", instance_id=inst_id, W=W, f2p=f2p, churn=churn, nF=len(F), task=src_kind or "spec_pending")
     run(["git", "checkout", "-q", "-f", commits[0]], a.wt)

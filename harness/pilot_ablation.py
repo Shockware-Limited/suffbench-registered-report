@@ -18,6 +18,7 @@ from run_instance import resolve_repo
 MAX_GROUPS = 16
 SELECTOR = re.compile(r"\b([A-Za-z_]\w*)\.([A-Z]\w*)")
 WORD = re.compile(r"[A-Za-z_]\w*")
+CODESPAN = re.compile(r"`+([^`\n]+?)`+")
 DECL = re.compile(r"^(?:func (?:\([^)]*\) )?|type |var |const |\t)([A-Z]\w*)", re.M)
 
 def default_name(pkg):
@@ -33,15 +34,16 @@ def import_aliases(files):
             out.setdefault(path, set()).add(alias or default_name(path))
     return out
 
-def referenced(text_lines, deps, aliases, exports):
+def referenced(text_lines, deps, aliases, exports, member=True):
     """deps whose (alias, Exported) selector appears in the lines; ambiguous aliases resolve by export membership.
-    A selector through a variable (v.Method) counts when Method is exported by exactly one dep."""
+    With member=True a selector through a variable (v.Method) counts when Method is exported by exactly one dep."""
     hits = {}
     for line in text_lines:
         for alias, name in SELECTOR.findall(line):
             cands = [d for d in deps if alias in aliases.get(d, {default_name(d)})]
             if len(cands) > 1: cands = [d for d in cands if name in exports[d]] or cands
             if not cands:
+                if not member: continue
                 owners = [d for d in deps if name in exports[d]]
                 if len(owners) == 1: hits.setdefault(owners[0], set()).add(f"member:{alias}.{name}")
                 continue
@@ -73,22 +75,23 @@ def main():
     gold_ids = set()
     for l in gold_lines: gold_ids |= code_tokens(l, False)[0]
     gold_ref = referenced(gold_lines, direct, aliases, exports)
-    task = inst["task_text"]; task_words = set(WORD.findall(task))
-    task_ref = referenced(task.splitlines(), direct, aliases, exports)
+    # task-text rule (preregistration amendment 2026-10-12): selectors resolving through W's imports, exported identifiers
+    # of exactly one direct dependency inside Markdown code spans, or the dependency's import path; prose words do not count.
+    task = inst["task_text"]
+    task_ref = referenced(task.splitlines(), direct, aliases, exports, member=False)
+    span_ids = set(WORD.findall(" ".join(CODESPAN.findall(task))))
     name_owner = {}
     for d in direct:
-        for n in exports[d]:
-            if len(n) >= 6: name_owner.setdefault(n, []).append(d)
+        for n in exports[d]: name_owner.setdefault(n, []).append(d)
+    for n in span_ids:
+        if name_owner.get(n) and len(name_owner[n]) == 1: task_ref.setdefault(name_owner[n][0], set()).add(f"span:{n}")
     for d in direct:
-        nm = default_name(d)
-        if len(nm) >= 4 and nm in task_words: task_ref.setdefault(d, set()).add(f"pkgname:{nm}")
-        for n in exports[d]:
-            if len(n) >= 6 and n in task_words and name_owner.get(n) == [d]: task_ref.setdefault(d, set()).add(f"ident:{n}")
+        if d in task: task_ref.setdefault(d, set()).add("importpath")
     # groups for leave-one-out
     if len(direct) <= MAX_GROUPS: groups = [[d] for d in direct]
     else:
         n = len(direct); groups = [direct[i * n // MAX_GROUPS:(i + 1) * n // MAX_GROUPS] for i in range(MAX_GROUPS)]
-    arms = {"W": (w_text, {}), "A1": (a1_text, {})}
+    arms = {"A0": ("", {}), "W": (w_text, {}), "A1": (a1_text, {})}
     for i, g in enumerate(groups):
         keep = [b for d, b in zip(direct, dep_blocks) if d not in g]
         arms[f"A1-{i:02d}"] = (serialise(keep + w_blocks), {"removed": g})
@@ -97,7 +100,8 @@ def main():
         arms[name] = (serialise(keep + w_blocks), {"kept": sorted(ref), "evidence": {d: sorted(v) for d, v in ref.items()}})
     client = make_client(inst); os.makedirs(a.out, exist_ok=True)
     meta = {"write_set": W, "direct_deps": direct, "forward_slice": F, "groups": groups, "gold_identifiers": sorted(gold_ids),
-            "exports_per_dep": {d: len(exports[d]) for d in direct}, "a1_matches_pilot": a1_matches, "count_model": a.model, "arms": {}}
+            "exports_per_dep": {d: len(exports[d]) for d in direct}, "a1_matches_pilot": a1_matches, "count_model": a.model,
+            "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths", "task_text_source": inst.get("task_text_source"), "repo": inst.get("repo"), "arms": {}}
     seen = {}
     for name, (text, extra) in arms.items():
         rec = dict(extra); rec["chars"] = len(text)
