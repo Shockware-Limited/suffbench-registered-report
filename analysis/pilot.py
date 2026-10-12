@@ -5,8 +5,13 @@ Usage: python analysis/pilot.py --results harness/results --out harness/results
 import argparse, glob, json, os, math, random, collections
 import csv
 
-PRICES = {  # $/M tokens: input, output, cache_read, cache_write. Haiku/Sonnet 5.5 from vendor page 2026-10-10; verify before publication.
+PRICES = {  # $/M tokens: input, output, cache_read, cache_write. Vendor page 2026-10-12. Haiku 5.5 has a second tier for prompts >100k tokens.
     "claude-haiku-5-5": (0.10, 0.50, 0.01, 0.125), "claude-sonnet-5-5": (2.0, 10.0, 0.10, 2.5), "claude-opus-5": (5.0, 25.0, 0.50, 6.25)}
+PRICES_OVER_100K = {"claude-haiku-5-5": (0.50, 2.50, 0.05, 0.625)}
+
+def price_for(model, u):
+    p = u["in"] + u["cache_read"] + u["cache_write"]
+    return PRICES_OVER_100K.get(model) if p > 100000 and model in PRICES_OVER_100K else PRICES.get(model, (0, 0, 0, 0))
 LOAD_ARMS = ["A1", "P32", "P64", "P128", "P200"]; BASE_ARMS = ["A0", "W", "A1", "A1b", "A1F"]
 
 def wilson(k, n, z=1.96):
@@ -58,9 +63,9 @@ def main():
         rep.append(f"\n## {m}\n\nInstances: {len(inst_ids)}. A0 (task-only) solved on {len(flagged)} instance(s): {flagged} — excluded from the curve below (reported both ways).\n")
         # spend
         cost = 0.0; toks = collections.Counter()
-        pi, po, pcr, pcw = PRICES.get(m, (0, 0, 0, 0))
         for r in R:
             for u in r.get("usage", []):
+                pi, po, pcr, pcw = price_for(m, u)
                 cost += (u["in"] * pi + u["out"] * po + u["cache_read"] * pcr + u["cache_write"] * pcw) / 1e6
                 toks["in"] += u["in"]; toks["out"] += u["out"]; toks["cache_read"] += u["cache_read"]; toks["cache_write"] += u["cache_write"]
         rep.append(f"Spend (list prices in PRICES, verify): ${cost:.2f}; tokens in={toks['in']:,} cache_read={toks['cache_read']:,} cache_write={toks['cache_write']:,} out={toks['out']:,}\n")
