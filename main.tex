@@ -8,8 +8,7 @@
 \usepackage[hidelinks]{hyperref}
 \newcommand{\eps}{\varepsilon}
 
-% MSR 2027 Registered Reports, Stage 1 (initial report). Limit: 6 pages + 1 page references. IEEE format.
-% DRAFT v0.3 — 2026-10-11. Pilot (DOI 10.5281/zenodo.23307204) incorporated; two independent review rounds applied.
+% Registered Report, Stage 1 protocol. IEEE format. v1.0 — 2026-10-11. Published on Zenodo as a preregistration; two independent review rounds applied.
 
 \title{Interfaces or Bodies? A Preregistered Test of $\eps$-Sufficient Context for Language-Model Code Editing in Go}
 
@@ -113,7 +112,7 @@ Single-shot editing is not an agent loop; the study measures context, not agency
 
 \section{Timeline and resources}
 
-Mining, screening, and slices: weeks 1 to 8 (about 80 hours of manual screening at the pilot's yield of one valid instance per twelve commits and a 58\% task-only screen loss). Harness: complete and released with the pilot. Stage 1 submission: 20 November 2026. Confirmatory run after in-principle acceptance: three weeks. Analysis and Stage 2: by the EMSE deadline. Budget, from the pilot's measured unit costs (\$0.20 per instance for nine arms at ten samples on the dense model; \$1.22 per instance for five arms at three samples on a mid-tier model; prompt caching makes samples after the first nearly free) and from list prices for the arms the pilot did not run: dense model, all arms within its window, 200 instances, about \$150; open-weights model at hosted list prices without caching, about \$500; frontier model on the 100-instance subset plus the 30-instance P$_{950}$ sub-subset, about \$900. About \$1,600 in total, with an upper bound of \$2,200 if input above 200k tokens is billed at a higher tier; verification on a laptop. All code, data, and prompts are released under Apache-2.0 and CC-BY-4.0.
+Mining, screening, and slices: weeks 1 to 8 (about 80 hours of manual screening at the pilot's yield of one valid instance per twelve commits and a 58\% task-only screen loss). Harness: complete and released with the pilot. This protocol is published with a DOI as a preregistration before any confirmatory model call, and will be submitted to a Registered Reports venue; the confirmatory run follows the fixing of models and cutoffs recorded in the preregistration: three weeks. Analysis and the results paper: by the venue's Stage 2 deadline. Budget, from the pilot's measured unit costs (\$0.20 per instance for nine arms at ten samples on the dense model; \$1.22 per instance for five arms at three samples on a mid-tier model; prompt caching makes samples after the first nearly free) and from list prices for the arms the pilot did not run: dense model, all arms within its window, 200 instances, about \$150; open-weights model at hosted list prices without caching, about \$500; frontier model on the 100-instance subset plus the 30-instance P$_{950}$ sub-subset, about \$900. About \$1,600 in total, with an upper bound of \$2,200 if input above 200k tokens is billed at a higher tier; verification on a laptop. All code, data, and prompts are released under Apache-2.0 and CC-BY-4.0.
 
 \section*{AI-use disclosure}
 Anthropic's Claude (Fable 5.1, referred to by the author as Lemma) was used under the author's direction to draft this report, to write the analysis, mining and harness scripts, to run the pilot against the author's API account, and to cross-check references; separate Claude Opus agents produced several rounds of critical review of the design and of the pilot paper, whose findings the author adopted or rejected. The author reviewed all text and takes full responsibility for it. Generative AI tools are not authors.

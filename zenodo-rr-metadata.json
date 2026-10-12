@@ -1,0 +1,59 @@
+{
+ "metadata": {
+  "title": "Interfaces or Bodies? A Preregistered Test of ε-Sufficient Context for Language-Model Code Editing in Go (Registered Report, Stage 1 protocol)",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "publication_date": "2026-10-11",
+  "description": "<p>Coding agents decide, many times a day, how much of a repository to show a language model, and the decision is made by heuristic or by end-task scores that confound localisation, context size, and model quality. A recent note defines ε-sufficient context: a context is sufficient for an editor when the editor's success on it is within ε of its success on the best context in a stated family, and proves that under a bounded reader this property is not closed under superset. We propose a preregistered, paired, multi-model study that operationalises the definition as a non-inferiority test. Holding localisation fixed at the gold write-set on at least 200 fail-to-pass instances mined from a fixed, ranked list of Go repositories after each model's training cutoff, we compare (H2) a compiler-computed context consisting of the write-set and the exported interfaces of its dependencies against the same package set with full bodies and against the transitive slice; (H1) we estimate each model's degradation curve by padding a fully covered base context to fixed absolute loads up to 950k tokens with three padding types, with a pre-specified equivalence test so that a flat curve is a reportable result; (H3) we measure, descriptively, whether showing the forward slice reduces breakage of passing tests; and (H4) we report tokens per arm. Coverage is defined operationally per arm by checking that the gold patch is expressible from the context. Three models: a dense cheap model at ten samples per cell on every arm, an open-weights model at temperature zero, and a frontier model at vendor-default sampling on a fixed subset. A 24-instance pilot on one repository (2,360 verified samples, three models, about 61, published with all data) shaped this design: it fixed the margins from measured per-instance variance, made a task-only screen mandatory after the mid-tier model solved 14 of 24 instances with no repository context, extended the load range after padding to 200k produced no consistent effect, and set the sampling depth after a quarter of the dense model's cells disagreed across samples. The instances, slices, contexts and verdicts are released as SuffBench v1.0.</p><p>Stage 1 protocol of a Registered Report, published as a preregistration before any confirmatory model call. The preregistration file with dated amendments is attached.</p>",
+  "creators": [
+   {
+    "name": "Johansen, Jude Castiel",
+    "affiliation": "Shockware Limited, independent researcher",
+    "orcid": "0009-0002-5644-3073"
+   }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+   "context sufficiency",
+   "language model code editing",
+   "registered report",
+   "preregistration",
+   "SuffBench",
+   "Go",
+   "non-inferiority"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "10.5281/zenodo.23282195",
+    "relation": "isSupplementTo",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23307204",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23282863",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://github.com/Shockware-Limited/suffbench",
+    "relation": "isSupplementedBy",
+    "resource_type": "software",
+    "scheme": "url"
+   }
+  ],
+  "version": "1.0",
+  "language": "eng",
+  "contributors": [
+   {
+    "name": "Shockware Limited",
+    "type": "HostingInstitution"
+   }
+  ],
+  "notes": "Preregistered study protocol; no confirmatory data have been collected. Margins, tests, instance rules, repository list and model-substitution rule are fixed in the attached preregistration.md."
+ }
+}

@@ -21,3 +21,7 @@ Checks before step 1: every rewritten task text in pilot-release/instances/*.jso
 ## Published 2026-10-11
 
 Zenodo DOI 10.5281/zenodo.23307204 (concept 10.5281/zenodo.23307203), deposition 23307204. Public release: Shockware-Limited/suffbench tag v0.1.1-pilot (commit 11159c9). Note: zenodo_publish.py still returns 415 on the bucket upload; files were uploaded with curl --upload-file and metadata PUT separately, as for the note.
+
+## Stage 1 protocol published 2026-10-11
+
+Zenodo DOI 10.5281/zenodo.23307547 (concept 10.5281/zenodo.23307546), deposition 23307547: registered-report-stage1.pdf + preregistration.md. Published as a preregistration since the MSR 2027 RR track had closed; to be submitted to a Registered Reports venue. No confirmatory call may be made before models and cutoffs are fixed in preregistration.md with a dated note.
