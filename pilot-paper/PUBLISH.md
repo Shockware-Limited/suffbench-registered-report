@@ -17,3 +17,7 @@ Shell: Git Bash. All paths relative to the chat workspace root.
 3. After the DOI resolves: add it to suffbench/README.md and suffbench/CITATION.cff, and to the note repo README under "Follow-on work"; commit and push both.
 
 Checks before step 1: every rewritten task text in pilot-release/instances/*.json with task_text_source = rewritten_spec (11 files) reads as behaviour-only; the veto in instances/vetoes.json is one you agree with; numbers in main.pdf match results/PILOT-REPORT.md.
+
+## Published 2026-10-11
+
+Zenodo DOI 10.5281/zenodo.23307204 (concept 10.5281/zenodo.23307203), deposition 23307204. Public release: Shockware-Limited/suffbench tag v0.1.1-pilot (commit 11159c9). Note: zenodo_publish.py still returns 415 on the bucket upload; files were uploaded with curl --upload-file and metadata PUT separately, as for the note.
