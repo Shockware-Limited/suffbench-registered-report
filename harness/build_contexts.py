@@ -7,6 +7,7 @@ Usage: python build_contexts.py --instance inst.json --out contexts/
 Requires the worktree at --repo to be checked out at base_commit (clean).
 """
 import argparse, json, os, re, subprocess, sys, pathlib
+from run_instance import resolve_repo
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "context-sufficiency-note" / "experiments"))
 from run_mutation import load_packages, build_graph, run, GO  # reuse graph code
 
@@ -43,7 +44,7 @@ def main():
     ap.add_argument("--instance", required=True); ap.add_argument("--out", required=True)
     a = ap.parse_args()
     inst = json.load(open(a.instance, encoding="utf-8"))
-    repo = inst["repo_path"]
+    repo = resolve_repo(inst["repo_path"])
     head = run(["git", "rev-parse", "HEAD"], repo).stdout.strip()
     assert head.startswith(inst["base_commit"][:12]), f"worktree at {head}, expected base {inst['base_commit']}"
     pk, mod = load_packages(repo)

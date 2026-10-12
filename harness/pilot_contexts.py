@@ -6,6 +6,7 @@ sha1(instance_id+path). Token targets measured with messages.count_tokens on the
 Writes <out>/contexts.json with per-arm file, chars, n_tokens_prompt (for --model), expressible, missing_identifiers.
 """
 import argparse, json, os, re, sys, hashlib, pathlib
+from run_instance import resolve_repo
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "context-sufficiency-note" / "experiments"))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from run_mutation import run, GO, load_packages, build_graph
@@ -35,7 +36,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--instance", required=True); ap.add_argument("--out", required=True); ap.add_argument("--model", default="claude-haiku-5-5")
     a = ap.parse_args()
-    inst = json.load(open(a.instance, encoding="utf-8")); repo = inst["repo_path"]
+    inst = json.load(open(a.instance, encoding="utf-8")); repo = resolve_repo(inst["repo_path"])
     run(["git", "checkout", "-q", "-f", inst["base_commit"]], repo); run(["git", "clean", "-fdq"], repo)
     pk, mod = load_packages(repo); deps, tdeps, fwd = build_graph(pk, mod)
     W = inst["write_set"]; rel = lambda p: os.path.relpath(p, repo).replace("\\", "/")

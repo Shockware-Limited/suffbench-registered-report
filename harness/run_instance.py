@@ -29,6 +29,10 @@ test files. Do not add explanations outside the blocks."""
 
 BLOCK = re.compile(r"(?:<<<< FILE: (?P<path>[^\n]+)\n)?<<<<<<< SEARCH\n(?P<search>.*?)\n=======\n(?P<replace>.*?)\n>>>>>>> REPLACE", re.S)
 
+def resolve_repo(p):
+    """Instance repo_path values are names under $CORPUS_ROOT unless absolute."""
+    return p if os.path.isabs(p) else os.path.join(os.environ.get("CORPUS_ROOT", "."), p)
+
 def parse_blocks(text):
     """SEARCH/REPLACE blocks; a block without a FILE header inherits the previous block's path."""
     out, last = [], None
@@ -61,7 +65,7 @@ def main():
     ap.add_argument("--only", nargs="*", help="context names to run (default all)")
     ap.add_argument("--full-suite", action="store_true", help="run full suite on patches passing fail-to-pass")
     a = ap.parse_args()
-    inst = json.load(open(a.instance, encoding="utf-8")); repo = inst["repo_path"]
+    inst = json.load(open(a.instance, encoding="utf-8")); repo = resolve_repo(inst["repo_path"])
     meta = json.load(open(os.path.join(a.contexts, "contexts.json"), encoding="utf-8"))
     key = open(os.path.expanduser(inst["api_key_file"]), encoding="utf-8-sig").read().strip()
     # Always use the author's key against the public endpoint; ignore any proxy credentials in the environment.

@@ -1,6 +1,6 @@
 {
  "repo": "cli/cli",
- "repo_path": "C:/Users/visci/tools/corpus/wt",
+ "repo_path": "wt",
  "baseline_fail_pkgs": [
   "github.com/cli/cli/v2/internal/ghcmd",
   "github.com/cli/cli/v2/internal/zip",

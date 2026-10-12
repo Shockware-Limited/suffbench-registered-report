@@ -13,6 +13,7 @@ from run_mutation import run, load_packages, build_graph
 from build_contexts import go_doc_all, read_files, serialise
 from pilot_mine import code_tokens, added_lines
 from pilot_contexts import make_client, count
+from run_instance import resolve_repo
 
 MAX_GROUPS = 16
 SELECTOR = re.compile(r"\b([A-Za-z_]\w*)\.([A-Z]\w*)")
@@ -52,7 +53,7 @@ def main():
     ap.add_argument("--instance", required=True); ap.add_argument("--out", required=True)
     ap.add_argument("--pilot-contexts"); ap.add_argument("--model", default="claude-haiku-5-5")
     a = ap.parse_args()
-    inst = json.load(open(a.instance, encoding="utf-8")); repo = inst["repo_path"]
+    inst = json.load(open(a.instance, encoding="utf-8")); repo = resolve_repo(inst["repo_path"])
     run(["git", "checkout", "-q", "-f", inst["base_commit"]], repo); run(["git", "clean", "-fdq"], repo)
     pk, mod = load_packages(repo); deps, tdeps, fwd = build_graph(pk, mod)
     W = inst["write_set"]; rel = lambda p: os.path.relpath(p, repo).replace("\\", "/")

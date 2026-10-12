@@ -8,7 +8,7 @@ import argparse, json, os, sys, time, hashlib, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "context-sufficiency-note" / "experiments"))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from run_mutation import run, GO
-from run_instance import parse_blocks, apply_blocks
+from run_instance import parse_blocks, apply_blocks, resolve_repo
 from pilot_contexts import make_client, messages_for, SYSTEM
 import anthropic
 
@@ -57,7 +57,7 @@ def main():
     ap.add_argument("--k", type=int, default=10); ap.add_argument("--arms", nargs="*"); ap.add_argument("--out", required=True)
     ap.add_argument("--max-prompt-tokens", type=int, default=900000); ap.add_argument("--max-tokens", type=int, default=16000)
     a = ap.parse_args()
-    inst = json.load(open(a.instance, encoding="utf-8")); repo = inst["repo_path"]
+    inst = json.load(open(a.instance, encoding="utf-8")); repo = resolve_repo(inst["repo_path"])
     meta = json.load(open(os.path.join(a.contexts, "contexts.json"), encoding="utf-8"))
     scope = [p for p in inst["write_set"] + meta["forward_slice"] if p not in inst.get("baseline_fail_pkgs", [])]
     client = make_client(inst); out = open(a.out, "a", encoding="utf-8")
