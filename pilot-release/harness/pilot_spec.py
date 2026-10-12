@@ -1,4 +1,4 @@
-"""Write behaviour-only task specs for mined instances lacking a linked issue (HANDOFF §5 M5).
+"""Write behaviour-only task specs for mined instances lacking a linked issue (mining check M5).
 
 Uses claude-haiku-5-5 on the author's key. Post-check: none of gold_new_identifiers, no file paths, no Go identifiers
 with a dot-path. One retry listing offending tokens; else flagged for the author.

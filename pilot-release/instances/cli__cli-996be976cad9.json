@@ -42,6 +42,6 @@
  "validity": {
   "status": "invalid_misconfigured",
   "reason": "gold patch changes pkg/extensions and pkg/cmd/root but write_set listed only pkg/extensions, so no context contained the caller; task text omitted the signature change; transitive context (2.88M tokens) exceeded the 1M window (api_error, not a model outcome). The 9 build failures are a configuration artefact.",
-  "use": "none; superseded by HANDOFF-pilot-haiku.md fixes F1/F3"
+  "use": "none; superseded after mining fixes F1/F3"
  }
 }

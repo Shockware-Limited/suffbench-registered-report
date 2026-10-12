@@ -1,4 +1,4 @@
-"""Build pilot arms for one mined instance (HANDOFF-pilot-haiku.md §6).
+"""Build pilot arms for one mined instance.
 
 Arms: A0 (task only), W, A1=W+iface(deps), A1b=W+bodies(deps), A1F=A1+iface(F)+test names, P32/P64/P128/P200 = A1
 padded (before A1) with same-module packages outside W∪B∪F not sharing a parent dir with W, ordered by

@@ -64,8 +64,7 @@ def main():
     inst = json.load(open(a.instance, encoding="utf-8")); repo = inst["repo_path"]
     meta = json.load(open(os.path.join(a.contexts, "contexts.json"), encoding="utf-8"))
     key = open(os.path.expanduser(inst["api_key_file"]), encoding="utf-8-sig").read().strip()
-    # The agent harness that runs this script sets its own ANTHROPIC_BASE_URL / ANTHROPIC_AUTH_TOKEN;
-    # the experiment must use the author's key against the public endpoint, never the harness credentials.
+    # Always use the author's key against the public endpoint; ignore any proxy credentials in the environment.
     for var in ("ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_BASE_URL", "ANTHROPIC_API_KEY"):
         os.environ.pop(var, None)
     client = anthropic.Anthropic(api_key=key, base_url="https://api.anthropic.com", max_retries=3)

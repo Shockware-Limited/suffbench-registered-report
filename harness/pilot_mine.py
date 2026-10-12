@@ -1,9 +1,9 @@
-"""Systematic instance mining for the SuffBench pilot (HANDOFF-pilot-haiku.md §5).
+"""Systematic instance mining for the SuffBench pilot.
 
 Walks first-parent commits of the corpus since --since, applies M1..M6, writes instances/<id>.json for valid
 instances and appends one line per examined commit to instances/rejected.jsonl (reason or "valid").
 
-Usage: python pilot_mine.py --clone C:/Users/visci/tools/corpus/cli --wt C:/Users/visci/tools/corpus/wt \
+Usage: python pilot_mine.py --clone /path/to/cli --wt /path/to/worktree \
          --since 2026-09-01 --target 24 --out instances/ --template instances/cli__cli-9b031151a825.json
 """
 import argparse, json, os, re, sys, pathlib, hashlib, urllib.request
