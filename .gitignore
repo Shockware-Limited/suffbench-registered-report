@@ -6,3 +6,4 @@ main.out
 harness/contexts/
 harness/results/*.log
 harness/contexts-*/
+harness/__pycache__/

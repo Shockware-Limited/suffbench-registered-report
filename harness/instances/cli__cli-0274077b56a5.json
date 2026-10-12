@@ -1,7 +1,6 @@
 {
  "repo": "cli/cli",
  "repo_path": "C:/Users/visci/tools/corpus/wt2",
- "api_key_file": "C:/Users/visci/.config/context-sufficiency-note/anthropic.key",
  "baseline_fail_pkgs": [
   "github.com/cli/cli/v2/internal/ghcmd",
   "github.com/cli/cli/v2/internal/zip",

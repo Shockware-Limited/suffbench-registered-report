@@ -17,7 +17,7 @@ SYSTEM = open(os.path.join(os.path.dirname(__file__), "SYSTEM_PROMPT.txt"), enco
 LEVELS = {"P32": 32000, "P64": 64000, "P128": 128000, "P200": 198000}
 
 def make_client(inst):
-    key = open(os.path.expanduser(inst["api_key_file"]), encoding="utf-8-sig").read().strip()
+    key = open(os.path.expanduser(inst.get("api_key_file", "~/.config/context-sufficiency-note/anthropic.key")), encoding="utf-8-sig").read().strip()
     for v in ("ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_BASE_URL", "ANTHROPIC_API_KEY"): os.environ.pop(v, None)
     return anthropic.Anthropic(api_key=key, base_url="https://api.anthropic.com", max_retries=3)
 
