@@ -23,7 +23,9 @@ To be registered on OSF (embargoed) at the time of the MSR 2027 Registered Repor
 - Population: fail-to-pass commits after the latest documented cutoff of the evaluated models, in 5–8 single-module Go repositories with green Linux baselines.
 - Exclusions: fail-to-pass tests that do not compile at the parent; tests referencing identifiers introduced by the gold patch (unless signatures supplied, flagged); flaky tests (fail ≥1 of 3 clean reruns); under-specified or leaking task text (manual screen).
 - Sample size: ≥300 confirmatory instances; 30 disjoint pilot instances. Justification: with n = 300, one-sided α = 0.05, π_d = 0.2, power at true difference 0 is 0.90 for ε = 0.075 and 0.61 for ε = 0.05 (analysis/power.py). Stopping rule: none; fixed n.
-- Margin: ε is fixed after the pilot: at least twice the larger of the measured run-to-run flip rates (temperature 0 for open-weights models; default sampling for the frontier model, whose sampling parameters cannot be set), and such that power ≥ 0.80 at the pilot's π_d; primary candidate 0.075; if pilot π_d > 0.3 the primary margin becomes 0.10. The chosen ε is recorded here before the confirmatory run.
+- Margin (revised 2026-10-11 after the pilot, DOI 10.5281/zenodo.23307204): cell non-unanimity (0.25 on Haiku at k=10) is not usable as a margin basis. ε is set from the standard deviation of per-instance paired differences observed in the pilot: ε = 0.05 for the dense model (σ ≈ 0.11, n required ≈ 30 at 80% power) and ε = 0.075 for models run at k=3 (σ ≈ 0.25, n ≈ 69). Fixed here before the confirmatory run; no further change without a dated note.
+- Screening (added 2026-10-11): the task-only arm is run first on the strongest evaluated model (k=3); any instance solved at least once is excluded from the confirmatory set and reported separately. In the pilot this removed 14 of 24 instances for Sonnet 5.5.
+- Load range (revised 2026-10-11): padding levels 64k, 200k, 400k, 700k, 950k; a flat curve is an admissible outcome.
 
 ## 5. Variables
 - Manipulated: context arm (A∅, A0, A1, A1b, A1F, A2, A4s, A4l, P32, P64, P128, P200 × 3 padding types).
