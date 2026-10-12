@@ -1,4 +1,5 @@
-export PYTHONIOENCODING=utf-8 PYTHONPATH='C:\Users\visci\Python\Python314\site-packages'
+export PYTHONIOENCODING=utf-8
+[ -f "$(dirname "$0")/env.local.sh" ] && . "$(dirname "$0")/env.local.sh"
 PY=/c/Python314/python
 for f in instances/cli__cli-*.json; do id=$(basename $f .json)
   [ -d contexts-$id ] || continue; [ "$id" = cli__cli-0c2eea6338a2 ] && continue

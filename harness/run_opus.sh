@@ -1,4 +1,5 @@
-export PYTHONIOENCODING=utf-8 PYTHONPATH='C:\Users\visci\Python\Python314\site-packages'
+export PYTHONIOENCODING=utf-8
+[ -f "$(dirname "$0")/env.local.sh" ] && . "$(dirname "$0")/env.local.sh"
 PY=/c/Python314/python
 IDS=$($PY -c "
 import json,glob

@@ -9,3 +9,4 @@ harness/contexts-*/
 harness/__pycache__/
 harness/abl-*/
 harness/results-abl/
+harness/env.local.sh
