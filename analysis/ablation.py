@@ -6,6 +6,13 @@ import argparse, glob, json, os, collections, csv, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from pilot import boot_diff, boot_mean, price_for
 
+def boot_sorted(pairs, B=2000, seed=2):
+    """Sorted bootstrap distribution of the mean paired difference; same generator as pilot.boot_diff."""
+    import random; rnd = random.Random(seed); n = len(pairs); ds = []
+    for _ in range(B):
+        s = [rnd.choice(pairs) for _ in range(n)]; ds.append(sum(x - y for x, y in s) / n)
+    return sorted(ds)
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", default="harness/results-abl"); ap.add_argument("--contexts-root", default="harness")
@@ -52,14 +59,25 @@ def main():
         if drift:
             d = boot_diff(drift); rep.append(f"A1 now (k=20) minus A1 pilot (k=10), {len(drift)} instances: {d[0]:+.3f} [{d[1]:+.3f}, {d[2]:+.3f}]\n")
         # H5a / H5b
-        rep.append("\n### H5: predicted-minimal contexts vs A1 (paired, instance-level bootstrap)\n\n| contrast | n | mean diff | 95% CI | non-inferior at eps | median tokens | tokens A1 |\n|---|---|---|---|---|---|---|")
+        rep.append("\n### H5: predicted-minimal contexts vs A1 (paired, instance-level bootstrap)\n\n"
+                   "Decision rule (preregistration §6, one-sided α=0.05): one-sided 95% lower bound > −eps. The two-sided interval, sign counts and the "
+                   "estimate without the most influential instance are shown alongside (added 2026-10-12 after the exploratory run; descriptive).\n\n"
+                   "| contrast | n | mean diff | 95% CI (two-sided) | one-sided 95% LB | non-inferior at eps | sign +/−/0 | without most influential | median tokens | tokens A1 |\n|---|---|---|---|---|---|---|---|---|---|")
         for arm in ("A1g", "A1t", "W"):
-            pairs = [(rate(i, arm), rate(i, "A1")) for i in insts if rate(i, arm) is not None and rate(i, "A1") is not None]
-            if not pairs: continue
-            d = boot_diff(pairs); tk = sorted(toks(i, arm) or 0 for i in insts); ta = sorted(toks(i, "A1") or 0 for i in insts)
-            rep.append(f"| {arm} − A1 | {len(pairs)} | {d[0]:+.3f} | [{d[1]:+.3f}, {d[2]:+.3f}] | {'yes' if d[1] > -a.eps else 'no'} | {tk[len(tk)//2]:,} | {ta[len(ta)//2]:,} |")
+            trip = [(i, rate(i, arm), rate(i, "A1")) for i in insts if rate(i, arm) is not None and rate(i, "A1") is not None]
+            if not trip: continue
+            pairs = [(x, y) for _, x, y in trip]; d = boot_diff(pairs); lb1 = boot_sorted(pairs)[int(0.05 * 2000)]
+            pos = sum(x > y for x, y in pairs); neg = sum(x < y for x, y in pairs)
+            infl = max(trip, key=lambda t: abs(t[1] - t[2])); d_wo = boot_diff([(x, y) for i, x, y in trip if i != infl[0]])
+            tk = sorted(toks(i, arm) or 0 for i in insts); ta = sorted(toks(i, "A1") or 0 for i in insts)
+            rep.append(f"| {arm} − A1 | {len(pairs)} | {d[0]:+.3f} | [{d[1]:+.3f}, {d[2]:+.3f}] | {lb1:+.3f} | {'yes' if lb1 > -a.eps else 'no'} | {pos}/{neg}/{len(pairs) - pos - neg} | "
+                       f"{d_wo[0]:+.3f} [{d_wo[1]:+.3f}, {d_wo[2]:+.3f}] (drop {infl[0][-12:]}) | {tk[len(tk)//2]:,} | {ta[len(ta)//2]:,} |")
         same_w = {arm: sum(1 for i in insts if meta[i]["arms"].get(arm, {}).get("same_as") == "W") for arm in ("A1g", "A1t")}
-        rep.append(f"\nInstances where the predictor keeps no dependency (arm equals W): A1g {same_w['A1g']}/{len(insts)}, A1t {same_w['A1t']}/{len(insts)}.\n")
+        ceil = sum(1 for i in insts if rate(i, "A1") == 1.0 and rate(i, "W") == 1.0); floor = sum(1 for i in insts if rate(i, "A1") == 0.0 and rate(i, "W") == 0.0)
+        inexpr = sum(1 for i in insts if not meta[i]["arms"].get("W", {}).get("expressible", True))
+        rep.append(f"\nInstances where the predictor keeps no dependency (arm equals W): A1g {same_w['A1g']}/{len(insts)}, A1t {same_w['A1t']}/{len(insts)}. "
+                   f"Instances with W and A1 both at ceiling (1.0): {ceil}; both at floor (0.0): {floor}; W inexpressible (gold identifiers missing from W): {inexpr}. "
+                   f"Only instances outside ceiling and floor can separate the arms.\n")
         # necessity
         rows = []; informative = []
         for i in insts:
@@ -81,6 +99,24 @@ def main():
             bm = boot_mean([float(r["necessary"]) for r in inf_rows])
             rep.append(f"- Necessary: {len(nec)}/{len(inf_rows)} = {bm[0]:.3f} [{bm[1]:.3f}, {bm[2]:.3f}] (bootstrap over groups; instance clustering ignored here).")
             rep.append(f"- Removal raises pass by > eps (non-monotone cells): {len(helps)}/{len(inf_rows)}.")
+            # null reference (added 2026-10-12): every cell of an instance drawn from one pooled rate at k=20
+            import random; rnd = random.Random(3); sim_n = []; sim_h = []; K = 20
+            per_inst = collections.defaultdict(list)
+            for r in inf_rows: per_inst[r["inst"]].append(r)
+            for _ in range(2000):
+                n_ = h_ = 0
+                for i, rs in per_inst.items():
+                    p = (rate(i, "A1") + sum(rate(i, "A1") - r["drop"] for r in rs)) / (len(rs) + 1)
+                    base = sum(rnd.random() < p for _ in range(K)) / K
+                    for _r in rs:
+                        cell = sum(rnd.random() < p for _ in range(K)) / K
+                        n_ += base - cell > a.eps; h_ += cell - base > a.eps
+                sim_n.append(n_); sim_h.append(h_)
+            sim_n.sort(); sim_h.sort()
+            rep.append(f"- Null reference (all cells of an instance share one rate, k={K}, 2,000 simulations): necessary {sum(sim_n)/len(sim_n):.1f} "
+                       f"[{sim_n[50]}, {sim_n[1949]}], helps {sum(sim_h)/len(sim_h):.1f} [{sim_h[50]}, {sim_h[1949]}]. Observed counts inside this range are not evidence of necessity.")
+            by_inst = sorted(((i, sum(r['necessary'] for r in rs), sum(r['helps'] for r in rs), len(rs)) for i, rs in per_inst.items()), key=lambda t: -(t[1] + t[2]))
+            rep.append("- Per instance (necessary/helps/groups): " + ", ".join(f"{i[-12:]} {n_}/{h_}/{g}" for i, n_, h_, g in by_inst[:8]) + ".")
             for name, key in (("gold-referenced", "pred_g"), ("task-referenced", "pred_t")):
                 tp = sum(r[key] and r["necessary"] for r in inf_rows); fp = sum(r[key] and not r["necessary"] for r in inf_rows); fn = sum((not r[key]) and r["necessary"] for r in inf_rows)
                 prec = tp / (tp + fp) if tp + fp else float("nan"); rec_ = tp / (tp + fn) if tp + fn else float("nan")

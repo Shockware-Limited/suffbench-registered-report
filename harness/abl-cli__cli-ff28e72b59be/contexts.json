@@ -1,0 +1,569 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/extension",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/ci",
+  "github.com/cli/cli/v2/internal/config",
+  "github.com/cli/cli/v2/internal/featuredetection",
+  "github.com/cli/cli/v2/internal/gh",
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/internal/prompter",
+  "github.com/cli/cli/v2/internal/run",
+  "github.com/cli/cli/v2/internal/safeurl",
+  "github.com/cli/cli/v2/internal/tableprinter",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/internal/update",
+  "github.com/cli/cli/v2/pkg/cmd/accessibility",
+  "github.com/cli/cli/v2/pkg/cmd/actions",
+  "github.com/cli/cli/v2/pkg/cmd/agent-task",
+  "github.com/cli/cli/v2/pkg/cmd/alias",
+  "github.com/cli/cli/v2/pkg/cmd/alias/shared",
+  "github.com/cli/cli/v2/pkg/cmd/api",
+  "github.com/cli/cli/v2/pkg/cmd/attestation",
+  "github.com/cli/cli/v2/pkg/cmd/auth",
+  "github.com/cli/cli/v2/pkg/cmd/browse",
+  "github.com/cli/cli/v2/pkg/cmd/cache",
+  "github.com/cli/cli/v2/pkg/cmd/codespace",
+  "github.com/cli/cli/v2/pkg/cmd/completion",
+  "github.com/cli/cli/v2/pkg/cmd/config",
+  "github.com/cli/cli/v2/pkg/cmd/copilot",
+  "github.com/cli/cli/v2/pkg/cmd/discussion",
+  "github.com/cli/cli/v2/pkg/cmd/extension/browse",
+  "github.com/cli/cli/v2/pkg/cmd/factory",
+  "github.com/cli/cli/v2/pkg/cmd/gist",
+  "github.com/cli/cli/v2/pkg/cmd/gpg-key",
+  "github.com/cli/cli/v2/pkg/cmd/issue",
+  "github.com/cli/cli/v2/pkg/cmd/label",
+  "github.com/cli/cli/v2/pkg/cmd/licenses",
+  "github.com/cli/cli/v2/pkg/cmd/org",
+  "github.com/cli/cli/v2/pkg/cmd/pr",
+  "github.com/cli/cli/v2/pkg/cmd/preview",
+  "github.com/cli/cli/v2/pkg/cmd/project",
+  "github.com/cli/cli/v2/pkg/cmd/release",
+  "github.com/cli/cli/v2/pkg/cmd/repo",
+  "github.com/cli/cli/v2/pkg/cmd/repo/credits",
+  "github.com/cli/cli/v2/pkg/cmd/ruleset",
+  "github.com/cli/cli/v2/pkg/cmd/run",
+  "github.com/cli/cli/v2/pkg/cmd/search",
+  "github.com/cli/cli/v2/pkg/cmd/secret",
+  "github.com/cli/cli/v2/pkg/cmd/send-telemetry",
+  "github.com/cli/cli/v2/pkg/cmd/skills",
+  "github.com/cli/cli/v2/pkg/cmd/ssh-key",
+  "github.com/cli/cli/v2/pkg/cmd/status",
+  "github.com/cli/cli/v2/pkg/cmd/variable",
+  "github.com/cli/cli/v2/pkg/cmd/version",
+  "github.com/cli/cli/v2/pkg/cmd/workflow",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/extensions",
+  "github.com/cli/cli/v2/pkg/findsh",
+  "github.com/cli/cli/v2/pkg/iostreams",
+  "github.com/cli/cli/v2/pkg/markdown",
+  "github.com/cli/cli/v2/pkg/search",
+  "github.com/cli/cli/v2/utils"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/internal/update",
+  "github.com/cli/cli/v2/pkg/cmd/api",
+  "github.com/cli/cli/v2/pkg/cmd/factory",
+  "github.com/cli/cli/v2/pkg/cmd/status"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api",
+   "github.com/cli/cli/v2/git",
+   "github.com/cli/cli/v2/internal/ci"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/config",
+   "github.com/cli/cli/v2/internal/featuredetection",
+   "github.com/cli/cli/v2/internal/gh",
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance",
+   "github.com/cli/cli/v2/internal/ghrepo",
+   "github.com/cli/cli/v2/internal/prompter",
+   "github.com/cli/cli/v2/internal/run"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/safeurl",
+   "github.com/cli/cli/v2/internal/tableprinter",
+   "github.com/cli/cli/v2/internal/text",
+   "github.com/cli/cli/v2/internal/update"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/accessibility",
+   "github.com/cli/cli/v2/pkg/cmd/actions",
+   "github.com/cli/cli/v2/pkg/cmd/agent-task",
+   "github.com/cli/cli/v2/pkg/cmd/alias"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/alias/shared",
+   "github.com/cli/cli/v2/pkg/cmd/api",
+   "github.com/cli/cli/v2/pkg/cmd/attestation",
+   "github.com/cli/cli/v2/pkg/cmd/auth"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/browse",
+   "github.com/cli/cli/v2/pkg/cmd/cache",
+   "github.com/cli/cli/v2/pkg/cmd/codespace",
+   "github.com/cli/cli/v2/pkg/cmd/completion"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/config",
+   "github.com/cli/cli/v2/pkg/cmd/copilot",
+   "github.com/cli/cli/v2/pkg/cmd/discussion",
+   "github.com/cli/cli/v2/pkg/cmd/extension/browse"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/factory",
+   "github.com/cli/cli/v2/pkg/cmd/gist",
+   "github.com/cli/cli/v2/pkg/cmd/gpg-key"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/issue",
+   "github.com/cli/cli/v2/pkg/cmd/label",
+   "github.com/cli/cli/v2/pkg/cmd/licenses",
+   "github.com/cli/cli/v2/pkg/cmd/org"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/pr",
+   "github.com/cli/cli/v2/pkg/cmd/preview",
+   "github.com/cli/cli/v2/pkg/cmd/project",
+   "github.com/cli/cli/v2/pkg/cmd/release"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/repo",
+   "github.com/cli/cli/v2/pkg/cmd/repo/credits",
+   "github.com/cli/cli/v2/pkg/cmd/ruleset",
+   "github.com/cli/cli/v2/pkg/cmd/run"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/search",
+   "github.com/cli/cli/v2/pkg/cmd/secret",
+   "github.com/cli/cli/v2/pkg/cmd/send-telemetry",
+   "github.com/cli/cli/v2/pkg/cmd/skills"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/ssh-key",
+   "github.com/cli/cli/v2/pkg/cmd/status",
+   "github.com/cli/cli/v2/pkg/cmd/variable",
+   "github.com/cli/cli/v2/pkg/cmd/version"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/workflow",
+   "github.com/cli/cli/v2/pkg/cmdutil",
+   "github.com/cli/cli/v2/pkg/extensions",
+   "github.com/cli/cli/v2/pkg/findsh"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams",
+   "github.com/cli/cli/v2/pkg/markdown",
+   "github.com/cli/cli/v2/pkg/search",
+   "github.com/cli/cli/v2/utils"
+  ]
+ ],
+ "gold_identifiers": [
+  "Env",
+  "Environ",
+  "allowing",
+  "directly",
+  "extension",
+  "externalCmd",
+  "invokes",
+  "program",
+  "run",
+  "sGH_EXTENSION",
+  "set",
+  "sgh",
+  "standalone",
+  "tell",
+  "was",
+  "when",
+  "whether"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 518,
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/ci": 2,
+  "github.com/cli/cli/v2/internal/config": 38,
+  "github.com/cli/cli/v2/internal/featuredetection": 29,
+  "github.com/cli/cli/v2/internal/gh": 56,
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry": 13,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/internal/prompter": 59,
+  "github.com/cli/cli/v2/internal/run": 17,
+  "github.com/cli/cli/v2/internal/safeurl": 9,
+  "github.com/cli/cli/v2/internal/tableprinter": 10,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/internal/update": 12,
+  "github.com/cli/cli/v2/pkg/cmd/accessibility": 5,
+  "github.com/cli/cli/v2/pkg/cmd/actions": 1,
+  "github.com/cli/cli/v2/pkg/cmd/agent-task": 1,
+  "github.com/cli/cli/v2/pkg/cmd/alias": 1,
+  "github.com/cli/cli/v2/pkg/cmd/alias/shared": 2,
+  "github.com/cli/cli/v2/pkg/cmd/api": 27,
+  "github.com/cli/cli/v2/pkg/cmd/attestation": 1,
+  "github.com/cli/cli/v2/pkg/cmd/auth": 1,
+  "github.com/cli/cli/v2/pkg/cmd/browse": 19,
+  "github.com/cli/cli/v2/pkg/cmd/cache": 1,
+  "github.com/cli/cli/v2/pkg/cmd/codespace": 36,
+  "github.com/cli/cli/v2/pkg/cmd/completion": 1,
+  "github.com/cli/cli/v2/pkg/cmd/config": 1,
+  "github.com/cli/cli/v2/pkg/cmd/copilot": 7,
+  "github.com/cli/cli/v2/pkg/cmd/discussion": 1,
+  "github.com/cli/cli/v2/pkg/cmd/extension/browse": 13,
+  "github.com/cli/cli/v2/pkg/cmd/factory": 6,
+  "github.com/cli/cli/v2/pkg/cmd/gist": 1,
+  "github.com/cli/cli/v2/pkg/cmd/gpg-key": 1,
+  "github.com/cli/cli/v2/pkg/cmd/issue": 1,
+  "github.com/cli/cli/v2/pkg/cmd/label": 1,
+  "github.com/cli/cli/v2/pkg/cmd/licenses": 1,
+  "github.com/cli/cli/v2/pkg/cmd/org": 1,
+  "github.com/cli/cli/v2/pkg/cmd/pr": 1,
+  "github.com/cli/cli/v2/pkg/cmd/preview": 1,
+  "github.com/cli/cli/v2/pkg/cmd/project": 1,
+  "github.com/cli/cli/v2/pkg/cmd/release": 1,
+  "github.com/cli/cli/v2/pkg/cmd/repo": 1,
+  "github.com/cli/cli/v2/pkg/cmd/repo/credits": 8,
+  "github.com/cli/cli/v2/pkg/cmd/ruleset": 1,
+  "github.com/cli/cli/v2/pkg/cmd/run": 1,
+  "github.com/cli/cli/v2/pkg/cmd/search": 1,
+  "github.com/cli/cli/v2/pkg/cmd/secret": 1,
+  "github.com/cli/cli/v2/pkg/cmd/send-telemetry": 5,
+  "github.com/cli/cli/v2/pkg/cmd/skills": 1,
+  "github.com/cli/cli/v2/pkg/cmd/ssh-key": 1,
+  "github.com/cli/cli/v2/pkg/cmd/status": 44,
+  "github.com/cli/cli/v2/pkg/cmd/variable": 1,
+  "github.com/cli/cli/v2/pkg/cmd/version": 2,
+  "github.com/cli/cli/v2/pkg/cmd/workflow": 1,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/extensions": 79,
+  "github.com/cli/cli/v2/pkg/findsh": 1,
+  "github.com/cli/cli/v2/pkg/iostreams": 107,
+  "github.com/cli/cli/v2/pkg/markdown": 5,
+  "github.com/cli/cli/v2/pkg/search": 174,
+  "github.com/cli/cli/v2/utils": 2
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 107698,
+   "file": "W.txt",
+   "n_tokens_prompt": 49822,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "directly",
+    "invokes",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1": {
+   "chars": 285797,
+   "file": "A1.txt",
+   "n_tokens_prompt": 122243,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api",
+    "github.com/cli/cli/v2/git",
+    "github.com/cli/cli/v2/internal/ci"
+   ],
+   "chars": 225190,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 97208,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/config",
+    "github.com/cli/cli/v2/internal/featuredetection",
+    "github.com/cli/cli/v2/internal/gh",
+    "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+   ],
+   "chars": 263103,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 113401,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance",
+    "github.com/cli/cli/v2/internal/ghrepo",
+    "github.com/cli/cli/v2/internal/prompter",
+    "github.com/cli/cli/v2/internal/run"
+   ],
+   "chars": 271439,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 116513,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/safeurl",
+    "github.com/cli/cli/v2/internal/tableprinter",
+    "github.com/cli/cli/v2/internal/text",
+    "github.com/cli/cli/v2/internal/update"
+   ],
+   "chars": 276787,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 118889,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/accessibility",
+    "github.com/cli/cli/v2/pkg/cmd/actions",
+    "github.com/cli/cli/v2/pkg/cmd/agent-task",
+    "github.com/cli/cli/v2/pkg/cmd/alias"
+   ],
+   "chars": 284794,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 121731,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/alias/shared",
+    "github.com/cli/cli/v2/pkg/cmd/api",
+    "github.com/cli/cli/v2/pkg/cmd/attestation",
+    "github.com/cli/cli/v2/pkg/cmd/auth"
+   ],
+   "chars": 283518,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 121280,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/browse",
+    "github.com/cli/cli/v2/pkg/cmd/cache",
+    "github.com/cli/cli/v2/pkg/cmd/codespace",
+    "github.com/cli/cli/v2/pkg/cmd/completion"
+   ],
+   "chars": 280326,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 119900,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/config",
+    "github.com/cli/cli/v2/pkg/cmd/copilot",
+    "github.com/cli/cli/v2/pkg/cmd/discussion",
+    "github.com/cli/cli/v2/pkg/cmd/extension/browse"
+   ],
+   "chars": 284315,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 121513,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/factory",
+    "github.com/cli/cli/v2/pkg/cmd/gist",
+    "github.com/cli/cli/v2/pkg/cmd/gpg-key"
+   ],
+   "chars": 278675,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 119687,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/issue",
+    "github.com/cli/cli/v2/pkg/cmd/label",
+    "github.com/cli/cli/v2/pkg/cmd/licenses",
+    "github.com/cli/cli/v2/pkg/cmd/org"
+   ],
+   "chars": 285017,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 121825,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/pr",
+    "github.com/cli/cli/v2/pkg/cmd/preview",
+    "github.com/cli/cli/v2/pkg/cmd/project",
+    "github.com/cli/cli/v2/pkg/cmd/release"
+   ],
+   "chars": 285009,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 121831,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/repo",
+    "github.com/cli/cli/v2/pkg/cmd/repo/credits",
+    "github.com/cli/cli/v2/pkg/cmd/ruleset",
+    "github.com/cli/cli/v2/pkg/cmd/run"
+   ],
+   "chars": 284686,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 121661,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/search",
+    "github.com/cli/cli/v2/pkg/cmd/secret",
+    "github.com/cli/cli/v2/pkg/cmd/send-telemetry",
+    "github.com/cli/cli/v2/pkg/cmd/skills"
+   ],
+   "chars": 284748,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 121706,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-13": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/ssh-key",
+    "github.com/cli/cli/v2/pkg/cmd/status",
+    "github.com/cli/cli/v2/pkg/cmd/variable",
+    "github.com/cli/cli/v2/pkg/cmd/version"
+   ],
+   "chars": 282452,
+   "file": "A1-13.txt",
+   "n_tokens_prompt": 120726,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-14": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/workflow",
+    "github.com/cli/cli/v2/pkg/cmdutil",
+    "github.com/cli/cli/v2/pkg/extensions",
+    "github.com/cli/cli/v2/pkg/findsh"
+   ],
+   "chars": 265574,
+   "file": "A1-14.txt",
+   "n_tokens_prompt": 113991,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "invokes",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1-15": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams",
+    "github.com/cli/cli/v2/pkg/markdown",
+    "github.com/cli/cli/v2/pkg/search",
+    "github.com/cli/cli/v2/utils"
+   ],
+   "chars": 259020,
+   "file": "A1-15.txt",
+   "n_tokens_prompt": 111605,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "sGH_EXTENSION"
+   ]
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 107698,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [
+    "github.com/cli/cli/v2/pkg/cmd/variable",
+    "github.com/cli/cli/v2/pkg/extensions"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/pkg/cmd/variable": [
+     "pkgname:variable"
+    ],
+    "github.com/cli/cli/v2/pkg/extensions": [
+     "pkgname:extensions"
+    ]
+   },
+   "chars": 120859,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 55317,
+   "expressible": false,
+   "missing_identifiers": [
+    "allowing",
+    "directly",
+    "sGH_EXTENSION"
+   ]
+  }
+ }
+}

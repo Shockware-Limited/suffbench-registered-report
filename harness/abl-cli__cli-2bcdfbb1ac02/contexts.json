@@ -1,0 +1,159 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/project/item-add"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/pkg/cmd/project/shared/client",
+  "github.com/cli/cli/v2/pkg/cmd/project/shared/queries",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/project",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/pkg/cmd/project/shared/client"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/project/shared/queries"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ]
+ ],
+ "gold_identifiers": [
+  "Fprintln",
+  "IsStdoutTTY",
+  "Out",
+  "config",
+  "item"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/pkg/cmd/project/shared/client": 1,
+  "github.com/cli/cli/v2/pkg/cmd/project/shared/queries": 98,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/iostreams": 107
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 3453,
+   "file": "W.txt",
+   "n_tokens_prompt": 2367,
+   "expressible": false,
+   "missing_identifiers": [
+    "Fprintln"
+   ]
+  },
+  "A1": {
+   "chars": 38614,
+   "file": "A1.txt",
+   "n_tokens_prompt": 16293,
+   "expressible": false,
+   "missing_identifiers": [
+    "Fprintln"
+   ]
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/project/shared/client"
+   ],
+   "chars": 38385,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 16185,
+   "expressible": false,
+   "missing_identifiers": [
+    "Fprintln"
+   ]
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/project/shared/queries"
+   ],
+   "chars": 21000,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 9387,
+   "expressible": false,
+   "missing_identifiers": [
+    "Fprintln"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 31717,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 13621,
+   "expressible": false,
+   "missing_identifiers": [
+    "Fprintln"
+   ]
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 28193,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 12053,
+   "expressible": false,
+   "missing_identifiers": [
+    "Fprintln"
+   ]
+  },
+  "A1g": {
+   "kept": [
+    "github.com/cli/cli/v2/pkg/cmd/project/shared/queries",
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/pkg/iostreams": [
+     "member:io.IsStdoutTTY",
+     "member:io.Out"
+    ],
+    "github.com/cli/cli/v2/pkg/cmd/project/shared/queries": [
+     "member:item.Id"
+    ]
+   },
+   "chars": 31488,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 13513,
+   "expressible": false,
+   "missing_identifiers": [
+    "Fprintln"
+   ]
+  },
+  "A1t": {
+   "kept": [
+    "github.com/cli/cli/v2/pkg/cmd/project/shared/queries",
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/pkg/cmd/project/shared/queries": [
+     "ident:Expected",
+     "ident:ProjectItem",
+     "pkgname:queries",
+     "queries.ProjectItem"
+    ],
+    "github.com/cli/cli/v2/pkg/iostreams": [
+     "ident:IsStdoutTTY",
+     "member:io.IsStdoutTTY",
+     "member:io.Out"
+    ]
+   },
+   "chars": 31488,
+   "same_as": "A1g"
+  }
+ }
+}

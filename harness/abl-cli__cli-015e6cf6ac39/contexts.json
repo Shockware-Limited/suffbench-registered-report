@@ -1,0 +1,71 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/internal/agents"
+ ],
+ "direct_deps": [],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/ghcmd"
+ ],
+ "groups": [],
+ "gold_identifiers": [
+  "AgentName",
+  "Contains",
+  "agentAmp",
+  "agentAntigravity",
+  "agentAugmentCLI",
+  "agentClaudeCode",
+  "agentCodex",
+  "agentCopilotCLI",
+  "agentCowork",
+  "agentCursor",
+  "agentCursorCLI",
+  "agentGeminiCLI",
+  "agentGoose",
+  "agentKiro",
+  "agentOpencode",
+  "agentPi",
+  "agentReplit",
+  "isSet",
+  "valueOf"
+ ],
+ "exports_per_dep": {},
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 3328,
+   "file": "W.txt",
+   "n_tokens_prompt": 2180,
+   "expressible": false,
+   "missing_identifiers": [
+    "Contains",
+    "agentAntigravity",
+    "agentAugmentCLI",
+    "agentCowork",
+    "agentCursor",
+    "agentCursorCLI",
+    "agentGoose",
+    "agentKiro",
+    "agentPi",
+    "agentReplit"
+   ]
+  },
+  "A1": {
+   "chars": 3328,
+   "same_as": "W"
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 3328,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 3328,
+   "same_as": "W"
+  }
+ }
+}

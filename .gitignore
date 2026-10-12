@@ -7,6 +7,12 @@ harness/contexts/
 harness/results/*.log
 harness/contexts-*/
 harness/__pycache__/
-harness/abl-*/
-harness/results-abl/
+harness/abl-*/*.txt
+harness/abl-instances-*/
 harness/env.local.sh
+harness/results-abl-invalid/
+harness/*.log
+harness/phase1*
+harness/rv_*
+harness/abl_ids*
+analysis/__pycache__/

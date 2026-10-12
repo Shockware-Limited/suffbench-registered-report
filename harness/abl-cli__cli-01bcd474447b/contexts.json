@@ -1,0 +1,648 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/skills/install"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/context",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/internal/prompter",
+  "github.com/cli/cli/v2/internal/skills/discovery",
+  "github.com/cli/cli/v2/internal/skills/frontmatter",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/skills/registry",
+  "github.com/cli/cli/v2/internal/skills/source",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/root",
+  "github.com/cli/cli/v2/pkg/cmd/skills"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/context"
+  ],
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/prompter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/discovery"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/frontmatter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/installer"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/registry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/source"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ]
+ ],
+ "gold_identifiers": [
+  "AddField",
+  "Description",
+  "DisplayName",
+  "EndRow",
+  "ErrOut",
+  "Errorf",
+  "Fprintf",
+  "InstallOptions",
+  "IsStdoutTTY",
+  "List",
+  "New",
+  "Pluralize",
+  "Render",
+  "Skill",
+  "TerminalWidth",
+  "Truncate",
+  "When",
+  "WithHeader",
+  "all",
+  "are",
+  "arguments",
+  "available",
+  "awesome",
+  "before",
+  "browse",
+  "can",
+  "command",
+  "copilot",
+  "desc",
+  "descWidth",
+  "discovery",
+  "errSkillsListed",
+  "errors",
+  "fetchDescriptions",
+  "filter",
+  "github",
+  "grep",
+  "install",
+  "interactively",
+  "into",
+  "isTTY",
+  "like",
+  "listAvailableSkills",
+  "listed",
+  "matching",
+  "missing",
+  "name",
+  "non",
+  "pipe",
+  "piped",
+  "prompting",
+  "prompts",
+  "required",
+  "review",
+  "run",
+  "running",
+  "sel",
+  "selection",
+  "separated",
+  "sgrep",
+  "skill",
+  "skillSelector",
+  "skills",
+  "sourceHint",
+  "specific",
+  "srepository",
+  "tab",
+  "table",
+  "tableprinter",
+  "text",
+  "the",
+  "them",
+  "tools",
+  "values",
+  "when",
+  "with",
+  "without",
+  "you"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 518,
+  "github.com/cli/cli/v2/context": 22,
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry": 13,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/internal/prompter": 59,
+  "github.com/cli/cli/v2/internal/skills/discovery": 54,
+  "github.com/cli/cli/v2/internal/skills/frontmatter": 12,
+  "github.com/cli/cli/v2/internal/skills/installer": 24,
+  "github.com/cli/cli/v2/internal/skills/registry": 19,
+  "github.com/cli/cli/v2/internal/skills/source": 5,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/iostreams": 89
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 42573,
+   "file": "W.txt",
+   "n_tokens_prompt": 19841,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "IsStdoutTTY",
+    "Pluralize",
+    "Render",
+    "WithHeader",
+    "arguments",
+    "browse",
+    "errSkillsListed",
+    "grep",
+    "isTTY",
+    "like",
+    "listAvailableSkills",
+    "listed",
+    "missing",
+    "pipe",
+    "piped",
+    "prompts",
+    "sgrep",
+    "tableprinter",
+    "tools"
+   ]
+  },
+  "A1": {
+   "chars": 153604,
+   "file": "A1.txt",
+   "n_tokens_prompt": 65656,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 103744,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 44888,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "missing",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/context"
+   ],
+   "chars": 151520,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 64767,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 143571,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 61671,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+   ],
+   "chars": 153018,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 65387,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 152913,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 65397,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 152226,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 65120,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/prompter"
+   ],
+   "chars": 142809,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 61299,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "prompts",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/discovery"
+   ],
+   "chars": 145418,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 62551,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/frontmatter"
+   ],
+   "chars": 151904,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 64984,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter",
+    "tools"
+   ]
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/installer"
+   ],
+   "chars": 151843,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 64995,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/registry"
+   ],
+   "chars": 145242,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 61679,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/source"
+   ],
+   "chars": 152736,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 65306,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 151587,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 64913,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Pluralize",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-13": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 146707,
+   "file": "A1-13.txt",
+   "n_tokens_prompt": 62984,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "Render",
+    "WithHeader",
+    "browse",
+    "errSkillsListed",
+    "grep",
+    "listAvailableSkills",
+    "listed",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1-14": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 147791,
+   "file": "A1-14.txt",
+   "n_tokens_prompt": 63084,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "IsStdoutTTY",
+    "Render",
+    "WithHeader",
+    "errSkillsListed",
+    "grep",
+    "isTTY",
+    "listAvailableSkills",
+    "pipe",
+    "piped",
+    "sgrep",
+    "tableprinter"
+   ]
+  },
+  "A1g": {
+   "kept": [
+    "github.com/cli/cli/v2/internal/skills/discovery",
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/internal/skills/discovery": [
+     "discovery.Skill"
+    ],
+    "github.com/cli/cli/v2/internal/text": [
+     "text.Pluralize",
+     "text.Truncate"
+    ]
+   },
+   "chars": 52776,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 23689,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "IsStdoutTTY",
+    "Render",
+    "WithHeader",
+    "arguments",
+    "browse",
+    "errSkillsListed",
+    "grep",
+    "isTTY",
+    "listAvailableSkills",
+    "listed",
+    "missing",
+    "pipe",
+    "piped",
+    "prompts",
+    "sgrep",
+    "tableprinter",
+    "tools"
+   ]
+  },
+  "A1t": {
+   "kept": [
+    "github.com/cli/cli/v2/context",
+    "github.com/cli/cli/v2/internal/skills/source",
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/context": [
+     "pkgname:context"
+    ],
+    "github.com/cli/cli/v2/internal/skills/source": [
+     "pkgname:source"
+    ],
+    "github.com/cli/cli/v2/internal/text": [
+     "pkgname:text"
+    ]
+   },
+   "chars": 47542,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 21823,
+   "expressible": false,
+   "missing_identifiers": [
+    "AddField",
+    "EndRow",
+    "IsStdoutTTY",
+    "Render",
+    "WithHeader",
+    "arguments",
+    "browse",
+    "errSkillsListed",
+    "grep",
+    "isTTY",
+    "like",
+    "listAvailableSkills",
+    "listed",
+    "missing",
+    "pipe",
+    "piped",
+    "prompts",
+    "sgrep",
+    "tableprinter",
+    "tools"
+   ]
+  }
+ }
+}

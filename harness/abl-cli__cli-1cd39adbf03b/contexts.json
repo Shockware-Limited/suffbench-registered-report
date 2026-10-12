@@ -1,0 +1,154 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/repo/setdefault"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/context",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/repo",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/context"
+  ],
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ]
+ ],
+ "gold_identifiers": [
+  "CanPrompt",
+  "Repo",
+  "UnsetMode",
+  "ViewMode"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 528,
+  "github.com/cli/cli/v2/context": 22,
+  "github.com/cli/cli/v2/git": 106,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/pkg/cmdutil": 61,
+  "github.com/cli/cli/v2/pkg/iostreams": 107
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 6927,
+   "file": "W.txt",
+   "n_tokens_prompt": 4082,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 94698,
+   "file": "A1.txt",
+   "n_tokens_prompt": 39586,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 39250,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 16975,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/context"
+   ],
+   "chars": 92614,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 38697,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 83254,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 35070,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 93328,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 39053,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 87622,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 36844,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 84349,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 35373,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [
+    "github.com/cli/cli/v2/context"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/context": [
+     "member:opts.Repo"
+    ]
+   },
+   "chars": 9011,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 4971,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 6927,
+   "same_as": "W"
+  }
+ }
+}

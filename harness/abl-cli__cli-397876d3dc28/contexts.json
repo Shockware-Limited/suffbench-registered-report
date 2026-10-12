@@ -1,0 +1,91 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/internal/skills/registry"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/ghrepo"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/pkg/cmd/root",
+  "github.com/cli/cli/v2/pkg/cmd/skills",
+  "github.com/cli/cli/v2/pkg/cmd/skills/install",
+  "github.com/cli/cli/v2/pkg/cmd/skills/list",
+  "github.com/cli/cli/v2/pkg/cmd/skills/publish",
+  "github.com/cli/cli/v2/pkg/cmd/skills/search",
+  "github.com/cli/cli/v2/pkg/cmd/skills/update"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ]
+ ],
+ "gold_identifiers": [
+  "Name",
+  "ProjectDir",
+  "UserDir",
+  "sharedProjectSkillsDir"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/ghrepo": 13
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 10320,
+   "file": "W.txt",
+   "n_tokens_prompt": 5683,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 21731,
+   "file": "A1.txt",
+   "n_tokens_prompt": 10204,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 11698,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 6219,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 20353,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 9668,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 10320,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 10320,
+   "same_as": "W"
+  }
+ }
+}

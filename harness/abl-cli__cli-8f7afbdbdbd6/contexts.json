@@ -1,0 +1,233 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/release/create"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/gh",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/internal/safeurl",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/cmd/release/shared",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams",
+  "github.com/cli/cli/v2/pkg/surveyext"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/release",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/safeurl"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/release/shared"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/surveyext"
+  ]
+ ],
+ "gold_identifiers": [
+  "Split",
+  "TrimSpace",
+  "scopes"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 518,
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/gh": 56,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/internal/safeurl": 9,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/cmd/release/shared": 54,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/iostreams": 107,
+  "github.com/cli/cli/v2/pkg/surveyext": 12
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 30547,
+   "file": "W.txt",
+   "n_tokens_prompt": 16439,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 130154,
+   "file": "A1.txt",
+   "n_tokens_prompt": 56667,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 80285,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 35890,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 120121,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 52682,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh"
+   ],
+   "chars": 121734,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 53726,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 129463,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 56408,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 128776,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 56131,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/safeurl"
+   ],
+   "chars": 126245,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 55310,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 128137,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 55924,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/release/shared"
+   ],
+   "chars": 125868,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 54791,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 123257,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 53995,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 119733,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 52427,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/surveyext"
+   ],
+   "chars": 128468,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 55825,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 30547,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [
+    "github.com/cli/cli/v2/api",
+    "github.com/cli/cli/v2/internal/gh"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/api": [
+     "ident:Content",
+     "ident:Transport"
+    ],
+    "github.com/cli/cli/v2/internal/gh": [
+     "ident:Version"
+    ]
+   },
+   "chars": 88836,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 40157,
+   "expressible": true,
+   "missing_identifiers": []
+  }
+ }
+}

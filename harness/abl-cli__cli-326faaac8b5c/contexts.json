@@ -1,0 +1,334 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/skills/install"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/context",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/internal/prompter",
+  "github.com/cli/cli/v2/internal/skills/discovery",
+  "github.com/cli/cli/v2/internal/skills/frontmatter",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/skills/registry",
+  "github.com/cli/cli/v2/internal/skills/source",
+  "github.com/cli/cli/v2/internal/tableprinter",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/root",
+  "github.com/cli/cli/v2/pkg/cmd/skills"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/context"
+  ],
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/prompter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/discovery"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/frontmatter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/installer"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/registry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/source"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/tableprinter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ]
+ ],
+ "gold_identifiers": [
+  "AgentHost",
+  "DefaultAgentID",
+  "Dir",
+  "FindByID",
+  "registry"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 518,
+  "github.com/cli/cli/v2/context": 22,
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry": 13,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/internal/prompter": 59,
+  "github.com/cli/cli/v2/internal/skills/discovery": 54,
+  "github.com/cli/cli/v2/internal/skills/frontmatter": 12,
+  "github.com/cli/cli/v2/internal/skills/installer": 24,
+  "github.com/cli/cli/v2/internal/skills/registry": 19,
+  "github.com/cli/cli/v2/internal/skills/source": 5,
+  "github.com/cli/cli/v2/internal/tableprinter": 10,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/iostreams": 89
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 44559,
+   "file": "W.txt",
+   "n_tokens_prompt": 21011,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 157296,
+   "file": "A1.txt",
+   "n_tokens_prompt": 67579,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 107436,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 46811,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/context"
+   ],
+   "chars": 155212,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 66690,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 147263,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 63594,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+   ],
+   "chars": 156710,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 67310,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 156605,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 67320,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 155918,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 67043,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/prompter"
+   ],
+   "chars": 146501,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 63222,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/discovery"
+   ],
+   "chars": 149110,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 64474,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/frontmatter"
+   ],
+   "chars": 155596,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 66907,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/installer"
+   ],
+   "chars": 155535,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 66918,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/registry"
+   ],
+   "chars": 148623,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 63436,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/source"
+   ],
+   "chars": 156428,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 67229,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/tableprinter"
+   ],
+   "chars": 155901,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 66992,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-13": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 155279,
+   "file": "A1-13.txt",
+   "n_tokens_prompt": 66836,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-14": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 150399,
+   "file": "A1-14.txt",
+   "n_tokens_prompt": 64907,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-15": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 151483,
+   "file": "A1-15.txt",
+   "n_tokens_prompt": 65007,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [
+    "github.com/cli/cli/v2/internal/skills/installer",
+    "github.com/cli/cli/v2/internal/skills/registry"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/internal/skills/installer": [
+     "member:opts.Dir"
+    ],
+    "github.com/cli/cli/v2/internal/skills/registry": [
+     "registry.AgentHost",
+     "registry.DefaultAgentID",
+     "registry.FindByID"
+    ]
+   },
+   "chars": 54993,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 25815,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1t": {
+   "kept": [
+    "github.com/cli/cli/v2/internal/prompter",
+    "github.com/cli/cli/v2/internal/skills/installer",
+    "github.com/cli/cli/v2/internal/skills/source",
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/internal/prompter": [
+     "ident:Select",
+     "ident:Verify"
+    ],
+    "github.com/cli/cli/v2/internal/skills/installer": [
+     "ident:Install",
+     "ident:Skills"
+    ],
+    "github.com/cli/cli/v2/internal/skills/source": [
+     "pkgname:source"
+    ],
+    "github.com/cli/cli/v2/internal/text": [
+     "pkgname:text"
+    ]
+   },
+   "chars": 60000,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 27122,
+   "expressible": true,
+   "missing_identifiers": []
+  }
+ }
+}

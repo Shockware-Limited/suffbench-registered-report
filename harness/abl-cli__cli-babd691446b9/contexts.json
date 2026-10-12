@@ -1,0 +1,229 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/internal/attachments"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/internal/gh",
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/safeurl",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/httpmock"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/agent-task",
+  "github.com/cli/cli/v2/pkg/cmd/agent-task/create",
+  "github.com/cli/cli/v2/pkg/cmd/agent-task/list",
+  "github.com/cli/cli/v2/pkg/cmd/agent-task/shared",
+  "github.com/cli/cli/v2/pkg/cmd/agent-task/view",
+  "github.com/cli/cli/v2/pkg/cmd/issue",
+  "github.com/cli/cli/v2/pkg/cmd/issue/close",
+  "github.com/cli/cli/v2/pkg/cmd/issue/comment",
+  "github.com/cli/cli/v2/pkg/cmd/issue/create",
+  "github.com/cli/cli/v2/pkg/cmd/issue/delete",
+  "github.com/cli/cli/v2/pkg/cmd/issue/develop",
+  "github.com/cli/cli/v2/pkg/cmd/issue/edit",
+  "github.com/cli/cli/v2/pkg/cmd/issue/list",
+  "github.com/cli/cli/v2/pkg/cmd/issue/lock",
+  "github.com/cli/cli/v2/pkg/cmd/issue/pin",
+  "github.com/cli/cli/v2/pkg/cmd/issue/reopen",
+  "github.com/cli/cli/v2/pkg/cmd/issue/shared",
+  "github.com/cli/cli/v2/pkg/cmd/issue/status",
+  "github.com/cli/cli/v2/pkg/cmd/issue/transfer",
+  "github.com/cli/cli/v2/pkg/cmd/issue/unpin",
+  "github.com/cli/cli/v2/pkg/cmd/issue/view",
+  "github.com/cli/cli/v2/pkg/cmd/pr",
+  "github.com/cli/cli/v2/pkg/cmd/pr/checkout",
+  "github.com/cli/cli/v2/pkg/cmd/pr/checks",
+  "github.com/cli/cli/v2/pkg/cmd/pr/close",
+  "github.com/cli/cli/v2/pkg/cmd/pr/comment",
+  "github.com/cli/cli/v2/pkg/cmd/pr/create",
+  "github.com/cli/cli/v2/pkg/cmd/pr/diff",
+  "github.com/cli/cli/v2/pkg/cmd/pr/edit",
+  "github.com/cli/cli/v2/pkg/cmd/pr/list",
+  "github.com/cli/cli/v2/pkg/cmd/pr/merge",
+  "github.com/cli/cli/v2/pkg/cmd/pr/ready",
+  "github.com/cli/cli/v2/pkg/cmd/pr/reopen",
+  "github.com/cli/cli/v2/pkg/cmd/pr/revert",
+  "github.com/cli/cli/v2/pkg/cmd/pr/review",
+  "github.com/cli/cli/v2/pkg/cmd/pr/shared",
+  "github.com/cli/cli/v2/pkg/cmd/pr/status",
+  "github.com/cli/cli/v2/pkg/cmd/pr/update-branch",
+  "github.com/cli/cli/v2/pkg/cmd/pr/view",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/safeurl"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/httpmock"
+  ]
+ ],
+ "gold_identifiers": [
+  "TokenTypeUserToServer"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 528,
+  "github.com/cli/cli/v2/internal/gh": 69,
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry": 17,
+  "github.com/cli/cli/v2/internal/ghinstance": 10,
+  "github.com/cli/cli/v2/internal/safeurl": 9,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/httpmock": 39
+ },
+ "a1_matches_pilot": true,
+ "count_model": "claude-haiku-5-5",
+ "arms": {
+  "W": {
+   "chars": 53087,
+   "file": "W.txt",
+   "n_tokens_prompt": 22957,
+   "expressible": false,
+   "missing_identifiers": [
+    "TokenTypeUserToServer"
+   ]
+  },
+  "A1": {
+   "chars": 130214,
+   "file": "A1.txt",
+   "n_tokens_prompt": 53549,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 74766,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 30938,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh"
+   ],
+   "chars": 119915,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 49837,
+   "expressible": false,
+   "missing_identifiers": [
+    "TokenTypeUserToServer"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+   ],
+   "chars": 128973,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 53046,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 129357,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 53225,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/safeurl"
+   ],
+   "chars": 126305,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 52192,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 128197,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 52806,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/httpmock"
+   ],
+   "chars": 126858,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 52207,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [
+    "github.com/cli/cli/v2/internal/gh"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/internal/gh": [
+     "gh.TokenTypeUserToServer"
+    ]
+   },
+   "chars": 63386,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 26669,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1t": {
+   "kept": [
+    "github.com/cli/cli/v2/api",
+    "github.com/cli/cli/v2/internal/gh"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/internal/gh": [
+     "gh.TokenType",
+     "gh.TokenTypeFineGrainedPAT",
+     "gh.TokenTypeOAuth",
+     "gh.TokenTypePersonalAccess",
+     "ident:TokenType",
+     "ident:TokenTypeFineGrainedPAT",
+     "ident:TokenTypeOAuth",
+     "ident:TokenTypePersonalAccess",
+     "ident:Version"
+    ],
+    "github.com/cli/cli/v2/api": [
+     "ident:Content"
+    ]
+   },
+   "chars": 118834,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 49280,
+   "expressible": true,
+   "missing_identifiers": []
+  }
+ }
+}
