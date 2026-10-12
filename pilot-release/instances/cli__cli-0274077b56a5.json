@@ -53,7 +53,8 @@
  "gold_new_identifiers": [],
  "churn": 2,
  "cutoff_flags": {
-  "note": "model cutoffs recorded at analysis; instance postdates 2026-09-01"
+  "note": "model training cut-offs not verified against commit date; task-only arm is the operational control",
+  "created_at": "2026-06-22T13:10:26+01:00"
  },
  "validity": {
   "status": "valid_pilot",

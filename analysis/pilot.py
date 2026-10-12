@@ -83,7 +83,7 @@ def main():
             for i in inst_ids:
                 rs = [(arm, rate(i, arm)) for arm in LOAD_ARMS if rate(i, arm) is not None]
                 if len(rs) < 2: continue
-                best = max(v for _, v in rs); hist[next(arm for arm, v in rs if v >= best - eps)] += 1
+                best = max(v for _, v in rs); hist[next(arm for arm, v in rs if v >= best - eps - 1e-9)] += 1
             rep.append(f"\nMinimal sufficient load at ε={eps}: " + ", ".join(f"{k}={v}" for k, v in sorted(hist.items(), key=lambda kv: LOAD_ARMS.index(kv[0]))) + f" (k-granularity limits resolution)")
         # flip rate
         nonun = tot = 0; minority = []

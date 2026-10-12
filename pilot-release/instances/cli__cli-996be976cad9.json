@@ -36,7 +36,8 @@
   "TestIsOfficial"
  ],
  "cutoff_flags": {
-  "note": "model training cutoffs not verified; instance date 2026-10-07"
+  "note": "model training cut-offs not verified against commit date; task-only arm is the operational control",
+  "created_at": "2026-10-07T16:22:14+02:00"
  },
  "validity": {
   "status": "invalid_misconfigured",

@@ -36,7 +36,8 @@
   "TestNewCmdSetDefault"
  ],
  "cutoff_flags": {
-  "note": "model training cutoffs not verified; instance date 2026-09-26"
+  "note": "model training cut-offs not verified against commit date; task-only arm is the operational control",
+  "created_at": "2026-09-26T06:46:04+02:00"
  },
  "validity": {
   "status": "valid_but_uninformative",
