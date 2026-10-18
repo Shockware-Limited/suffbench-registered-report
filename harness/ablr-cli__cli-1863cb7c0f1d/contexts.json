@@ -1,0 +1,172 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verification"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/pkg/cmd/attestation/api",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/io",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/test/data",
+  "github.com/cli/cli/v2/pkg/option"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/attestation",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/inspect",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/trustedroot",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verify",
+  "github.com/cli/cli/v2/pkg/cmd/release",
+  "github.com/cli/cli/v2/pkg/cmd/release/create",
+  "github.com/cli/cli/v2/pkg/cmd/release/delete",
+  "github.com/cli/cli/v2/pkg/cmd/release/delete-asset",
+  "github.com/cli/cli/v2/pkg/cmd/release/download",
+  "github.com/cli/cli/v2/pkg/cmd/release/edit",
+  "github.com/cli/cli/v2/pkg/cmd/release/shared",
+  "github.com/cli/cli/v2/pkg/cmd/release/upload",
+  "github.com/cli/cli/v2/pkg/cmd/release/verify",
+  "github.com/cli/cli/v2/pkg/cmd/release/verify-asset",
+  "github.com/cli/cli/v2/pkg/cmd/release/view",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/api"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/artifact"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/io"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/test/data"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/option"
+  ]
+ ],
+ "gold_identifiers": [
+  "SourceRepositoryRef",
+  "expected",
+  "given"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/pkg/cmd/attestation/api": 35,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact": 8,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci": 14,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/io": 12,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/test/data": 4,
+  "github.com/cli/cli/v2/pkg/option": 14
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "rewritten_spec",
+ "repo": "cli/cli",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 439,
+   "expressible": false,
+   "missing_identifiers": [
+    "SourceRepositoryRef",
+    "expected",
+    "given"
+   ]
+  },
+  "W": {
+   "chars": 27731,
+   "file": "W.txt",
+   "n_tokens_prompt": 13123,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 37431,
+   "file": "A1.txt",
+   "n_tokens_prompt": 17108,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/api"
+   ],
+   "chars": 35067,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 16113,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/artifact"
+   ],
+   "chars": 36561,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 16739,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci"
+   ],
+   "chars": 34749,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 16007,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/io"
+   ],
+   "chars": 36515,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 16698,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/test/data"
+   ],
+   "chars": 37020,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 16897,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/option"
+   ],
+   "chars": 34974,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 16209,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 27731,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 27731,
+   "same_as": "W"
+  }
+ }
+}

@@ -1,0 +1,4 @@
+[write-r0] claude-opus-5-5 in=28339 out=24000 223s
+[review-r0] claude-opus-5-5 in=17189 out=5359 51s
+[revise-r1] claude-opus-5-5 in=14702 out=24000 198s
+[review-r1] claude-opus-5-5 in=29799 out=12000 112s

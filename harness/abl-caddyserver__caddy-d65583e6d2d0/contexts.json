@@ -1,0 +1,161 @@
+{
+ "write_set": [
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/templates"
+ ],
+ "direct_deps": [
+  "github.com/caddyserver/caddy/v2",
+  "github.com/caddyserver/caddy/v2/caddyconfig",
+  "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile",
+  "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+ ],
+ "forward_slice": [
+  "github.com/caddyserver/caddy/v2/caddytest",
+  "github.com/caddyserver/caddy/v2/caddytest/integration",
+  "github.com/caddyserver/caddy/v2/cmd/caddy",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/standard",
+  "github.com/caddyserver/caddy/v2/modules/standard"
+ ],
+ "groups": [
+  [
+   "github.com/caddyserver/caddy/v2"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+  ]
+ ],
+ "gold_identifiers": [
+  "Del",
+  "Header",
+  "RespHeader"
+ ],
+ "exports_per_dep": {
+  "github.com/caddyserver/caddy/v2": 222,
+  "github.com/caddyserver/caddy/v2/caddyconfig": 15,
+  "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile": 72,
+  "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile": 41,
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp": 237
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "issue",
+ "repo": "caddyserver/caddy",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 1136,
+   "expressible": false,
+   "missing_identifiers": [
+    "Del",
+    "Header",
+    "RespHeader"
+   ]
+  },
+  "W": {
+   "chars": 38538,
+   "file": "W.txt",
+   "n_tokens_prompt": 17852,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 237348,
+   "file": "A1.txt",
+   "n_tokens_prompt": 90532,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2"
+   ],
+   "chars": 174972,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 68706,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig"
+   ],
+   "chars": 233506,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 89095,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+   ],
+   "chars": 221795,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 85041,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
+   ],
+   "chars": 229259,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 87583,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+   ],
+   "chars": 128398,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 49555,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 38538,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile",
+    "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile",
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+   ],
+   "evidence": {
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile": [
+     "span:Content"
+    ],
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp": [
+     "span:Ranges"
+    ],
+    "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile": [
+     "span:Last"
+    ]
+   },
+   "chars": 171130,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 67269,
+   "expressible": true,
+   "missing_identifiers": []
+  }
+ }
+}

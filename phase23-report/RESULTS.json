@@ -1,0 +1,1644 @@
+{
+ "generated": "2026-10-18",
+ "notes": [],
+ "spend": {
+  "phase1_results_abl": 12.87,
+  "phase2_results_p2": 95.7,
+  "phase2_screen": 1.58,
+  "phase3_results_p3": 38.6,
+  "total_phases_1_3": 148.75
+ },
+ "samples": {
+  "phase1": 5020,
+  "phase2": 7754,
+  "phase2_screen": 162,
+  "phase3": 4751
+ },
+ "spend_by_model": {
+  "claude-haiku-5-5": {
+   "samples": 16202,
+   "usd": 101.81
+  },
+  "claude-haiku-4-5-20251001": {
+   "samples": 520,
+   "usd": 7.32
+  },
+  "claude-opus-5-5": {
+   "samples": 105,
+   "usd": 8.34
+  },
+  "claude-sonnet-5-5": {
+   "samples": 860,
+   "usd": 31.28
+  }
+ },
+ "phase1_report_excerpt": "A1 now (k=20) minus A1 pilot (k=10), 23 instances: -0.041 [-0.074, -0.013]\n| contrast | n | mean diff | 95% CI (two-sided) | one-sided 95% LB | non-inferior at eps | sign +/\u2212/0 | without most influential | median tokens | tokens A1 |\n|---|---|---|---|---|---|---|---|---|---|\n| A1g \u2212 A1 | 23 | +0.017 | [-0.002, +0.041] | +0.000 | yes | 5/2/16 | +0.011 [-0.005, +0.032] (drop 2bcdfbb1ac02) | 13,513 | 39,586 |\n| A1t \u2212 A1 | 23 | +0.007 | [-0.020, +0.030] | -0.015 | yes | 5/3/15 | +0.000 [-0.023, +0.023] (drop 2bcdfbb1ac02) | 15,335 | 39,586 |\n| W \u2212 A1 | 23 | -0.028 | [-0.096, +0.017] | -0.083 | no | 4/4/15 | +0.000 [-0.025, +0.023] (drop babd691446b9) | 13,476 | 39,586 |\nInstances where the predictor keeps no dependency (arm equals W): A1g 14/23, A1t 11/23. Instances with W and A1 both at ceiling (1.0): 8; both at floor (0.0): 5; W inexpressible (gold identifiers missing from W): 10. Only instances outside ceiling and floor can separate the arms.\nInstances with A1 pass > 0 (informative): 17/23. Dependency groups on informative instances: 135.\n- Necessary: 33/135 = 0.244 [0.178, 0.319] (bootstrap over groups; instance clustering ignored here).\n- Removal raises pass by > eps (non-monotone cells): 33/135.\n- Null reference (all cells of an instance share one rate, k=20, 2,000 simulations): necessary 30.8 [13, 49], helps 30.4 [12, 53]. Observed counts inside this range are not evidence of necessity.\n- Per instance (necessary/helps/groups): 326faaac8b5c 0/14/16, b87e58a1d390 11/2/15, 8f7afbdbdbd6 9/2/11, 3f6a16a9f8c7 3/3/10, 01bcd474447b 5/0/15, ad2a33837712 0/5/7, cba9646b8c25 4/1/9, 2bcdfbb1ac02 0/3/4.\n- Predictor gold-referenced: predicted 10, precision 0.20, recall 0.06 (tp=2, fp=8, fn=31).\n- Predictor task-referenced: predicted 18, precision 0.33, recall 0.18 (tp=6, fp=12, fn=27).\n- Slack tokens(A1)/tokens(W \u222a necessary): mean 2.71 [1.66, 4.06], median 1.56.\n| instance | A1 pass | group removed | pass after | drop | pred gold | pred task |\n|---|---|---|---|---|---|---|\n| 8f7afbdbdbd6 | 0.95 | iostreams | 0.50 | +0.45 | 0 | 0 |\n| ad2a33837712 | 0.60 | gh | 0.90 | -0.30 | 0 | 0 |\n| 8f7afbdbdbd6 | 0.95 | api | 0.65 | +0.30 | 0 | 1 |\n| 2bcdfbb1ac02 | 0.05 | cmdutil | 0.30 | -0.25 | 0 | 0 |\n| 3f6a16a9f8c7 | 0.85 | io | 0.60 | +0.25 | 0 | 0 |\n| babd691446b9 | 1.00 | gh | 0.75 | +0.25 | 1 | 1 |\n| cba9646b8c25 | 0.85 | gh | 0.60 | +0.25 | 0 | 0 |\n| ad2a33837712 | 0.60 | set | 0.80 | -0.20 | 0 | 0 |\n| b87e58a1d390 | 0.50 | ghinstance | 0.30 | +0.20 | 0 | 0 |\n| b87e58a1d390 | 0.50 | text | 0.30 | +0.20 | 0 | 0 |\n| b87e58a1d390 | 0.50 | cmdutil | 0.30 | +0.20 | 0 | 0 |\n| b87e58a1d390 | 0.50 | iostreams | 0.30 | +0.20 | 0 | 0 |\n| 3f6a16a9f8c7 | 0.85 | verification | 0.65 | +0.20 | 0 | 1 |\n| 8f7afbdbdbd6 | 0.95 | shared | 0.75 | +0.20 | 0 | 0 |\n| cba9646b8c25 | 0.85 | safeurl | 0.65 | +0.20 | 0 | 0 |\n| 2bcdfbb1ac02 | 0.05 | iostreams | 0.20 | -0.15 | 1 | 1 |\n| 326faaac8b5c | 0.85 | context | 1.00 | -0.15 | 0 | 0 |\n| 326faaac8b5c | 0.85 | git | 1.00 | -0.15 | 0 | 0 |\n| 326faaac8b5c | 0.85 | prompter | 1.00 | -0.15 | 0 | 1 |\n| 326faaac8b5c | 0.85 | source | 1.00 | -0.15 | 0 | 1 |\n| 326faaac8b5c | 0.85 | tableprinter | 1.00 | -0.15 | 0 | 0 |\n| 326faaac8b5c | 0.85 | text | 1.00 | -0.15 | 0 | 1 |\n| 326faaac8b5c | 0.85 | iostreams | 1.00 | -0.15 | 0 | 0 |\n| ad2a33837712 | 0.60 | ghtelemetry | 0.75 | -0.15 | 0 | 0 |\n| ad2a33837712 | 0.60 | ghrepo | 0.75 | -0.15 | 0 | 0 |\n| b87e58a1d390 | 0.50 | prompter | 0.35 | +0.15 | 0 | 0 |\n| 8f7afbdbdbd6 | 0.95 | git | 0.80 | +0.15 | 0 | 0 |\n| 8f7afbdbdbd6 | 0.95 | text | 0.80 | +0.15 | 0 | 0 |\n| 8f7afbdbdbd6 | 0.95 | surveyext | 0.80 | +0.15 | 0 | 0 |\n| 2bcdfbb1ac02 | 0.05 | client | 0.15 | -0.10 | 0 | 0 |\n| 326faaac8b5c | 0.85 | api | 0.95 | -0.10 | 0 | 0 |\n| 326faaac8b5c | 0.85 | ghrepo | 0.95 | -0.10 | 0 | 0 |\n| 326faaac8b5c | 0.85 | frontmatter | 0.95 | -0.10 | 0 | 0 |\n| 326faaac8b5c | 0.85 | installer | 0.95 | -0.10 | 1 | 1 |\n| 3f6a16a9f8c7 | 0.85 | gh | 0.95 | -0.10 | 0 | 0 |\n| 3f6a16a9f8c7 | 0.85 | ghinstance | 0.75 | +0.10 | 0 | 0 |\n| 3f6a16a9f8c7 | 0.85 | artifact | 0.95 | -0.10 | 0 | 1 |\n| 3f6a16a9f8c7 | 0.85 | cmdutil | 0.95 | -0.10 | 0 | 0 |\n| 8f7afbdbdbd6 | 0.95 | ghinstance | 0.85 | +0.10 | 0 | 0 |\n| 8f7afbdbdbd6 | 0.95 | ghrepo | 0.85 | +0.10 | 0 | 0 |",
+ "phase2_screen": {
+  "screened": 35,
+  "selected": 10,
+  "w_inexpressible": 16,
+  "by_repo": {
+   "caddyserver/caddy": [
+    4,
+    10
+   ],
+   "cli/cli": [
+    6,
+    22
+   ],
+   "gohugoio/hugo": [
+    0,
+    1
+   ],
+   "golangci/golangci-lint": [
+    0,
+    1
+   ],
+   "restic/restic": [
+    0,
+    1
+   ]
+  }
+ },
+ "phase2_instances": [
+  {
+   "instance": "caddyserver__caddy-4f45ded75556",
+   "repo": "caddyserver/caddy",
+   "deps": 8,
+   "a1g_kept": 1,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.03,
+    "A1": 0.03,
+    "A1g": 0.01,
+    "A1t": 0.03
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-opus-5-5": {
+    "A0": 0.0,
+    "W": 0.0,
+    "A1t": 0.0
+   }
+  },
+  {
+   "instance": "caddyserver__caddy-6727b2f3a92b",
+   "repo": "caddyserver/caddy",
+   "deps": 13,
+   "a1g_kept": 0,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.44,
+    "A1": 0.22,
+    "A1g": 0.44,
+    "A1t": 0.44
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.2,
+    "A1": 0.1,
+    "A1g": 0.2,
+    "A1t": 0.2
+   },
+   "claude-opus-5-5": {
+    "A0": 0.0,
+    "W": 1.0,
+    "A1g": 1.0,
+    "A1t": 1.0
+   }
+  },
+  {
+   "instance": "caddyserver__caddy-7910dd94eea2",
+   "repo": "caddyserver/caddy",
+   "deps": 12,
+   "a1g_kept": 1,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.010101010101010102,
+    "A1": 0.07,
+    "A1g": 0.02,
+    "A1t": 0.010101010101010102
+   },
+   "claude-haiku-4-5-20251001": {},
+   "claude-sonnet-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-opus-5-5": {
+    "A0": 0.6,
+    "W": 0.0,
+    "A1t": 0.0
+   }
+  },
+  {
+   "instance": "caddyserver__caddy-c8591a1e46e4",
+   "repo": "caddyserver/caddy",
+   "deps": 5,
+   "a1g_kept": 1,
+   "a1t_kept": 2,
+   "claude-haiku-5-5": {
+    "W": 0.57,
+    "A1": 0.46,
+    "A1g": 0.49,
+    "A1t": 0.45
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.4,
+    "A1": 0.15,
+    "A1g": 0.15,
+    "A1t": 0.05
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.2,
+    "A1": 0.6,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-opus-5-5": {
+    "A0": 0.0,
+    "W": 0.0,
+    "A1t": 0.0
+   }
+  },
+  {
+   "instance": "cli__cli-015e6cf6ac39",
+   "repo": "cli/cli",
+   "deps": 0,
+   "a1g_kept": 0,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-opus-5-5": {
+    "A0": 0.0,
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   }
+  },
+  {
+   "instance": "cli__cli-20147bf81fed",
+   "repo": "cli/cli",
+   "deps": 50,
+   "a1g_kept": 3,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.0,
+    "A1": 0.01,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-opus-5-5": {
+    "A0": 0.0,
+    "W": 1.0,
+    "A1t": 1.0
+   }
+  },
+  {
+   "instance": "cli__cli-2bcdfbb1ac02",
+   "repo": "cli/cli",
+   "deps": 4,
+   "a1g_kept": 2,
+   "a1t_kept": 2,
+   "claude-haiku-5-5": {
+    "W": 0.0,
+    "A1": 0.27,
+    "A1g": 0.14,
+    "A1t": 0.14
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.0,
+    "A1": 0.1,
+    "A1g": 0.1,
+    "A1t": 0.1
+   },
+   "claude-opus-5-5": {
+    "A0": 0.8,
+    "W": 0.8
+   }
+  },
+  {
+   "instance": "cli__cli-9b6585be5218",
+   "repo": "cli/cli",
+   "deps": 8,
+   "a1g_kept": 1,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.01,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.01
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.1,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.1
+   },
+   "claude-opus-5-5": {
+    "A0": 0.0,
+    "W": 0.0,
+    "A1t": 0.0
+   }
+  },
+  {
+   "instance": "cli__cli-9ee0afb43414",
+   "repo": "cli/cli",
+   "deps": 10,
+   "a1g_kept": 0,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-opus-5-5": {
+    "A0": 0.0,
+    "W": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   }
+  },
+  {
+   "instance": "cli__cli-ff28e72b59be",
+   "repo": "cli/cli",
+   "deps": 62,
+   "a1g_kept": 0,
+   "a1t_kept": 0,
+   "claude-haiku-5-5": {
+    "W": 0.0,
+    "A1": 0.0,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-haiku-4-5-20251001": {
+    "W": 0.0,
+    "A1": 0.05,
+    "A1g": 0.0,
+    "A1t": 0.0
+   },
+   "claude-sonnet-5-5": {
+    "W": 1.0,
+    "A1": 0.8,
+    "A1g": 1.0,
+    "A1t": 1.0
+   },
+   "claude-opus-5-5": {
+    "A0": 1.0,
+    "W": 1.0,
+    "A1g": 1.0,
+    "A1t": 1.0
+   }
+  }
+ ],
+ "phase2_contrasts": {
+  "claude-haiku-5-5:A1t-A1": {
+   "mean": 0.002,
+   "lo": -0.043,
+   "hi": 0.059,
+   "lb1": -0.038,
+   "pos": 2,
+   "neg": 4,
+   "zero": 4,
+   "n": 10
+  },
+  "claude-haiku-5-5:A1g-A1": {
+   "mean": 0.004,
+   "lo": -0.042,
+   "hi": 0.061,
+   "lb1": -0.035,
+   "pos": 2,
+   "neg": 4,
+   "zero": 4,
+   "n": 10
+  },
+  "claude-haiku-5-5:W-A1": {
+   "mean": 0.0,
+   "lo": -0.076,
+   "hi": 0.071,
+   "lb1": -0.06,
+   "pos": 3,
+   "neg": 3,
+   "zero": 4,
+   "n": 10
+  },
+  "claude-haiku-5-5:A1t-W": {
+   "mean": 0.002,
+   "lo": -0.036,
+   "hi": 0.042,
+   "lb1": -0.024,
+   "pos": 1,
+   "neg": 1,
+   "zero": 8,
+   "n": 10
+  },
+  "claude-haiku-4-5-20251001:A1t-A1": {
+   "mean": -0.019,
+   "lo": -0.044,
+   "hi": 0.0,
+   "lb1": -0.037,
+   "pos": 0,
+   "neg": 2,
+   "zero": 6,
+   "n": 8
+  },
+  "claude-haiku-4-5-20251001:A1g-A1": {
+   "mean": -0.006,
+   "lo": -0.019,
+   "hi": 0.0,
+   "lb1": -0.019,
+   "pos": 0,
+   "neg": 1,
+   "zero": 7,
+   "n": 8
+  },
+  "claude-haiku-4-5-20251001:W-A1": {
+   "mean": 0.025,
+   "lo": -0.019,
+   "hi": 0.094,
+   "lb1": -0.013,
+   "pos": 1,
+   "neg": 1,
+   "zero": 6,
+   "n": 8
+  },
+  "claude-haiku-4-5-20251001:A1t-W": {
+   "mean": -0.039,
+   "lo": -0.117,
+   "hi": 0.0,
+   "lb1": -0.117,
+   "pos": 0,
+   "neg": 1,
+   "zero": 8,
+   "n": 9
+  },
+  "claude-sonnet-5-5:A1t-A1": {
+   "mean": -0.02,
+   "lo": -0.17,
+   "hi": 0.08,
+   "lb1": -0.15,
+   "pos": 3,
+   "neg": 1,
+   "zero": 6,
+   "n": 10
+  },
+  "claude-sonnet-5-5:A1g-A1": {
+   "mean": -0.03,
+   "lo": -0.18,
+   "hi": 0.06,
+   "lb1": -0.15,
+   "pos": 2,
+   "neg": 1,
+   "zero": 7,
+   "n": 10
+  },
+  "claude-sonnet-5-5:W-A1": {
+   "mean": -0.01,
+   "lo": -0.12,
+   "hi": 0.07,
+   "lb1": -0.1,
+   "pos": 3,
+   "neg": 2,
+   "zero": 5,
+   "n": 10
+  },
+  "claude-sonnet-5-5:A1t-W": {
+   "mean": -0.01,
+   "lo": -0.06,
+   "hi": 0.03,
+   "lb1": -0.05,
+   "pos": 1,
+   "neg": 1,
+   "zero": 8,
+   "n": 10
+  },
+  "claude-opus-5-5:A1t-W": {
+   "mean": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "lb1": 0.0,
+   "pos": 0,
+   "neg": 0,
+   "zero": 9,
+   "n": 9
+  },
+  "claude-opus-5-5:A0-W": {
+   "mean": -0.14,
+   "lo": -0.44,
+   "hi": 0.12,
+   "lb1": -0.4,
+   "pos": 1,
+   "neg": 2,
+   "zero": 7,
+   "n": 10
+  }
+ },
+ "phase2_floor_instances": {
+  "claude-haiku-5-5": 7,
+  "claude-haiku-4-5-20251001": 9,
+  "claude-sonnet-5-5": 5,
+  "claude-opus-5-5": 5
+ },
+ "loo": {
+  "caddyserver__caddy-6727b2f3a92b": {
+   "A1": 0.22,
+   "W": 0.44,
+   "n_A1": 100,
+   "groups": [
+    {
+     "removed": [
+      "v2"
+     ],
+     "pass": 0.29,
+     "diff": 0.07,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddyconfig"
+     ],
+     "pass": 0.21,
+     "diff": -0.01,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddyfile"
+     ],
+     "pass": 0.3,
+     "diff": 0.08,
+     "n": 100
+    },
+    {
+     "removed": [
+      "httpcaddyfile"
+     ],
+     "pass": 0.2,
+     "diff": -0.02,
+     "n": 100
+    },
+    {
+     "removed": [
+      "cmd"
+     ],
+     "pass": 0.31,
+     "diff": 0.09,
+     "n": 100
+    },
+    {
+     "removed": [
+      "internal"
+     ],
+     "pass": 0.36,
+     "diff": 0.14,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddyevents"
+     ],
+     "pass": 0.18,
+     "diff": -0.04,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddyhttp"
+     ],
+     "pass": 0.33,
+     "diff": 0.11,
+     "n": 100
+    },
+    {
+     "removed": [
+      "fileserver"
+     ],
+     "pass": 0.33,
+     "diff": 0.11,
+     "n": 100
+    },
+    {
+     "removed": [
+      "headers"
+     ],
+     "pass": 0.28,
+     "diff": 0.06,
+     "n": 100
+    },
+    {
+     "removed": [
+      "rewrite"
+     ],
+     "pass": 0.35,
+     "diff": 0.13,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddytls"
+     ],
+     "pass": 0.44,
+     "diff": 0.22,
+     "n": 100
+    },
+    {
+     "removed": [
+      "network"
+     ],
+     "pass": 0.27,
+     "diff": 0.05,
+     "n": 100
+    }
+   ],
+   "obs_over_eps": 9,
+   "null_mean": 5.5,
+   "null_95": [
+    1,
+    12
+   ],
+   "a1g_kept": [],
+   "a1t_kept": [],
+   "tokens_A1": 277505,
+   "tokens_W": 158565
+  },
+  "caddyserver__caddy-c8591a1e46e4": {
+   "A1": 0.46,
+   "W": 0.57,
+   "n_A1": 100,
+   "groups": [
+    {
+     "removed": [
+      "v2"
+     ],
+     "pass": 0.51,
+     "diff": 0.05,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddyconfig"
+     ],
+     "pass": 0.42,
+     "diff": -0.04,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddyfile"
+     ],
+     "pass": 0.34,
+     "diff": -0.12,
+     "n": 100
+    },
+    {
+     "removed": [
+      "httpcaddyfile"
+     ],
+     "pass": 0.45,
+     "diff": -0.01,
+     "n": 100
+    },
+    {
+     "removed": [
+      "caddyhttp"
+     ],
+     "pass": 0.52,
+     "diff": 0.06,
+     "n": 100
+    }
+   ],
+   "obs_over_eps": 2,
+   "null_mean": 2.3,
+   "null_95": [
+    0,
+    5
+   ],
+   "a1g_kept": [
+    "caddyhttp"
+   ],
+   "a1t_kept": [
+    "caddyfile",
+    "caddyhttp"
+   ],
+   "tokens_A1": 84817,
+   "tokens_W": 12137
+  },
+  "cli__cli-2bcdfbb1ac02": {
+   "A1": 0.27,
+   "W": 0.0,
+   "n_A1": 100,
+   "groups": [
+    {
+     "removed": [
+      "client"
+     ],
+     "pass": 0.28,
+     "diff": 0.01,
+     "n": 100
+    },
+    {
+     "removed": [
+      "queries"
+     ],
+     "pass": 0.0,
+     "diff": -0.27,
+     "n": 100
+    },
+    {
+     "removed": [
+      "cmdutil"
+     ],
+     "pass": 0.22,
+     "diff": -0.05,
+     "n": 100
+    },
+    {
+     "removed": [
+      "iostreams"
+     ],
+     "pass": 0.18,
+     "diff": -0.09,
+     "n": 100
+    }
+   ],
+   "obs_over_eps": 2,
+   "null_mean": 1.5,
+   "null_95": [
+    0,
+    4
+   ],
+   "a1g_kept": [
+    "queries",
+    "iostreams"
+   ],
+   "a1t_kept": [
+    "queries",
+    "iostreams"
+   ],
+   "tokens_A1": 16293,
+   "tokens_W": 2367
+  }
+ },
+ "phase3_screen": {
+  "screened": 35,
+  "selected_incl_hugo": 12,
+  "selected_run": 11
+ },
+ "phase3_instances": [
+  {
+   "instance": "caddyserver__caddy-30d3bd2a8959",
+   "repo": "caddyserver/caddy",
+   "tokens": {
+    "W": 171794,
+    "Wd": 82533,
+    "A1": 237893,
+    "A1r": 198792,
+    "Wdr": 89753,
+    "Wpad": 183345,
+    "A1t": 171794
+   },
+   "slice": "189/606",
+   "deprefs": "42/126",
+   "haiku": {
+    "W": 0.98,
+    "Wd": 0.96,
+    "A1": 0.94,
+    "A1r": 1.0,
+    "Wdr": 1.0,
+    "Wpad": 1.0,
+    "A1t": 0.98
+   },
+   "haiku_post": {
+    "W": 0.9666666666666667,
+    "A1": 0.9666666666666667
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 1.0,
+    "A1": 1.0,
+    "A1r": 1.0,
+    "Wdr": 1.0,
+    "Wpad": 1.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "W"
+   }
+  },
+  {
+   "instance": "caddyserver__caddy-6727b2f3a92b",
+   "repo": "caddyserver/caddy",
+   "tokens": {
+    "W": 158565,
+    "Wd": 73923,
+    "A1": 277505,
+    "A1r": 203263,
+    "Wdr": 93699,
+    "Wpad": 229911,
+    "A1t": 158565
+   },
+   "slice": "181/459",
+   "deprefs": "68/157",
+   "haiku": {
+    "W": 0.34,
+    "Wd": 0.2,
+    "A1": 0.26,
+    "A1r": 0.06,
+    "Wdr": 0.18,
+    "Wpad": 0.06,
+    "A1t": 0.34
+   },
+   "haiku_post": {
+    "W": 0.26666666666666666,
+    "A1": 0.26666666666666666
+   },
+   "sonnet": {
+    "W": 0.3,
+    "Wd": 0.2,
+    "A1": 0.2,
+    "A1r": 0.3,
+    "Wdr": 0.4,
+    "Wpad": 0.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "W"
+   }
+  },
+  {
+   "instance": "caddyserver__caddy-c8591a1e46e4",
+   "repo": "caddyserver/caddy",
+   "tokens": {
+    "W": 12137,
+    "Wd": 10047,
+    "A1": 84817,
+    "A1r": 17460,
+    "Wdr": 13474,
+    "Wpad": 84798,
+    "A1t": 58605
+   },
+   "slice": "23/37",
+   "deprefs": "23/27",
+   "haiku": {
+    "W": 0.64,
+    "Wd": 0.38,
+    "A1": 0.36,
+    "A1r": 0.52,
+    "Wdr": 0.3,
+    "Wpad": 0.36,
+    "A1t": 0.44
+   },
+   "haiku_post": {
+    "W": 0.6,
+    "A1": 0.3
+   },
+   "sonnet": {
+    "W": 0.2,
+    "Wd": 0.0,
+    "A1": 0.5,
+    "A1r": 0.0,
+    "Wdr": 0.0,
+    "Wpad": 0.3
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "A1t"
+   }
+  },
+  {
+   "instance": "cli__cli-2bcdfbb1ac02",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 2367,
+    "Wd": 2367,
+    "A1": 16293,
+    "A1r": 4443,
+    "Wdr": 4443,
+    "Wpad": 16341,
+    "A1t": 13513
+   },
+   "slice": "7/7",
+   "deprefs": "14/14",
+   "haiku": {
+    "W": 0.0,
+    "Wd": 0.0,
+    "A1": 0.22,
+    "A1r": 0.6,
+    "Wdr": 0.6,
+    "Wpad": 0.0,
+    "A1t": null
+   },
+   "haiku_post": {
+    "W": 0.0,
+    "A1": 0.16666666666666666
+   },
+   "sonnet": {
+    "W": 0.3,
+    "Wd": 0.3,
+    "A1": 0.1,
+    "A1r": 0.0,
+    "Wdr": 0.0,
+    "Wpad": 0.2
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "W",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "A1r",
+    "Wpad": "Wpad",
+    "A1t": "A1g"
+   }
+  },
+  {
+   "instance": "cli__cli-326faaac8b5c",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 21011,
+    "Wd": 21011,
+    "A1": 67579,
+    "A1r": 31357,
+    "Wdr": 31357,
+    "Wpad": 68049,
+    "A1t": 21011
+   },
+   "slice": "44/44",
+   "deprefs": "79/79",
+   "haiku": {
+    "W": 0.86,
+    "Wd": 0.86,
+    "A1": 0.84,
+    "A1r": 0.94,
+    "Wdr": 0.94,
+    "Wpad": 0.96,
+    "A1t": 0.86
+   },
+   "haiku_post": {
+    "W": 0.9,
+    "A1": 0.9
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 1.0,
+    "A1": 1.0,
+    "A1r": 1.0,
+    "Wdr": 1.0,
+    "Wpad": 1.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "W",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "A1r",
+    "Wpad": "Wpad",
+    "A1t": "W"
+   }
+  },
+  {
+   "instance": "cli__cli-3f6a16a9f8c7",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 13485,
+    "Wd": 4045,
+    "A1": 24999,
+    "A1r": 17612,
+    "Wdr": 5744,
+    "Wpad": 24960,
+    "A1t": 13485
+   },
+   "slice": "6/17",
+   "deprefs": "10/43",
+   "haiku": {
+    "W": 0.88,
+    "Wd": 0.94,
+    "A1": 0.84,
+    "A1r": 0.88,
+    "Wdr": 0.74,
+    "Wpad": 0.74,
+    "A1t": 0.88
+   },
+   "haiku_post": {
+    "W": 0.9666666666666667,
+    "A1": 0.9
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 1.0,
+    "A1": 1.0,
+    "A1r": 1.0,
+    "Wdr": 1.0,
+    "Wpad": 1.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "W"
+   }
+  },
+  {
+   "instance": "cli__cli-8f7afbdbdbd6",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 16439,
+    "Wd": 16439,
+    "A1": 56667,
+    "A1r": 21820,
+    "Wdr": 21820,
+    "Wpad": 56531,
+    "A1t": 37216
+   },
+   "slice": "23/23",
+   "deprefs": "44/44",
+   "haiku": {
+    "W": 0.98,
+    "Wd": 0.98,
+    "A1": 0.92,
+    "A1r": 0.62,
+    "Wdr": 0.62,
+    "Wpad": 0.28,
+    "A1t": 0.46
+   },
+   "haiku_post": {
+    "W": 1.0,
+    "A1": 0.9333333333333333
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 1.0,
+    "A1": 1.0,
+    "A1r": 1.0,
+    "Wdr": 1.0,
+    "Wpad": 1.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "W",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "A1r",
+    "Wpad": "Wpad",
+    "A1t": "A1t"
+   }
+  },
+  {
+   "instance": "cli__cli-ad2a33837712",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 78155,
+    "Wd": 16657,
+    "A1": 83776,
+    "A1r": 79540,
+    "Wdr": 16776,
+    "Wpad": 83757,
+    "A1t": 78155
+   },
+   "slice": "110/401",
+   "deprefs": "2/19",
+   "haiku": {
+    "W": 0.46,
+    "Wd": 0.6,
+    "A1": 0.58,
+    "A1r": 0.46,
+    "Wdr": 0.74,
+    "Wpad": 0.4,
+    "A1t": 0.46
+   },
+   "haiku_post": {
+    "W": 0.5333333333333333,
+    "A1": 0.5333333333333333
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 1.0,
+    "A1": 1.0,
+    "A1r": 0.7,
+    "Wdr": 0.6,
+    "Wpad": 1.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "W"
+   }
+  },
+  {
+   "instance": "cli__cli-b87e58a1d390",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 26184,
+    "Wd": 6235,
+    "A1": 68609,
+    "A1r": 32648,
+    "Wdr": 6434,
+    "Wpad": 68718,
+    "A1t": 26184
+   },
+   "slice": "14/61",
+   "deprefs": "3/70",
+   "haiku": {
+    "W": 0.42,
+    "Wd": 0.46,
+    "A1": 0.48,
+    "A1r": 0.58,
+    "Wdr": 0.42,
+    "Wpad": 0.5,
+    "A1t": 0.42
+   },
+   "haiku_post": {
+    "W": 0.36666666666666664,
+    "A1": 0.4666666666666667
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 0.9,
+    "A1": 0.6,
+    "A1r": 0.7,
+    "Wdr": 0.6,
+    "Wpad": 0.8
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "W"
+   }
+  },
+  {
+   "instance": "cli__cli-babd691446b9",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 22957,
+    "Wd": 6347,
+    "A1": 53549,
+    "A1r": 24996,
+    "Wdr": 7779,
+    "Wpad": 53884,
+    "A1t": 26669
+   },
+   "slice": "19/99",
+   "deprefs": "13/25",
+   "haiku": {
+    "W": 0.34,
+    "Wd": 0.6,
+    "A1": 1.0,
+    "A1r": 1.0,
+    "Wdr": 1.0,
+    "Wpad": 0.16,
+    "A1t": null
+   },
+   "haiku_post": {
+    "W": 0.36666666666666664,
+    "A1": 1.0
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 1.0,
+    "A1": 1.0,
+    "A1r": 1.0,
+    "Wdr": 1.0,
+    "Wpad": 1.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "A1g"
+   }
+  },
+  {
+   "instance": "cli__cli-cba9646b8c25",
+   "repo": "cli/cli",
+   "tokens": {
+    "W": 86253,
+    "Wd": 32808,
+    "A1": 103793,
+    "A1r": 90653,
+    "Wdr": 36818,
+    "Wpad": 102489,
+    "A1t": 86786
+   },
+   "slice": "134/420",
+   "deprefs": "30/38",
+   "haiku": {
+    "W": 0.8,
+    "Wd": 0.86,
+    "A1": 0.8,
+    "A1r": 0.8,
+    "Wdr": 0.72,
+    "Wpad": 0.82,
+    "A1t": null
+   },
+   "haiku_post": {
+    "W": 0.8333333333333334,
+    "A1": 0.8
+   },
+   "sonnet": {
+    "W": 1.0,
+    "Wd": 0.9,
+    "A1": 0.9,
+    "A1r": 0.8,
+    "Wdr": 1.0,
+    "Wpad": 1.0
+   },
+   "alias": {
+    "W": "W",
+    "Wd": "Wd",
+    "A1": "A1",
+    "A1r": "A1r",
+    "Wdr": "Wdr",
+    "Wpad": "Wpad",
+    "A1t": "A1g"
+   }
+  }
+ ],
+ "phase3_contrasts": {
+  "haiku_post:Wd-W": {
+   "mean": 0.009,
+   "lo": -0.053,
+   "hi": 0.072,
+   "lb1": -0.043,
+   "pos": 4,
+   "neg": 4,
+   "zero": 3,
+   "n": 11,
+   "token_ratio_median": 0.47
+  },
+  "haiku_post:A1r-A1": {
+   "mean": 0.021,
+   "lo": -0.095,
+   "hi": 0.141,
+   "lb1": -0.079,
+   "pos": 5,
+   "neg": 4,
+   "zero": 2,
+   "n": 11,
+   "token_ratio_median": 0.48
+  },
+  "haiku_post:Wdr-A1": {
+   "mean": 0.002,
+   "lo": -0.102,
+   "hi": 0.116,
+   "lb1": -0.082,
+   "pos": 4,
+   "neg": 5,
+   "zero": 2,
+   "n": 11,
+   "token_ratio_median": 0.27
+  },
+  "haiku_post:Wdr-W": {
+   "mean": 0.042,
+   "lo": -0.133,
+   "hi": 0.234,
+   "lb1": -0.107,
+   "pos": 6,
+   "neg": 5,
+   "zero": 0,
+   "n": 11,
+   "token_ratio_median": 0.52
+  },
+  "haiku_post:A1-W": {
+   "mean": 0.039,
+   "lo": -0.076,
+   "hi": 0.185,
+   "lb1": -0.061,
+   "pos": 3,
+   "neg": 4,
+   "zero": 4,
+   "n": 11,
+   "token_ratio_median": 2.33
+  },
+  "haiku_post:Wpad-W": {
+   "mean": -0.138,
+   "lo": -0.281,
+   "hi": -0.018,
+   "lb1": -0.255,
+   "pos": 3,
+   "neg": 7,
+   "zero": 1,
+   "n": 11,
+   "token_ratio_median": 2.35
+  },
+  "haiku_post:Wpad-A1": {
+   "mean": -0.178,
+   "lo": -0.373,
+   "hi": -0.024,
+   "lb1": -0.335,
+   "pos": 5,
+   "neg": 6,
+   "zero": 0,
+   "n": 11,
+   "token_ratio_median": 1.0
+  },
+  "haiku_post:A1r-W": {
+   "mean": 0.06,
+   "lo": -0.114,
+   "hi": 0.248,
+   "lb1": -0.086,
+   "pos": 5,
+   "neg": 6,
+   "zero": 0,
+   "n": 11,
+   "token_ratio_median": 1.28
+  },
+  "haiku_post:A1t-A1": {
+   "mean": -0.046,
+   "lo": -0.177,
+   "hi": 0.051,
+   "lb1": -0.156,
+   "pos": 2,
+   "neg": 2,
+   "zero": 4,
+   "n": 8,
+   "token_ratio_median": 0.66
+  },
+  "haiku_post:A1t-W": {
+   "mean": -0.087,
+   "lo": -0.223,
+   "hi": 0.0,
+   "lb1": -0.203,
+   "pos": 0,
+   "neg": 2,
+   "zero": 6,
+   "n": 8,
+   "token_ratio_median": 1.0
+  },
+  "haiku_all:Wd-W": {
+   "mean": 0.013,
+   "lo": -0.064,
+   "hi": 0.089,
+   "lb1": -0.051,
+   "pos": 5,
+   "neg": 3,
+   "zero": 3,
+   "n": 11
+  },
+  "haiku_all:A1r-A1": {
+   "mean": 0.02,
+   "lo": -0.089,
+   "hi": 0.129,
+   "lb1": -0.071,
+   "pos": 6,
+   "neg": 3,
+   "zero": 2,
+   "n": 11
+  },
+  "haiku_all:Wdr-A1": {
+   "mean": 0.002,
+   "lo": -0.091,
+   "hi": 0.105,
+   "lb1": -0.078,
+   "pos": 4,
+   "neg": 6,
+   "zero": 1,
+   "n": 11
+  },
+  "haiku_all:Wdr-W": {
+   "mean": 0.051,
+   "lo": -0.129,
+   "hi": 0.251,
+   "lb1": -0.102,
+   "pos": 5,
+   "neg": 5,
+   "zero": 1,
+   "n": 11
+  },
+  "haiku_all:A1-W": {
+   "mean": 0.049,
+   "lo": -0.067,
+   "hi": 0.202,
+   "lb1": -0.053,
+   "pos": 4,
+   "neg": 6,
+   "zero": 1,
+   "n": 11
+  },
+  "haiku_all:Wpad-W": {
+   "mean": -0.129,
+   "lo": -0.273,
+   "hi": -0.011,
+   "lb1": -0.245,
+   "pos": 4,
+   "neg": 6,
+   "zero": 1,
+   "n": 11
+  },
+  "haiku_all:Wpad-A1": {
+   "mean": -0.178,
+   "lo": -0.371,
+   "hi": -0.02,
+   "lb1": -0.336,
+   "pos": 4,
+   "neg": 6,
+   "zero": 1,
+   "n": 11
+  },
+  "haiku_all:A1r-W": {
+   "mean": 0.069,
+   "lo": -0.1,
+   "hi": 0.26,
+   "lb1": -0.08,
+   "pos": 5,
+   "neg": 3,
+   "zero": 3,
+   "n": 11
+  },
+  "haiku_all:A1t-A1": {
+   "mean": -0.047,
+   "lo": -0.18,
+   "hi": 0.045,
+   "lb1": -0.155,
+   "pos": 5,
+   "neg": 3,
+   "zero": 0,
+   "n": 8
+  },
+  "haiku_all:A1t-W": {
+   "mean": -0.09,
+   "lo": -0.22,
+   "hi": 0.0,
+   "lb1": -0.195,
+   "pos": 0,
+   "neg": 2,
+   "zero": 6,
+   "n": 8
+  },
+  "sonnet:Wd-W": {
+   "mean": -0.045,
+   "lo": -0.082,
+   "hi": -0.009,
+   "lb1": -0.082,
+   "pos": 0,
+   "neg": 4,
+   "zero": 7,
+   "n": 11
+  },
+  "sonnet:A1r-A1": {
+   "mean": -0.073,
+   "lo": -0.182,
+   "hi": 0.009,
+   "lb1": -0.164,
+   "pos": 2,
+   "neg": 4,
+   "zero": 5,
+   "n": 11
+  },
+  "sonnet:Wdr-A1": {
+   "mean": -0.064,
+   "lo": -0.191,
+   "hi": 0.036,
+   "lb1": -0.164,
+   "pos": 2,
+   "neg": 3,
+   "zero": 6,
+   "n": 11
+  },
+  "sonnet:Wdr-W": {
+   "mean": -0.109,
+   "lo": -0.218,
+   "hi": -0.018,
+   "lb1": -0.2,
+   "pos": 1,
+   "neg": 4,
+   "zero": 6,
+   "n": 11
+  },
+  "sonnet:A1-W": {
+   "mean": -0.045,
+   "lo": -0.145,
+   "hi": 0.045,
+   "lb1": -0.127,
+   "pos": 1,
+   "neg": 4,
+   "zero": 6,
+   "n": 11
+  },
+  "sonnet:Wpad-W": {
+   "mean": -0.045,
+   "lo": -0.118,
+   "hi": 0.009,
+   "lb1": -0.1,
+   "pos": 1,
+   "neg": 3,
+   "zero": 7,
+   "n": 11
+  },
+  "sonnet:Wpad-A1": {
+   "mean": 0.0,
+   "lo": -0.064,
+   "hi": 0.064,
+   "lb1": -0.055,
+   "pos": 3,
+   "neg": 2,
+   "zero": 6,
+   "n": 11
+  },
+  "sonnet:A1r-W": {
+   "mean": -0.118,
+   "lo": -0.2,
+   "hi": -0.045,
+   "lb1": -0.191,
+   "pos": 0,
+   "neg": 5,
+   "zero": 6,
+   "n": 11
+  },
+  "sonnet:A1t-A1": {
+   "mean": 0.083,
+   "lo": 0.0,
+   "hi": 0.217,
+   "lb1": 0.0,
+   "pos": 2,
+   "neg": 0,
+   "zero": 4,
+   "n": 6
+  },
+  "sonnet:A1t-W": {
+   "mean": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "lb1": 0.0,
+   "pos": 0,
+   "neg": 0,
+   "zero": 6,
+   "n": 6
+  }
+ },
+ "phase3_nondegenerate": {
+  "claude-haiku-5-5": 11,
+  "claude-sonnet-5-5": 11
+ },
+ "phase3_sonnet_ceiling_W_and_A1": 6,
+ "phase3_median_tokens": {
+  "W": 22957,
+  "Wd": 16439,
+  "A1": 68609,
+  "A1r": 31357,
+  "Wdr": 16776,
+  "Wpad": 68718
+ },
+ "phase3_wpad_matching": {
+  "caddyserver__caddy-30d3bd2a8959": {
+   "wpad_tokens": 183345,
+   "a1_tokens": 237893,
+   "n_pad_pkgs": 5
+  },
+  "caddyserver__caddy-6727b2f3a92b": {
+   "wpad_tokens": 229911,
+   "a1_tokens": 277505,
+   "n_pad_pkgs": 12
+  },
+  "caddyserver__caddy-c8591a1e46e4": {
+   "wpad_tokens": 84798,
+   "a1_tokens": 84817,
+   "n_pad_pkgs": 11
+  },
+  "cli__cli-2bcdfbb1ac02": {
+   "wpad_tokens": 16341,
+   "a1_tokens": 16293,
+   "n_pad_pkgs": 4
+  },
+  "cli__cli-326faaac8b5c": {
+   "wpad_tokens": 68049,
+   "a1_tokens": 67579,
+   "n_pad_pkgs": 14
+  },
+  "cli__cli-3f6a16a9f8c7": {
+   "wpad_tokens": 24960,
+   "a1_tokens": 24999,
+   "n_pad_pkgs": 1
+  },
+  "cli__cli-8f7afbdbdbd6": {
+   "wpad_tokens": 56531,
+   "a1_tokens": 56667,
+   "n_pad_pkgs": 8
+  },
+  "cli__cli-ad2a33837712": {
+   "wpad_tokens": 83757,
+   "a1_tokens": 83776,
+   "n_pad_pkgs": 5
+  },
+  "cli__cli-b87e58a1d390": {
+   "wpad_tokens": 68718,
+   "a1_tokens": 68609,
+   "n_pad_pkgs": 19
+  },
+  "cli__cli-babd691446b9": {
+   "wpad_tokens": 53884,
+   "a1_tokens": 53549,
+   "n_pad_pkgs": 18
+  },
+  "cli__cli-cba9646b8c25": {
+   "wpad_tokens": 102489,
+   "a1_tokens": 103793,
+   "n_pad_pkgs": 12
+  }
+ },
+ "instance_pool": {
+  "caddyserver__caddy": 14,
+  "cli__cli": 30,
+  "gohugoio__hugo": 1,
+  "golangci__golangci-lint": 1,
+  "issue": 1,
+  "restic__restic": 1,
+  "vetoes.json": 1
+ }
+}

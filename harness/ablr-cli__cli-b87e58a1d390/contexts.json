@@ -1,0 +1,444 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/internal/skills/registry",
+  "github.com/cli/cli/v2/pkg/cmd/skills/install"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/context",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/internal/prompter",
+  "github.com/cli/cli/v2/internal/skills/discovery",
+  "github.com/cli/cli/v2/internal/skills/frontmatter",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/skills/source",
+  "github.com/cli/cli/v2/internal/tableprinter",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/pkg/cmd/root",
+  "github.com/cli/cli/v2/pkg/cmd/skills",
+  "github.com/cli/cli/v2/pkg/cmd/skills/list",
+  "github.com/cli/cli/v2/pkg/cmd/skills/publish",
+  "github.com/cli/cli/v2/pkg/cmd/skills/search",
+  "github.com/cli/cli/v2/pkg/cmd/skills/update"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/context"
+  ],
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/prompter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/discovery"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/frontmatter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/installer"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/source"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/tableprinter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ]
+ ],
+ "gold_identifiers": [
+  "Devin",
+  "Goose",
+  "Grok",
+  "Junie",
+  "Name",
+  "OpenCode",
+  "ProjectDir",
+  "UserDir",
+  "and",
+  "many",
+  "more"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 518,
+  "github.com/cli/cli/v2/context": 22,
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry": 13,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/internal/prompter": 59,
+  "github.com/cli/cli/v2/internal/skills/discovery": 54,
+  "github.com/cli/cli/v2/internal/skills/frontmatter": 12,
+  "github.com/cli/cli/v2/internal/skills/installer": 24,
+  "github.com/cli/cli/v2/internal/skills/source": 5,
+  "github.com/cli/cli/v2/internal/tableprinter": 10,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/iostreams": 89
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "issue",
+ "repo": "cli/cli",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 477,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin",
+    "Goose",
+    "Grok",
+    "Junie",
+    "Name",
+    "OpenCode",
+    "ProjectDir",
+    "UserDir",
+    "and",
+    "many",
+    "more"
+   ]
+  },
+  "W": {
+   "chars": 56007,
+   "file": "W.txt",
+   "n_tokens_prompt": 26184,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1": {
+   "chars": 160072,
+   "file": "A1.txt",
+   "n_tokens_prompt": 68609,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 110212,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 47841,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/context"
+   ],
+   "chars": 157988,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 67720,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 150039,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 64624,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+   ],
+   "chars": 159486,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 68340,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 159381,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 68350,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 158694,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 68073,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/prompter"
+   ],
+   "chars": 149277,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 64252,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/discovery"
+   ],
+   "chars": 151886,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 65504,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/frontmatter"
+   ],
+   "chars": 158372,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 67937,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/installer"
+   ],
+   "chars": 158311,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 67948,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/source"
+   ],
+   "chars": 159204,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 68259,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/tableprinter"
+   ],
+   "chars": 158677,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 68022,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 158055,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 67866,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-13": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 153175,
+   "file": "A1-13.txt",
+   "n_tokens_prompt": 65937,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1-14": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 154258,
+   "file": "A1-14.txt",
+   "n_tokens_prompt": 66037,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 56007,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 56007,
+   "same_as": "W"
+  },
+  "Wd": {
+   "chars": 11822,
+   "file": "Wd.txt",
+   "n_tokens_prompt": 6235,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin",
+    "many",
+    "more"
+   ]
+  },
+  "A1r": {
+   "chars": 72683,
+   "file": "A1r.txt",
+   "n_tokens_prompt": 32648,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  },
+  "Wdr": {
+   "chars": 12311,
+   "file": "Wdr.txt",
+   "n_tokens_prompt": 6434,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin",
+    "many",
+    "more"
+   ]
+  },
+  "Wpad": {
+   "chars": 145721,
+   "file": "Wpad.txt",
+   "n_tokens_prompt": 68718,
+   "expressible": false,
+   "missing_identifiers": [
+    "Devin"
+   ]
+  }
+ },
+ "pad_meta": {
+  "Wpad": {
+   "pad_pkgs": [
+    "github.com/cli/cli/v2/pkg/cmd/issue/develop",
+    "github.com/cli/cli/v2/pkg/cmd/project/shared/client",
+    "github.com/cli/cli/v2/pkg/cmd/pr/list",
+    "github.com/cli/cli/v2/pkg/cmd/discussion/edit",
+    "github.com/cli/cli/v2/pkg/cmd/repo/credits",
+    "github.com/cli/cli/v2/pkg/cmd/issue/argparsetest",
+    "github.com/cli/cli/v2/pkg/cmd/repo/shared",
+    "github.com/cli/cli/v2/pkg/cmd/project/mark-template",
+    "github.com/cli/cli/v2/pkg/cmd/auth/token",
+    "github.com/cli/cli/v2/pkg/cmd/release/delete",
+    "github.com/cli/cli/v2/pkg/cmd/agent-task/view",
+    "github.com/cli/cli/v2/internal/agents",
+    "github.com/cli/cli/v2/pkg/cmd/attestation",
+    "github.com/cli/cli/v2/pkg/cmd/licenses",
+    "github.com/cli/cli/v2/pkg/cmd/repo/autolink/shared",
+    "github.com/cli/cli/v2/pkg/cmd/repo/clone",
+    "github.com/cli/cli/v2/pkg/githubtemplate",
+    "github.com/cli/cli/v2/pkg/cmd/gist/rename",
+    "github.com/cli/cli/v2/pkg/cmd/issue/lock"
+   ],
+   "target_tokens": 68609
+  }
+ },
+ "struct_meta": {
+  "rule": "2026-10-13 amendment: declaration slice from fail-to-pass tests and task code spans; referenced dependency declarations without bodies",
+  "n_w_decls": 61,
+  "n_selected": 14,
+  "n_roots": 9,
+  "n_dep_refs_all": 70,
+  "n_dep_refs_sel": 3,
+  "selected": [
+   "github.com/cli/cli/v2/internal/skills/registry.AgentHost",
+   "github.com/cli/cli/v2/internal/skills/registry.AgentHost.InstallDir",
+   "github.com/cli/cli/v2/internal/skills/registry.AgentIDs",
+   "github.com/cli/cli/v2/internal/skills/registry.Agents",
+   "github.com/cli/cli/v2/internal/skills/registry.FindByID",
+   "github.com/cli/cli/v2/internal/skills/registry.RepoNameFromRemote",
+   "github.com/cli/cli/v2/internal/skills/registry.Scope",
+   "github.com/cli/cli/v2/internal/skills/registry.ScopeLabels",
+   "github.com/cli/cli/v2/internal/skills/registry.ScopeProject",
+   "github.com/cli/cli/v2/internal/skills/registry.ScopeUser",
+   "github.com/cli/cli/v2/internal/skills/registry.UniqueProjectDirs",
+   "github.com/cli/cli/v2/internal/skills/registry.ValidAgentIDs",
+   "github.com/cli/cli/v2/internal/skills/registry.claudeConfigDirEnv",
+   "github.com/cli/cli/v2/internal/skills/registry.sharedProjectSkillsDir"
+  ],
+  "dep_refs_sel": [
+   "github.com/cli/cli/v2/git.ParseURL",
+   "github.com/cli/cli/v2/internal/ghrepo.FromURL",
+   "github.com/cli/cli/v2/internal/ghrepo.FullName"
+  ]
+ }
+}

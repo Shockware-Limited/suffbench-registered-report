@@ -1,0 +1,50 @@
+[
+ {
+  "tag": "write-r0",
+  "model": "claude-opus-5-5",
+  "in": 30120,
+  "out": 43579,
+  "stop": "end_turn",
+  "secs": 371
+ },
+ {
+  "tag": "review-r0",
+  "model": "claude-opus-5-5",
+  "in": 45097,
+  "out": 32000,
+  "stop": "max_tokens",
+  "secs": 290
+ },
+ {
+  "tag": "revise-r1",
+  "model": "claude-opus-5-5",
+  "in": 39911,
+  "out": 20876,
+  "stop": "end_turn",
+  "secs": 136
+ },
+ {
+  "tag": "review-r1",
+  "model": "claude-opus-5-5",
+  "in": 45075,
+  "out": 32000,
+  "stop": "max_tokens",
+  "secs": 293
+ },
+ {
+  "tag": "revise-r2",
+  "model": "claude-opus-5-5",
+  "in": 39889,
+  "out": 21886,
+  "stop": "end_turn",
+  "secs": 145
+ },
+ {
+  "tag": "errata-check",
+  "model": "claude-sonnet-5-5",
+  "in": 53320,
+  "out": 32000,
+  "stop": "max_tokens",
+  "secs": 233
+ }
+]

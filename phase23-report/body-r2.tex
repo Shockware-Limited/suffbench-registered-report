@@ -1,0 +1,591 @@
+\begin{abstract}
+This report describes three exploratory ablation phases run before the confirmatory study of a registered report on $\eps$-sufficient context for language-model code editing in Go. None of the results is confirmatory. Some aggregates were seen before repairs, the instance sets were chosen by screens on the evaluated models, and eleven instances from two repositories are a small basis.
+
+Phase 1 removed dependency interfaces one group at a time on 23 pilot instances (Haiku 5.5, $k=20$). The count of apparently necessary groups (33 of 135) lay inside a null reference.
+
+Phase 2 ran four models on 10 screened instances. On Haiku 5.5, 7/10 instances had no arm reaching 0.1. No average difference was resolved between the write-set bodies (W), W plus dependency interfaces (A1) and the predictor-selected arms.
+
+Leave-one-out at $k=100$ gave counts inside their null ranges. On cli 2bcdfbb1ac02, however, removing one package moved the pass rate from 0.27 to 0.00.
+
+Phase 3 tested declaration-level arms and token-matched padding on 11 instances with headroom. On Haiku 5.5 with post-screen samples (a choice not preregistered), a reachable-declaration slice of W was non-inferior to W at $\eps = 0.05$ (lower bound $-0.043$, median token ratio 0.47). It was not non-inferior with screen samples included ($-0.051$). On Sonnet 5.5 it was worse ($-0.045$ $[-0.082, -0.009]$). Inert padding lowered Haiku 5.5 pass rates (Wpad$-$W $-0.138$ $[-0.281, -0.018]$).
+\end{abstract}
+
+\section{Purpose and relation to the prior publications}
+
+This report belongs to a series of public records on $\eps$-sufficient context for language-model code editing. The definitions note \cite{definitions} defines the concept (concept DOI 10.5281/zenodo.23282195; the preregistration cites the version DOI 10.5281/zenodo.23282196). The pilot \cite{pilot} ran 24 instances from \texttt{cli/cli}. One of these had an empty task text and is invalid (erratum of 2026-10-12), which leaves 23 valid pilot instances.
+
+The Stage 1 protocol \cite{stage1} operationalises $\eps$-sufficiency as a paired, single-shot, multi-model test. A compiler-computed interface context is compared with bodies and with the transitive slice. The outcome is $\Delta$-pass, the pass rate of the fail-to-pass tests after the model's patch is applied.
+
+The three phases reported here were run between 2026-10-12 and 2026-10-14. They took place after the pilot and before any confirmatory call. Their purpose was to decide which arms and screens the confirmatory study should use. They are exploratory throughout, and we report them regardless of outcome.
+
+The preregistration states the hypotheses relevant here as follows.
+
+\begin{itemize}
+\item \textbf{H2 (primary).} A1 is non-inferior to A1b (dependency bodies) and to A2 (transitive slice) at margin $\eps$ on $\Delta$-pass, tested by intersection--union.
+\item \textbf{H1 (revised after the pilot; date recorded in the preregistration).} At each preregistered load level and padding type, the protocol tests (a) one-sided paired superiority of A1 over A1 padded to that level (degradation) and (b) TOST equivalence at $\pm 0.05$ (flatness). Each level is classed as degradation, flat or inconclusive, and the full curve is reported with intervals.
+\item \textbf{H5 (added 2026-10-12, before any ablation call).} H5 concerns the necessity and static predictability of dependency interfaces within A1. It is confirmatory on ``the Phase 3 instances'' and exploratory on the 24 pilot instances.
+  \begin{itemize}
+  \item For each direct dependency $d$ of W, arm A1$-d$ removes $d$'s interface from A1. When there are many dependencies, they are grouped into contiguous groups.
+  \item Arm A1g keeps only the dependencies referenced by the gold patch (an oracle predictor). Arm A1t keeps only those referenced by the task text (an inference-time predictor).
+  \item H5a: A1g is non-inferior to A1 at $\eps$. H5b: A1t is non-inferior to A1 at $\eps$.
+  \item Descriptive quantities are fixed at $k=20$: the fraction of necessary dependencies, the precision and recall of each predictor, a slack ratio, and the count of removals that raise the pass rate by more than $\eps$.
+  \end{itemize}
+\end{itemize}
+
+None of H1, H2 or H5 was tested confirmatorily in these phases. H1 and H2 belong to the confirmatory run. H5 was tested exploratorily in Phases 1 and 2. Section~\ref{sec:lim} explains why it was not tested confirmatorily in Phase 3.
+
+The work relates to three strands of published research. The first is the notion of sufficient context in retrieval-augmented generation \cite{joren2025}. The second is the observation, stated in its title, that context length alone can hurt performance despite perfect retrieval \cite{du2025}. The third is evidence on how position within long contexts affects use of information \cite{liu2024}. Studies of repository context files for coding agents \cite{gloaguen2026} address a related practical question. We make no claim of novelty beyond the specific arms, instances and contrasts reported below.
+
+\section{Design}
+
+\subsection{Instances and screens}
+
+All instances are fail-to-pass commits from single-module Go repositories. They were mined from commits since 2026-06-01; the mining windows covered 159 first-parent commits for caddy, 240 for hugo and 13 for zap (none valid). The valid instances on disk number 14 for \texttt{caddyserver/caddy} and 30 for \texttt{cli/cli}. The 30 \texttt{cli/cli} instances include the 24 pilot instances, one of them invalid. There is one valid instance each for \texttt{gohugoio/hugo}, \texttt{restic/restic} and \texttt{golangci/golangci-lint}. Every examined commit and its rejection reason is listed in \texttt{harness/instances/rejected.jsonl}.
+
+\paragraph{Phase 1 (2026-10-12).} Phase 1 used the 23 valid pilot instances, all from \texttt{cli/cli}, with no screen.
+
+\paragraph{Phase 2 (2026-10-12/13).}
+\begin{itemize}
+\item \emph{Screen.} We screened 35 instances (22 cli, 10 caddy, 1 hugo, 1 restic, 1 golangci-lint) with arm W at $k=5$ on Haiku 5.5. Under the amendment of 2026-10-12, an instance entered only if W was inexpressible (a gold identifier absent from W) and W passed below 0.8.
+\item \emph{Selection.} Sixteen instances had W inexpressible, and 10 were selected (6 cli, 4 caddy).
+\item \emph{Missing instance.} Instance cli bd81afda9ab6 is absent because its arms failed to build during a disk-full interruption.
+\end{itemize}
+
+\paragraph{Phase 3 (2026-10-13/14).}
+\begin{itemize}
+\item \emph{Screen.} We screened 35 instances with W and A1 at $k=20$ on Haiku 5.5. An instance entered if either rate lay in $[0.1, 0.9]$.
+\item \emph{Selection.} Twelve instances were selected, including \texttt{gohugoio/hugo} c9f6e4d4abc3. That instance was dropped on 2026-10-14 because it produced a 182 GB build cache.
+\item \emph{Run.} The remaining 11 instances were run (8 cli, 3 caddy).
+\end{itemize}
+
+\subsection{Arms}
+
+The arms are defined as follows. Construction metadata for every arm and instance is in \texttt{harness/abl-*/contexts.json} and \texttt{harness/ablr-*/contexts.json}.
+
+\begin{itemize}
+\item \textbf{W}: the write set, that is, the code the gold patch edits, shown with full bodies.
+\item \textbf{A1}: W plus the compiler-computed interfaces of every direct dependency of W.
+\item \textbf{A1$-d$}: A1 with the interface of dependency group $d$ removed (leave-one-out).
+\item \textbf{A1g}: W plus only the dependencies referenced by the gold patch. References are either a selector \texttt{alias.Name} resolved through W's imports, or a selector \texttt{v.Name} where \texttt{Name} is exported by exactly one direct dependency. This arm is an oracle by construction.
+\item \textbf{A1t}: W plus only the dependencies referenced by the task text, under the task-text rule in force (Section~\ref{sec:taskrule}). When a predictor keeps no dependency, A1g or A1t is byte-identical to W.
+\item \textbf{A0}: the arm of that name in the Stage 1 protocol \cite{stage1}, run only on Opus 5.5 in Phase 2.
+\item \textbf{Wd} (Phase 3): the declarations of W reachable, through the type-checked reference graph, from identifiers used in the fail-to-pass tests and in task-text code spans or selectors. Each file keeps its package clause and imports, and omitted declarations are marked. When every declaration is reachable, Wd is byte-identical to W.
+\item \textbf{A1r} (Phase 3): full W plus only the dependency declarations that W references, rendered without bodies.
+\item \textbf{Wdr} (Phase 3): the slice Wd plus the dependency declarations that the slice references.
+\item \textbf{Wpad} (Phase 3): W preceded by inert same-module padding, drawn from the pilot padding pool and matched to A1's prompt tokens.
+\end{itemize}
+
+\subsection{Models, samples and spend}
+
+The models are Haiku 5.5 (\texttt{claude-haiku-5-5}), \texttt{claude-haiku-4-5-20251001} (labelled Haiku 4.5 in the tables), Sonnet 5.5 (\texttt{claude-sonnet-5-5}) and Opus 5.5 (\texttt{claude-opus-5-5}). Each sample is an independent single-shot call.
+
+\paragraph{Phase 1.} Haiku 5.5 at $k=20$ on W, A1, A1g, A1t and every A1$-d$.
+
+\paragraph{Phase 2.} The dense models ran W, A1, A1g and A1t:
+\begin{itemize}
+\item Haiku 5.5 at $k=100$;
+\item \texttt{claude-haiku-4-5-20251001} at $k=20$;
+\item Sonnet 5.5 at $k=10$.
+\end{itemize}
+Opus 5.5 ran A0, W and A1t at $k=5$. Leave-one-out at $k=100$ on Haiku 5.5 formed stage 6 of Phase 2.
+
+\paragraph{Phase 3.}
+\begin{itemize}
+\item Haiku 5.5 ran $k=50$ on W, A1, A1t, Wd, A1r, Wdr and Wpad. The W and A1 cells continue the $k=20$ screen samples, so each has 30 post-screen samples per instance.
+\item Sonnet 5.5 ran $k=10$ on W, A1, Wd, A1r, Wdr and Wpad.
+\end{itemize}
+
+\paragraph{Spend.} Spend at list prices, in USD, was:
+\begin{itemize}
+\item Phase 1: USD 12.87 for 5020 samples;
+\item Phase 2 screen: USD 1.58 for 162 samples;
+\item Phase 2: USD 95.7 for 7754 samples;
+\item Phase 3: USD 38.6 for 4751 samples;
+\item total: USD 148.75 for 17687 samples.
+\end{itemize}
+
+By model, the spend was:
+\begin{itemize}
+\item \texttt{claude-haiku-5-5}: 16202 samples, \$89.85;
+\item \texttt{claude-haiku-4-5-20251001}: 520 samples, \$7.37;
+\item \texttt{claude-sonnet-5-5}: 860 samples, \$31.07;
+\item \texttt{claude-opus-5-5}: 105 samples, \$8.36.
+\end{itemize}
+
+For comparison, the pilot cost about \$73 at list prices. This figure comes from the erratum of 2026-10-12; the pilot paper states \$61.
+
+\subsection{The task-text rule}\label{sec:taskrule}
+
+\paragraph{Original rule (Phase 1).} Phase 1 used the rule in the original H5 paragraph. A dependency counted as task-referenced if any of the following appeared in the task text:
+\begin{itemize}
+\item a selector resolving to the dependency;
+\item a whole-word package name above a preregistered minimum length;
+\item a unique exported identifier above a preregistered minimum length.
+\end{itemize}
+
+The Phase 1 reading recorded on 2026-10-12 found that the package-name clause matched English words (for example \texttt{context}, \texttt{source}, \texttt{text}, \texttt{status}, \texttt{extension}) rather than code references.
+
+\paragraph{Amended rule (2026-10-12, fixed before any Phase 2 call).} The task-text predictor now counts a dependency only if the task text contains one of:
+\begin{itemize}
+\item a selector \texttt{alias.Name} resolving to it;
+\item an exported identifier of that dependency inside a Markdown code span;
+\item its import path.
+\end{itemize}
+Whole-word package names in prose no longer count. Phases 2 and 3 use the amended rule.
+
+\subsection{Statistics}
+
+Paired contrasts use the instance-level percentile bootstrap with 2,000 resamples and seed 2. For each contrast we report:
+\begin{itemize}
+\item the mean per-instance difference;
+\item its two-sided 95\% interval;
+\item the one-sided 95\% lower bound (LB), which is the preregistered decision bound;
+\item paired sign counts ($+/-/0$);
+\item the number of instances $n$.
+\end{itemize}
+
+The decision rules are as follows.
+\begin{itemize}
+\item \emph{Non-inferiority.} A contrast is called non-inferior at $\eps = 0.05$ only when LB $> -0.05$.
+\item \emph{Unresolved differences.} An interval that contains zero is reported as an unresolved difference, not as equivalence.
+\item \emph{Non-degeneracy.} Following the note of 2026-10-13, every relative statement is accompanied by the non-degeneracy condition (best arm $\geq 0.1$) and by absolute rates. The reason is that a relative contrast between arms that all fail carries no information about sufficiency.
+\end{itemize}
+
+For leave-one-out, the null reference draws every cell of an instance from one pooled rate and counts removals exceeding $\eps$ in absolute difference. It uses 2,000 simulations, at $k=20$ in Phase 1 and $k=100$ in Phase 2.
+
+Section 6 of the preregistration names a different seed for the paired bootstrap. The analysis amendment of 2026-10-12 records that paired differences use seed 2. The same amendment also introduced the printed one-sided LB, which replaced the lower end of the two-sided interval; that lower end corresponds to a one-sided test at half the intended level.
+
+\subsection{Amendments and deviations as dated in the preregistration}
+
+\begin{itemize}
+\item \textbf{2026-10-12, pilot erratum.} One pilot instance had an empty task text and is invalid. The ablation study excludes it, and a non-empty task-text check was added to mining.
+\item \textbf{2026-10-12, pilot cost erratum.} Pilot spend is about \$73, not \$61.
+\item \textbf{2026-10-12, harness fault in Phase 1.} A build-environment fault invalidated verdicts for 4,456 samples. Of these, 4,409 were re-verified from stored responses with a patch-hash equality check, and 44 were re-sampled. The faulty aggregate was seen before the repair.
+\item \textbf{2026-10-12, analysis amendment.} The amendment introduced the one-sided LB, sign counts, the estimate without the most influential instance, ceiling and floor counts and a null reference. It also recorded seed 2. The decision rule was unchanged.
+\item \textbf{2026-10-12, Phase 1 reading.} This reading was recorded before any further call.
+\item \textbf{2026-10-12, amendment for the next phase.} The amendment comprises:
+  \begin{enumerate}
+  \item[(i)] the task-text rule above;
+  \item[(ii)] the W screen for Phase 2;
+  \item[(iii)] estimating per-dependency necessity only at $k \geq 100$, with the null reference reported alongside;
+  \item[(iv)] set-level precision and recall of the task-text predictor against the gold-referenced set, computed without model calls.
+  \end{enumerate}
+\item \textbf{2026-10-13, Phase 2 note.} This note was recorded after stages 2 to 5 and before any further call. It covers the floor problem, the non-degeneracy condition and the restriction of leave-one-out to three responsive instances. It also records the absence of bd81afda9ab6 and the replacement of docker/cli (no root \texttt{go.mod}) by restic and golangci-lint.
+\item \textbf{2026-10-13, amendment for Phase 3.} This amendment was fixed before any Phase 3 call. It defines arms Wd, A1r and Wdr (H6, descriptive) and Wpad (H7). It also sets the $[0.1, 0.9]$ screen, relaxes the mining limits with re-examination of previously rejected commits, and fixes the per-model arm sets and $k$.
+\end{itemize}
+
+Further events not recorded in the version of Section 8 used for this report are listed in Section~\ref{sec:lim}.
+
+\section{Results}
+
+\input{tables}
+
+\subsection{Phase 1: leave-one-dependency-out on the pilot instances}
+
+All Phase 1 figures are reproduced from the frozen \texttt{harness/results-abl/ABLATION-REPORT.md}. Phase 1 has no table in this report.
+
+\paragraph{Drift relative to the pilot.} A1 on Haiku 5.5 at $k=20$ was lower than A1 in the pilot at $k=10$ by $-0.041$ $[-0.074, -0.013]$ over 23 instances. This day-to-day shift is close in size to $\eps$.
+
+\paragraph{Predictor arms against A1.}
+\begin{itemize}
+\item \textbf{A1g$-$A1}: $+0.017$ $[-0.002, +0.041]$, LB $+0.000$, signs 5/2/16. A1g is therefore non-inferior to A1 at $\eps$. Without the most influential instance (2bcdfbb1ac02) the estimate is $+0.011$ $[-0.005, +0.032]$. Median tokens were 13,513 against 39,586 for A1.
+\item \textbf{A1t$-$A1}: $+0.007$ $[-0.020, +0.030]$, LB $-0.015$, signs 5/3/15. A1t is non-inferior at $\eps$. Without 2bcdfbb1ac02 the estimate is $+0.000$ $[-0.023, +0.023]$. Median tokens were 15,335.
+\end{itemize}
+Both intervals contain zero. These are non-inferiority readings, not evidence of equal performance.
+
+\paragraph{W against A1.} W$-$A1 was $-0.028$ $[-0.096, +0.017]$, LB $-0.083$, signs 4/4/15, so W is not non-inferior to A1. Without babd691446b9 the estimate becomes $+0.000$ $[-0.025, +0.023]$. That is a post-hoc single-instance exclusion, which we do not treat as a finding.
+
+\paragraph{How many instances could separate the arms.} The predictors kept no dependency on 14/23 instances (A1g) and 11/23 (A1t); on those instances the arm equals W. On 8 instances W and A1 were both at ceiling, and on 5 both were at floor. W was inexpressible on 10. Most paired differences were exactly zero (16 for A1g$-$A1 and 15 for A1t$-$A1), so only a minority of instances carry the contrasts.
+
+\paragraph{Necessity counts.} On the 17/23 informative instances (A1 pass $> 0$) there were 135 dependency groups.
+\begin{itemize}
+\item Removal lowered the pass rate by more than $\eps$ for 33/135 groups and raised it by more than $\eps$ for 33/135.
+\item The null reference gives 30.8 $[13, 49]$ lowering and 30.4 $[12, 53]$ raising. Both observed counts lie inside these ranges.
+\item The bootstrap fraction 0.244 $[0.178, 0.319]$ ignores clustering by instance and should not be read as an estimate of necessity.
+\end{itemize}
+
+Per instance (necessary/helps/groups), the counts are concentrated. Examples are 326faaac8b5c 0/14/16, b87e58a1d390 11/2/15, 8f7afbdbdbd6 9/2/11 and 2bcdfbb1ac02 0/3/4. With $k=20$ per cell, however, these patterns are compatible with sampling noise.
+
+Predictor precision and recall against this label are printed in the results file. As recorded on 2026-10-12, they are not interpretable as predictor quality because the label itself is uninformative. The slack ratio tokens(A1)/tokens(W $\cup$ necessary) has mean 2.71 $[1.66, 4.06]$ and median 1.56, and it inherits the same problem.
+
+\subsection{Phase 2: four models on ten screened instances}
+
+Table~\ref{tab:p2inst} gives the per-instance rates and Table~\ref{tab:p2con} the paired contrasts.
+
+\paragraph{Prompt sizes.} Median prompt tokens on the 10 instances were 21,946 for W, 84,817 for A1, and 49,822 for each of A1g and A1t.
+
+\paragraph{Degenerate instances.} The best arm was below 0.1 on:
+\begin{itemize}
+\item 7/10 instances for Haiku 5.5;
+\item 9/10 for \texttt{claude-haiku-4-5-20251001};
+\item 5/10 for Sonnet 5.5;
+\item 5/10 for Opus 5.5.
+\end{itemize}
+The relative contrasts therefore rest on few informative instances and are close to vacuous.
+
+\paragraph{Haiku 5.5 ($k=100$, $n=10$).}
+\begin{itemize}
+\item A1t$-$A1: $+0.002$ $[-0.043, +0.059]$, LB $-0.038$, signs 2/4/4.
+\item A1g$-$A1: $+0.004$ $[-0.042, +0.061]$, LB $-0.035$, signs 2/4/4.
+\item W$-$A1: $+0.000$ $[-0.076, +0.071]$, LB $-0.060$.
+\item A1t$-$W: $+0.002$ $[-0.036, +0.042]$, LB $-0.024$, signs 1/1/8.
+\end{itemize}
+The lower bounds of A1t$-$A1, A1g$-$A1 and A1t$-$W clear $-0.05$. Only three instances meet the non-degeneracy condition, so we do not read these as evidence of sufficiency.
+
+\paragraph{\texttt{claude-haiku-4-5-20251001} ($k=20$).} This model has no cells on caddy 7910dd94eea2 and no A1 cell on caddy 6727b2f3a92b. Its contrasts against A1 therefore use $n=8$, and A1t$-$W uses $n=9$. All contrasts have intervals touching or containing zero:
+\begin{itemize}
+\item A1t$-$A1: $-0.019$ $[-0.044, +0.000]$;
+\item A1g$-$A1: $-0.006$ $[-0.019, +0.000]$;
+\item W$-$A1: $+0.025$ $[-0.019, +0.094]$;
+\item A1t$-$W: $-0.039$ $[-0.117, +0.000]$, LB $-0.117$.
+\end{itemize}
+With 9/10 instances degenerate, these numbers carry essentially no information.
+
+\paragraph{Sonnet 5.5 ($k=10$, $n=10$).} No contrast was resolved:
+\begin{itemize}
+\item A1t$-$A1: $-0.020$ $[-0.170, +0.080]$;
+\item A1g$-$A1: $-0.030$ $[-0.180, +0.060]$;
+\item W$-$A1: $-0.010$ $[-0.120, +0.070]$;
+\item A1t$-$W: $-0.010$ $[-0.060, +0.030]$, LB $-0.050$, which does not clear the margin.
+\end{itemize}
+
+\paragraph{Opus 5.5 ($k=5$).} Opus had no A1 arm.
+\begin{itemize}
+\item A1t$-$W was $+0.000$ $[+0.000, +0.000]$ with signs 0/0/9. This is a degenerate interval, not evidence of sufficiency.
+\item A0$-$W was $-0.140$ $[-0.440, +0.120]$, LB $-0.400$, signs 1/2/7.
+\end{itemize}
+
+\paragraph{Cells where context changed the outcome.} The averages hide cells in which context did change the outcome, in both directions:
+\begin{itemize}
+\item On cli 2bcdfbb1ac02, Haiku 5.5 passed 0.00 with W and 0.27 with A1. A1g and A1t, which are identical here, passed 0.14.
+\item On caddy c8591a1e46e4, Sonnet 5.5 passed 0.60 with A1 against 0.20 with W, and 0.00 with A1g and A1t. Haiku 5.5 on the same instance passed 0.57 with W and 0.46 with A1. \texttt{claude-haiku-4-5-20251001} passed 0.40 with W and 0.15 with A1.
+\item On caddy 6727b2f3a92b, Haiku 5.5 passed 0.44 with W and 0.22 with A1. Here W had 158,565 prompt tokens and A1 had 277,505.
+\end{itemize}
+
+\paragraph{Cross-model differences.} Several instances that were degenerate for one model were solved by another:
+\begin{itemize}
+\item On cli ff28e72b59be, Haiku 5.5 passed 0.00 in every arm. Sonnet 5.5 passed 1.00 with W, and Opus 5.5 passed 1.00 in every arm.
+\item On cli 20147bf81fed, Opus 5.5 passed 1.00 with W and 0.00 with A0.
+\item On caddy 7910dd94eea2, Opus 5.5 passed 0.60 with A0 and 0.00 with W.
+\end{itemize}
+
+\paragraph{Unverified diagnostic.} A diagnostic was recorded on 2026-10-13 during a harness session. It is not a script output. It examined the three Phase 2 cells listed above, in which context changed the outcome. In those cells, the passing patches introduced no code identifier that only the dependency documentation supplied. The only dependency-only tokens in passing patches were English words from comments. This observation is unverified by the analysis scripts.
+
+\subsection{Leave-one-out at $k=100$}
+
+Table~\ref{tab:loo} gives the results. Each count of removals with absolute difference above 0.05 lies within its simulated null range:
+\begin{itemize}
+\item caddy 6727b2f3a92b: 9 of 13 against 5.5 $[1, 12]$;
+\item caddy c8591a1e46e4: 2 of 5 against 2.3 $[0, 5]$;
+\item cli 2bcdfbb1ac02: 2 of 4 against 1.5 $[0, 4]$.
+\end{itemize}
+No necessity claim is supported at the level of counts.
+
+\paragraph{caddy 6727b2f3a92b.} Here A1 is 0.22 and W is 0.44. Most removals raised the pass rate; only removing caddyevents, httpcaddyfile or caddyconfig lowered it. Removing caddytls gave 0.44 ($+0.22$), equal to W. Neither predictor kept any dependency on this instance.
+
+\paragraph{caddy c8591a1e46e4.} Here A1 is 0.46 and W is 0.57. Removing caddyfile gave 0.34 ($-0.12$), the largest drop. The gold-referenced predictor kept caddyhttp, and the task-referenced predictor kept caddyfile and caddyhttp.
+
+\paragraph{cli 2bcdfbb1ac02.} Here A1 is 0.27 and W is 0.00. The individual removals gave:
+\begin{itemize}
+\item queries: 0.00 ($-0.27$);
+\item iostreams: 0.18 ($-0.09$);
+\item cmdutil: 0.22 ($-0.05$);
+\item client: 0.28 ($+0.01$).
+\end{itemize}
+Both predictors kept exactly queries and iostreams. The corresponding Phase 2 cell (A1g $=$ A1t) passed 0.14. We report the single cell for queries descriptively: with 100 samples per arm, a rate of 0.27 falling to 0.00 is unlikely to be sampling noise alone. Even so, it is one cell on one instance.
+
+\subsection{Phase 3: declaration-level arms and matched padding}
+
+Table~\ref{tab:p3inst} gives prompt tokens and per-instance rates. The Haiku W and A1 columns pool all 50 samples. Table~\ref{tab:p3con} gives the paired contrasts.
+
+\paragraph{Primary sample set.} We take as primary the Haiku 5.5 set in which W and A1 are restricted to the post-screen samples ($n=30$ per instance; other arms $n=50$). This choice was not preregistered. We made it because the screen samples were used to select the instances: including them risks regression to the mean in the selected cells. The per-instance screen-to-post-screen changes in Section~\ref{sec:lim} show such movement. Both sets are reported.
+
+\paragraph{Non-degeneracy and identical arms.} Every instance met the non-degeneracy condition for both models (Haiku 11/11, Sonnet 11/11). Sonnet 5.5 had both W and A1 at 1.00 on 6/11 instances, which limits every Sonnet contrast.
+
+Wd was byte-identical to W on cli 2bcdfbb1ac02, 326faaac8b5c and 8f7afbdbdbd6, where every declaration was reachable. The Haiku A1t arm was byte-identical to another arm on most instances. On babd691446b9, 2bcdfbb1ac02 and cba9646b8c25 it is marked as identical in Table~\ref{tab:p3inst} without a separate rate.
+
+\paragraph{Prompt sizes.} Median prompt tokens were:
+\begin{itemize}
+\item W 22,957;
+\item Wd 16,439;
+\item A1 68,609;
+\item A1r 31,357;
+\item Wdr 16,776;
+\item Wpad 68,718.
+\end{itemize}
+
+\paragraph{Haiku 5.5, primary (post-screen) set.}
+\begin{itemize}
+\item \textbf{Wd$-$W}: $+0.009$ $[-0.053, +0.072]$, LB $-0.043$, signs 4/4/3, median token ratio 0.47. This is non-inferior at $\eps = 0.05$; the interval contains zero.
+\item \textbf{A1r$-$A1}: $+0.021$ $[-0.095, +0.141]$, LB $-0.079$, ratio 0.48. Not non-inferior.
+\item \textbf{Wdr$-$A1}: $+0.002$ $[-0.102, +0.116]$, LB $-0.082$, ratio 0.27. Not non-inferior.
+\item \textbf{Wdr$-$W}: $+0.042$ $[-0.133, +0.234]$, LB $-0.107$. Not non-inferior.
+\item \textbf{A1$-$W}: $+0.039$ $[-0.076, +0.185]$, ratio 2.33. Unresolved.
+\item \textbf{A1r$-$W}: $+0.060$ $[-0.114, +0.248]$. Unresolved.
+\item \textbf{Wpad$-$W}: $-0.138$ $[-0.281, -0.018]$, LB $-0.255$, signs 3/7/1, ratio 2.35. The interval excludes zero.
+\item \textbf{Wpad$-$A1}: $-0.178$ $[-0.373, -0.024]$, LB $-0.335$, signs 5/6/0, ratio 1.00 (matched tokens). The interval excludes zero.
+\end{itemize}
+
+\paragraph{Haiku 5.5, all samples.}
+\begin{itemize}
+\item Wd$-$W was $+0.013$ $[-0.064, +0.089]$ with LB $-0.051$, so it is not non-inferior on this set. The non-inferiority verdict for Wd$-$W therefore depends on the sample set.
+\item The padding contrasts were essentially unchanged: Wpad$-$W $-0.129$ $[-0.273, -0.011]$ and Wpad$-$A1 $-0.178$ $[-0.371, -0.020]$.
+\item A1$-$W was $+0.049$ $[-0.067, +0.202]$ with LB $-0.053$.
+\end{itemize}
+
+\paragraph{Sonnet 5.5 ($k=10$; W $=$ A1 $=$ 1.00 on 6/11).}
+\begin{itemize}
+\item \textbf{Wd$-$W}: $-0.045$ $[-0.082, -0.009]$, LB $-0.082$, signs 0/4/7. Not non-inferior, and the interval excludes zero with Wd worse.
+\item \textbf{A1r$-$W}: $-0.118$ $[-0.200, -0.045]$, signs 0/5/6. The interval excludes zero.
+\item \textbf{Wdr$-$W}: $-0.109$ $[-0.218, -0.018]$. The interval excludes zero.
+\item \textbf{A1r$-$A1}: $-0.073$ $[-0.182, +0.009]$. Unresolved.
+\item \textbf{Wdr$-$A1}: $-0.064$ $[-0.191, +0.036]$. Unresolved.
+\item \textbf{A1$-$W}: $-0.045$ $[-0.145, +0.045]$. Unresolved.
+\item \textbf{Wpad$-$W}: $-0.045$ $[-0.118, +0.009]$. Unresolved, and not evidence of a padding effect.
+\item \textbf{Wpad$-$A1}: $+0.000$ $[-0.064, +0.064]$, LB $-0.055$. Unresolved and not non-inferior.
+\end{itemize}
+
+\paragraph{Instances that carry the Haiku contrasts.} The instance-level rates in Table~\ref{tab:p3inst} show which instances carry the Haiku contrasts.
+\begin{itemize}
+\item \emph{Padding.} Wpad fell well below W on:
+  \begin{itemize}
+  \item babd691446b9 (0.16 against 0.34, with A1 1.00);
+  \item 8f7afbdbdbd6 (0.28 against 0.98);
+  \item 6727b2f3a92b (0.06 against 0.34).
+  \end{itemize}
+  On 2bcdfbb1ac02, Wpad passed 0.00 against 0.22 for A1. On c8591a1e46e4, Wpad and A1 both passed 0.36 at nearly equal prompt sizes (84,798 and 84,817 tokens).
+\item \emph{Slice and dependency arms.} The slice and dependency-declaration arms gained on some instances and lost on others:
+  \begin{itemize}
+  \item babd691446b9: Wd 0.60 and A1r 1.00, against W 0.34;
+  \item ad2a33837712: Wdr 0.74, against W 0.46;
+  \item 8f7afbdbdbd6: A1r 0.62, against A1 0.92;
+  \item c8591a1e46e4 and 6727b2f3a92b: the slice losses discussed in Section~\ref{sec:lim}.
+  \end{itemize}
+\end{itemize}
+
+\section{Reading of the evidence}
+
+This section separates what the data show from interpretation. Paragraphs marked \emph{Interpretation} go beyond the measurements.
+
+\subsection{What is supported and what is not}
+
+\paragraph{Supported, within the exploratory scope.}
+\begin{enumerate}
+\item On Haiku 5.5 in Phase 3, inert same-module padding matched to A1's size lowered pass rates relative to both W and A1. Both intervals exclude zero in both sample sets.
+\item On Haiku 5.5, the reachable-declaration slice Wd was non-inferior to W at $\eps$ on the primary set, at a median token ratio of 0.47. This verdict does not survive inclusion of the screen samples.
+\item On Sonnet 5.5, Wd, A1r and Wdr were each worse than W, with intervals excluding zero, despite ceiling on 6/11 instances.
+\item Individual task--model cells showed large effects of context in both directions. The largest was the loss of all passes on cli 2bcdfbb1ac02 when queries was removed from A1.
+\end{enumerate}
+
+\paragraph{Not supported.}
+\begin{itemize}
+\item Any claim that dependency interfaces are generally unnecessary once W is present: Phase 1 W$-$A1 is not non-inferior.
+\item Any claim that particular dependencies are necessary at the count level: every leave-one-out count lies inside its null range.
+\item Any claim of sufficiency on Phase 2 floor instances.
+\item Any claim that the static predictors recover sufficient context.
+\end{itemize}
+
+A defensible summary of Phase 2 is the following. Across ten screened tasks from two repositories we detected no clear average advantage from adding dependency interfaces. Individual task--model comparisons showed both benefits and harms, and seven tasks were near floor on the primary model.
+
+\subsection{Load degradation on headroom instances, and the flat pilot curve}
+
+\paragraph{Data.} On Haiku 5.5, Wpad$-$W was $-0.138$ at a median token ratio of 2.35. Wpad$-$A1 was $-0.178$ at a ratio of 1.00. A1$-$W, which adds about as many tokens of dependency interfaces as Wpad adds padding, was $+0.039$ (unresolved).
+
+\paragraph{Interpretation.} Taken together, these contrasts suggest that for Haiku 5.5 the harm is not a function of prompt length alone. At matched length, padding was worse than dependency interfaces. This is consistent with the observation that length can hurt even when relevant information is present \cite{du2025}, but adds the qualification that the kind of added text matters.
+
+Two confounds remain. First, Wpad places W after the padding, and the adversarial review of Phase 1 noted that serialisation always places W last; position effects \cite{liu2024} are therefore not separated from content. Second, the Sonnet 5.5 contrasts are unresolved and close to ceiling, so we make no claim about Sonnet.
+
+\paragraph{Interpretation (pilot curve).} The pilot's padding contrast did not resolve a difference. Phase 1 offers one plausible reason. On the pilot instances, W and A1 were both at ceiling on 8 instances and both at floor on 5, so most instances had no room to degrade. The Phase 3 screen admitted only instances with a rate in $[0.1, 0.9]$, and degradation appeared there. This reading is post hoc and has not been tested with a load dose curve. Wpad is matched to A1 rather than to the preregistered load levels, so it is not a test of H1.
+
+\subsection{Declaration-level slicing}
+
+\paragraph{Data.} On Haiku 5.5, Wd retains W's pass rate within the margin on the primary set, at about half the tokens. A1r and Wdr do not meet the margin against A1, at ratios of 0.48 and 0.27. On Sonnet 5.5, every arm that removes bodies or declarations from W is worse than W where the interval is resolved.
+
+\paragraph{Interpretation.} The slice is a candidate for reducing context without loss for one model on these instances. The evidence is fragile: the verdict changes with the sample set, and it does not hold for the second model. We do not read Wd as $\eps$-sufficient in general.
+
+\subsection{Granularity versus package selection, and the non-additive necessity on cli 2bcdfbb1ac02}
+
+\paragraph{Data.} On cli 2bcdfbb1ac02 with Haiku 5.5:
+\begin{itemize}
+\item W passed 0.00 and A1 passed 0.27 (Phase 2, $k=100$).
+\item Removing queries alone gave 0.00, and removing iostreams alone gave 0.18.
+\item Removing cmdutil alone gave 0.22, and removing client alone gave 0.28.
+\item Yet the arm that keeps exactly queries and iostreams (A1g $=$ A1t) passed 0.14, about half of A1's rate.
+\item In Phase 3, A1r (W plus only the dependency declarations W references, without bodies; 4,443 tokens against 16,293 for A1) passed 0.60 against 0.22 for A1.
+\end{itemize}
+
+\paragraph{Interpretation.} Removing cmdutil or client individually had small effects, yet removing both together (by keeping only queries and iostreams) roughly halved the rate. The effects of removals are therefore not additive on this instance. As noted in the external critique, leave-one-out measures the effect of removing one group while all others remain, and cannot identify a minimal sufficient subset when groups interact or are redundant.
+
+Selecting at the level of referenced declarations did better here than selecting whole packages. This is one instance. A1r is also smaller than A1, so granularity and size are not separated. On Sonnet 5.5 the same A1r passed 0.00 against 0.30 for W.
+
+\subsection{The cross-model asymmetry}
+
+\paragraph{Data.} The same context had opposite effects on different models:
+\begin{itemize}
+\item On caddy c8591a1e46e4 in Phase 2, A1 beat W on Sonnet 5.5 (0.60 against 0.20) but lost to W on both Haiku models.
+\item In Phase 3 the signs of the slice and dependency contrasts differ between Haiku 5.5 and Sonnet 5.5. Padding harmed Haiku 5.5 clearly but not Sonnet 5.5 on the resolved level.
+\item Instances at floor for Haiku 5.5 were solved by Sonnet 5.5 or Opus 5.5.
+\end{itemize}
+
+There was also day-to-day variation in Sonnet's W cell on cli 2bcdfbb1ac02: 0.00 in Phase 2 and 0.30 in Phase 3, both at $k=10$. For Haiku 5.5, A1 drifted by $-0.041$ between the pilot and Phase 1.
+
+\paragraph{Interpretation.} Whether a context is sufficient, and whether added text helps or harms, appears to depend on the reader. This is the sense of ``reader effects'' in the title. The diagnostic of 2026-10-13 found no dependency-only code identifiers in passing patches in the three cells where context changed the outcome. That diagnostic is a harness-session observation, not a script output. The attribution recorded in the preregistration on the same date (load, framing, semantic reminders) is an untested mechanism, and we do not claim it is shown.
+
+\subsection{The predictors}
+
+\paragraph{Data.} Under the original rule, the predictors kept nothing on many pilot instances (A1g 14/23, A1t 11/23). Precision and recall against the Phase 1 necessity label are uninterpretable, as recorded on 2026-10-12. In Phase 2 the predictors behaved as follows:
+\begin{itemize}
+\item On caddy 6727b2f3a92b, both predictors kept nothing. This was the better choice for Haiku 5.5 (W 0.44 against A1 0.22).
+\item On caddy c8591a1e46e4, Sonnet 5.5 passed 0.60 with A1 and 0.00 with either predictor arm.
+\item On cli 2bcdfbb1ac02, the predictors kept the two groups whose individual removal hurt most, and the arm still passed only 0.14.
+\end{itemize}
+
+\paragraph{Interpretation.} The tested static selectors missed at least one clear dependency-sensitive case, so their ability to recover sufficient context remains unestablished. On floor instances, a predictor that keeps nothing cannot be credited with a correct selection, because every arm fails. The set-level comparison of task-text and gold-referenced sets in amendment (iv) is not reported here.
+
+\subsection{What this does and does not say about static computability}
+
+The Stage 1 protocol asks whether a context computed by the compiler, without model calls, is $\eps$-sufficient. These phases do not answer that question. They show that one statically computed context (Wd) met the margin against W for one model on one sample set, and failed it for another model. They also show that statically computed dependency selections did not reproduce the pass rate of full A1 where A1 mattered.
+
+\emph{Interpretation.} If the unverified diagnostic is right that passing patches did not use dependency-only identifiers, then the differences between arms reflect how a model responds to a presentation rather than which facts are available. A purely structural criterion of sufficiency would then need to be paired with a model-specific check. This is a hypothesis for the confirmatory study, not a result.
+
+\section{Limitations and deviations}\label{sec:lim}
+
+\paragraph{Data-integrity events.} The following events are recorded, together with their consequences.
+
+\begin{itemize}
+\item \textbf{2026-10-12, Phase 1.}
+  \begin{itemize}
+  \item A build-environment fault invalidated verdicts for 4,456 samples. Of these, 4,409 were re-verified from stored responses with a patch-hash equality check, and 44 were re-sampled.
+  \item The re-verified and re-sampled counts do not sum to the invalidated count, and the results file does not record the disposition of the difference.
+  \item The faulty aggregate was seen before the repair. The adversarial review judged the repair procedure sound. Phase 1 remains exploratory for this reason among others.
+  \end{itemize}
+\item \textbf{2026-10-12/13, Phase 2.}
+  \begin{itemize}
+  \item A disk-full interruption contaminated the hugo baseline and 17 mining rejections, which were purged and re-examined.
+  \item docker/cli was replaced by restic and golangci-lint because it has no root \texttt{go.mod}.
+  \item Instance cli bd81afda9ab6 is absent because its arms failed to build.
+  \end{itemize}
+\item \textbf{2026-10-13, Phase 2 stage 6.} Leave-one-out was restricted to three responsive instances. Completed samples on floor instances were kept. This was an exploratory budget decision. It forfeits the ability to detect rescue effects, in which removing a distracting dependency raises a floor instance.
+\item \textbf{2026-10-14, Phase 3.}
+  \begin{itemize}
+  \item The shared Go build cache reached about 150 GB, caused by per-patch relinking of test binaries, and lanes were restarted with per-lane caches.
+  \item The hugo instance was dropped.
+  \item Seventeen records written while the disk was full were purged together with their cached-verdict dependants and re-sampled. The originals are retained by the author.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Deviations not in the version of Section 8 used for this report.} The results file states that all events are recorded in Section 8 of \texttt{preregistration.md}. The version of that section used to prepare this report does not contain the following items, which are recorded here as dated deviations:
+\begin{itemize}
+\item \textbf{2026-10-12/13.} The hugo baseline contamination and the purge and re-examination of 17 mining rejections.
+\item \textbf{2026-10-14.} The build-cache incident, the hugo drop and the purge and re-sampling of 17 records.
+\item \textbf{2026-10-14, relaxed mining.} The 2026-10-13 amendment relaxed the mining limits (at most 4 packages, at most 300 changed lines) and required re-examination of commits rejected only by the old limits. On 2026-10-14 the relaxed limits produced no new valid instance on restic and golangci-lint. The relaxed mining of caddy, hugo and cli was stopped by the disk incident and not rerun.
+\item \textbf{H5 not tested confirmatorily.} H5 was preregistered as confirmatory on ``the Phase 3 instances''. Phase 3 ran no A1g arm, and no Phase 3 A1t$-$A1 contrast was computed. A1t was run on Haiku 5.5 but coincided with another arm on most instances. H5a and H5b were therefore not tested confirmatorily. The arm set had been replaced by the declaration-level and padding arms in the amendment of 2026-10-13.
+\item \textbf{Phase 3 sample set.} The choice of the post-screen sample set as primary for Phase 3 was made after the data were seen and was not preregistered.
+\end{itemize}
+
+\paragraph{Selection and $k$.} All Phase 2 and Phase 3 instances were selected by screens on the same model, and the screened population is an enriched subset of the mining population.
+
+The Phase 2 screen at $k=5$ is coarse: an instance with a modest true rate can return zero passes often. That screen also admitted floor instances, 7/10 on Haiku 5.5.
+
+The Phase 3 screen used $k=20$, and the post-screen rates moved, in some cases substantially:
+\begin{itemize}
+\item 6727b2f3a92b: W 0.45 to 0.27;
+\item c8591a1e46e4: A1 0.45 to 0.30;
+\item 2bcdfbb1ac02: A1 0.30 to 0.17;
+\item 3f6a16a9f8c7: W 0.75 to 0.97.
+\end{itemize}
+
+The Phase 1 necessity estimates at $k=20$ carry no information beyond the null reference. Leave-one-out at $k=100$ covered only three instances.
+
+\paragraph{The hugo instance.} The one hugo instance selected in Phase 3 was dropped as unrunnable on the available disk. The hugo repository is therefore unrepresented in Phases 2 and 3, apart from screening.
+
+\paragraph{Two repositories.} All run instances come from \texttt{cli/cli} and \texttt{caddyserver/caddy}: 10 in Phase 2 and 11 in Phase 3, with some overlap. Repository-specific code structure may drive every effect reported. Repeated samples on the same instance do not create independent tasks.
+
+\paragraph{Sonnet 5.5 at $k=10$.} Sonnet rates move in steps of 0.1, so one sample changes a cell visibly. With 6/11 Phase 3 instances at ceiling for W and A1, most Sonnet contrasts rest on a handful of instances and a few samples per cell. The Phase 2 Sonnet contrasts share the same granularity.
+
+\paragraph{Slice losses on caddy c8591a1e46e4 and 6727b2f3a92b.}
+\begin{itemize}
+\item \emph{c8591a1e46e4.} The slice kept 23 of 37 declarations (10,047 against 12,137 tokens). Haiku 5.5 passed 0.38 with Wd against 0.64 with W, and Sonnet 5.5 passed 0.00 against 0.20.
+\item \emph{6727b2f3a92b.} The slice kept 181 of 459 declarations. Haiku 5.5 passed 0.20 against 0.34, and Sonnet 5.5 passed 0.20 against 0.30.
+\end{itemize}
+The reachability rule, the marking of omitted declarations or the omission itself may be responsible; these were not separated.
+
+\paragraph{Other limitations.} Several further limitations apply:
+\begin{itemize}
+\item A1g is an oracle, because it uses the gold patch.
+\item Opus 5.5 had no A1 arm and ran at $k=5$.
+\item The day-to-day drift on Haiku 5.5 ($-0.041$) is close to $\eps$, which limits the meaning of a margin of 0.05 across days. Phase 3 contrasts are same-day paired.
+\item The A0 arm is used only descriptively.
+\end{itemize}
+
+\section{Consequences for the registered report and future work}
+
+\paragraph{Headroom screening for H1.} The padding harm appeared only on instances selected for headroom. The confirmatory H1 instance set should therefore be screened so that both the unpadded arm and its padded versions can move. Selection should rely on separate screen samples, and the evaluation should use fresh samples, with the screened and mining populations reported separately. A triage screen followed by further screening of borderline instances would reduce misclassification.
+
+\paragraph{Declaration-level arms as candidate confirmatory arms.} Wd and A1r are candidates for confirmatory arms, with the token ratios reported alongside every non-inferiority reading. Given the Sonnet 5.5 losses and the sample-set dependence of the Haiku 5.5 verdict, they should be tested as hypotheses, not adopted as defaults.
+
+\paragraph{A load dose curve.} Wpad tests a single load matched to A1. A dose curve over several padding levels, with W in a fixed position and with padding placed both before and after W, would separate length, content and position. This is what H1 already specifies for A1.
+
+\paragraph{A second dense model.} The cross-model asymmetry means that conclusions from Haiku 5.5 alone may not transfer. A second dense model at a $k$ comparable to Haiku's would allow per-instance contrasts with useful resolution.
+
+\paragraph{Instance scarcity.} Valid instances number 14 for caddy and 30 for cli, with single instances elsewhere. Relaxed mining of caddy, hugo and cli has not been rerun. The confirmatory sample size in the preregistration therefore depends on adding repositories and completing the relaxed mining. Build-cache isolation per lane should be in place from the start.
+
+\paragraph{The obligation-graph idea.} An idea raised in the external critique is to make explicit, as a graph, the declarations a patch must be consistent with, and to derive context from that graph. It is untested here. The critical test is whether such a graph can be built before seeing the solution; a graph derived from the gold patch is an oracle diagnostic only. An explicit dependency would not imply that the dependency must be included. Structural relevance, reader need and presentation would need to be measured separately.
+
+\section{Availability}
+
+All data, harness code and analysis scripts are in the repository \url{https://github.com/Shockware-Limited/suffbench-registered-report}. The materials are organised as follows:
+\begin{itemize}
+\item verdict records: \texttt{harness/results-abl}, \texttt{harness/results-p2}, \texttt{harness/results-p2screen} and \texttt{harness/results-p3};
+\item arm metadata: \texttt{harness/abl-*/contexts.json} and \texttt{harness/ablr-*/contexts.json};
+\item rejected commits with reasons: \texttt{harness/instances/rejected.jsonl}.
+\end{itemize}
+
+The script \texttt{analysis/phase23.py} generates every number in this report, and \texttt{analysis/phase23\_tables.py} generates every table. The Phase 1 figures are reproduced from the frozen \texttt{harness/results-abl/ABLATION-REPORT.md}. The invalid originals from the data-integrity events are retained by the author.
+
+\section*{Acknowledgements and AI-use disclosure}
+
+The author used Anthropic's Claude Fable 5.1, which the author refers to as Lemma, through GitHub Copilot to design and run the phases and to write the analysis scripts. The author used Claude Opus 5.5 through the Anthropic API to draft this report and to review it adversarially against the generated results file. An independent adversarial critique of the Phase 1 result was obtained from a Claude agent run by the author. An external critique of the Phase 2 summary was also received, and both critiques are reflected in the text. The author is responsible for all claims.
+
+\begin{thebibliography}{9}
+
+\bibitem{definitions}
+J.~C. Johansen.
+Definitions note on $\eps$-sufficient context.
+Shockware Limited, Zenodo.
+Concept DOI \url{https://doi.org/10.5281/zenodo.23282195}.
+
+\bibitem{pilot}
+J.~C. Johansen.
+Pilot study of $\eps$-sufficient context for language-model code editing in Go.
+Shockware Limited, Zenodo.
+DOI \url{https://doi.org/10.5281/zenodo.23307204}.
+Erratum of 2026-10-12.
+
+\bibitem{stage1}
+J.~C. Johansen.
+Interfaces or bodies? A test of $\eps$-sufficient context for LM code editing in Go.
+Registered report, Stage 1 protocol. Shockware Limited, Zenodo.
+DOI \url{https://doi.org/10.5281/zenodo.23307547}.
+
+\bibitem{joren2025}
+Joren et al.
+Sufficient Context: A New Lens on Retrieval Augmented Generation Systems.
+In \emph{International Conference on Learning Representations (ICLR)}, 2025.
+
+\bibitem{du2025}
+Du et al.
+Context Length Alone Hurts LLM Performance Despite Perfect Retrieval.
+In \emph{Findings of the Association for Computational Linguistics: EMNLP}, 2025.
+
+\bibitem{liu2024}
+Liu et al.
+Lost in the Middle: How Language Models Use Long Contexts.
+\emph{Transactions of the Association for Computational Linguistics}, 2024.
+
+\bibitem{gloaguen2026}
+Gloaguen et al.
+Evaluating AGENTS.md.
+arXiv:2602.11988, 2026.
+
+\end{thebibliography}

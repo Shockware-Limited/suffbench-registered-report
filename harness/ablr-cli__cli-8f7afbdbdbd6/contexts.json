@@ -1,0 +1,358 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/release/create"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/gh",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/internal/safeurl",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/cmd/release/shared",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams",
+  "github.com/cli/cli/v2/pkg/surveyext"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/release",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/safeurl"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/release/shared"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/surveyext"
+  ]
+ ],
+ "gold_identifiers": [
+  "Split",
+  "TrimSpace",
+  "scopes"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 518,
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/gh": 56,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/internal/safeurl": 9,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/cmd/release/shared": 54,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/iostreams": 107,
+  "github.com/cli/cli/v2/pkg/surveyext": 12
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "issue",
+ "repo": "cli/cli",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 2927,
+   "expressible": false,
+   "missing_identifiers": [
+    "Split",
+    "TrimSpace",
+    "scopes"
+   ]
+  },
+  "W": {
+   "chars": 30547,
+   "file": "W.txt",
+   "n_tokens_prompt": 16439,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 130154,
+   "file": "A1.txt",
+   "n_tokens_prompt": 56667,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 80285,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 35890,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 120121,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 52682,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh"
+   ],
+   "chars": 121734,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 53726,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 129463,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 56408,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 128776,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 56131,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/safeurl"
+   ],
+   "chars": 126245,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 55310,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 128137,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 55924,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/release/shared"
+   ],
+   "chars": 125868,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 54791,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 123257,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 53995,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 119733,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 52427,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/surveyext"
+   ],
+   "chars": 128468,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 55825,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 30547,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/api": [
+     "span:HTTP"
+    ]
+   },
+   "chars": 80416,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 37216,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "Wd": {
+   "chars": 30547,
+   "same_as": "W"
+  },
+  "A1r": {
+   "chars": 44501,
+   "file": "A1r.txt",
+   "n_tokens_prompt": 21820,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "Wdr": {
+   "chars": 44501,
+   "same_as": "A1r"
+  },
+  "Wpad": {
+   "chars": 117134,
+   "file": "Wpad.txt",
+   "n_tokens_prompt": 56531,
+   "expressible": true,
+   "missing_identifiers": []
+  }
+ },
+ "pad_meta": {
+  "Wpad": {
+   "pad_pkgs": [
+    "github.com/cli/cli/v2/pkg/cmd/project/item-create",
+    "github.com/cli/cli/v2/pkg/cmd/discussion/list",
+    "github.com/cli/cli/v2/pkg/cmd/repo/autolink/delete",
+    "github.com/cli/cli/v2/pkg/cmd/skills/publish",
+    "github.com/cli/cli/v2/pkg/cmd/repo/autolink",
+    "github.com/cli/cli/v2/pkg/cmd/repo/gitignore/list",
+    "github.com/cli/cli/v2/pkg/cmd/repo/edit",
+    "github.com/cli/cli/v2/pkg/cmd/repo/fork"
+   ],
+   "target_tokens": 56667
+  }
+ },
+ "struct_meta": {
+  "rule": "2026-10-13 amendment: declaration slice from fail-to-pass tests and task code spans; referenced dependency declarations without bodies",
+  "n_w_decls": 23,
+  "n_selected": 23,
+  "n_roots": 7,
+  "n_dep_refs_all": 44,
+  "n_dep_refs_sel": 44,
+  "selected": [
+   "github.com/cli/cli/v2/pkg/cmd/release/create.CreateOptions",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.NewCmdCreate",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.changelogForRange",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.createRelease",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.createRun",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.deleteRelease",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.detectPreviousTag",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.errMissingRequiredWorkflowScope",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.errMissingRequiredWorkflowScope.Error",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.generateChangelog",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.generateReleaseNotes",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.getTags",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.gitTagInfo",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.iprompter",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.isNewRelease",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.logEntry",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.notImplementedError",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.publishRelease",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.publishedReleaseExists",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.releaseNotes",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.remoteTagExists",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.tag",
+   "github.com/cli/cli/v2/pkg/cmd/release/create.tokenHasWorkflowScope"
+  ],
+  "dep_refs_sel": [
+   "github.com/cli/cli/v2/api.Client",
+   "github.com/cli/cli/v2/api.Client.Query",
+   "github.com/cli/cli/v2/api.Client.REST",
+   "github.com/cli/cli/v2/api.HandleHTTPError",
+   "github.com/cli/cli/v2/api.NewClientFromHTTP",
+   "github.com/cli/cli/v2/git.Client",
+   "github.com/cli/cli/v2/git.Client.Command",
+   "github.com/cli/cli/v2/git.Command",
+   "github.com/cli/cli/v2/git.Command.Output",
+   "github.com/cli/cli/v2/internal/gh.Config",
+   "github.com/cli/cli/v2/internal/ghinstance.RESTPrefix",
+   "github.com/cli/cli/v2/internal/ghrepo.FullName",
+   "github.com/cli/cli/v2/internal/ghrepo.Interface",
+   "github.com/cli/cli/v2/internal/safeurl.JoinPath",
+   "github.com/cli/cli/v2/internal/safeurl.JoinPathWithHostPrefix",
+   "github.com/cli/cli/v2/internal/safeurl.MutableSafeURL",
+   "github.com/cli/cli/v2/internal/safeurl.MutableSafeURL.SetQuery",
+   "github.com/cli/cli/v2/internal/safeurl.MutableSafeURL.String",
+   "github.com/cli/cli/v2/internal/safeurl.NewImmutableSafeURL",
+   "github.com/cli/cli/v2/internal/safeurl.SafeURL",
+   "github.com/cli/cli/v2/internal/text.Indent",
+   "github.com/cli/cli/v2/pkg/cmd/release/shared.AssetForUpload",
+   "github.com/cli/cli/v2/pkg/cmd/release/shared.AssetsFromArgs",
+   "github.com/cli/cli/v2/pkg/cmd/release/shared.ConcurrentUpload",
+   "github.com/cli/cli/v2/pkg/cmd/release/shared.ErrReleaseNotFound",
+   "github.com/cli/cli/v2/pkg/cmd/release/shared.FetchLatestRelease",
+   "github.com/cli/cli/v2/pkg/cmd/release/shared.Release",
+   "github.com/cli/cli/v2/pkg/cmdutil.CancelError",
+   "github.com/cli/cli/v2/pkg/cmdutil.DetermineEditor",
+   "github.com/cli/cli/v2/pkg/cmdutil.Factory",
+   "github.com/cli/cli/v2/pkg/cmdutil.FlagErrorf",
+   "github.com/cli/cli/v2/pkg/cmdutil.NilBoolFlag",
+   "github.com/cli/cli/v2/pkg/cmdutil.ReadFile",
+   "github.com/cli/cli/v2/pkg/cmdutil.RegisterBranchCompletionFlags",
+   "github.com/cli/cli/v2/pkg/cmdutil.SilentError",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme.Bold",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme.WarningIcon",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.CanPrompt",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.ColorScheme",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.StartProgressIndicator",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.StopProgressIndicator",
+   "github.com/cli/cli/v2/pkg/surveyext.Edit"
+  ]
+ }
+}

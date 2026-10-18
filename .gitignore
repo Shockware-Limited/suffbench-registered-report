@@ -18,3 +18,7 @@ harness/abl_ids*
 analysis/__pycache__/
 harness/results-p2smoke/
 harness/ablr-*/*.txt
+harness/p3_before_*
+harness/p3_after_*
+harness/results-prepurge-*/
+harness/reverify_lane.sh

@@ -1,0 +1,22 @@
+{
+ "metadata": {
+  "title": "Load, Granularity and Reader Effects: Exploratory Ablations of ε-Sufficient Context for Language-Model Code Editing in Go (Phases 1 to 3)",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "publication_date": "2026-10-18",
+  "creators": [{"name": "Johansen, Jude Castiel", "affiliation": "Shockware Limited", "orcid": "0009-0002-5644-3073"}],
+  "description": "Exploratory ablations (October 2026) following the pilot measurement of ε-sufficient context for language-model code editing in Go: leave-one-dependency-out on 23 cli/cli instances (Haiku 5.5, k=20 and k=100), four-model contrasts on 10 screened instances from cli/cli and caddy, and declaration-level context arms with matched inert padding on 11 screened instances (Haiku 5.5 k=50, Sonnet 5.5 k=10). Every figure is generated from the released verdict records by analysis/phase23.py. The report records all deviations, including two data-integrity incidents and their repairs.",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "version": "1.0",
+  "keywords": ["context sufficiency", "language models", "code editing", "Go", "ablation", "program slicing", "context length", "SuffBench"],
+  "related_identifiers": [
+   {"identifier": "10.5281/zenodo.23282195", "relation": "isSupplementTo", "resource_type": "publication-article"},
+   {"identifier": "10.5281/zenodo.23307204", "relation": "continues", "resource_type": "publication-report"},
+   {"identifier": "10.5281/zenodo.23307547", "relation": "isSupplementTo", "resource_type": "publication-report"},
+   {"identifier": "https://github.com/Shockware-Limited/suffbench-registered-report", "relation": "isSupplementedBy", "resource_type": "software"}
+  ],
+  "notes": "Exploratory; no confirmatory claim. The author used Anthropic's Claude Fable 5.1 (referred to as Lemma) through GitHub Copilot to design and run the phases, and Claude Opus 5.5 through the Anthropic API to draft and adversarially review the report against the generated results file. The author is responsible for all claims."
+ }
+}

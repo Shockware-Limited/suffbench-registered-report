@@ -1,0 +1,9 @@
+{
+ "repo": "caddyserver/caddy",
+ "repo_path": "caddy-wt",
+ "baseline_fail_pkgs": [
+  "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile",
+  "github.com/caddyserver/caddy/v2/caddytest/integration"
+ ],
+ "baseline_pkgs": 49
+}

@@ -9,7 +9,6 @@
 {"commit": "996be976cad960a726aabb94be67dfc7e31e317b", "reason": "needs_source_and_test_change"}
 {"commit": "17142e08db2e300b37e6da1ddcfb651eb6d9c587", "reason": "needs_source_and_test_change"}
 {"commit": "6fc1c29d5477bfe71da7af290eb481c0df7811f1", "reason": "touches_go_mod_or_vendor"}
-{"commit": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd", "reason": "more_than_2_packages", "n": 7}
 {"commit": "c601748945c7f2390b6a4e99f874b1ce8e47533a", "reason": "child_tests_do_not_compile_at_parent"}
 {"commit": "5092057373a101c8706be0590856c13aaefd62ad", "reason": "valid", "instance_id": "cli__cli-9ee0afb43414", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestNewEnforcementCriteria", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatching", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingObservedCertificate", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingObservedNestedRef", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingPinnedRef", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestSignerWorkflowSANMatchingRepositoryValue", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestValidateSignerWorkflow"], "churn": 40, "nF": 6, "task": "spec_pending"}
 {"commit": "9ee0afb43414a411a214995ac3cb84dec6043b13", "reason": "valid", "instance_id": "cli__cli-1863cb7c0f1d", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification:TestVerifyCertExtensions"], "churn": 3, "nF": 20, "task": "spec_pending"}
@@ -21,8 +20,6 @@
 {"commit": "cfc615f110b10840f64b843eabd887e1c474ee5c", "reason": "touches_go_mod_or_vendor"}
 {"commit": "9b031151a825bda919203c5202876a725d637368", "reason": "valid", "instance_id": "cli__cli-babd691446b9", "W": ["github.com/cli/cli/v2/internal/attachments"], "f2p": ["github.com/cli/cli/v2/internal/attachments:TestNewUploader"], "churn": 4, "nF": 44, "task": "issue"}
 {"commit": "babd691446b9c935574771ef31e85e88f1362e4a", "reason": "needs_source_and_test_change"}
-{"commit": "b6770c8bc54c72e74e785c307850446b8e10be9d", "reason": "more_than_2_packages", "n": 5}
-{"commit": "8eba304d7da2417869797f0a61e416a769b281b3", "reason": "more_than_2_packages", "n": 9}
 {"commit": "6f7893163bb67716e27ab38261d06dc1fc47057b", "reason": "needs_source_and_test_change"}
 {"commit": "a3d31e2764f110dd03c46136177360bc78dc3f63", "reason": "needs_source_and_test_change"}
 {"commit": "5e5cd85ea40988abf5c15ec83d90f545151d220e", "reason": "needs_source_and_test_change"}
@@ -54,7 +51,6 @@
 {"commit": "c265dd86f7b50eb788f7fc9432148a60ea7517f9", "reason": "needs_source_and_test_change"}
 {"commit": "cebba8ca6c71e85a6bbac445de411690802298ac", "reason": "needs_source_and_test_change"}
 {"commit": "093c348510736308b88e6ca3dd0adc801e291a8b", "reason": "needs_source_and_test_change"}
-{"commit": "ae1ba32887ab1233824f159774cda4b36f249ac5", "reason": "more_than_2_packages", "n": 21}
 {"commit": "e18cc33299fedb85c7f849bf338a63e34f7b7db7", "reason": "needs_source_and_test_change"}
 {"commit": "9174ffb070f71162601f4a07ac643c73d00f133d", "reason": "valid", "instance_id": "cli__cli-9b6585be5218", "W": ["github.com/cli/cli/v2/pkg/cmd/repo/create"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/repo/create:Test_createRun"], "churn": 3, "nF": 6, "task": "issue"}
 {"commit": "9b6585be521825220f712599cad9416a923fc485", "reason": "needs_source_and_test_change"}
@@ -65,12 +61,9 @@
 {"commit": "c9dd6db9e12fcc53ab7f5cc272a1724d8adc9444", "reason": "needs_source_and_test_change"}
 {"commit": "31e17047d1b82244d11a780e250440a6f855a205", "reason": "valid", "instance_id": "cli__cli-cba9646b8c25", "W": ["github.com/cli/cli/v2/api", "github.com/cli/cli/v2/pkg/cmd/repo/clone"], "f2p": ["github.com/cli/cli/v2/api:TestBaseRepoQuerySelections", "github.com/cli/cli/v2/pkg/cmd/repo/clone:Test_RepoClone"], "churn": 21, "nF": 255, "task": "issue"}
 {"commit": "cba9646b8c254a5711ef9e19e1dfc1455e88feaa", "reason": "needs_source_and_test_change"}
-{"commit": "965c3dd723ac6677279220f71b4b9c3b1a907a01", "reason": "more_than_2_packages", "n": 7}
 {"commit": "400c0844954c8f42507b1d967c5bdcb1ee958a77", "reason": "needs_source_and_test_change"}
 {"commit": "e63f6149ef34757aa1d54dfd2b9324b03a055d88", "reason": "needs_source_and_test_change"}
-{"commit": "45437bc7eeeb3359bbfddd1742f79de7652fd3e2", "reason": "more_than_2_packages", "n": 3}
 {"commit": "bac1b1b38d5e74d9f72917f652ef31a1eed46a36", "reason": "touches_go_mod_or_vendor"}
-{"commit": "6e82bc505d81f8f294491b5ff448d69f79abc44f", "reason": "more_than_2_packages", "n": 10}
 {"commit": "9a6b96d6a133687faf188cad7791c2668c0f19e7", "reason": "child_tests_do_not_compile_at_parent"}
 {"commit": "a609c2b1b9208e13c181b509c027dc382f9f79c7", "reason": "touches_go_mod_or_vendor"}
 {"commit": "636cbb6ddb93c1f63f3ba01c74f94705787561f1", "reason": "valid", "instance_id": "cli__cli-8e556081de66", "W": ["github.com/cli/cli/v2/pkg/extensions"], "f2p": ["github.com/cli/cli/v2/pkg/extensions:TestIsOfficial"], "churn": 1, "nF": 239, "task": "spec_pending"}
@@ -85,11 +78,9 @@
 {"commit": "a8460b5af8cde6f31b732d8907e7170ccaa16571", "reason": "needs_source_and_test_change"}
 {"commit": "35f596de9837caa24d8806b15c146a53b442144a", "reason": "needs_source_and_test_change"}
 {"commit": "0574bc5bb590d073e539abc3109876ec9e2c1872", "reason": "touches_go_mod_or_vendor"}
-{"commit": "40b742f76d68e6b1f472942a6368db4b5d765641", "reason": "more_than_2_packages", "n": 7}
 {"commit": "9b323de8005a9988f398ce547697bf43b944e505", "reason": "touches_go_mod_or_vendor"}
 {"commit": "8d17165d4e2b759dd4d07f2b498c2981f85ed41f", "reason": "touches_go_mod_or_vendor"}
 {"commit": "679018a0249592dbc7e47d49c9c7b9449b0fad9a", "reason": "touches_go_mod_or_vendor"}
-{"commit": "2ea46117e59a9fbcb31f673565eb2b5207e08aae", "reason": "more_than_2_packages", "n": 101}
 {"commit": "d76da6081d16388e4abdd4e0a21258f1921fef3a", "reason": "needs_source_and_test_change"}
 {"commit": "2c5ff72f937ff1873a4e348bea9e430f1684f4c3", "reason": "needs_source_and_test_change"}
 {"commit": "3bc8eaa3d5ad5744d4089852fb3c54af8dedd4cb", "reason": "needs_source_and_test_change"}
@@ -98,14 +89,9 @@
 {"commit": "19b17f9785f3e94ff119f4bc35e297e9d4abb533", "reason": "needs_source_and_test_change"}
 {"commit": "2e9fccbc4a9e41070d3f117a925d4091c887f3fd", "reason": "touches_go_mod_or_vendor"}
 {"commit": "09bf3ff700fe6f3e8ac0ca417fb5b5176abeb050", "reason": "touches_go_mod_or_vendor"}
-{"commit": "7ca1a75182e3593b5df9a19edd638f70a6c22fab", "reason": "more_than_2_packages", "n": 3}
 {"commit": "606cda4a9b1a703ad7c2e353a77bce0d93d21b0e", "reason": "needs_source_and_test_change"}
-{"commit": "a2fd23c6a92172c18e2ba6264f39619f3dda68c7", "reason": "more_than_2_packages", "n": 3}
 {"commit": "9e69e88539a0d7078c2282d430f3d3446660a664", "reason": "not_green_at_child_testpkgs"}
-{"commit": "cc831722b71c3fc1603e6473bd1d9da27c0605e5", "reason": "more_than_2_packages", "n": 16}
 {"commit": "5d3c4817f1619213951dbf15031bad04acb88392", "reason": "valid", "instance_id": "cli__cli-62e3e719a483", "W": ["github.com/cli/cli/v2/pkg/cmd/copilot"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/copilot:TestRunCopilot"], "churn": 2, "nF": 5, "task": "issue"}
-{"commit": "62e3e719a483d9e2b9be2b7dba7e2bb4a7f91c8c", "reason": "more_than_2_packages", "n": 3}
-{"commit": "d9cba2af43d85420a9577870c132df82237e4a22", "reason": "churn_over_120", "churn": 168}
 {"commit": "7fff140bad992d8e18f6116fe81116c523ea1bcc", "reason": "child_tests_do_not_compile_at_parent"}
 {"commit": "a255baf71d13fe5947a4eb7ad521ffd412d64cee", "reason": "child_tests_do_not_compile_at_parent"}
 {"commit": "fadd4efb7daddd8afd8a5517a0cb5f5f39af6ada", "reason": "needs_source_and_test_change"}
@@ -126,7 +112,6 @@
 {"commit": "fdca974187d95f1020cf3378f8c269703c9cab5b", "reason": "needs_source_and_test_change"}
 {"commit": "b9f99e85254629a7771a43bfa73b423d3b3e3836", "reason": "touches_go_mod_or_vendor"}
 {"commit": "c613912ec412b67e9330641cc5a7e0c4333558a0", "reason": "needs_source_and_test_change"}
-{"commit": "a7059d5dab3c680189b266d9c15dd8a5624e8237", "reason": "more_than_2_packages", "n": 3}
 {"commit": "a526307b621c90dca18734bfedaa5533318edd1a", "reason": "deletes_or_renames_source"}
 {"commit": "c624f0ac79b2923a98a451aa9b7eebffca9c1222", "reason": "needs_source_and_test_change"}
 {"commit": "7db9c203607e227de838f6d6744b3c3175143542", "reason": "needs_source_and_test_change"}
@@ -143,7 +128,6 @@
 {"commit": "83c6321b8faba2ec6202af70b1cc0e2ed936495e", "reason": "needs_source_and_test_change"}
 {"commit": "1cb245f83556fb2749c8665eb376d58c582ae0a8", "reason": "needs_source_and_test_change"}
 {"commit": "5c39f803f10777aea7f37c62b1299f20f5637c60", "reason": "needs_source_and_test_change"}
-{"commit": "608dff7b80386a10962397852ff138f8ba567b08", "reason": "more_than_2_packages", "n": 6}
 {"commit": "8b72a8e75a1103284ae43d2e472871a46f6f75f3", "reason": "touches_go_mod_or_vendor"}
 {"commit": "50b1933be80b2d976e48594a85944ab3b341b2f0", "reason": "touches_go_mod_or_vendor"}
 {"commit": "1d467689d5e909c6b5e6e43f204ca7cb2c5230d7", "reason": "needs_source_and_test_change"}
@@ -151,14 +135,8 @@
 {"commit": "ae253a8ab985c2e10359b7b2bca560913540f340", "reason": "needs_source_and_test_change"}
 {"commit": "5ccd971df4421952a7448e62547b77bf6c9e1ef7", "reason": "valid", "instance_id": "cli__cli-ff28e72b59be", "W": ["github.com/cli/cli/v2/pkg/cmd/extension", "github.com/cli/cli/v2/pkg/cmd/root"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/extension:TestManager_Dispatch_ghExtensionEnv"], "churn": 7, "nF": 8, "task": "issue"}
 {"commit": "ff28e72b59be874a76243cb954607bf612db5cb3", "reason": "needs_source_and_test_change"}
-{"commit": "c6f4067da80ffa6195a1c99694a59e405a193908", "reason": "churn_over_120", "churn": 184}
 {"commit": "0f0e7fdd43065a07feb9f09ad9bf7f683c8aa41b", "reason": "no_failing_test_at_parent"}
-{"commit": "fdad95fb54b228d382d711f72c7fb1dd25a85172", "reason": "more_than_2_packages", "n": 4}
 {"commit": "8f22883b557feb78f7de35ac7f7a838d6b5d07c6", "reason": "valid", "instance_id": "cli__cli-8f7afbdbdbd6", "W": ["github.com/cli/cli/v2/pkg/cmd/release/create"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/release/create:TestTokenHasWorkflowScope", "github.com/cli/cli/v2/pkg/cmd/release/create:Test_createRun"], "churn": 10, "nF": 6, "task": "issue"}
-{"commit": "8f7afbdbdbd6c648009be64f94d1167857253cf7", "reason": "churn_over_120", "churn": 264}
-{"commit": "a3ed50ad5fafddd0e15ab8838c2136c8d25572df", "reason": "more_than_2_packages", "n": 3}
-{"commit": "8d81d0341005775e25375819cfa0f67529c4c66c", "reason": "more_than_2_packages", "n": 3}
-{"commit": "ddc7d465379c7d857faf2ac0b9cb43cea5f48d97", "reason": "more_than_2_packages", "n": 3}
 {"commit": "e83adbc0642994fae7c39a9a012eb34b8c81f4f1", "reason": "valid", "instance_id": "cli__cli-ad2a33837712", "W": ["github.com/cli/cli/v2/api"], "f2p": ["github.com/cli/cli/v2/api:TestRESTAndRESTWithNextErrorTypeParity", "github.com/cli/cli/v2/api:TestRESTWithNextError", "github.com/cli/cli/v2/pkg/cmd/attestation/api:TestGetAttestationsRetriesRESTWithNextError", "github.com/cli/cli/v2/pkg/cmd/status:TestStatusRun"], "churn": 7, "nF": 255, "task": "spec_pending"}
 {"commit": "ad2a3383771268dd5584127aa9f0615af8bf46d2", "reason": "needs_source_and_test_change"}
 {"commit": "5131aafb83895e2855888435ffe1203f98d81e1f", "reason": "needs_source_and_test_change"}
@@ -167,8 +145,6 @@
 {"commit": "4dee7a5ebe0e83f44225707e0ac4966d8984dc92", "reason": "needs_source_and_test_change"}
 {"commit": "55dbb4dc6b7edb10b48e3d7fc5bccd32318d1b55", "reason": "valid", "instance_id": "cli__cli-3f6a16a9f8c7", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestNewEnforcementCriteria", "github.com/cli/cli/v2/pkg/cmd/attestation/verify:TestValidateSignerWorkflow"], "churn": 6, "nF": 6, "task": "spec_pending"}
 {"commit": "3f6a16a9f8c7fe9676aa8d8f47b399310dd231c3", "reason": "valid", "instance_id": "cli__cli-0c2eea6338a2", "W": ["github.com/cli/cli/v2/pkg/cmd/auth/status"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/auth/status:TestMaskToken", "github.com/cli/cli/v2/pkg/cmd/auth/status:Test_statusRun"], "churn": 13, "nF": 6, "task": "spec_pending"}
-{"commit": "0c2eea6338a2323cfff000160b9b5a56a38d2a06", "reason": "more_than_2_packages", "n": 77}
-{"commit": "2a1409fe88d416cc85fc96fb5bc473f83ed5a054", "reason": "more_than_2_packages", "n": 19}
 {"commit": "ba0b7d98b5a8eb6c30e2b9f1cff168b301237eb7", "reason": "needs_source_and_test_change"}
 {"commit": "c6aa32727c82f2828337437125d7a895bcacae77", "reason": "needs_source_and_test_change"}
 {"commit": "c2ad3b0eb7ead66eec3a8a61239e10a765332ec7", "reason": "child_tests_do_not_compile_at_parent"}
@@ -190,7 +166,6 @@
 {"commit": "e0eac3bb90b9aa1b9f4a598b25e184940d628448", "reason": "touches_go_mod_or_vendor"}
 {"commit": "2c87c82fa2484f26c7181cbf31be406c943fdaaf", "reason": "no_failing_test_at_parent"}
 {"commit": "c28f55d51e3ccfb913abca073ed46cfbbb11fe8e", "reason": "needs_source_and_test_change"}
-{"commit": "efe3f165dd297c85fff11473dbf586f2d39fbf86", "reason": "churn_over_120", "churn": 135}
 {"commit": "ae66a1c02e08366858f3070664f493afbe0cdf18", "reason": "needs_source_and_test_change"}
 {"commit": "2f012c2da1adf9cd943edac3514d6bbf56717565", "reason": "touches_go_mod_or_vendor"}
 {"commit": "0e277a0e8615df0e1646f24ed6280d146f724ab6", "reason": "needs_source_and_test_change"}
@@ -212,10 +187,8 @@
 {"commit": "949313430cabc799bf17b72d0a04a16980729fc8", "reason": "needs_source_and_test_change"}
 {"commit": "54a0440414b7b4da14faccca8043b5aa5722126c", "reason": "touches_go_mod_or_vendor"}
 {"commit": "4007349ce6e4e8fdcbe9a39517d4b7a8fad7efa3", "reason": "needs_source_and_test_change"}
-{"commit": "d1897f89b294fc172e5b2993325ad1a0184f711d", "reason": "churn_over_120", "churn": 490}
 {"commit": "2af8c115be240a8018add33bf5c7a9ba5070a62c", "reason": "needs_source_and_test_change"}
 {"commit": "c14cbaa24a75272958161751240fd538a68e6c04", "reason": "needs_source_and_test_change"}
-{"commit": "9d95dd7344abe6388b59e25b8db54a3c7371cd6a", "reason": "more_than_2_packages", "n": 3}
 {"commit": "10c3f78c1f43bd609001ef30ff4c23ac57d74ffc", "reason": "needs_source_and_test_change"}
 {"commit": "2b970995a3c63b7a7600f242d55d15185a82ed8b", "reason": "needs_source_and_test_change"}
 {"commit": "d51b72243a01729cdc76a5b57a0866a2f1bfd2bc", "reason": "valid", "instance_id": "cli__cli-bd81afda9ab6", "W": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/attestation/verification:TestChooseVerifierWithNilGitHub"], "churn": 3, "nF": 20, "task": "spec_pending"}
@@ -246,7 +219,6 @@
 {"commit": "f843011fd2777e26650558a56124a2bfa5ffdb99", "reason": "needs_source_and_test_change"}
 {"commit": "a0c0773812ad0f3d94a95d0c0fdc3674321931f2", "reason": "touches_go_mod_or_vendor"}
 {"commit": "047f43e971ee6b5c0007aaa6f1c1a65adc4ffa92", "reason": "needs_source_and_test_change"}
-{"commit": "71fb4f5f4358c44c9328637752f0c15a47d84139", "reason": "more_than_2_packages", "n": 3}
 {"commit": "954ffc37e5931a9621868a50f05c8fb17e288f19", "reason": "child_tests_do_not_compile_at_parent"}
 {"commit": "561d9f919cbdadc22f886a3eadb260ba0b4f49c5", "reason": "valid", "instance_id": "cli__cli-015e6cf6ac39", "W": ["github.com/cli/cli/v2/internal/agents"], "f2p": ["github.com/cli/cli/v2/internal/agents:TestDetectWith"], "churn": 108, "nF": 2, "task": "spec_pending"}
 {"commit": "015e6cf6ac39ad18138f868545f02359c3c8d3ef", "reason": "touches_go_mod_or_vendor"}
@@ -254,11 +226,8 @@
 {"commit": "cd68c69dbd5ea0793cece6355f0911ca6a68ffc1", "reason": "valid", "instance_id": "cli__cli-9ad0bccb4778", "W": ["github.com/cli/cli/v2/internal/skills/registry"], "f2p": ["github.com/cli/cli/v2/internal/skills/registry:TestInstallDir"], "churn": 2, "nF": 12, "task": "issue"}
 {"commit": "9ad0bccb4778a344f918d33d4eb7924eddaed9ac", "reason": "needs_source_and_test_change"}
 {"commit": "23f83e6ae18998fcd6ac0497f57a1d9ebd95862a", "reason": "valid", "instance_id": "cli__cli-0274077b56a5", "W": ["github.com/cli/cli/v2/pkg/cmd/pr/checks"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/pr/checks:TestPrintSummary"], "churn": 2, "nF": 6, "task": "spec_pending"}
-{"commit": "0274077b56a5ef8e575358721149cd02888b2a5f", "reason": "more_than_2_packages", "n": 14}
 {"commit": "f4a29a3d22335936f577e889c0b44d4f314fc794", "reason": "needs_source_and_test_change"}
 {"commit": "70bb306bd25eb407f90eabefd98824aed62cf519", "reason": "valid", "instance_id": "cli__cli-01bcd474447b", "W": ["github.com/cli/cli/v2/pkg/cmd/skills/install"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/skills/install:TestInstallRun", "github.com/cli/cli/v2/pkg/cmd/skills/install:TestRunLocalInstall"], "churn": 67, "nF": 6, "task": "spec_pending"}
-{"commit": "01bcd474447b5034da20686c838ae4b0cf2b23f5", "reason": "churn_over_120", "churn": 162}
-{"commit": "733e35c04c4141468f8882d17b063414ffe36c57", "reason": "more_than_2_packages", "n": 4}
 {"commit": "a6012aca41ffa2d943ea9f12094a7398ce2e4b7e", "reason": "needs_source_and_test_change"}
 {"commit": "d05c71a9da4bce4d57f622aacc6a8ee24e5e158e", "reason": "needs_source_and_test_change"}
 {"commit": "f15dce85056f12cb83f902ab38a35b358676f612", "reason": "touches_go_mod_or_vendor"}
@@ -270,13 +239,379 @@
 {"commit": "412c5fae63239705c0120e76ec9508307d2709a0", "reason": "child_tests_do_not_compile_at_parent"}
 {"commit": "57b9b207d900114092f30d78020c193b40621dfa", "reason": "needs_source_and_test_change"}
 {"commit": "cac0ba166220017af1d299001b698e811077d5a6", "reason": "needs_source_and_test_change"}
-{"commit": "52e8e7427702e023d743318f748fceda4c0dcf37", "reason": "more_than_2_packages", "n": 9}
 {"commit": "da68cb8f6f597cfc3838cf40f89ecc01f4e53233", "reason": "needs_source_and_test_change"}
 {"commit": "5c9ec1c5f51d682dbf65b0c16f856d8b9303adff", "reason": "needs_source_and_test_change"}
 {"commit": "ea722406033a9965fc37a9496650dd59d126c28b", "reason": "touches_go_mod_or_vendor"}
 {"commit": "898d97296c4a710185ed2c9c95ebd75336da6427", "reason": "touches_go_mod_or_vendor"}
 {"commit": "19ac156fda27f6cb0580bb58d26a4f4a1b753b84", "reason": "needs_source_and_test_change"}
 {"commit": "db66865b94be007465f34f14cc24881c434438e6", "reason": "needs_source_and_test_change"}
-{"commit": "674e02a56b020549b45f970808ce7c20e179824a", "reason": "churn_over_120", "churn": 588}
 {"commit": "0faf4b09c16dae7a59ce0794dd98308bba6b01c9", "reason": "needs_source_and_test_change"}
 {"commit": "7ef9c54bf87fb17516e93a7ddb932efb7c660a35", "reason": "valid", "instance_id": "cli__cli-20147bf81fed", "W": ["github.com/cli/cli/v2/pkg/cmd/root"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/root:TestOfficialExtensionStubRun"], "churn": 42, "nF": 4, "task": "spec_pending"}
+{"commit": "4892335e05f14bce8a98a69a577fcf3844a42623", "reason": "not_green_at_child_testpkgs"}
+{"commit": "3532124e52751881368f661fc4ba7a57dcd2bd42", "reason": "not_green_at_child_testpkgs"}
+{"commit": "5ae580e125a8d47b8159e37a6e2e33a8f46c2e18", "reason": "write_set_not_in_module", "W": ["go.uber.org/zap/exp/zapslog"]}
+{"commit": "bb1a55dd13257cf7cbd06b4146674c67ca614dea", "reason": "needs_source_and_test_change"}
+{"commit": "5bef1076ffac9019f626d4d8b1bd91697ec53fda", "reason": "needs_source_and_test_change"}
+{"commit": "40527448ed0312db8f638ca18fca68c5b322b290", "reason": "needs_source_and_test_change"}
+{"commit": "70c933283ade22240aa0bff949f2ea9da32b1a78", "reason": "needs_source_and_test_change"}
+{"commit": "f69e56fdc12c41286a184cde35e8b14ac3cfccce", "reason": "needs_source_and_test_change"}
+{"commit": "bbd4ecbd8760678fdbac94c93d9aca8069c83b2f", "reason": "needs_source_and_test_change"}
+{"commit": "f09e79e2f5bd99ea316fc29621da055d590364d2", "reason": "write_set_not_in_module", "W": ["go.uber.org/zap/exp/zapslog", "go.uber.org/zap/zapcore"]}
+{"commit": "f029ceca262ab44a551e9a9fe591a8e1e0159c09", "reason": "touches_go_mod_or_vendor"}
+{"commit": "df20da220c3197d719e2d8512ab016dcbefceec9", "reason": "needs_source_and_test_change"}
+{"commit": "018b91390e74732e9e40f8d356887b8d06461886", "reason": "not_green_at_child_testpkgs"}
+{"commit": "7c7456353e52d1f6056f22538b1eb05b02708e57", "reason": "valid", "instance_id": "caddyserver__caddy-7910dd94eea2", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp", "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy:TestRequestOnlyExpressionDoesNotRetryResponses"], "churn": 78, "nF": 28, "task": "issue"}
+{"commit": "c8591a1e46e4d0e39b6ca20633c44cd42f874f71", "reason": "needs_source_and_test_change"}
+{"commit": "53aae44633bae913dfede21a02cdcfd99f4dd5b2", "reason": "needs_source_and_test_change"}
+{"commit": "846b1d74e8c36f0fd15513c26ddc0951c5fd24d7", "reason": "touches_go_mod_or_vendor"}
+{"commit": "16441d2f97cde72a05d4add5177d42d3c409e847", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c9f6e4d4abc3645cb46824c870e4e1b4c098b765", "reason": "touches_go_mod_or_vendor"}
+{"commit": "5379c10923388e3be680f2e6a42ec2fb2c91592a", "reason": "needs_source_and_test_change"}
+{"commit": "46123a609bd1272f10acfedbf85a96515c5a08d8", "reason": "needs_source_and_test_change"}
+{"commit": "8c88da3723b007ca2ea4593f7e7483aa9b140fc6", "reason": "needs_source_and_test_change"}
+{"commit": "ec69d0e64931715e490ae411cba2b305636d20e0", "reason": "needs_source_and_test_change"}
+{"commit": "60c84b18ca0ee3e055dc8d021132b532cce49880", "reason": "needs_source_and_test_change"}
+{"commit": "3fff6fb5c267dacb26280c78dbe8c344054249c8", "reason": "needs_source_and_test_change"}
+{"commit": "f6606f1fd5ec705983a72f0b3a0b6b1baf3727b8", "reason": "needs_source_and_test_change"}
+{"commit": "c7f9999309a2e7a12d24c03fe639008ddc4565f8", "reason": "needs_source_and_test_change"}
+{"commit": "fdbba5a6614d00eb631c1ad6b424b42f6f7195f8", "reason": "needs_source_and_test_change"}
+{"commit": "83ab7999a89de94225ec008d4b1911874ccf58ca", "reason": "needs_source_and_test_change"}
+{"commit": "8bac4de7a173977489ddd82d6e782a577c140f88", "reason": "needs_source_and_test_change"}
+{"commit": "079c76f0104de25c3e8f5b7d77878291bd8c8c2c", "reason": "needs_source_and_test_change"}
+{"commit": "90861931ad376b188878f9079e7c9900dcfcdaca", "reason": "needs_source_and_test_change"}
+{"commit": "1567bdef12256fd260d641546755150917b84110", "reason": "touches_go_mod_or_vendor"}
+{"commit": "9e4059cfca84a3914544476093b86bc06d6028e8", "reason": "touches_go_mod_or_vendor"}
+{"commit": "8e3bbe67865e9d60cff45fc154b23ed411d5db0c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "753c5fc18d1fe966687b057161ba546e0f818f06", "reason": "touches_go_mod_or_vendor"}
+{"commit": "facde8aa409e27a581ce76b08352c95354788923", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a74b753908993473d283169722e10d72c8f4d178", "reason": "touches_go_mod_or_vendor"}
+{"commit": "d588d5c8f0a48a44851a218bbfc3d6edc0e4be17", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "7910dd94eea2750896f187301f4d99a21a522d24", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "093fd4b7ec3d299c7c9bcfbdad30827de783d36c", "reason": "valid", "instance_id": "caddyserver__caddy-c8591a1e46e4", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/encode"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/encode:TestEncodeHeadResponseContentLength", "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode:TestEncodeHeaderOnlyResponseHasNoBody"], "churn": 15, "nF": 10, "task": "issue"}
+{"commit": "519be12306c5bfb325bd6bf9591ddbd4cdccff3e", "reason": "valid", "instance_id": "caddyserver__caddy-1b3838c1fdc0", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy:TestInformationalResponseKeepsHandlerHeaders"], "churn": 5, "nF": 7, "task": "issue"}
+{"commit": "1b3838c1fdc052a27effd424ea62124ae0dd09b5", "reason": "touches_go_mod_or_vendor"}
+{"commit": "9da3b87b07706956e8dc5fd5cb259b99ec940f51", "reason": "needs_source_and_test_change"}
+{"commit": "519a9791071eff1d2fc93c5b46c638cc3c2362c5", "reason": "needs_source_and_test_change"}
+{"commit": "ca1c625227b7d9f58af12e278feb561c1c1fd195", "reason": "touches_go_mod_or_vendor"}
+{"commit": "5127c4abf921857fde4ae51f566c86028c8c2911", "reason": "needs_source_and_test_change"}
+{"commit": "8e917cf0bdf5cc9133336c7107ed2b57d485c65e", "reason": "needs_source_and_test_change"}
+{"commit": "818dd21a4fb1a3f52297537569bfa94eaae18cfb", "reason": "needs_source_and_test_change"}
+{"commit": "6adedec6b48ae9ff0ffbc37bd675ccebd02c728f", "reason": "needs_source_and_test_change"}
+{"commit": "9c86adb78384d39471fb8e7ad475e2de11fb0033", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ab17711e313ad0c869ac45a481d54f8d760685ad", "reason": "touches_go_mod_or_vendor"}
+{"commit": "444c1cb2215741c7c637c4d966b14e5ac252a9c2", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c0acea6d7592ca8d2620e7fd57780e2173731121", "reason": "needs_source_and_test_change"}
+{"commit": "7710556df10b20a9f8967ca2d8096475b701c1e1", "reason": "touches_go_mod_or_vendor"}
+{"commit": "96188e33a34735bc7493bead65eebc3127472ef9", "reason": "needs_source_and_test_change"}
+{"commit": "f35acc2421873b1dd1348b2a629caa40cffbd975", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ca33201335f0b7dc8a7ffc24cdf9a511d2a6fccb", "reason": "needs_source_and_test_change"}
+{"commit": "ba802d42b7294c98b62c16d1157ea3e80820c019", "reason": "needs_source_and_test_change"}
+{"commit": "46ea3656299aecc6d0f1d179e9dbcdf30cf89014", "reason": "needs_source_and_test_change"}
+{"commit": "fb5e9df35749258dd4dfbf39986c59f7fba04626", "reason": "needs_source_and_test_change"}
+{"commit": "28d802df8c5ba169bd4bc2bfdc82bfc4ec931c80", "reason": "needs_source_and_test_change"}
+{"commit": "0946f45de6aef3cd0d90c16a8f94fa5a422bdf31", "reason": "needs_source_and_test_change"}
+{"commit": "5895e6d0593a7afacdb307d1a9f8e7ef64d8a747", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e982b6e7b5d26f77814e8350fcdfa78032e3e1fe", "reason": "needs_source_and_test_change"}
+{"commit": "479cf1fb3df4d925507ab59b6cb4c97a919e77d1", "reason": "needs_source_and_test_change"}
+{"commit": "dbaa8cf124e6a9818a830f0a63d90ff833a6ce0a", "reason": "needs_source_and_test_change"}
+{"commit": "a80be1478a4c537f8396e0db2b05120aa78f11e0", "reason": "touches_go_mod_or_vendor"}
+{"commit": "7bfa32a90af7a21224db5056b5976ac70ba78f9e", "reason": "touches_go_mod_or_vendor"}
+{"commit": "63b583c4ea357568f3f1cc661cb64f73e5b5fed1", "reason": "touches_go_mod_or_vendor"}
+{"commit": "85bf4430b8bd3f04aa2989baab07c11c1a38f979", "reason": "needs_source_and_test_change"}
+{"commit": "e2b43a5f1fe5aa1d402653712c0d0a2ce9a45e42", "reason": "touches_go_mod_or_vendor"}
+{"commit": "607aba3809b5fbc785b204f2107bcaeeb939e191", "reason": "needs_source_and_test_change"}
+{"commit": "221ebc4503398fa8c87d95a52d43d0d93a6aeef4", "reason": "valid", "instance_id": "caddyserver__caddy-6727b2f3a92b", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy", "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi:TestRoundTripDialError"], "churn": 7, "nF": 6, "task": "issue"}
+{"commit": "8baffc40273bb3aa4f6c7826d582ebe576f4c90c", "reason": "valid", "instance_id": "restic__restic-d4088aa09ba7", "W": ["github.com/restic/restic/internal/repository"], "f2p": ["github.com/restic/restic/internal/repository:TestOpenKeyShortData"], "churn": 8, "nF": 9, "task": "spec_pending"}
+{"commit": "d4088aa09ba78d3c93d81505bfab9cacf13f5168", "reason": "needs_source_and_test_change"}
+{"commit": "35dcda418c75b93667d302ae6df89023da768a16", "reason": "needs_source_and_test_change"}
+{"commit": "9e007fa3cc937b7e4642bb654476e7e01f868b8a", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "a4d85ce299b297742582930105d901e4a41a1fd2", "reason": "touches_go_mod_or_vendor"}
+{"commit": "9b0ee376975fb13cf6bdb3530796b11214d1a6ae", "reason": "touches_go_mod_or_vendor"}
+{"commit": "987caba4089fc4345bb201e62c5a2ba96b168049", "reason": "touches_go_mod_or_vendor"}
+{"commit": "bfca18c1b00a6d1e2a9632f7aab2820fd7697b2d", "reason": "needs_source_and_test_change"}
+{"commit": "dba493cb6c08c9e35588d1998bf80e4e33423157", "reason": "touches_go_mod_or_vendor"}
+{"commit": "512d0577d6814af4afbd4d4e2e41b60e77cea6b6", "reason": "touches_go_mod_or_vendor"}
+{"commit": "d8ef26afa4b212710f3325e9ac1a4c19051b6c3b", "reason": "needs_source_and_test_change"}
+{"commit": "cc93a94e15f263377c3c4048547ae952ab95fc9f", "reason": "needs_source_and_test_change"}
+{"commit": "6727b2f3a92bfc20f897ea9a24e88a4013274d55", "reason": "valid", "instance_id": "caddyserver__caddy-d65583e6d2d0", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/templates"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/templates:TestServeHTTPErrorDeletesFileHeaders"], "churn": 12, "nF": 7, "task": "issue"}
+{"commit": "d65583e6d2d02af71490b727ef88785458661a03", "reason": "valid", "instance_id": "caddyserver__caddy-9c44b6685e24", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver:TestBrowseHidesPathQualifiedEntries", "github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver:TestHiddenPrecompressedSidecar"], "churn": 17, "nF": 6, "task": "spec_pending"}
+{"commit": "9c44b6685e24ae6897b81aa3f86d6032ad7e0a08", "reason": "valid", "instance_id": "caddyserver__caddy-4f45ded75556", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp:TestIdleTimeoutWriter_HandlerDeadline"], "churn": 61, "nF": 29, "task": "spec_pending"}
+{"commit": "75de8b54e644885e44e8ec5e2538adc7cdfdcc3e", "reason": "not_green_at_child_testpkgs"}
+{"commit": "e4056e70a863d2f76e6878ef86b42a478cf0010a", "reason": "touches_go_mod_or_vendor"}
+{"commit": "8ae69fae1e16ac8037762a6e017ed842048f6e51", "reason": "valid", "instance_id": "caddyserver__caddy-036895ed4bad", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy:TestWeightedRoundRobinPolicyFewerWeightsThanUpstreams"], "churn": 2, "nF": 7, "task": "issue"}
+{"commit": "0688a8cd3c229a9444832d7eca1f5686a4ee9e46", "reason": "valid", "instance_id": "gohugoio__hugo-c9f6e4d4abc3", "W": ["github.com/gohugoio/hugo/internal/js/esbuild"], "f2p": ["github.com/gohugoio/hugo/internal/js/esbuild:TestDecodeExternalOptions", "github.com/gohugoio/hugo/internal/js/esbuild:TestToBuildOptions", "github.com/gohugoio/hugo/resources/resource_transformers/js:TestBuildCharset"], "churn": 17, "nF": 74, "task": "issue"}
+{"commit": "281e1a464570253a7c23a54bb583ec47fb59f0d5", "reason": "touches_go_mod_or_vendor"}
+{"commit": "bd2ed4f0028c5936ea7ab724bca4ab87d058241a", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e1480ab0c3eaa2c9505d6c771ea3e89ca91def14", "reason": "touches_go_mod_or_vendor"}
+{"commit": "4aa532f4b21cddec2689a9fecc64a8909e54a595", "reason": "touches_go_mod_or_vendor"}
+{"commit": "122cc681ca6660944489dc64f9e926dfc20461cc", "reason": "touches_go_mod_or_vendor"}
+{"commit": "bb193df40e5ab0ff7105d5e89c6f0c08e466a870", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ade6f104721c14b3849635243cb22c350b3a8138", "reason": "touches_go_mod_or_vendor"}
+{"commit": "8bb607d797e0594fc90bd26bf7e77979624bc8c3", "reason": "touches_go_mod_or_vendor"}
+{"commit": "8f023e069665f0374ffbea377130840672991eb8", "reason": "touches_go_mod_or_vendor"}
+{"commit": "23d564ba80185f1130a0cae3e339a08bfe18c282", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6a4a138631363326f09a91823db60630c38cb41e", "reason": "needs_source_and_test_change"}
+{"commit": "036895ed4bad6b1ec395ad09f7164eedbbb844e3", "reason": "valid", "instance_id": "caddyserver__caddy-c1acb2fcbac9", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy:TestLeastRequestsAllBusy"], "churn": 6, "nF": 7, "task": "issue"}
+{"commit": "c1acb2fcbac9c659f601ad3a920653ac959ff952", "reason": "no_failing_test_at_parent"}
+{"commit": "aa94be2dbdd316758dafbba592cce8da892e3f78", "reason": "not_green_at_child_testpkgs"}
+{"commit": "981adc47ac024496dff787c7890dcbb63b35fd9b", "reason": "needs_source_and_test_change"}
+{"commit": "7134577c5699363288f563d51d5ad51b91354394", "reason": "needs_source_and_test_change"}
+{"commit": "55e335ec6ced73fc11d6835b79e72acbc7c2b9ef", "reason": "write_set_not_in_module", "W": ["github.com/restic/restic/internal/fuse"]}
+{"commit": "a8e6e8bc7d432dccb6b359633169ba7b55045705", "reason": "valid", "instance_id": "golangci__golangci-lint-5e7d0c42ef20", "W": ["github.com/golangci/golangci-lint/v2/pkg/goutil"], "f2p": ["github.com/golangci/golangci-lint/v2/pkg/goutil:TestEnv_Discover"], "churn": 4, "nF": 145, "task": "issue"}
+{"commit": "5e7d0c42ef205fc7a738753a8126511290b42d66", "reason": "needs_source_and_test_change"}
+{"commit": "8ea3d53535f7ebb30b630f66acf81e53d0a57a5d", "reason": "touches_go_mod_or_vendor"}
+{"commit": "d9df2fa53265776945734b5c5902489edc386095", "reason": "touches_go_mod_or_vendor"}
+{"commit": "415417736e30f68e9386fb808630ed1358959fb5", "reason": "touches_go_mod_or_vendor"}
+{"commit": "82b490c788df7f36c0a1db8b2c8620ccd03d4702", "reason": "needs_source_and_test_change"}
+{"commit": "2e624541515406487b5c5610c6a182857c6b7545", "reason": "touches_go_mod_or_vendor"}
+{"commit": "1c35211236f8d1c54dfa52591e9c269628cc6c0d", "reason": "touches_go_mod_or_vendor"}
+{"commit": "efac294f10051803f88873bd278f5675e781b8f5", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6672b6f6d26d6fe4c1494ba418027d01396f91a1", "reason": "touches_go_mod_or_vendor"}
+{"commit": "cb307f16f1046ce351687b3aee5edd11fdcd7f57", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e0f80d7280b6566bc9c43dee993aa69b75f9b993", "reason": "needs_source_and_test_change"}
+{"commit": "0e8087fdcf30179ea1233396310f1037a10f390b", "reason": "needs_source_and_test_change"}
+{"commit": "909da3c983735d9b4e1f8360492846cc46d2f95a", "reason": "needs_source_and_test_change"}
+{"commit": "a4a27971060e63fe3b45e21bf3c40cc8e3d27eea", "reason": "needs_source_and_test_change"}
+{"commit": "fa204ec4ba8c00163ee34c7e6fae7ca63c503d29", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e10a4706a3756b6a54435703a273382bc522afb9", "reason": "touches_go_mod_or_vendor"}
+{"commit": "8920f7a763476de3e0dc3d8e548641f1607aba91", "reason": "needs_source_and_test_change"}
+{"commit": "032d962e0399070bc72d32925e778deaaf2213b9", "reason": "needs_source_and_test_change"}
+{"commit": "1c836b620cd9850b131f69b9d47f877917772aa4", "reason": "needs_source_and_test_change"}
+{"commit": "b47383ea66604f9e7650388b981122957a1b1901", "reason": "needs_source_and_test_change"}
+{"commit": "23966b2a181a8810ad211ad1a1a0d60b504f92ef", "reason": "needs_source_and_test_change"}
+{"commit": "114493f9b3e7257d29e4130f2b4a4aadefbb6845", "reason": "needs_source_and_test_change"}
+{"commit": "69607019417584ddffe30647f9168c092745d2c3", "reason": "needs_source_and_test_change"}
+{"commit": "67c0febb6216ea6915dc5e3758f94a4f6949528d", "reason": "needs_source_and_test_change"}
+{"commit": "260cab13e4f40a7966c26b03dd4a8cc0123ae314", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6f2bcb088e7cbe6458fd034bdabe1b8308f4ecb3", "reason": "touches_go_mod_or_vendor"}
+{"commit": "665f99bcdf6738530fe942fe5721cdd6fbb8313f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "4e2a77e4453edb7d760a322651fc77787f320a0e", "reason": "touches_go_mod_or_vendor"}
+{"commit": "b02fd39dc083f8063786565314ce43f7f8d1262a", "reason": "touches_go_mod_or_vendor"}
+{"commit": "7c6c6c0df619b690e2cd3c9879ec595c7df27711", "reason": "touches_go_mod_or_vendor"}
+{"commit": "98686bac279b986b57d2b7c1eabbbea2f22cd563", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f0a15fd643bf2854e48e1130ac9cacdd34856019", "reason": "touches_go_mod_or_vendor"}
+{"commit": "251df821e1c6af0e251d9bdd3107869bf3438315", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a1002350762bd9faf272101a4eb32aabfcba8ca2", "reason": "needs_source_and_test_change"}
+{"commit": "e298dfe97177d35aa7c21fe3544f45127646647f", "reason": "needs_source_and_test_change"}
+{"commit": "30600b6801d6a172739e69b746ec602a55a6e396", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f5e8fcd02d41b84f988801843900fbc9322cfdd1", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ca7f7273cc4b6f3c344add1c467cab53e8bcb817", "reason": "needs_source_and_test_change"}
+{"commit": "5573d88ff78251eba05ca31a1d5f530f3b02eb89", "reason": "touches_go_mod_or_vendor"}
+{"commit": "219f1ff7574bcaac2c3c8ff65c997efd0b27061c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "52f8688434bdd4c8a43e3905936900f88d1fb65c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "afd1f8a18f1312d28c3fbf80e7db3bad7dcc6e3b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f184a9c82cad95ab0f92c3b5907f385d2bce4912", "reason": "touches_go_mod_or_vendor"}
+{"commit": "bd8288ff1f097b058191244541e264a9768617e0", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e2891447d93a6be4afb168e7ffbfb752093250e4", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ccf56c68037681a023c1732694f8e271c54a9923", "reason": "needs_source_and_test_change"}
+{"commit": "94ebab9b2bb058bbb77fe9aa1442f4b16d2dcf35", "reason": "needs_source_and_test_change"}
+{"commit": "238321a824bd20040b6c05b6b852ca8ac1e89b04", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6ded9bc0794a1fae359c122568bec3571775916c", "reason": "needs_source_and_test_change"}
+{"commit": "c0df92e1ae77dcba62f5138200d815fc74404ab1", "reason": "needs_source_and_test_change"}
+{"commit": "798b644c961ee7b61da7ed5f0e1875f48be8753b", "reason": "needs_source_and_test_change"}
+{"commit": "a391b19cb1c8a5e45eeebf4c9b2ee3bd80b940bd", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ed7a235d2d771152056fdc142a9855567c5796a9", "reason": "needs_source_and_test_change"}
+{"commit": "3bdde57d654154a9680c02b71abcb21cacf51794", "reason": "needs_source_and_test_change"}
+{"commit": "793eccdc17dd5832cb23a0997273966fc4185c4f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "dfd21f102e8031c6d4d1c8ec1d3e75c29197855c", "reason": "needs_source_and_test_change"}
+{"commit": "5a80f044beb4eea52b1f81b823b69d1eecf25733", "reason": "touches_go_mod_or_vendor"}
+{"commit": "02551960c9578d585894a842aba41c60adfab2f8", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ee27419f6b561c4f216497bbcf9fc07871372217", "reason": "touches_go_mod_or_vendor"}
+{"commit": "48de4fb1722c665542eb9681cc24191dd7c61a13", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c265ef1e96e7451b83a56fe1f5b4a86876c182a7", "reason": "touches_go_mod_or_vendor"}
+{"commit": "7b04fee9bcddd7028f76864044d4d83288ca9500", "reason": "touches_go_mod_or_vendor"}
+{"commit": "dcba16f47fe6c74e88c511298d93cb47c4cd97f9", "reason": "touches_go_mod_or_vendor"}
+{"commit": "622ca0728e72a5bf1040a9213c9bb1f2a99987b8", "reason": "needs_source_and_test_change"}
+{"commit": "264d0e9ffd406066053a6738f315f3c1700d4d66", "reason": "needs_source_and_test_change"}
+{"commit": "27774aaf853a4fd21f1dd5e69439459dc1b26e68", "reason": "needs_source_and_test_change"}
+{"commit": "c2bc9bf4762d8c7b267ba852d5fca450445fe5a5", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f34e0bb6c3f4a48513018de81894f5bca1e186c1", "reason": "needs_source_and_test_change"}
+{"commit": "9af7a1866c0b3b4f43d6d7cb0fba860c4cf615e8", "reason": "needs_source_and_test_change"}
+{"commit": "03da382d2ffa23d706253c9a6061a3ad84482b7a", "reason": "touches_go_mod_or_vendor"}
+{"commit": "1b907273167eec8b3d84cae636b7798ced4433d5", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6fb5dee3889d231640dce56e5e71c522f13aef7e", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f84535e9743220e244192f692b8c561ddf3a1c90", "reason": "needs_source_and_test_change"}
+{"commit": "2d351a1f3697c25b1e8e0605d79c62fa42f2dfe5", "reason": "needs_source_and_test_change"}
+{"commit": "6d2288e072e6f9c9bca28180cae9ce58a049c912", "reason": "needs_source_and_test_change"}
+{"commit": "0924cfd9899de3a6f89eb2eeeecc01ed471195b4", "reason": "touches_go_mod_or_vendor"}
+{"commit": "eac982716187a41e859a6e24bcac18666dd4e1e2", "reason": "needs_source_and_test_change"}
+{"commit": "e2a4f0a347ef99790f5ecbcac33f911a4bab6797", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c3ab374844721687ee00313e847d6e8a7d4cffa2", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e602199aba3a75d917b300815b0ba7f7dbd6360b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "0a5ab003d104e298efa1841b71a605205a730095", "reason": "needs_source_and_test_change"}
+{"commit": "62afbbeaf6d09592bfd9d93ec3795b7eae5d83af", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c2c181de20259a79c12e0db27ff80dec70bf71be", "reason": "needs_source_and_test_change"}
+{"commit": "652e15d13030c5e7f6c966e777d1c0c8ec517608", "reason": "needs_source_and_test_change"}
+{"commit": "f838df1edb6265abbfa24f5cbb7381b21c735642", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a95c8ac5288b82d04559c0929a24dae6af34c9ac", "reason": "touches_go_mod_or_vendor"}
+{"commit": "42a05302e2bbb966fc3ed0636001dbe4fc2b0c58", "reason": "touches_go_mod_or_vendor"}
+{"commit": "1f273ea1c347aa6a2c2fafcdeed1d239206623aa", "reason": "touches_go_mod_or_vendor"}
+{"commit": "b1ae2185cd125334fedf3a68538c83671752b6f1", "reason": "touches_go_mod_or_vendor"}
+{"commit": "0da5bde5476d1743a399a11e966253b3de3681dd", "reason": "needs_source_and_test_change"}
+{"commit": "6e8c051a55d8c79c25731ea1e76d88eb7273ad0e", "reason": "touches_go_mod_or_vendor"}
+{"commit": "5da58b25c583d30eb5a4665a96d634dc4b8dcfbd", "reason": "touches_go_mod_or_vendor"}
+{"commit": "fcfa8adf59848f0056f64cc1712280101b608fcf", "reason": "needs_source_and_test_change"}
+{"commit": "46090328af2413063f1512527da43871ccbf25a8", "reason": "touches_go_mod_or_vendor"}
+{"commit": "d879220033c1ecd155426c69d013d307fdb1e968", "reason": "needs_source_and_test_change"}
+{"commit": "4de5b3aa610b08133e3989d88d340972c90f401c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "10b4803b33a14dd08113d7de04376b7fd94fcead", "reason": "touches_go_mod_or_vendor"}
+{"commit": "d0f29a2177c7c0d2bd0a73714ee7f9223ff83548", "reason": "needs_source_and_test_change"}
+{"commit": "6217aab418b3e1706de6194b25ed2185227de6d3", "reason": "touches_go_mod_or_vendor"}
+{"commit": "8f9326aa9a53d215920942c1c085a8543203dd28", "reason": "touches_go_mod_or_vendor"}
+{"commit": "5cc065bd977ffe01f00ae480b88436b345baa593", "reason": "needs_source_and_test_change"}
+{"commit": "2b2fbafa6bf52d3852d82e7daf6061f0a2ed4c4c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "9626c9a723901674a89721762f21c95944825afd", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6c3b771b7b465a54a958fd092d8237e85edb7f5e", "reason": "needs_source_and_test_change"}
+{"commit": "6c8ca6a875e0219adde0fda12505b24d6e31892e", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6d1fc3b4d5fe7b06a2bf59ec79ce00d4c3590fd7", "reason": "touches_go_mod_or_vendor"}
+{"commit": "ad01b866eac551d0f176ec0aad9de34fbc417676", "reason": "touches_go_mod_or_vendor"}
+{"commit": "2cce7356513cf1394bad5158205fe62a12eb0b41", "reason": "needs_source_and_test_change"}
+{"commit": "700d60327d77d56ba81455acb989a698f1819640", "reason": "not_green_at_child_testpkgs"}
+{"commit": "62cf8150efceb60988f86b8c36033d12d2410d36", "reason": "no_failing_test_at_parent"}
+{"commit": "e18ac9ef38ff1b420704eea64ed40f902b3322b2", "reason": "touches_go_mod_or_vendor"}
+{"commit": "57667f0191553d1e8ad2f4bc7ccca703d945d17b", "reason": "needs_source_and_test_change"}
+{"commit": "681c654da71d381f59b97b98f699bdffbf3070b7", "reason": "needs_source_and_test_change"}
+{"commit": "eed6cffceff3cfb9820fc376ef24a0d159efa9cf", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c7e3d327f96201fa04c1dc2cdb1e887d5525e397", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6b2ddf9224768e2097b028b7ac7f6efb97a5f9f6", "reason": "touches_go_mod_or_vendor"}
+{"commit": "96eadf18f6a694ef4650bd442f221c47c59fb857", "reason": "no_failing_test_at_parent"}
+{"commit": "88e4578e9018557cf0b63accf5d0af9b72c3ec6a", "reason": "needs_source_and_test_change"}
+{"commit": "7b8a203b6fa6509f7c034e76dd99039e9f15ea3d", "reason": "needs_source_and_test_change"}
+{"commit": "b9b03cdb320eecc9b8763dedb286663720d1b070", "reason": "needs_source_and_test_change"}
+{"commit": "d5de4e14c8f811cc6294105b99d022a543687b63", "reason": "needs_source_and_test_change"}
+{"commit": "a67e605068e07504cbb64ae398a7c6a1aec1f3b0", "reason": "needs_source_and_test_change"}
+{"commit": "10c91265b545cd974ad5be1cc292d25857e2bce6", "reason": "touches_go_mod_or_vendor"}
+{"commit": "62677e72b8284085512fe4257fa154dd13d896e1", "reason": "touches_go_mod_or_vendor"}
+{"commit": "1ea35bf1348c5cfe16b7f152c19f8359494df78f", "reason": "touches_go_mod_or_vendor"}
+{"commit": "d8547ac14f75e272cf2d39133330cbc30c50eac9", "reason": "needs_source_and_test_change"}
+{"commit": "9b5e24cba6e9964465bc892ab9377fae5a60cb97", "reason": "needs_source_and_test_change"}
+{"commit": "d3c47e14f944bfe14d0b013a613cb39037748aeb", "reason": "touches_go_mod_or_vendor"}
+{"commit": "39e88c8639e2aee449eb82dff125befdc8c7ab60", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e1fb9a0e2c9dd6bc2f1c9da3d67c4a103b91ab5e", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c508ecf3b16f8c781b79a5d2457f45abc489075b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "12b97aa39b75fea29f6e4f5adc0f133a5e865564", "reason": "needs_source_and_test_change"}
+{"commit": "450b509b583e69a1c4209c568465f149079a951f", "reason": "needs_source_and_test_change"}
+{"commit": "8e4331e51c969fd2fb258314f4c10e96a6111a0e", "reason": "needs_source_and_test_change"}
+{"commit": "87b977018c69c97519b000085daa8ce693e8ed22", "reason": "touches_go_mod_or_vendor"}
+{"commit": "396d55329848fd8db196ffef1a5324854be64d9a", "reason": "touches_go_mod_or_vendor"}
+{"commit": "e60c9371ca6ba0b722b4f883c0d1b42c2ab012bc", "reason": "touches_go_mod_or_vendor"}
+{"commit": "14ed862c72f71d6cb705a82c280d7aa0c13a4584", "reason": "touches_go_mod_or_vendor"}
+{"commit": "a9b484189fa255f772b661b0e8f2e93a02252ae6", "reason": "needs_source_and_test_change"}
+{"commit": "6b274d25c1e38f136ab75ac9b9e4785fc22f9421", "reason": "touches_go_mod_or_vendor"}
+{"commit": "6d5618a95711065986cc79041076ed7c6fd7665b", "reason": "touches_go_mod_or_vendor"}
+{"commit": "4645dbe52e175aec2aa9e70b9f793facc3fbb7a7", "reason": "touches_go_mod_or_vendor"}
+{"commit": "17b0746d8802b6b29df5b60e657a48ab5936cd87", "reason": "touches_go_mod_or_vendor"}
+{"commit": "9e89eac4f50c1062ea8c772eb89f4fd2cf1bba39", "reason": "needs_source_and_test_change"}
+{"commit": "2c56c9c84fbfa69db9c3fa70b0cc763d6d1a1746", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c4b085b658fa2e09eda5e1b28686cc6d97fbf1da", "reason": "touches_go_mod_or_vendor"}
+{"commit": "0f08d30088922a298d1e8a72f70f6daf6c539830", "reason": "touches_go_mod_or_vendor"}
+{"commit": "7f83be056cb248d9156e76f3d32148a16daae169", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c1d8288e1543ca40bc2638e755fd7e8d26bcc2fe", "reason": "needs_source_and_test_change"}
+{"commit": "9c5ec8122806403581f78b7dc880e9d2e43b575e", "reason": "needs_source_and_test_change"}
+{"commit": "665ac6a69bd812925c2271c9b92da89108073076", "reason": "needs_source_and_test_change"}
+{"commit": "8baaf6d0eacf5b1a7c10c200f6766662cff3964c", "reason": "touches_go_mod_or_vendor"}
+{"commit": "78b2ed90d31080bcf621d4054ff219487dafa241", "reason": "needs_source_and_test_change"}
+{"commit": "9ca1399740622743ffb5149145a2a0f2ff86dd8d", "reason": "needs_source_and_test_change"}
+{"commit": "b5ad4ec1e04554e03462cefb52d3b039e4d0cba8", "reason": "needs_source_and_test_change"}
+{"commit": "1b8ff177ff27d7840bd78d6d817b6e68d8a742e7", "reason": "touches_go_mod_or_vendor"}
+{"commit": "c65c2483365e2ef5102d6e3c0c73ef7bbb516d78", "reason": "valid", "instance_id": "caddyserver__caddy-30d3bd2a8959", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp:TestIdleTimeoutReaderPausedHandlerHTTP2"], "churn": 6, "nF": 29, "task": "spec_pending"}
+{"commit": "30d3bd2a8959d4d00ca72446f23a59a09f02a83b", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "8507b63cf03a7a0d90b2084f3aafbcc1d8e60a7b", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "4f45ded75556f6645075ddb8724a6d79cc1e5870", "reason": "churn_over_120", "churn": 1723}
+{"commit": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd", "reason": "more_than_2_packages", "n": 7}
+{"commit": "b6770c8bc54c72e74e785c307850446b8e10be9d", "reason": "more_than_2_packages", "n": 5}
+{"commit": "8eba304d7da2417869797f0a61e416a769b281b3", "reason": "more_than_2_packages", "n": 9}
+{"commit": "ae1ba32887ab1233824f159774cda4b36f249ac5", "reason": "more_than_2_packages", "n": 21}
+{"commit": "965c3dd723ac6677279220f71b4b9c3b1a907a01", "reason": "more_than_2_packages", "n": 7}
+{"commit": "45437bc7eeeb3359bbfddd1742f79de7652fd3e2", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "6e82bc505d81f8f294491b5ff448d69f79abc44f", "reason": "more_than_2_packages", "n": 10}
+{"commit": "40b742f76d68e6b1f472942a6368db4b5d765641", "reason": "more_than_2_packages", "n": 7}
+{"commit": "2ea46117e59a9fbcb31f673565eb2b5207e08aae", "reason": "more_than_2_packages", "n": 101}
+{"commit": "b9f7a1c24830d6be8daad27d31dc64603092c9db", "reason": "valid", "instance_id": "caddyserver__caddy-8ad83ebd4316", "W": ["github.com/caddyserver/caddy/v2"], "f2p": ["github.com/caddyserver/caddy/v2:TestReplacerTimeNowRFC3339"], "churn": 2, "nF": 43, "task": "spec_pending"}
+{"commit": "7ca1a75182e3593b5df9a19edd638f70a6c22fab", "reason": "valid", "instance_id": "cli__cli-606cda4a9b1a", "W": ["github.com/cli/cli/v2/pkg/cmd/discussion/view", "github.com/cli/cli/v2/pkg/cmd/issue/view", "github.com/cli/cli/v2/pkg/cmd/pr/view"], "f2p": ["github.com/cli/cli/v2/pkg/cmd/discussion/view:TestNewCmdView", "github.com/cli/cli/v2/pkg/cmd/issue/view:TestNewCmdView", "github.com/cli/cli/v2/pkg/cmd/pr/view:Test_NewCmdView"], "churn": 15, "nF": 8, "task": "issue"}
+{"commit": "a2fd23c6a92172c18e2ba6264f39619f3dda68c7", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "cc831722b71c3fc1603e6473bd1d9da27c0605e5", "reason": "more_than_2_packages", "n": 16}
+{"commit": "62e3e719a483d9e2b9be2b7dba7e2bb4a7f91c8c", "reason": "churn_over_120", "churn": 312}
+{"commit": "8ad83ebd4316d47fa40d11181eef148f018ec159", "reason": "valid", "instance_id": "caddyserver__caddy-1706dc8f722c", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy:TestUpgradeDetachmentRequiresWriterSupport"], "churn": 25, "nF": 7, "task": "spec_pending"}
+{"commit": "d9cba2af43d85420a9577870c132df82237e4a22", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "a7059d5dab3c680189b266d9c15dd8a5624e8237", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "608dff7b80386a10962397852ff138f8ba567b08", "reason": "more_than_2_packages", "n": 6}
+{"commit": "c6f4067da80ffa6195a1c99694a59e405a193908", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "fdad95fb54b228d382d711f72c7fb1dd25a85172", "reason": "no_failing_test_at_parent"}
+{"commit": "8f7afbdbdbd6c648009be64f94d1167857253cf7", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "1706dc8f722c0542433a7b280f756ff8dd62315e", "reason": "valid", "instance_id": "caddyserver__caddy-f7eeb1d65c80", "W": ["github.com/caddyserver/caddy/v2/modules/caddytls"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddytls:TestParseCaddyfileNestedMatcherSet"], "churn": 17, "nF": 33, "task": "spec_pending"}
+{"commit": "a3ed50ad5fafddd0e15ab8838c2136c8d25572df", "reason": "no_failing_test_at_parent"}
+{"commit": "8d81d0341005775e25375819cfa0f67529c4c66c", "reason": "no_failing_test_at_parent"}
+{"commit": "ddc7d465379c7d857faf2ac0b9cb43cea5f48d97", "reason": "no_failing_test_at_parent"}
+{"commit": "0c2eea6338a2323cfff000160b9b5a56a38d2a06", "reason": "more_than_2_packages", "n": 77}
+{"commit": "2a1409fe88d416cc85fc96fb5bc473f83ed5a054", "reason": "more_than_2_packages", "n": 19}
+{"commit": "efe3f165dd297c85fff11473dbf586f2d39fbf86", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "d1897f89b294fc172e5b2993325ad1a0184f711d", "reason": "churn_over_120", "churn": 490}
+{"commit": "f7eeb1d65c80b2f634b3ce406fa71ba1f0e078a2", "reason": "valid", "instance_id": "caddyserver__caddy-7ba5e147acb5", "W": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy"], "f2p": ["github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy:TestClientCancelAbortLogLevel"], "churn": 26, "nF": 7, "task": "issue"}
+{"commit": "7ba5e147acb504c825081d0640e14bd021ecbb00", "reason": "no_failing_test_at_parent"}
+{"commit": "7ef5c60ed0f1f0a5d87f9f8db4a290dbb50e3e48", "reason": "churn_over_120", "churn": 791}
+{"commit": "9d95dd7344abe6388b59e25b8db54a3c7371cd6a", "reason": "valid", "instance_id": "cli__cli-10c3f78c1f43", "W": ["github.com/cli/cli/v2/internal/skills/registry", "github.com/cli/cli/v2/pkg/cmd/skills/install", "github.com/cli/cli/v2/pkg/cmd/skills/update"], "f2p": ["github.com/cli/cli/v2/internal/skills/registry:TestFindByID", "github.com/cli/cli/v2/internal/skills/registry:TestInstallDir"], "churn": 12, "nF": 10, "task": "issue"}
+{"commit": "b593ba305b31be412af424b4bc561a20e42b7b5d", "reason": "no_failing_test_at_parent"}
+{"commit": "c6074f82fb6bc38f34733c7d44735021c41e64e0", "reason": "more_than_2_packages", "n": 41}
+{"commit": "61b35d627783c92193f55a477fb4cb3c2d00a83b", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "3e9f89be9416079e560e44cabca5a0e1663ecbc9", "reason": "touches_go_mod_or_vendor"}
+{"commit": "40c94e07a8506e9ae17604d9e1fc17017fc565fd", "reason": "touches_go_mod_or_vendor"}
+{"commit": "af4f50223e025c6a6987cc24622736a5e3c9b4aa", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "62991338eaec47592fab25701e9eeb6fdf5f91fd", "reason": "not_green_at_child_testpkgs"}
+{"commit": "9e1a526611d9a33cc2379ace5860ce1d2fe934d7", "reason": "not_green_at_child_testpkgs"}
+{"commit": "db03aed816d4e3b5bf5bfefafc56a1c1f9c4f53e", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "4e8eea7ab4dfb9c923d5f7155824f951ffb25ddc", "reason": "more_than_2_packages", "n": 5}
+{"commit": "d30d6b628192f38f8ed123759b65ae7cc4e00ae5", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "8d7679c83110257bc458e0ed68c7985cd37cecb9", "reason": "not_green_at_child_testpkgs"}
+{"commit": "d9dd1b753489c0e80e0b291ae20667aadc7ef3e0", "reason": "not_green_at_child_testpkgs"}
+{"commit": "1151d70655ee6ad10c4bf74872bbd988aaa3c437", "reason": "not_green_at_child_testpkgs"}
+{"commit": "1029fe6dd0f75d1484ba3a5b83debb0a8b9bed3f", "reason": "needs_source_and_test_change"}
+{"commit": "28521d27c17c22524d9b53e1f682dfefa3a9e12e", "reason": "needs_source_and_test_change"}
+{"commit": "af64caf5d9f9657cff7f34c04009bc0ecba6b607", "reason": "not_green_at_child_testpkgs"}
+{"commit": "ea699bb0ba962a5fad6271eb4ba24771df91f4fc", "reason": "needs_source_and_test_change"}
+{"commit": "532f36a5a89e5a1746312e5e593f626e148762a7", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "57ac5d107cf6ce1723a8e800a3752aff8133ea18", "reason": "deletes_or_renames_source"}
+{"commit": "284daaf0b4d6d7c6b3b4cd3ef3f15f55b84f042b", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "980f194360c39fe42c60c6807e3e1620e70e6c5b", "reason": "needs_source_and_test_change"}
+{"commit": "d795988fa895b63b6e755cedc77eef08e1eda8a8", "reason": "needs_source_and_test_change"}
+{"commit": "7d36449ea8774c2ed38483eb737215b16fab066a", "reason": "more_than_2_packages", "n": 9}
+{"commit": "71f38d266c93bca4b67dbad9c6098f2b366b9ad6", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "0536e15bbf75a9cc91b212dd706a5433cfc573c3", "reason": "needs_source_and_test_change"}
+{"commit": "650f658244c1855de9b49c12241106aeb0a5e3f6", "reason": "needs_source_and_test_change"}
+{"commit": "ae96b2a0f8b8b20e69e9f99a13ff71f169a05cdf", "reason": "needs_source_and_test_change"}
+{"commit": "ce9b6ceea1d6df00b5dcacc9fc13c0cb7342291c", "reason": "deletes_or_renames_source"}
+{"commit": "8e11f5747d4c06cfbd8cfe86408a006c0a3535fa", "reason": "more_than_2_packages", "n": 9}
+{"commit": "22a304af7e97f0a64285160d63f30eea4cc9bcbc", "reason": "deletes_or_renames_source"}
+{"commit": "952b310d620f02c920725cf026cc0dd955c76bec", "reason": "more_than_2_packages", "n": 7}
+{"commit": "f2ff05f840c844ced27494ff7f4d1a908dac316d", "reason": "more_than_2_packages", "n": 7}
+{"commit": "0938f52f38be723b6ed25df305f24a62b75f0c1c", "reason": "needs_source_and_test_change"}
+{"commit": "9f9a3472aaebe2a15e8f4b9f8db66b4257773deb", "reason": "deletes_or_renames_source"}
+{"commit": "2d02a1ad39f5b19e84463cbe12d6ddef1962dae9", "reason": "needs_source_and_test_change"}
+{"commit": "bae49d00ee2ea44e9c5007d3640038c90c44a9c7", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "e5dba15367369421b92d481380a47eacc2030d77", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "bf56d71b09f7cffe0e7b4b6033169f49ffeecb9e", "reason": "needs_source_and_test_change"}
+{"commit": "3a4b0e3b8c8f0880c4b0d50687a365164aa8f3aa", "reason": "not_green_at_child_testpkgs"}
+{"commit": "abfc9bbdff487c55f300a38e589ec6b4995df1ed", "reason": "touches_go_mod_or_vendor"}
+{"commit": "784812361ed6a74df3b3f8d5c1ab41a454e44ba0", "reason": "more_than_2_packages", "n": 7}
+{"commit": "c745f810b393910a9232cf69649d6acf4ce1359a", "reason": "child_tests_do_not_compile_at_parent"}
+{"commit": "a15b1579ff30609c3fb0e19880f754206715354a", "reason": "deletes_or_renames_source"}
+{"commit": "17ff3aa5f9d79630864ea663329bd21035354935", "reason": "churn_over_120", "churn": 749}
+{"commit": "81571775d56a1dc326c5efe7e09f30cb0f6c1246", "reason": "needs_source_and_test_change"}
+{"commit": "16b8b8cda0ec8d008aaca0f71be12b4b2403f0e2", "reason": "needs_source_and_test_change"}
+{"commit": "12875cc48ed34111f71fe94a24a47ad11660f3a4", "reason": "needs_source_and_test_change"}
+{"commit": "8c37a3983a974021f3e8048a14d41e58db1e1b9b", "reason": "needs_source_and_test_change"}
+{"commit": "d718c4cf20f0729cf9a5d5100e50195f2d264ca9", "reason": "needs_source_and_test_change"}
+{"commit": "60448342b30dcd576e202694557d6abf675cb313", "reason": "needs_source_and_test_change"}
+{"commit": "4f59ed8806cf27cc09466a90540c4f4badfc3400", "reason": "touches_go_mod_or_vendor"}
+{"commit": "f01359ff9214a6006e5317069b13abcf2d171caa", "reason": "needs_source_and_test_change"}
+{"commit": "0b3c0fc222630e6e76e5b98d0b3257330525cfa6", "reason": "needs_source_and_test_change"}
+{"commit": "ed571c8d120b8a7fc993c6b8d4fe030b17cc3953", "reason": "needs_source_and_test_change"}
+{"commit": "0ddd98e03b2ba747a53582cf2672fcd188b92d55", "reason": "needs_source_and_test_change"}
+{"commit": "724b7dc23171527e07957b973995a39b969b4491", "reason": "touches_go_mod_or_vendor"}
+{"commit": "2141fd83a9917ddadde9875acc48f5bb76791e2c", "reason": "needs_source_and_test_change"}
+{"commit": "6693611497700ae35ef7fb06a040087f3581a009", "reason": "touches_go_mod_or_vendor"}
+{"commit": "0e9446277dc1dbfeef182215be86191c27cdcd77", "reason": "touches_go_mod_or_vendor"}
+{"commit": "b6bfa13f5f6dde1511bb148f1b6b78a9f2f8d6fe", "reason": "touches_go_mod_or_vendor"}
+{"commit": "88aa8132ae9289635c438bf596680c4758be03c8", "reason": "needs_source_and_test_change"}
+{"commit": "bff8acb2d94be7f1f201884392ad72a439aed3e3", "reason": "needs_source_and_test_change"}
+{"commit": "4ae2e26021cb78dc7723434105788e63a97ad04c", "reason": "touches_go_mod_or_vendor"}

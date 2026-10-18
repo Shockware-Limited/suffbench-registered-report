@@ -1,0 +1,30 @@
+[
+ {
+  "tag": "write-r0",
+  "model": "claude-opus-5-5",
+  "in": 28339,
+  "out": 24000,
+  "secs": 223
+ },
+ {
+  "tag": "review-r0",
+  "model": "claude-opus-5-5",
+  "in": 17189,
+  "out": 5359,
+  "secs": 51
+ },
+ {
+  "tag": "revise-r1",
+  "model": "claude-opus-5-5",
+  "in": 14702,
+  "out": 24000,
+  "secs": 198
+ },
+ {
+  "tag": "review-r1",
+  "model": "claude-opus-5-5",
+  "in": 29799,
+  "out": 12000,
+  "secs": 112
+ }
+]

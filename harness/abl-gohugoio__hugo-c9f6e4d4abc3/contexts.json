@@ -1,0 +1,750 @@
+{
+ "write_set": [
+  "github.com/gohugoio/hugo/internal/js/esbuild"
+ ],
+ "direct_deps": [
+  "github.com/gohugoio/hugo/cache/dynacache",
+  "github.com/gohugoio/hugo/common/herrors",
+  "github.com/gohugoio/hugo/common/hmaps",
+  "github.com/gohugoio/hugo/common/hsync",
+  "github.com/gohugoio/hugo/common/hugio",
+  "github.com/gohugoio/hugo/common/paths",
+  "github.com/gohugoio/hugo/common/text",
+  "github.com/gohugoio/hugo/common/types/css",
+  "github.com/gohugoio/hugo/deps",
+  "github.com/gohugoio/hugo/helpers",
+  "github.com/gohugoio/hugo/hugofs",
+  "github.com/gohugoio/hugo/hugolib/filesystems",
+  "github.com/gohugoio/hugo/identity",
+  "github.com/gohugoio/hugo/internal/js",
+  "github.com/gohugoio/hugo/media",
+  "github.com/gohugoio/hugo/resources",
+  "github.com/gohugoio/hugo/resources/resource",
+  "github.com/gohugoio/hugo/resources/resource_factories/create",
+  "github.com/gohugoio/hugo/resources/resource_transformers/tocss/sass",
+  "github.com/gohugoio/hugo/tpl/tplimpl"
+ ],
+ "forward_slice": [
+  "github.com/gohugoio/hugo",
+  "github.com/gohugoio/hugo/cache/filecache",
+  "github.com/gohugoio/hugo/cache/httpcache",
+  "github.com/gohugoio/hugo/commands",
+  "github.com/gohugoio/hugo/common/hexec",
+  "github.com/gohugoio/hugo/common/htime",
+  "github.com/gohugoio/hugo/common/hugio",
+  "github.com/gohugoio/hugo/common/hugo",
+  "github.com/gohugoio/hugo/common/paths",
+  "github.com/gohugoio/hugo/config/allconfig",
+  "github.com/gohugoio/hugo/config/security",
+  "github.com/gohugoio/hugo/create",
+  "github.com/gohugoio/hugo/hugofs",
+  "github.com/gohugoio/hugo/hugolib",
+  "github.com/gohugoio/hugo/hugolib/filesystems",
+  "github.com/gohugoio/hugo/hugolib/pagesfromdata",
+  "github.com/gohugoio/hugo/hugolib/roles",
+  "github.com/gohugoio/hugo/hugolib/segments",
+  "github.com/gohugoio/hugo/hugolib/sitesmatrix",
+  "github.com/gohugoio/hugo/hugolib/versions",
+  "github.com/gohugoio/hugo/internal/warpc",
+  "github.com/gohugoio/hugo/langs",
+  "github.com/gohugoio/hugo/langs/i18n",
+  "github.com/gohugoio/hugo/markup/asciidocext",
+  "github.com/gohugoio/hugo/markup/goldmark",
+  "github.com/gohugoio/hugo/markup/goldmark/blockquotes",
+  "github.com/gohugoio/hugo/markup/goldmark/codeblocks",
+  "github.com/gohugoio/hugo/markup/goldmark/images",
+  "github.com/gohugoio/hugo/markup/goldmark/internal/extensions/attributes",
+  "github.com/gohugoio/hugo/markup/goldmark/passthrough",
+  "github.com/gohugoio/hugo/markup/goldmark/tables",
+  "github.com/gohugoio/hugo/markup/highlight",
+  "github.com/gohugoio/hugo/markup/pandoc",
+  "github.com/gohugoio/hugo/markup/rst",
+  "github.com/gohugoio/hugo/markup/tableofcontents",
+  "github.com/gohugoio/hugo/modules",
+  "github.com/gohugoio/hugo/modules/npm",
+  "github.com/gohugoio/hugo/output",
+  "github.com/gohugoio/hugo/parser/metadecoders",
+  "github.com/gohugoio/hugo/related",
+  "github.com/gohugoio/hugo/resources",
+  "github.com/gohugoio/hugo/resources/images",
+  "github.com/gohugoio/hugo/resources/images/imagetesting",
+  "github.com/gohugoio/hugo/resources/images/meta",
+  "github.com/gohugoio/hugo/resources/page",
+  "github.com/gohugoio/hugo/resources/page/pagemeta",
+  "github.com/gohugoio/hugo/resources/resource",
+  "github.com/gohugoio/hugo/resources/resource_factories/create",
+  "github.com/gohugoio/hugo/resources/resource_transformers/babel",
+  "github.com/gohugoio/hugo/resources/resource_transformers/cssjs",
+  "github.com/gohugoio/hugo/resources/resource_transformers/js",
+  "github.com/gohugoio/hugo/resources/resource_transformers/minifier",
+  "github.com/gohugoio/hugo/resources/resource_transformers/templates",
+  "github.com/gohugoio/hugo/resources/resource_transformers/tocss/dartsass",
+  "github.com/gohugoio/hugo/resources/resource_transformers/tocss/scss",
+  "github.com/gohugoio/hugo/tpl/collections",
+  "github.com/gohugoio/hugo/tpl/compare",
+  "github.com/gohugoio/hugo/tpl/crypto",
+  "github.com/gohugoio/hugo/tpl/css",
+  "github.com/gohugoio/hugo/tpl/debug",
+  "github.com/gohugoio/hugo/tpl/fmt",
+  "github.com/gohugoio/hugo/tpl/images",
+  "github.com/gohugoio/hugo/tpl/js",
+  "github.com/gohugoio/hugo/tpl/openapi/openapi3",
+  "github.com/gohugoio/hugo/tpl/os",
+  "github.com/gohugoio/hugo/tpl/page",
+  "github.com/gohugoio/hugo/tpl/partials",
+  "github.com/gohugoio/hugo/tpl/reflect",
+  "github.com/gohugoio/hugo/tpl/resources",
+  "github.com/gohugoio/hugo/tpl/templates",
+  "github.com/gohugoio/hugo/tpl/time",
+  "github.com/gohugoio/hugo/tpl/tplimpl",
+  "github.com/gohugoio/hugo/tpl/tplimplinit",
+  "github.com/gohugoio/hugo/tpl/transform"
+ ],
+ "groups": [
+  [
+   "github.com/gohugoio/hugo/cache/dynacache"
+  ],
+  [
+   "github.com/gohugoio/hugo/common/herrors"
+  ],
+  [
+   "github.com/gohugoio/hugo/common/hmaps"
+  ],
+  [
+   "github.com/gohugoio/hugo/common/hsync",
+   "github.com/gohugoio/hugo/common/hugio"
+  ],
+  [
+   "github.com/gohugoio/hugo/common/paths"
+  ],
+  [
+   "github.com/gohugoio/hugo/common/text"
+  ],
+  [
+   "github.com/gohugoio/hugo/common/types/css"
+  ],
+  [
+   "github.com/gohugoio/hugo/deps",
+   "github.com/gohugoio/hugo/helpers"
+  ],
+  [
+   "github.com/gohugoio/hugo/hugofs"
+  ],
+  [
+   "github.com/gohugoio/hugo/hugolib/filesystems"
+  ],
+  [
+   "github.com/gohugoio/hugo/identity"
+  ],
+  [
+   "github.com/gohugoio/hugo/internal/js",
+   "github.com/gohugoio/hugo/media"
+  ],
+  [
+   "github.com/gohugoio/hugo/resources"
+  ],
+  [
+   "github.com/gohugoio/hugo/resources/resource"
+  ],
+  [
+   "github.com/gohugoio/hugo/resources/resource_factories/create"
+  ],
+  [
+   "github.com/gohugoio/hugo/resources/resource_transformers/tocss/sass",
+   "github.com/gohugoio/hugo/tpl/tplimpl"
+  ]
+ ],
+ "gold_identifiers": [
+  "Charset",
+  "CharsetASCII",
+  "CharsetUTF8",
+  "Errorf",
+  "api",
+  "charset"
+ ],
+ "exports_per_dep": {
+  "github.com/gohugoio/hugo/cache/dynacache": 32,
+  "github.com/gohugoio/hugo/common/herrors": 50,
+  "github.com/gohugoio/hugo/common/hmaps": 76,
+  "github.com/gohugoio/hugo/common/hsync": 9,
+  "github.com/gohugoio/hugo/common/hugio": 37,
+  "github.com/gohugoio/hugo/common/paths": 92,
+  "github.com/gohugoio/hugo/common/text": 13,
+  "github.com/gohugoio/hugo/common/types/css": 2,
+  "github.com/gohugoio/hugo/deps": 63,
+  "github.com/gohugoio/hugo/helpers": 64,
+  "github.com/gohugoio/hugo/hugofs": 131,
+  "github.com/gohugoio/hugo/hugolib/filesystems": 42,
+  "github.com/gohugoio/hugo/identity": 71,
+  "github.com/gohugoio/hugo/internal/js": 15,
+  "github.com/gohugoio/hugo/media": 103,
+  "github.com/gohugoio/hugo/resources": 86,
+  "github.com/gohugoio/hugo/resources/resource": 83,
+  "github.com/gohugoio/hugo/resources/resource_factories/create": 18,
+  "github.com/gohugoio/hugo/resources/resource_transformers/tocss/sass": 8,
+  "github.com/gohugoio/hugo/tpl/tplimpl": 96
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "issue",
+ "repo": "gohugoio/hugo",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 418,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "Errorf",
+    "api",
+    "charset"
+   ]
+  },
+  "W": {
+   "chars": 70830,
+   "file": "W.txt",
+   "n_tokens_prompt": 32720,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1": {
+   "chars": 196823,
+   "file": "A1.txt",
+   "n_tokens_prompt": 82967,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/gohugoio/hugo/cache/dynacache"
+   ],
+   "chars": 193860,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 81741,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/gohugoio/hugo/common/herrors"
+   ],
+   "chars": 189943,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 80367,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/gohugoio/hugo/common/hmaps"
+   ],
+   "chars": 185851,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 78574,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/gohugoio/hugo/common/hsync",
+    "github.com/gohugoio/hugo/common/hugio"
+   ],
+   "chars": 190880,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 80392,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/gohugoio/hugo/common/paths"
+   ],
+   "chars": 186292,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 78962,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/gohugoio/hugo/common/text"
+   ],
+   "chars": 195432,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 82465,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/gohugoio/hugo/common/types/css"
+   ],
+   "chars": 196490,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 82840,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/gohugoio/hugo/deps",
+    "github.com/gohugoio/hugo/helpers"
+   ],
+   "chars": 182691,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 77271,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/gohugoio/hugo/hugofs"
+   ],
+   "chars": 183207,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 77158,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/gohugoio/hugo/hugolib/filesystems"
+   ],
+   "chars": 190612,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 80644,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/gohugoio/hugo/identity"
+   ],
+   "chars": 188763,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 79815,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/gohugoio/hugo/internal/js",
+    "github.com/gohugoio/hugo/media"
+   ],
+   "chars": 186441,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 78479,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/gohugoio/hugo/resources"
+   ],
+   "chars": 187307,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 79269,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-13": {
+   "removed": [
+    "github.com/gohugoio/hugo/resources/resource"
+   ],
+   "chars": 184526,
+   "file": "A1-13.txt",
+   "n_tokens_prompt": 78466,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-14": {
+   "removed": [
+    "github.com/gohugoio/hugo/resources/resource_factories/create"
+   ],
+   "chars": 194258,
+   "file": "A1-14.txt",
+   "n_tokens_prompt": 82026,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1-15": {
+   "removed": [
+    "github.com/gohugoio/hugo/resources/resource_transformers/tocss/sass",
+    "github.com/gohugoio/hugo/tpl/tplimpl"
+   ],
+   "chars": 186622,
+   "file": "A1-15.txt",
+   "n_tokens_prompt": 78756,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 70830,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [
+    "github.com/gohugoio/hugo/common/types/css",
+    "github.com/gohugoio/hugo/internal/js"
+   ],
+   "evidence": {
+    "github.com/gohugoio/hugo/internal/js": [
+     "js.Build",
+     "span:Build"
+    ],
+    "github.com/gohugoio/hugo/common/types/css": [
+     "css.Build"
+    ]
+   },
+   "chars": 72143,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 33256,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "Wd": {
+   "chars": 61265,
+   "file": "Wd.txt",
+   "n_tokens_prompt": 28193,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "A1r": {
+   "chars": 95327,
+   "file": "A1r.txt",
+   "n_tokens_prompt": 42797,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "Wdr": {
+   "chars": 84664,
+   "file": "Wdr.txt",
+   "n_tokens_prompt": 37818,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  },
+  "Wpad": {
+   "chars": 181948,
+   "file": "Wpad.txt",
+   "n_tokens_prompt": 82973,
+   "expressible": false,
+   "missing_identifiers": [
+    "Charset",
+    "CharsetASCII",
+    "CharsetUTF8",
+    "charset"
+   ]
+  }
+ },
+ "pad_meta": {
+  "Wpad": {
+   "pad_pkgs": [
+    "github.com/gohugoio/hugo/tpl/openapi",
+    "github.com/gohugoio/hugo/publisher",
+    "github.com/gohugoio/hugo/parser/pageparser",
+    "github.com/gohugoio/hugo/tpl/internal/go_templates/cfg",
+    "github.com/gohugoio/hugo/tpl/internal/go_templates/testenv",
+    "github.com/gohugoio/hugo/resources/page/page_generate",
+    "github.com/gohugoio/hugo/releaser",
+    "github.com/gohugoio/hugo/tpl/hugo",
+    "github.com/gohugoio/hugo/cache",
+    "github.com/gohugoio/hugo/tpl/path",
+    "github.com/gohugoio/hugo/codegen"
+   ],
+   "target_tokens": 82967
+  }
+ },
+ "struct_meta": {
+  "rule": "2026-10-13 amendment: declaration slice from fail-to-pass tests and task code spans; referenced dependency declarations without bodies",
+  "n_w_decls": 142,
+  "n_selected": 94,
+  "n_roots": 12,
+  "n_dep_refs_all": 80,
+  "n_dep_refs_sel": 71,
+  "selected": [
+   "github.com/gohugoio/hugo/internal/js/esbuild.BatcherClient",
+   "github.com/gohugoio/hugo/internal/js/esbuild.BatcherClient.New",
+   "github.com/gohugoio/hugo/internal/js/esbuild.BatcherClient.buildBatchGroup",
+   "github.com/gohugoio/hugo/internal/js/esbuild.BuildClient",
+   "github.com/gohugoio/hugo/internal/js/esbuild.BuildClient.Build",
+   "github.com/gohugoio/hugo/internal/js/esbuild.DecodeExternalOptions",
+   "github.com/gohugoio/hugo/internal/js/esbuild.ErrorMessageResolved",
+   "github.com/gohugoio/hugo/internal/js/esbuild.ExternalOptions",
+   "github.com/gohugoio/hugo/internal/js/esbuild.InternalOptions",
+   "github.com/gohugoio/hugo/internal/js/esbuild.NsBatch",
+   "github.com/gohugoio/hugo/internal/js/esbuild.NsHugoImport",
+   "github.com/gohugoio/hugo/internal/js/esbuild.NsHugoImportResolveFunc",
+   "github.com/gohugoio/hugo/internal/js/esbuild.Options",
+   "github.com/gohugoio/hugo/internal/js/esbuild.Options.compile",
+   "github.com/gohugoio/hugo/internal/js/esbuild.Options.loaderFromFilename",
+   "github.com/gohugoio/hugo/internal/js/esbuild.Options.validate",
+   "github.com/gohugoio/hugo/internal/js/esbuild.Package",
+   "github.com/gohugoio/hugo/internal/js/esbuild.PrefixHugoMemory",
+   "github.com/gohugoio/hugo/internal/js/esbuild.PrefixHugoVirtual",
+   "github.com/gohugoio/hugo/internal/js/esbuild.ResolveComponent",
+   "github.com/gohugoio/hugo/internal/js/esbuild.ResolveResource",
+   "github.com/gohugoio/hugo/internal/js/esbuild.SourcesFromSourceMap",
+   "github.com/gohugoio/hugo/internal/js/esbuild._",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batchGroupTemplateContext",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batcher",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batcher.Build",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batcher.build",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batcher.doBuild",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batcher.isStale",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batcher.removeNotSet",
+   "github.com/gohugoio/hugo/internal/js/esbuild.batcher.reset",
+   "github.com/gohugoio/hugo/internal/js/esbuild.buildIDs",
+   "github.com/gohugoio/hugo/internal/js/esbuild.buildIDs.Has",
+   "github.com/gohugoio/hugo/internal/js/esbuild.buildIDs.Set",
+   "github.com/gohugoio/hugo/internal/js/esbuild.buildToucher",
+   "github.com/gohugoio/hugo/internal/js/esbuild.commonExtensions",
+   "github.com/gohugoio/hugo/internal/js/esbuild.configOptions",
+   "github.com/gohugoio/hugo/internal/js/esbuild.createBuildPlugins",
+   "github.com/gohugoio/hugo/internal/js/esbuild.createCSSVarsStyleSheet",
+   "github.com/gohugoio/hugo/internal/js/esbuild.defaultOptionValues",
+   "github.com/gohugoio/hugo/internal/js/esbuild.engineKeysSorted",
+   "github.com/gohugoio/hugo/internal/js/esbuild.engineName",
+   "github.com/gohugoio/hugo/internal/js/esbuild.extensionToLoaderMapCSS",
+   "github.com/gohugoio/hugo/internal/js/esbuild.extensionToLoaderMapJS",
+   "github.com/gohugoio/hugo/internal/js/esbuild.fixOutputFile",
+   "github.com/gohugoio/hugo/internal/js/esbuild.fixSourceMap",
+   "github.com/gohugoio/hugo/internal/js/esbuild.fsResolver",
+   "github.com/gohugoio/hugo/internal/js/esbuild.fsResolver.resolveComponent",
+   "github.com/gohugoio/hugo/internal/js/esbuild.hugoNamespaces",
+   "github.com/gohugoio/hugo/internal/js/esbuild.instanceID",
+   "github.com/gohugoio/hugo/internal/js/esbuild.isBuiltOrTouched",
+   "github.com/gohugoio/hugo/internal/js/esbuild.isBuiltOrTouched.isBuilt",
+   "github.com/gohugoio/hugo/internal/js/esbuild.isBuiltOrTouched.isTouched",
+   "github.com/gohugoio/hugo/internal/js/esbuild.isBuiltOrTouched.setBuilt",
+   "github.com/gohugoio/hugo/internal/js/esbuild.isBuiltOrTouchedProvider",
+   "github.com/gohugoio/hugo/internal/js/esbuild.key",
+   "github.com/gohugoio/hugo/internal/js/esbuild.nameLoader",
+   "github.com/gohugoio/hugo/internal/js/esbuild.nameTarget",
+   "github.com/gohugoio/hugo/internal/js/esbuild.newFSResolver",
+   "github.com/gohugoio/hugo/internal/js/esbuild.newIsBuiltOrTouched",
+   "github.com/gohugoio/hugo/internal/js/esbuild.newOpts",
+   "github.com/gohugoio/hugo/internal/js/esbuild.nsHugoParams",
+   "github.com/gohugoio/hugo/internal/js/esbuild.nsHugoVars",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optionsCompiler",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optionsGetSetter",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optionsGetSetters",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optionsGetSetters.Filter",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optionsMap",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optionsMap.ByKey",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optionsMap.isBuilt",
+   "github.com/gohugoio/hugo/internal/js/esbuild.opts",
+   "github.com/gohugoio/hugo/internal/js/esbuild.opts.Get",
+   "github.com/gohugoio/hugo/internal/js/esbuild.optsHolder",
+   "github.com/gohugoio/hugo/internal/js/esbuild.paramsOptions",
+   "github.com/gohugoio/hugo/internal/js/esbuild.pathHugoConfigParams",
+   "github.com/gohugoio/hugo/internal/js/esbuild.runnerTemplateStr",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptBatchTemplateContext",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroup",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroup.Reset",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroup.forEachIdentity",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroup.isStale",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroup.removeNotSet",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroup.removeTouchedButNotSet",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroups",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptGroups.Sorted",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptID",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptID.String",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptInstanceBatchTemplateContext",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptOptions",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptOptions.Dir",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptOptions.IsZero",
+   "github.com/gohugoio/hugo/internal/js/esbuild.scriptRunnerTemplateContext",
+   "github.com/gohugoio/hugo/internal/js/esbuild.sourceMap",
+   "github.com/gohugoio/hugo/internal/js/esbuild.stdinImporter"
+  ],
+  "dep_refs_sel": [
+   "github.com/gohugoio/hugo/cache/dynacache.CleanKey",
+   "github.com/gohugoio/hugo/common/herrors.NewFileErrorFromName",
+   "github.com/gohugoio/hugo/common/hmaps.Cache",
+   "github.com/gohugoio/hugo/common/hmaps.Cache.Get",
+   "github.com/gohugoio/hugo/common/hmaps.Cache.GetOrCreate",
+   "github.com/gohugoio/hugo/common/hmaps.Cache.Set",
+   "github.com/gohugoio/hugo/common/hmaps.NewCache",
+   "github.com/gohugoio/hugo/common/hmaps.ToStringMapString",
+   "github.com/gohugoio/hugo/common/hsync.OnceMore",
+   "github.com/gohugoio/hugo/common/hsync.OnceMore.Do",
+   "github.com/gohugoio/hugo/common/hugio.NewReadSeekerNoOpCloserFromBytes",
+   "github.com/gohugoio/hugo/common/hugio.ReadSeekCloser",
+   "github.com/gohugoio/hugo/common/hugio.ReadSeekCloserProvider",
+   "github.com/gohugoio/hugo/common/paths.AddLeadingSlash",
+   "github.com/gohugoio/hugo/common/paths.ToSlashPreserveLeading",
+   "github.com/gohugoio/hugo/common/paths.ToSlashTrimLeading",
+   "github.com/gohugoio/hugo/common/paths.TrimExt",
+   "github.com/gohugoio/hugo/common/paths.UrlFromFilename",
+   "github.com/gohugoio/hugo/common/text.Position",
+   "github.com/gohugoio/hugo/common/types/css.QuotedString",
+   "github.com/gohugoio/hugo/deps.Deps",
+   "github.com/gohugoio/hugo/deps.Deps.GetTemplateStore",
+   "github.com/gohugoio/hugo/deps.Listeners",
+   "github.com/gohugoio/hugo/deps.Listeners.Add",
+   "github.com/gohugoio/hugo/helpers.OpenFilesForWriting",
+   "github.com/gohugoio/hugo/hugofs.FileMeta",
+   "github.com/gohugoio/hugo/hugofs.FileMeta.Open",
+   "github.com/gohugoio/hugo/hugofs.FileMetaInfo",
+   "github.com/gohugoio/hugo/hugofs.Os",
+   "github.com/gohugoio/hugo/hugolib/filesystems.BaseFs",
+   "github.com/gohugoio/hugo/hugolib/filesystems.BaseFs.ResolveJSConfigFile",
+   "github.com/gohugoio/hugo/hugolib/filesystems.SourceFilesystem",
+   "github.com/gohugoio/hugo/hugolib/filesystems.SourceFilesystem.MakePathRelative",
+   "github.com/gohugoio/hugo/identity.DependencyManagerScopedProvider",
+   "github.com/gohugoio/hugo/identity.Finder",
+   "github.com/gohugoio/hugo/identity.Finder.Contains",
+   "github.com/gohugoio/hugo/identity.FinderConfig",
+   "github.com/gohugoio/hugo/identity.FirstIdentity",
+   "github.com/gohugoio/hugo/identity.Identity",
+   "github.com/gohugoio/hugo/identity.IdentityProvider",
+   "github.com/gohugoio/hugo/identity.Manager",
+   "github.com/gohugoio/hugo/identity.NewFinder",
+   "github.com/gohugoio/hugo/identity.NopManager",
+   "github.com/gohugoio/hugo/internal/js.BatchPackage",
+   "github.com/gohugoio/hugo/internal/js.Batcher",
+   "github.com/gohugoio/hugo/internal/js.OptionsSetter",
+   "github.com/gohugoio/hugo/media.Builtin",
+   "github.com/gohugoio/hugo/media.Type",
+   "github.com/gohugoio/hugo/media.Type.IsZero",
+   "github.com/gohugoio/hugo/media.Types",
+   "github.com/gohugoio/hugo/media.Types.GetBySuffix",
+   "github.com/gohugoio/hugo/resources.InternalResourceSourceContent",
+   "github.com/gohugoio/hugo/resources.InternalResourceSourcePath",
+   "github.com/gohugoio/hugo/resources.InternalResourceSourcePathBestEffort",
+   "github.com/gohugoio/hugo/resources.InternalResourceTargetPath",
+   "github.com/gohugoio/hugo/resources.ResourceSourceDescriptor",
+   "github.com/gohugoio/hugo/resources.Spec",
+   "github.com/gohugoio/hugo/resources.Spec.MediaTypes",
+   "github.com/gohugoio/hugo/resources.Spec.NewResource",
+   "github.com/gohugoio/hugo/resources/resource.Resource",
+   "github.com/gohugoio/hugo/resources/resource.ResourceGetter",
+   "github.com/gohugoio/hugo/resources/resource.Resources",
+   "github.com/gohugoio/hugo/resources/resource_factories/create.Client",
+   "github.com/gohugoio/hugo/resources/resource_factories/create.Client.FromString",
+   "github.com/gohugoio/hugo/resources/resource_transformers/tocss/sass.HugoVarsSubPath",
+   "github.com/gohugoio/hugo/resources/resource_transformers/tocss/sass.PrepareVars",
+   "github.com/gohugoio/hugo/resources/resource_transformers/tocss/sass.ResolveVars",
+   "github.com/gohugoio/hugo/tpl/tplimpl.TemplInfo",
+   "github.com/gohugoio/hugo/tpl/tplimpl.TemplateStore",
+   "github.com/gohugoio/hugo/tpl/tplimpl.TemplateStore.ExecuteWithContext",
+   "github.com/gohugoio/hugo/tpl/tplimpl.TemplateStore.TextParse"
+  ]
+ }
+}

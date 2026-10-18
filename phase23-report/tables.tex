@@ -1,0 +1,100 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Phase 2: per-instance pass rates on the 10 screened instances (Haiku 5.5 $k{=}100$, Haiku 4.5 $k{=}20$, Sonnet 5.5 $k{=}10$, Opus 5.5 $k{=}5$). An arm byte-identical to another arm carries that arm's rate. ``deps'' is the number of direct dependencies; ``kept'' the dependencies retained by the gold-referenced (A1g) and task-referenced (A1t) predictors.}\label{tab:p2inst}
+\begin{tabular}{llrrr p{3.1cm} p{2.9cm} p{2.9cm} p{2.6cm}}\toprule
+instance & repo & deps & A1g & A1t & Haiku 5.5 & Haiku 4.5 & Sonnet 5.5 & Opus 5.5\\\midrule
+4f45ded75556 & caddyserver & 8 & 1 & 0 & W\,0.03 A1\,0.03 A1g\,0.01 A1t\,0.03 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & A0\,0.00 W\,0.00 A1t\,0.00\\
+6727b2f3a92b & caddyserver & 13 & 0 & 0 & W\,0.44 A1\,0.22 A1g\,0.44 A1t\,0.44 & W\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.20 A1\,0.10 A1g\,0.20 A1t\,0.20 & A0\,0.00 W\,1.00 A1g\,1.00 A1t\,1.00\\
+7910dd94eea2 & caddyserver & 12 & 1 & 0 & W\,0.01 A1\,0.07 A1g\,0.02 A1t\,0.01 & -- & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & A0\,0.60 W\,0.00 A1t\,0.00\\
+c8591a1e46e4 & caddyserver & 5 & 1 & 2 & W\,0.57 A1\,0.46 A1g\,0.49 A1t\,0.45 & W\,0.40 A1\,0.15 A1g\,0.15 A1t\,0.05 & W\,0.20 A1\,0.60 A1g\,0.00 A1t\,0.00 & A0\,0.00 W\,0.00 A1t\,0.00\\
+015e6cf6ac39 & cli & 0 & 0 & 0 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & A0\,0.00 W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00\\
+20147bf81fed & cli & 50 & 3 & 0 & W\,0.00 A1\,0.01 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & A0\,0.00 W\,1.00 A1t\,1.00\\
+2bcdfbb1ac02 & cli & 4 & 2 & 2 & W\,0.00 A1\,0.27 A1g\,0.14 A1t\,0.14 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.10 A1g\,0.10 A1t\,0.10 & A0\,0.80 W\,0.80\\
+9b6585be5218 & cli & 8 & 1 & 0 & W\,0.01 A1\,0.00 A1g\,0.00 A1t\,0.01 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.10 A1\,0.00 A1g\,0.00 A1t\,0.10 & A0\,0.00 W\,0.00 A1t\,0.00\\
+9ee0afb43414 & cli & 10 & 0 & 0 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & A0\,0.00 W\,0.00 A1g\,0.00 A1t\,0.00\\
+ff28e72b59be & cli & 62 & 0 & 0 & W\,0.00 A1\,0.00 A1g\,0.00 A1t\,0.00 & W\,0.00 A1\,0.05 A1g\,0.00 A1t\,0.00 & W\,1.00 A1\,0.80 A1g\,1.00 A1t\,1.00 & A0\,1.00 W\,1.00 A1g\,1.00 A1t\,1.00\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\small
+\caption{Phase 2: paired contrasts on the 10 screened instances. Instance-level percentile bootstrap (2{,}000 resamples): mean difference with two-sided 95\% interval, one-sided 95\% lower bound (LB), sign counts $+/-/0$, and $n$. Degenerate instances (best arm $<0.1$): Haiku 5.5 7/10, Haiku 4.5 9/10, Sonnet 5.5 5/10, Opus 5.5 5/10.}\label{tab:p2con}
+\begin{tabular}{llrrrr}\toprule
+model & contrast & mean [95\% CI] & LB & $+/-/0$ & $n$\\\midrule
+haiku-5-5 & A1t $-$ A1 & $+0.002$ $[-0.043, +0.059]$ & $-0.038$ & 2/4/4 & 10\\
+haiku-5-5 & A1g $-$ A1 & $+0.004$ $[-0.042, +0.061]$ & $-0.035$ & 2/4/4 & 10\\
+haiku-5-5 & W $-$ A1 & $+0.000$ $[-0.076, +0.071]$ & $-0.060$ & 3/3/4 & 10\\
+haiku-5-5 & A1t $-$ W & $+0.002$ $[-0.036, +0.042]$ & $-0.024$ & 1/1/8 & 10\\
+haiku-4-5-20251001 & A1t $-$ A1 & $-0.019$ $[-0.044, +0.000]$ & $-0.037$ & 0/2/6 & 8\\
+haiku-4-5-20251001 & A1g $-$ A1 & $-0.006$ $[-0.019, +0.000]$ & $-0.019$ & 0/1/7 & 8\\
+haiku-4-5-20251001 & W $-$ A1 & $+0.025$ $[-0.019, +0.094]$ & $-0.013$ & 1/1/6 & 8\\
+haiku-4-5-20251001 & A1t $-$ W & $-0.039$ $[-0.117, +0.000]$ & $-0.117$ & 0/1/8 & 9\\
+sonnet-5-5 & A1t $-$ A1 & $-0.020$ $[-0.170, +0.080]$ & $-0.150$ & 3/1/6 & 10\\
+sonnet-5-5 & A1g $-$ A1 & $-0.030$ $[-0.180, +0.060]$ & $-0.150$ & 2/1/7 & 10\\
+sonnet-5-5 & W $-$ A1 & $-0.010$ $[-0.120, +0.070]$ & $-0.100$ & 3/2/5 & 10\\
+sonnet-5-5 & A1t $-$ W & $-0.010$ $[-0.060, +0.030]$ & $-0.050$ & 1/1/8 & 10\\
+opus-5-5 & A1t $-$ W & $+0.000$ $[+0.000, +0.000]$ & $+0.000$ & 0/0/9 & 9\\
+opus-5-5 & A0 $-$ W & $-0.140$ $[-0.440, +0.120]$ & $-0.400$ & 1/2/7 & 10\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\small
+\caption{Leave-one-dependency-out at $k{=}100$ (Haiku 5.5) on the three instances with A1 $\geq 0.1$. Difference is pass(A1 minus group) $-$ pass(A1). The null reference draws every cell of an instance from one pooled rate and counts removals with $|\text{difference}| > 0.05$.}\label{tab:loo}
+\begin{tabular}{llrrr}\toprule
+instance (A1, W; tokens A1) & removed group & pass & difference & $n$\\\midrule
+6727b2f3a92b (A1 0.22, W 0.44; 277,505) & caddyevents & 0.18 & $-0.04$ & 100\\
+ & httpcaddyfile & 0.20 & $-0.02$ & 100\\
+ & caddyconfig & 0.21 & $-0.01$ & 100\\
+ & network & 0.27 & $+0.05$ & 100\\
+ & headers & 0.28 & $+0.06$ & 100\\
+ & v2 & 0.29 & $+0.07$ & 100\\
+ & caddyfile & 0.30 & $+0.08$ & 100\\
+ & cmd & 0.31 & $+0.09$ & 100\\
+ & caddyhttp & 0.33 & $+0.11$ & 100\\
+ & fileserver & 0.33 & $+0.11$ & 100\\
+ & rewrite & 0.35 & $+0.13$ & 100\\
+ & internal & 0.36 & $+0.14$ & 100\\
+ & caddytls & 0.44 & $+0.22$ & 100\\
+\multicolumn{5}{l}{\quad removals with $|$difference$|>0.05$: 9 of 13; null reference 5.5 [1, 12]; gold-referenced kept []; task-referenced kept []}\\\addlinespace
+c8591a1e46e4 (A1 0.46, W 0.57; 84,817) & caddyfile & 0.34 & $-0.12$ & 100\\
+ & caddyconfig & 0.42 & $-0.04$ & 100\\
+ & httpcaddyfile & 0.45 & $-0.01$ & 100\\
+ & v2 & 0.51 & $+0.05$ & 100\\
+ & caddyhttp & 0.52 & $+0.06$ & 100\\
+\multicolumn{5}{l}{\quad removals with $|$difference$|>0.05$: 2 of 5; null reference 2.3 [0, 5]; gold-referenced kept ['caddyhttp']; task-referenced kept ['caddyfile', 'caddyhttp']}\\\addlinespace
+2bcdfbb1ac02 (A1 0.27, W 0.00; 16,293) & queries & 0.00 & $-0.27$ & 100\\
+ & iostreams & 0.18 & $-0.09$ & 100\\
+ & cmdutil & 0.22 & $-0.05$ & 100\\
+ & client & 0.28 & $+0.01$ & 100\\
+\multicolumn{5}{l}{\quad removals with $|$difference$|>0.05$: 2 of 4; null reference 1.5 [0, 4]; gold-referenced kept ['queries', 'iostreams']; task-referenced kept ['queries', 'iostreams']}\\\addlinespace
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{Phase 3: prompt tokens and pass rates on the 11 instances (Haiku 5.5 $k{=}50$; Sonnet 5.5 $k{=}10$). A trailing $=$ marks an arm byte-identical to another arm (it carries that arm's rate). ``slice'' is kept/total declarations of W; ``dep decls'' is referenced dependency declarations for the slice/for all of W.}\label{tab:p3inst}
+\begin{tabular}{llrrrrrrllrrrrrrrrrrrrr}\toprule
+instance & repo & tok W & tok Wd & tok A1 & tok A1r & tok Wdr & tok Wpad & slice & dep decls & H W & H Wd & H A1 & H A1r & H Wdr & H Wpad & H A1t & S W & S Wd & S A1 & S A1r & S Wdr & S Wpad\\\midrule
+30d3bd2a8959 & caddyserver & 171,794 & 82,533 & 237,893 & 198,792 & 89,753 & 183,345 & 189/606 & 42/126 & 0.98 & 0.96 & 0.94 & 1.00 & 1.00 & 1.00 & 0.98= & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00\\
+6727b2f3a92b & caddyserver & 158,565 & 73,923 & 277,505 & 203,263 & 93,699 & 229,911 & 181/459 & 68/157 & 0.34 & 0.20 & 0.26 & 0.06 & 0.18 & 0.06 & 0.34= & 0.30 & 0.20 & 0.20 & 0.30 & 0.40 & 0.00\\
+c8591a1e46e4 & caddyserver & 12,137 & 10,047 & 84,817 & 17,460 & 13,474 & 84,798 & 23/37 & 23/27 & 0.64 & 0.38 & 0.36 & 0.52 & 0.30 & 0.36 & 0.44 & 0.20 & 0.00 & 0.50 & 0.00 & 0.00 & 0.30\\
+2bcdfbb1ac02 & cli & 2,367 & 2,367 & 16,293 & 4,443 & 4,443 & 16,341 & 7/7 & 14/14 & 0.00 & 0.00= & 0.22 & 0.60 & 0.60= & 0.00 & --= & 0.30 & 0.30= & 0.10 & 0.00 & 0.00= & 0.20\\
+326faaac8b5c & cli & 21,011 & 21,011 & 67,579 & 31,357 & 31,357 & 68,049 & 44/44 & 79/79 & 0.86 & 0.86= & 0.84 & 0.94 & 0.94= & 0.96 & 0.86= & 1.00 & 1.00= & 1.00 & 1.00 & 1.00= & 1.00\\
+3f6a16a9f8c7 & cli & 13,485 & 4,045 & 24,999 & 17,612 & 5,744 & 24,960 & 6/17 & 10/43 & 0.88 & 0.94 & 0.84 & 0.88 & 0.74 & 0.74 & 0.88= & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00\\
+8f7afbdbdbd6 & cli & 16,439 & 16,439 & 56,667 & 21,820 & 21,820 & 56,531 & 23/23 & 44/44 & 0.98 & 0.98= & 0.92 & 0.62 & 0.62= & 0.28 & 0.46 & 1.00 & 1.00= & 1.00 & 1.00 & 1.00= & 1.00\\
+ad2a33837712 & cli & 78,155 & 16,657 & 83,776 & 79,540 & 16,776 & 83,757 & 110/401 & 2/19 & 0.46 & 0.60 & 0.58 & 0.46 & 0.74 & 0.40 & 0.46= & 1.00 & 1.00 & 1.00 & 0.70 & 0.60 & 1.00\\
+b87e58a1d390 & cli & 26,184 & 6,235 & 68,609 & 32,648 & 6,434 & 68,718 & 14/61 & 3/70 & 0.42 & 0.46 & 0.48 & 0.58 & 0.42 & 0.50 & 0.42= & 1.00 & 0.90 & 0.60 & 0.70 & 0.60 & 0.80\\
+babd691446b9 & cli & 22,957 & 6,347 & 53,549 & 24,996 & 7,779 & 53,884 & 19/99 & 13/25 & 0.34 & 0.60 & 1.00 & 1.00 & 1.00 & 0.16 & --= & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00\\
+cba9646b8c25 & cli & 86,253 & 32,808 & 103,793 & 90,653 & 36,818 & 102,489 & 134/420 & 30/38 & 0.80 & 0.86 & 0.80 & 0.80 & 0.72 & 0.82 & --= & 1.00 & 0.90 & 0.90 & 0.80 & 1.00 & 1.00\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\small
+\caption{Phase 3: paired contrasts on the 11 instances. Haiku 5.5 is reported with W and A1 restricted to post-screen samples ($n{=}30$ per instance; other arms $n{=}50$) and with all samples; Sonnet 5.5 at $k{=}10$. NI: one-sided 95\% lower bound $> -0.05$. Ratio: median per-instance prompt-token ratio.}\label{tab:p3con}
+\begin{tabular}{l rrrr r rrr rrr}\toprule
+ & \multicolumn{5}{c}{Haiku 5.5, post-screen} & \multicolumn{3}{c}{Haiku 5.5, all samples} & \multicolumn{3}{c}{Sonnet 5.5}\\\cmidrule(lr){2-6}\cmidrule(lr){7-9}\cmidrule(lr){10-12}
+contrast & mean [95\% CI] & LB & NI & $+/-/0$ & ratio & mean [95\% CI] & LB & $+/-/0$ & mean [95\% CI] & LB & $+/-/0$\\\midrule
+Wd $-$ W & $+0.009$ $[-0.053, +0.072]$ & $-0.043$ & yes & 4/4/3 & 0.47 & $+0.013$ $[-0.064, +0.089]$ & $-0.051$ & 5/3/3 & $-0.045$ $[-0.082, -0.009]$ & $-0.082$ & 0/4/7\\
+A1r $-$ A1 & $+0.021$ $[-0.095, +0.141]$ & $-0.079$ & no & 5/4/2 & 0.48 & $+0.020$ $[-0.089, +0.129]$ & $-0.071$ & 6/3/2 & $-0.073$ $[-0.182, +0.009]$ & $-0.164$ & 2/4/5\\
+Wdr $-$ A1 & $+0.002$ $[-0.102, +0.116]$ & $-0.082$ & no & 4/5/2 & 0.27 & $+0.002$ $[-0.091, +0.105]$ & $-0.078$ & 4/6/1 & $-0.064$ $[-0.191, +0.036]$ & $-0.164$ & 2/3/6\\
+Wdr $-$ W & $+0.042$ $[-0.133, +0.234]$ & $-0.107$ & no & 6/5/0 & 0.52 & $+0.051$ $[-0.129, +0.251]$ & $-0.102$ & 5/5/1 & $-0.109$ $[-0.218, -0.018]$ & $-0.200$ & 1/4/6\\
+A1 $-$ W & $+0.039$ $[-0.076, +0.185]$ & $-0.061$ & no & 3/4/4 & 2.33 & $+0.049$ $[-0.067, +0.202]$ & $-0.053$ & 4/6/1 & $-0.045$ $[-0.145, +0.045]$ & $-0.127$ & 1/4/6\\
+Wpad $-$ W & $-0.138$ $[-0.281, -0.018]$ & $-0.255$ & no & 3/7/1 & 2.35 & $-0.129$ $[-0.273, -0.011]$ & $-0.245$ & 4/6/1 & $-0.045$ $[-0.118, +0.009]$ & $-0.100$ & 1/3/7\\
+Wpad $-$ A1 & $-0.178$ $[-0.373, -0.024]$ & $-0.335$ & no & 5/6/0 & 1.00 & $-0.178$ $[-0.371, -0.020]$ & $-0.336$ & 4/6/1 & $+0.000$ $[-0.064, +0.064]$ & $-0.055$ & 3/2/6\\
+A1r $-$ W & $+0.060$ $[-0.114, +0.248]$ & $-0.086$ & no & 5/6/0 & 1.28 & $+0.069$ $[-0.100, +0.260]$ & $-0.080$ & 5/3/3 & $-0.118$ $[-0.200, -0.045]$ & $-0.191$ & 0/5/6\\
+A1t $-$ A1 & $-0.046$ $[-0.177, +0.051]$ & $-0.156$ & no & 2/2/4 & 0.66 & $-0.047$ $[-0.180, +0.045]$ & $-0.155$ & 5/3/0 & $+0.083$ $[+0.000, +0.217]$ & $+0.000$ & 2/0/4\\
+A1t $-$ W & $-0.087$ $[-0.223, +0.000]$ & $-0.203$ & no & 0/2/6 & 1.00 & $-0.090$ $[-0.220, +0.000]$ & $-0.195$ & 0/2/6 & $+0.000$ $[+0.000, +0.000]$ & $+0.000$ & 0/0/6\\
+\bottomrule\end{tabular}\end{table}

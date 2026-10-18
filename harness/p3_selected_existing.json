@@ -1,0 +1,351 @@
+[
+ {
+  "instance_id": "caddyserver__caddy-036895ed4bad",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "caddyserver__caddy-1b3838c1fdc0",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "caddyserver__caddy-30d3bd2a8959",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 1.0,
+   "A1": 0.9
+  },
+  "selected": true,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "caddyserver__caddy-4f45ded75556",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "caddyserver__caddy-6727b2f3a92b",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 0.45,
+   "A1": 0.25
+  },
+  "selected": true,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "caddyserver__caddy-7910dd94eea2",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.05
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "caddyserver__caddy-9c44b6685e24",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "caddyserver__caddy-c1acb2fcbac9",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "caddyserver__caddy-c8591a1e46e4",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 0.7,
+   "A1": 0.45
+  },
+  "selected": true,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "caddyserver__caddy-d65583e6d2d0",
+  "repo": "caddyserver/caddy",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-015e6cf6ac39",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.0
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-01bcd474447b",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 0.95
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-0274077b56a5",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-1863cb7c0f1d",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-1cd39adbf03b",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-20147bf81fed",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.05
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-2bcdfbb1ac02",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.3
+  },
+  "selected": true,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-326faaac8b5c",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.8,
+   "A1": 0.75
+  },
+  "selected": true,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-397876d3dc28",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-3f6a16a9f8c7",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.75,
+   "A1": 0.75
+  },
+  "selected": true,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-62e3e719a483",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-8e556081de66",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-8f7afbdbdbd6",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.95,
+   "A1": 0.9
+  },
+  "selected": true,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-9ad0bccb4778",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-9b6585be5218",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-9ee0afb43414",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-a8460b5af8cd",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-ad2a33837712",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.35,
+   "A1": 0.65
+  },
+  "selected": true,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "cli__cli-b87e58a1d390",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.5,
+   "A1": 0.5
+  },
+  "selected": true,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-babd691446b9",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.3,
+   "A1": 1.0
+  },
+  "selected": true,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-cba9646b8c25",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.75,
+   "A1": 0.8
+  },
+  "selected": true,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "cli__cli-ff28e72b59be",
+  "repo": "cli/cli",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "golangci__golangci-lint-5e7d0c42ef20",
+  "repo": "golangci/golangci-lint",
+  "rates": {
+   "W": 1.0,
+   "A1": 1.0
+  },
+  "selected": false,
+  "w_expressible": true
+ },
+ {
+  "instance_id": "gohugoio__hugo-c9f6e4d4abc3",
+  "repo": "gohugoio/hugo",
+  "rates": {
+   "W": 0.85,
+   "A1": 0.7222222222222222
+  },
+  "selected": true,
+  "w_expressible": false
+ },
+ {
+  "instance_id": "restic__restic-d4088aa09ba7",
+  "repo": "restic/restic",
+  "rates": {
+   "W": 0.0,
+   "A1": 0.0
+  },
+  "selected": false,
+  "w_expressible": true
+ }
+]

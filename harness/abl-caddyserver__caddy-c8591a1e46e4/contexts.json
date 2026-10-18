@@ -1,0 +1,297 @@
+{
+ "write_set": [
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode"
+ ],
+ "direct_deps": [
+  "github.com/caddyserver/caddy/v2",
+  "github.com/caddyserver/caddy/v2/caddyconfig",
+  "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile",
+  "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+ ],
+ "forward_slice": [
+  "github.com/caddyserver/caddy/v2/caddytest",
+  "github.com/caddyserver/caddy/v2/caddytest/integration",
+  "github.com/caddyserver/caddy/v2/cmd/caddy",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode/brotli",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode/gzip",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode/zstd",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/standard",
+  "github.com/caddyserver/caddy/v2/modules/standard"
+ ],
+ "groups": [
+  [
+   "github.com/caddyserver/caddy/v2"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+  ]
+ ],
+ "gold_identifiers": [
+  "Close",
+  "wroteBody"
+ ],
+ "exports_per_dep": {
+  "github.com/caddyserver/caddy/v2": 222,
+  "github.com/caddyserver/caddy/v2/caddyconfig": 15,
+  "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile": 72,
+  "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile": 41,
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp": 237
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "issue",
+ "repo": "caddyserver/caddy",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 1231,
+   "expressible": false,
+   "missing_identifiers": [
+    "Close",
+    "wroteBody"
+   ]
+  },
+  "W": {
+   "chars": 24883,
+   "file": "W.txt",
+   "n_tokens_prompt": 12137,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1": {
+   "chars": 223693,
+   "file": "A1.txt",
+   "n_tokens_prompt": 84817,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2"
+   ],
+   "chars": 161317,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 62991,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig"
+   ],
+   "chars": 219851,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 83380,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+   ],
+   "chars": 208140,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 79326,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
+   ],
+   "chars": 215604,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 81868,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+   ],
+   "chars": 114743,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 43840,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1g": {
+   "kept": [
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+   ],
+   "evidence": {
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp": [
+     "member:w.Close"
+    ]
+   },
+   "chars": 133833,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 53114,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1t": {
+   "kept": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile",
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+   ],
+   "evidence": {
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp": [
+     "span:Close"
+    ],
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile": [
+     "span:Content"
+    ]
+   },
+   "chars": 149386,
+   "file": "A1t.txt",
+   "n_tokens_prompt": 58605,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "Wd": {
+   "chars": 20188,
+   "file": "Wd.txt",
+   "n_tokens_prompt": 10047,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "A1r": {
+   "chars": 39932,
+   "file": "A1r.txt",
+   "n_tokens_prompt": 17460,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "Wdr": {
+   "chars": 29620,
+   "file": "Wdr.txt",
+   "n_tokens_prompt": 13474,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  },
+  "Wpad": {
+   "chars": 182990,
+   "file": "Wpad.txt",
+   "n_tokens_prompt": 84798,
+   "expressible": false,
+   "missing_identifiers": [
+    "wroteBody"
+   ]
+  }
+ },
+ "pad_meta": {
+  "Wpad": {
+   "pad_pkgs": [
+    "github.com/caddyserver/caddy/v2/modules/internal/network",
+    "github.com/caddyserver/caddy/v2/internal/testmocks",
+    "github.com/caddyserver/caddy/v2/modules/caddypki/acmeserver",
+    "github.com/caddyserver/caddy/v2/modules/logging",
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/forwardauth",
+    "github.com/caddyserver/caddy/v2/modules/caddytls/standardstek",
+    "github.com/caddyserver/caddy/v2/modules/metrics",
+    "github.com/caddyserver/caddy/v2/modules/caddyevents/eventsconfig",
+    "github.com/caddyserver/caddy/v2/modules/caddytls/distributedstek",
+    "github.com/caddyserver/caddy/v2/modules/filestorage",
+    "github.com/caddyserver/caddy/v2/modules/caddyfs"
+   ],
+   "target_tokens": 84817
+  }
+ },
+ "struct_meta": {
+  "rule": "2026-10-13 amendment: declaration slice from fail-to-pass tests and task code spans; referenced dependency declarations without bodies",
+  "n_w_decls": 37,
+  "n_selected": 23,
+  "n_roots": 10,
+  "n_dep_refs_all": 27,
+  "n_dep_refs_sel": 23,
+  "selected": [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.AcceptedEncodings",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encode",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encode.Match",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encode.ServeHTTP",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encode.UnmarshalCaddyfile",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encode.initResponseWriter",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encode.openResponseWriter",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encoder",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.Encoding",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode._",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.encodingPreference",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.hasVaryValue",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.init",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.isEncodeAllowed",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.isSSE",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.parseCaddyfile",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.responseWriter",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.responseWriter.Close",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.responseWriter.FlushError",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.responseWriter.Write",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.responseWriter.WriteHeader",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.responseWriter.init",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode.sseMediaType"
+  ],
+  "dep_refs_sel": [
+   "github.com/caddyserver/caddy/v2.GetModule",
+   "github.com/caddyserver/caddy/v2.ModuleMap",
+   "github.com/caddyserver/caddy/v2/caddyconfig.JSON",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.ArgErr",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.Errf",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.NewFromNextSegment",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.Next",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.NextArg",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.NextBlock",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.RemainingArgs",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser.Val",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.UnmarshalModule",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Unmarshaler",
+   "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile.Helper",
+   "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile.RegisterHandlerDirective",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.Handler",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.IsIncremental",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.MiddlewareHandler",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ParseNamedResponseMatcher",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ResponseMatcher",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ResponseMatcher.Match",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ResponseWriterWrapper"
+  ]
+ }
+}

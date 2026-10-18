@@ -1,0 +1,12 @@
+{
+ "repo": "restic/restic",
+ "repo_path": "restic-wt",
+ "baseline_fail_pkgs": [
+  "github.com/restic/restic/cmd/restic",
+  "github.com/restic/restic/internal/archiver",
+  "github.com/restic/restic/internal/dump",
+  "github.com/restic/restic/internal/fs",
+  "github.com/restic/restic/internal/restorer"
+ ],
+ "baseline_pkgs": 61
+}

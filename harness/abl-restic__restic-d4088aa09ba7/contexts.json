@@ -1,0 +1,333 @@
+{
+ "write_set": [
+  "github.com/restic/restic/internal/repository"
+ ],
+ "direct_deps": [
+  "github.com/restic/restic/internal/backend",
+  "github.com/restic/restic/internal/backend/cache",
+  "github.com/restic/restic/internal/backend/dryrun",
+  "github.com/restic/restic/internal/backend/local",
+  "github.com/restic/restic/internal/backend/mem",
+  "github.com/restic/restic/internal/backend/retry",
+  "github.com/restic/restic/internal/debug",
+  "github.com/restic/restic/internal/errors",
+  "github.com/restic/restic/internal/feature",
+  "github.com/restic/restic/internal/fileio",
+  "github.com/restic/restic/internal/repository/crypto",
+  "github.com/restic/restic/internal/repository/hashing",
+  "github.com/restic/restic/internal/repository/index",
+  "github.com/restic/restic/internal/repository/pack",
+  "github.com/restic/restic/internal/restic",
+  "github.com/restic/restic/internal/test"
+ ],
+ "forward_slice": [
+  "github.com/restic/restic/cmd/restic",
+  "github.com/restic/restic/internal/archiver",
+  "github.com/restic/restic/internal/checker",
+  "github.com/restic/restic/internal/data",
+  "github.com/restic/restic/internal/dump",
+  "github.com/restic/restic/internal/global",
+  "github.com/restic/restic/internal/migrations",
+  "github.com/restic/restic/internal/repository/index",
+  "github.com/restic/restic/internal/restorer"
+ ],
+ "groups": [
+  [
+   "github.com/restic/restic/internal/backend"
+  ],
+  [
+   "github.com/restic/restic/internal/backend/cache"
+  ],
+  [
+   "github.com/restic/restic/internal/backend/dryrun"
+  ],
+  [
+   "github.com/restic/restic/internal/backend/local"
+  ],
+  [
+   "github.com/restic/restic/internal/backend/mem"
+  ],
+  [
+   "github.com/restic/restic/internal/backend/retry"
+  ],
+  [
+   "github.com/restic/restic/internal/debug"
+  ],
+  [
+   "github.com/restic/restic/internal/errors"
+  ],
+  [
+   "github.com/restic/restic/internal/feature"
+  ],
+  [
+   "github.com/restic/restic/internal/fileio"
+  ],
+  [
+   "github.com/restic/restic/internal/repository/crypto"
+  ],
+  [
+   "github.com/restic/restic/internal/repository/hashing"
+  ],
+  [
+   "github.com/restic/restic/internal/repository/index"
+  ],
+  [
+   "github.com/restic/restic/internal/repository/pack"
+  ],
+  [
+   "github.com/restic/restic/internal/restic"
+  ],
+  [
+   "github.com/restic/restic/internal/test"
+  ]
+ ],
+ "gold_identifiers": [
+  "CiphertextLength",
+  "Data",
+  "Errorf",
+  "New",
+  "buf",
+  "crypto",
+  "errors"
+ ],
+ "exports_per_dep": {
+  "github.com/restic/restic/internal/backend": 60,
+  "github.com/restic/restic/internal/backend/cache": 17,
+  "github.com/restic/restic/internal/backend/dryrun": 15,
+  "github.com/restic/restic/internal/backend/local": 22,
+  "github.com/restic/restic/internal/backend/mem": 16,
+  "github.com/restic/restic/internal/backend/retry": 14,
+  "github.com/restic/restic/internal/debug": 5,
+  "github.com/restic/restic/internal/errors": 12,
+  "github.com/restic/restic/internal/feature": 26,
+  "github.com/restic/restic/internal/fileio": 2,
+  "github.com/restic/restic/internal/repository/crypto": 26,
+  "github.com/restic/restic/internal/repository/hashing": 7,
+  "github.com/restic/restic/internal/repository/index": 52,
+  "github.com/restic/restic/internal/repository/pack": 34,
+  "github.com/restic/restic/internal/restic": 143,
+  "github.com/restic/restic/internal/test": 18
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "rewritten_spec",
+ "repo": "restic/restic",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 452,
+   "expressible": false,
+   "missing_identifiers": [
+    "CiphertextLength",
+    "Data",
+    "Errorf",
+    "New",
+    "buf",
+    "crypto",
+    "errors"
+   ]
+  },
+  "W": {
+   "chars": 141088,
+   "file": "W.txt",
+   "n_tokens_prompt": 64354,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 205894,
+   "file": "A1.txt",
+   "n_tokens_prompt": 89909,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/restic/restic/internal/backend"
+   ],
+   "chars": 197665,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 86899,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/restic/restic/internal/backend/cache"
+   ],
+   "chars": 203716,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 89072,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/restic/restic/internal/backend/dryrun"
+   ],
+   "chars": 204250,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 89257,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/restic/restic/internal/backend/local"
+   ],
+   "chars": 203166,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 88911,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/restic/restic/internal/backend/mem"
+   ],
+   "chars": 203801,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 89087,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/restic/restic/internal/backend/retry"
+   ],
+   "chars": 203481,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 89039,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/restic/restic/internal/debug"
+   ],
+   "chars": 205087,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 89608,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/restic/restic/internal/errors"
+   ],
+   "chars": 203900,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 89197,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/restic/restic/internal/feature"
+   ],
+   "chars": 203858,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 89052,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/restic/restic/internal/fileio"
+   ],
+   "chars": 205558,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 89776,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/restic/restic/internal/repository/crypto"
+   ],
+   "chars": 201305,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 88091,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/restic/restic/internal/repository/hashing"
+   ],
+   "chars": 204875,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 89508,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/restic/restic/internal/repository/index"
+   ],
+   "chars": 195755,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 85806,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-13": {
+   "removed": [
+    "github.com/restic/restic/internal/repository/pack"
+   ],
+   "chars": 202166,
+   "file": "A1-13.txt",
+   "n_tokens_prompt": 88434,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-14": {
+   "removed": [
+    "github.com/restic/restic/internal/restic"
+   ],
+   "chars": 187468,
+   "file": "A1-14.txt",
+   "n_tokens_prompt": 82358,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-15": {
+   "removed": [
+    "github.com/restic/restic/internal/test"
+   ],
+   "chars": 203447,
+   "file": "A1-15.txt",
+   "n_tokens_prompt": 88894,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [
+    "github.com/restic/restic/internal/errors",
+    "github.com/restic/restic/internal/repository/crypto"
+   ],
+   "evidence": {
+    "github.com/restic/restic/internal/repository/crypto": [
+     "crypto.CiphertextLength"
+    ],
+    "github.com/restic/restic/internal/errors": [
+     "errors.New",
+     "member:fmt.Errorf"
+    ]
+   },
+   "chars": 147671,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 66884,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 141088,
+   "same_as": "W"
+  }
+ }
+}

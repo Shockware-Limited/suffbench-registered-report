@@ -1,0 +1,292 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verify"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/internal/gh",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/api",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/auth",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/io",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verification",
+  "github.com/cli/cli/v2/pkg/cmdutil"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/attestation",
+  "github.com/cli/cli/v2/pkg/cmd/root"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/internal/gh"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/api"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/artifact"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/auth"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/io"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verification"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ]
+ ],
+ "gold_identifiers": [
+  "QuoteMeta",
+  "Sprintf",
+  "hostname",
+  "regexp",
+  "signerWorkflow",
+  "url"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/internal/gh": 56,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/api": 35,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact": 8,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci": 14,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/auth": 2,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/io": 12,
+  "github.com/cli/cli/v2/pkg/cmd/attestation/verification": 46,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "rewritten_spec",
+ "repo": "cli/cli",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 554,
+   "expressible": false,
+   "missing_identifiers": [
+    "QuoteMeta",
+    "Sprintf",
+    "hostname",
+    "regexp",
+    "signerWorkflow",
+    "url"
+   ]
+  },
+  "W": {
+   "chars": 29344,
+   "file": "W.txt",
+   "n_tokens_prompt": 13485,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 58765,
+   "file": "A1.txt",
+   "n_tokens_prompt": 24999,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh"
+   ],
+   "chars": 50345,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 22058,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 58074,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 24740,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 56748,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 24256,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/api"
+   ],
+   "chars": 56401,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 24004,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/artifact"
+   ],
+   "chars": 57895,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 24630,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci"
+   ],
+   "chars": 56083,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 23898,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/auth"
+   ],
+   "chars": 58420,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 24849,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/io"
+   ],
+   "chars": 57809,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 24574,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmd/attestation/verification"
+   ],
+   "chars": 54586,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 23140,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 51868,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 22327,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 29344,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 29344,
+   "same_as": "W"
+  },
+  "Wd": {
+   "chars": 7372,
+   "file": "Wd.txt",
+   "n_tokens_prompt": 4045,
+   "expressible": false,
+   "missing_identifiers": [
+    "QuoteMeta"
+   ]
+  },
+  "A1r": {
+   "chars": 39716,
+   "file": "A1r.txt",
+   "n_tokens_prompt": 17612,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "Wdr": {
+   "chars": 11619,
+   "file": "Wdr.txt",
+   "n_tokens_prompt": 5744,
+   "expressible": false,
+   "missing_identifiers": [
+    "QuoteMeta"
+   ]
+  },
+  "Wpad": {
+   "chars": 55256,
+   "file": "Wpad.txt",
+   "n_tokens_prompt": 24960,
+   "expressible": true,
+   "missing_identifiers": []
+  }
+ },
+ "pad_meta": {
+  "Wpad": {
+   "pad_pkgs": [
+    "github.com/cli/cli/v2/pkg/cmd/skills/search"
+   ],
+   "target_tokens": 24999
+  }
+ },
+ "struct_meta": {
+  "rule": "2026-10-13 amendment: declaration slice from fail-to-pass tests and task code spans; referenced dependency declarations without bodies",
+  "n_w_decls": 17,
+  "n_selected": 6,
+  "n_roots": 3,
+  "n_dep_refs_all": 43,
+  "n_dep_refs_sel": 10,
+  "selected": [
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verify.Options",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verify.expandToGitHubURL",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verify.expandToGitHubURLRegex",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verify.hostRegex",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verify.newEnforcementCriteria",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verify.validateSignerWorkflow"
+  ],
+  "dep_refs_sel": [
+   "github.com/cli/cli/v2/internal/gh.Config",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/api.Client",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/artifact/oci.Client",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/io.Handler",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verification.EnforcementCriteria",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verification.GitHubOIDCIssuer",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verification.GitHubRunner",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verification.GitHubTenantOIDCIssuer",
+   "github.com/cli/cli/v2/pkg/cmd/attestation/verification.SigstoreVerifier",
+   "github.com/cli/cli/v2/pkg/cmdutil.Exporter"
+  ]
+ }
+}

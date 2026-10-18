@@ -1,0 +1,20 @@
+{
+ "repo": "cli/cli",
+ "repo_path": "cli-mine",
+ "baseline_fail_pkgs": [
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/internal/safepaths",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/zip",
+  "github.com/cli/cli/v2/pkg/cmd/attestation/download",
+  "github.com/cli/cli/v2/pkg/cmd/codespace",
+  "github.com/cli/cli/v2/pkg/cmd/copilot",
+  "github.com/cli/cli/v2/pkg/cmd/issue/develop",
+  "github.com/cli/cli/v2/pkg/cmd/pr/shared",
+  "github.com/cli/cli/v2/pkg/cmd/release/download",
+  "github.com/cli/cli/v2/pkg/cmd/repo/read-file",
+  "github.com/cli/cli/v2/pkg/cmd/run/download",
+  "github.com/cli/cli/v2/pkg/cmd/skills/list"
+ ],
+ "baseline_pkgs": 310
+}

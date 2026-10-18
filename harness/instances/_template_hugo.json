@@ -1,0 +1,6 @@
+{
+ "repo": "gohugoio/hugo",
+ "repo_path": "hugo-wt",
+ "baseline_fail_pkgs": [],
+ "baseline_pkgs": 192
+}

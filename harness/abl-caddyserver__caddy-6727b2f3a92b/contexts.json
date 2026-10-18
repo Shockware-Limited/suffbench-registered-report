@@ -1,0 +1,612 @@
+{
+ "write_set": [
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi"
+ ],
+ "direct_deps": [
+  "github.com/caddyserver/caddy/v2",
+  "github.com/caddyserver/caddy/v2/caddyconfig",
+  "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile",
+  "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile",
+  "github.com/caddyserver/caddy/v2/cmd",
+  "github.com/caddyserver/caddy/v2/internal",
+  "github.com/caddyserver/caddy/v2/modules/caddyevents",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite",
+  "github.com/caddyserver/caddy/v2/modules/caddytls",
+  "github.com/caddyserver/caddy/v2/modules/internal/network"
+ ],
+ "forward_slice": [
+  "github.com/caddyserver/caddy/v2/caddytest",
+  "github.com/caddyserver/caddy/v2/caddytest/integration",
+  "github.com/caddyserver/caddy/v2/cmd/caddy",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/forwardauth",
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/standard",
+  "github.com/caddyserver/caddy/v2/modules/standard"
+ ],
+ "groups": [
+  [
+   "github.com/caddyserver/caddy/v2"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/cmd"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/internal"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddyevents"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/caddytls"
+  ],
+  [
+   "github.com/caddyserver/caddy/v2/modules/internal/network"
+  ]
+ ],
+ "gold_identifiers": [
+  "DialError",
+  "Errorf",
+  "NewDialError",
+  "reverseproxy"
+ ],
+ "exports_per_dep": {
+  "github.com/caddyserver/caddy/v2": 222,
+  "github.com/caddyserver/caddy/v2/caddyconfig": 15,
+  "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile": 72,
+  "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile": 41,
+  "github.com/caddyserver/caddy/v2/cmd": 23,
+  "github.com/caddyserver/caddy/v2/internal": 18,
+  "github.com/caddyserver/caddy/v2/modules/caddyevents": 17,
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp": 237,
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver": 30,
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers": 21,
+  "github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite": 11,
+  "github.com/caddyserver/caddy/v2/modules/caddytls": 241,
+  "github.com/caddyserver/caddy/v2/modules/internal/network": 8
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "issue",
+ "repo": "caddyserver/caddy",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 1132,
+   "expressible": false,
+   "missing_identifiers": [
+    "DialError",
+    "Errorf",
+    "NewDialError",
+    "reverseproxy"
+   ]
+  },
+  "W": {
+   "chars": 355109,
+   "file": "W.txt",
+   "n_tokens_prompt": 158565,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1": {
+   "chars": 674609,
+   "file": "A1.txt",
+   "n_tokens_prompt": 277505,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2"
+   ],
+   "chars": 612233,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 255679,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig"
+   ],
+   "chars": 670767,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 276068,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+   ],
+   "chars": 659056,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 272014,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
+   ],
+   "chars": 666520,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 274556,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/cmd"
+   ],
+   "chars": 668692,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 275458,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/internal"
+   ],
+   "chars": 671616,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 276230,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddyevents"
+   ],
+   "chars": 669449,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 275736,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp"
+   ],
+   "chars": 565659,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 236528,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp/fileserver"
+   ],
+   "chars": 660975,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 272635,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers"
+   ],
+   "chars": 670413,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 275982,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite"
+   ],
+   "chars": 670963,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 276153,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/caddytls"
+   ],
+   "chars": 590662,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 244644,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/caddyserver/caddy/v2/modules/internal/network"
+   ],
+   "chars": 673412,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 276942,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1g": {
+   "kept": [],
+   "evidence": {},
+   "chars": 355109,
+   "same_as": "W"
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 355109,
+   "same_as": "W"
+  },
+  "Wd": {
+   "chars": 166971,
+   "file": "Wd.txt",
+   "n_tokens_prompt": 73923,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "A1r": {
+   "chars": 476993,
+   "file": "A1r.txt",
+   "n_tokens_prompt": 203263,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "Wdr": {
+   "chars": 220637,
+   "file": "Wdr.txt",
+   "n_tokens_prompt": 93699,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  },
+  "Wpad": {
+   "chars": 509757,
+   "file": "Wpad.txt",
+   "n_tokens_prompt": 229911,
+   "expressible": false,
+   "missing_identifiers": [
+    "NewDialError"
+   ]
+  }
+ },
+ "pad_meta": {
+  "Wpad": {
+   "pad_pkgs": [
+    "github.com/caddyserver/caddy/v2/modules/caddytls/distributedstek",
+    "github.com/caddyserver/caddy/v2/modules/caddytls/standardstek",
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode/zstd",
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode/brotli",
+    "github.com/caddyserver/caddy/v2/modules/metrics",
+    "github.com/caddyserver/caddy/v2/modules/caddyevents/eventsconfig",
+    "github.com/caddyserver/caddy/v2/modules/caddypki/acmeserver",
+    "github.com/caddyserver/caddy/v2/modules/logging",
+    "github.com/caddyserver/caddy/v2/modules/filestorage",
+    "github.com/caddyserver/caddy/v2/modules/caddyfs",
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp/encode/gzip",
+    "github.com/caddyserver/caddy/v2/internal/testmocks"
+   ],
+   "target_tokens": 277505
+  }
+ },
+ "struct_meta": {
+  "rule": "2026-10-13 amendment: declaration slice from fail-to-pass tests and task code spans; referenced dependency declarations without bodies",
+  "n_w_decls": 459,
+  "n_selected": 181,
+  "n_roots": 39,
+  "n_dep_refs_all": 157,
+  "n_dep_refs_sel": 68,
+  "selected": [
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.AUpstreams",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.AUpstreams.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.AUpstreams.String",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.ActiveHealthChecks",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.ActiveHealthChecks.IsEnabled",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.ActiveHealthChecks.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.BufferedTransport",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.CircuitBreaker",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.ContentLengthRequiredTransport",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.CookieHashSelection",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.CookieHashSelection.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.CopyResponseHandler",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.CopyResponseHandler.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.CopyResponseHeadersHandler",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.CopyResponseHeadersHandler.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.DialError",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.DialInfo",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.DialInfo.String",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.GetDialInfo",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HTTPTransport",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HTTPTransport.Cleanup",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HTTPTransport.NewTransport",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HTTPTransport.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HTTPTransport.RoundTrip",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HTTPTransport.SetScheme",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HTTPTransport.shouldUseTLS",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Handler",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Handler.Cleanup",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Handler.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Handler.activeHealthChecker",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Handler.doActiveHealthCheck",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Handler.doActiveHealthCheckForAllHosts",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Handler.provisionUpstream",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HeaderHashSelection",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HeaderHashSelection.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HealthCheckSchemeOverriderTransport",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.HealthChecks",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Host",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Host.Fails",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.IPVersions",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.KeepAlive",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.LoadBalancing",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.LoadBalancing.tryAgain",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.MultiUpstreams",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.MultiUpstreams.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.PassiveHealthChecks",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.ProxyProtocolInfo",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.QueryHashSelection",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.QueryHashSelection.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.RandomChoiceSelection",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.RandomChoiceSelection.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.RandomSelection",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.RequestHeaderOpsTransport",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.SRVUpstreams",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.SRVUpstreams.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.SRVUpstreams.String",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.SRVUpstreams.formattedAddr",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Selector",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.StreamLogs",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.TLSConfig",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.TLSConfig.MakeTLSClientConfig",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.Healthy",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.String",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.activeHealthFails",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.activeHealthPasses",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.countHealthFail",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.countHealthPass",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.fillDialInfo",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.fillDynamicHost",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.fillHost",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.healthy",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.resetHealth",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.Upstream.setHealthy",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.UpstreamPool",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.UpstreamResolver",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.UpstreamResolver.ParseAddresses",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.UpstreamSource",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.WeightedRoundRobinSelection",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.WeightedRoundRobinSelection.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy._",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.addrList",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.addrList.first",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.addrList.forResolve",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.allowedVersions",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.allowedVersionsString",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.bodyNopCloserIfNotRead",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.bodyNopCloserIfNotRead.Close",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.bodyReadCloser",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.bodyReadCloser.Close",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.bufPool",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.decodeBase64DERCert",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.defaultBufferSize",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.defaultStreamLogLevel",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.defaultStreamLoggerName",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.detachedTunnelTrackers",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.detachedTunnelTrackersMu",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.dialInfoCtxKey",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.dynamicHostCleanupInterval",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.dynamicHostEntry",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.dynamicHostIdleExpiry",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.dynamicHosts",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.dynamicHostsCleanerOnce",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.dynamicHostsMu",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.errNoUpstream",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.hosts",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.initReverseProxyMetrics",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.isIPv4",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.isNotIPv4",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.metricsUpstreamsHealthyUpdater",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.metricsUpstreamsHealthyUpdater.init",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.metricsUpstreamsHealthyUpdater.update",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.newMetricsUpstreamsHealthyUpdater",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.newTunnelTracker",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.notifyDetachedTunnelTrackersOfUpstreamRemoval",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.openConnection",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.proxyProtocolInfoVarKey",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.proxyVarKey",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.registerDetachedTunnelTrackers",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.resolveUDPAddr",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.retryableResponseError",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.reverseProxyMetrics",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.switchProtocolCopier",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.switchProtocolCopier.buffer",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.tcpRWTimeoutConn",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.tlsH1OnlyVarKey",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.tunnelTracker",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.tunnelTracker.cleanupAttachedConnections",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.tunnelTracker.closeAttachedConnections",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.tunnelTracker.closeConnectionsForUpstream",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy.unregisterDetachedTunnelTrackers",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.BeginRequest",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.ErrInvalidSplitPath",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Params",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Responder",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Stdin",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Transport",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Transport.DefaultBufferSizes",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Transport.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Transport.RequiresContentLength",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Transport.RoundTrip",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Transport.buildEnv",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.Transport.splitPos",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.UnknownType",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi._",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.bufPool",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.chunked",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.Do",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.Get",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.Head",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.Options",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.Post",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.Request",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.SetReadTimeout",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.client.SetWriteTimeout",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.clientCloser",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.clientCloser.Close",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.encodeSize",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.envVars",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.errBadContentLength",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.errNoContentLength",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.header",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.header.init",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.headerNameReplacer",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.loggableEnv",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.maxPad",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.maxWrite",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.noopLogger",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.pad",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.record",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamReader",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter.Flush",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter.FlushStream",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter.endStream",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter.writeBeginRequest",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter.writeHeader",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter.writePairs",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.streamWriter.writeRecord",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/reverseproxy/fastcgi.tlsProtocolStrings"
+  ],
+  "dep_refs_sel": [
+   "github.com/caddyserver/caddy/v2.Context",
+   "github.com/caddyserver/caddy/v2.Context.App",
+   "github.com/caddyserver/caddy/v2.Context.GetMetricsRegistry",
+   "github.com/caddyserver/caddy/v2.Context.LoadModule",
+   "github.com/caddyserver/caddy/v2.Context.Logger",
+   "github.com/caddyserver/caddy/v2.CtxKey",
+   "github.com/caddyserver/caddy/v2.Duration",
+   "github.com/caddyserver/caddy/v2.FastAbs",
+   "github.com/caddyserver/caddy/v2.JoinNetworkAddress",
+   "github.com/caddyserver/caddy/v2.NetworkAddress",
+   "github.com/caddyserver/caddy/v2.NetworkAddress.IsFdNetwork",
+   "github.com/caddyserver/caddy/v2.NetworkAddress.IsUnixNetwork",
+   "github.com/caddyserver/caddy/v2.NetworkAddress.JoinHostPort",
+   "github.com/caddyserver/caddy/v2.NetworkAddress.PortRangeSize",
+   "github.com/caddyserver/caddy/v2.NewReplacer",
+   "github.com/caddyserver/caddy/v2.NewUsagePool",
+   "github.com/caddyserver/caddy/v2.ParseNetworkAddress",
+   "github.com/caddyserver/caddy/v2.ParseNetworkAddressWithDefaults",
+   "github.com/caddyserver/caddy/v2.Provisioner",
+   "github.com/caddyserver/caddy/v2.ProxyFuncProducer",
+   "github.com/caddyserver/caddy/v2.Replacer",
+   "github.com/caddyserver/caddy/v2.Replacer.Delete",
+   "github.com/caddyserver/caddy/v2.Replacer.GetString",
+   "github.com/caddyserver/caddy/v2.Replacer.ReplaceAll",
+   "github.com/caddyserver/caddy/v2.Replacer.ReplaceKnown",
+   "github.com/caddyserver/caddy/v2.Replacer.ReplaceOrErr",
+   "github.com/caddyserver/caddy/v2.Replacer.Set",
+   "github.com/caddyserver/caddy/v2.ReplacerCtxKey",
+   "github.com/caddyserver/caddy/v2.UsagePool",
+   "github.com/caddyserver/caddy/v2.UsagePool.Delete",
+   "github.com/caddyserver/caddy/v2.UsagePool.LoadOrStore",
+   "github.com/caddyserver/caddy/v2.Version",
+   "github.com/caddyserver/caddy/v2/caddyconfig.JSONModuleObject",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Dispenser",
+   "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile.Unmarshaler",
+   "github.com/caddyserver/caddy/v2/modules/caddyevents.App",
+   "github.com/caddyserver/caddy/v2/modules/caddyevents.App.Emit",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.Error",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.GetVar",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.HandlerError",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.LoggableHTTPRequest",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.MatcherSets",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.MatcherSets.AnyMatchWithError",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.MatcherSets.FromInterface",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.OriginalRequestCtxKey",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.RawMatcherSets",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ResponseHandler",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ResponseHandler.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ResponseMatcher",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.SanitizedPathJoin",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.Server",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.ServerCtxKey",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.SetVar",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.StatusCodeMatches",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp.WeakString",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers.Handler",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers.Handler.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers.HeaderOps",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/headers.HeaderOps.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite.Rewrite",
+   "github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite.Rewrite.Provision",
+   "github.com/caddyserver/caddy/v2/modules/caddytls.AllMatchingCertificates",
+   "github.com/caddyserver/caddy/v2/modules/caddytls.CA",
+   "github.com/caddyserver/caddy/v2/modules/caddytls.SupportedCipherSuites",
+   "github.com/caddyserver/caddy/v2/modules/caddytls.SupportedCurves",
+   "github.com/caddyserver/caddy/v2/modules/caddytls.TLS",
+   "github.com/caddyserver/caddy/v2/modules/caddytls.TLS.Manage",
+   "github.com/caddyserver/caddy/v2/modules/internal/network.ProxyFromURL"
+  ]
+ }
+}

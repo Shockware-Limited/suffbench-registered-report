@@ -1,0 +1,505 @@
+{
+ "write_set": [
+  "github.com/cli/cli/v2/pkg/cmd/skills/install"
+ ],
+ "direct_deps": [
+  "github.com/cli/cli/v2/api",
+  "github.com/cli/cli/v2/context",
+  "github.com/cli/cli/v2/git",
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry",
+  "github.com/cli/cli/v2/internal/ghinstance",
+  "github.com/cli/cli/v2/internal/ghrepo",
+  "github.com/cli/cli/v2/internal/prompter",
+  "github.com/cli/cli/v2/internal/skills/discovery",
+  "github.com/cli/cli/v2/internal/skills/frontmatter",
+  "github.com/cli/cli/v2/internal/skills/installer",
+  "github.com/cli/cli/v2/internal/skills/registry",
+  "github.com/cli/cli/v2/internal/skills/source",
+  "github.com/cli/cli/v2/internal/tableprinter",
+  "github.com/cli/cli/v2/internal/text",
+  "github.com/cli/cli/v2/pkg/cmdutil",
+  "github.com/cli/cli/v2/pkg/iostreams"
+ ],
+ "forward_slice": [
+  "github.com/cli/cli/v2/cmd/gen-docs",
+  "github.com/cli/cli/v2/cmd/gh",
+  "github.com/cli/cli/v2/internal/docs",
+  "github.com/cli/cli/v2/internal/ghcmd",
+  "github.com/cli/cli/v2/pkg/cmd/root",
+  "github.com/cli/cli/v2/pkg/cmd/skills"
+ ],
+ "groups": [
+  [
+   "github.com/cli/cli/v2/api"
+  ],
+  [
+   "github.com/cli/cli/v2/context"
+  ],
+  [
+   "github.com/cli/cli/v2/git"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghinstance"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/ghrepo"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/prompter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/discovery"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/frontmatter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/installer"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/registry"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/skills/source"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/tableprinter"
+  ],
+  [
+   "github.com/cli/cli/v2/internal/text"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/cmdutil"
+  ],
+  [
+   "github.com/cli/cli/v2/pkg/iostreams"
+  ]
+ ],
+ "gold_identifiers": [
+  "AgentHost",
+  "DefaultAgentID",
+  "Dir",
+  "FindByID",
+  "registry"
+ ],
+ "exports_per_dep": {
+  "github.com/cli/cli/v2/api": 518,
+  "github.com/cli/cli/v2/context": 22,
+  "github.com/cli/cli/v2/git": 98,
+  "github.com/cli/cli/v2/internal/gh/ghtelemetry": 13,
+  "github.com/cli/cli/v2/internal/ghinstance": 9,
+  "github.com/cli/cli/v2/internal/ghrepo": 13,
+  "github.com/cli/cli/v2/internal/prompter": 59,
+  "github.com/cli/cli/v2/internal/skills/discovery": 54,
+  "github.com/cli/cli/v2/internal/skills/frontmatter": 12,
+  "github.com/cli/cli/v2/internal/skills/installer": 24,
+  "github.com/cli/cli/v2/internal/skills/registry": 19,
+  "github.com/cli/cli/v2/internal/skills/source": 5,
+  "github.com/cli/cli/v2/internal/tableprinter": 10,
+  "github.com/cli/cli/v2/internal/text": 13,
+  "github.com/cli/cli/v2/pkg/cmdutil": 60,
+  "github.com/cli/cli/v2/pkg/iostreams": 89
+ },
+ "a1_matches_pilot": null,
+ "count_model": "claude-haiku-5-5",
+ "task_rule": "2026-10-12 amendment: selectors, code-span identifiers, import paths",
+ "task_text_source": "issue",
+ "repo": "cli/cli",
+ "arms": {
+  "A0": {
+   "chars": 0,
+   "file": "A0.txt",
+   "n_tokens_prompt": 755,
+   "expressible": false,
+   "missing_identifiers": [
+    "AgentHost",
+    "DefaultAgentID",
+    "Dir",
+    "FindByID",
+    "registry"
+   ]
+  },
+  "W": {
+   "chars": 44559,
+   "file": "W.txt",
+   "n_tokens_prompt": 21011,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1": {
+   "chars": 157296,
+   "file": "A1.txt",
+   "n_tokens_prompt": 67579,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-00": {
+   "removed": [
+    "github.com/cli/cli/v2/api"
+   ],
+   "chars": 107436,
+   "file": "A1-00.txt",
+   "n_tokens_prompt": 46811,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-01": {
+   "removed": [
+    "github.com/cli/cli/v2/context"
+   ],
+   "chars": 155212,
+   "file": "A1-01.txt",
+   "n_tokens_prompt": 66690,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-02": {
+   "removed": [
+    "github.com/cli/cli/v2/git"
+   ],
+   "chars": 147263,
+   "file": "A1-02.txt",
+   "n_tokens_prompt": 63594,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-03": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/gh/ghtelemetry"
+   ],
+   "chars": 156710,
+   "file": "A1-03.txt",
+   "n_tokens_prompt": 67310,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-04": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghinstance"
+   ],
+   "chars": 156605,
+   "file": "A1-04.txt",
+   "n_tokens_prompt": 67320,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-05": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/ghrepo"
+   ],
+   "chars": 155918,
+   "file": "A1-05.txt",
+   "n_tokens_prompt": 67043,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-06": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/prompter"
+   ],
+   "chars": 146501,
+   "file": "A1-06.txt",
+   "n_tokens_prompt": 63222,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-07": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/discovery"
+   ],
+   "chars": 149110,
+   "file": "A1-07.txt",
+   "n_tokens_prompt": 64474,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-08": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/frontmatter"
+   ],
+   "chars": 155596,
+   "file": "A1-08.txt",
+   "n_tokens_prompt": 66907,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-09": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/installer"
+   ],
+   "chars": 155535,
+   "file": "A1-09.txt",
+   "n_tokens_prompt": 66918,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-10": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/registry"
+   ],
+   "chars": 148623,
+   "file": "A1-10.txt",
+   "n_tokens_prompt": 63436,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-11": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/skills/source"
+   ],
+   "chars": 156428,
+   "file": "A1-11.txt",
+   "n_tokens_prompt": 67229,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-12": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/tableprinter"
+   ],
+   "chars": 155901,
+   "file": "A1-12.txt",
+   "n_tokens_prompt": 66992,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-13": {
+   "removed": [
+    "github.com/cli/cli/v2/internal/text"
+   ],
+   "chars": 155279,
+   "file": "A1-13.txt",
+   "n_tokens_prompt": 66836,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-14": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/cmdutil"
+   ],
+   "chars": 150399,
+   "file": "A1-14.txt",
+   "n_tokens_prompt": 64907,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1-15": {
+   "removed": [
+    "github.com/cli/cli/v2/pkg/iostreams"
+   ],
+   "chars": 151483,
+   "file": "A1-15.txt",
+   "n_tokens_prompt": 65007,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1g": {
+   "kept": [
+    "github.com/cli/cli/v2/internal/skills/installer",
+    "github.com/cli/cli/v2/internal/skills/registry"
+   ],
+   "evidence": {
+    "github.com/cli/cli/v2/internal/skills/installer": [
+     "member:opts.Dir"
+    ],
+    "github.com/cli/cli/v2/internal/skills/registry": [
+     "registry.AgentHost",
+     "registry.DefaultAgentID",
+     "registry.FindByID"
+    ]
+   },
+   "chars": 54993,
+   "file": "A1g.txt",
+   "n_tokens_prompt": 25815,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "A1t": {
+   "kept": [],
+   "evidence": {},
+   "chars": 44559,
+   "same_as": "W"
+  },
+  "Wd": {
+   "chars": 44559,
+   "same_as": "W"
+  },
+  "A1r": {
+   "chars": 69189,
+   "file": "A1r.txt",
+   "n_tokens_prompt": 31357,
+   "expressible": true,
+   "missing_identifiers": []
+  },
+  "Wdr": {
+   "chars": 69189,
+   "same_as": "A1r"
+  },
+  "Wpad": {
+   "chars": 137175,
+   "file": "Wpad.txt",
+   "n_tokens_prompt": 68049,
+   "expressible": true,
+   "missing_identifiers": []
+  }
+ },
+ "pad_meta": {
+  "Wpad": {
+   "pad_pkgs": [
+    "github.com/cli/cli/v2/pkg/cmd/run/list",
+    "github.com/cli/cli/v2/pkg/cmd/issue/pin",
+    "github.com/cli/cli/v2/pkg/ssh",
+    "github.com/cli/cli/v2/pkg/cmd/discussion/list",
+    "github.com/cli/cli/v2/pkg/cmd/project/edit",
+    "github.com/cli/cli/v2/pkg/cmd/repo",
+    "github.com/cli/cli/v2/pkg/cmd/repo/rename",
+    "github.com/cli/cli/v2/pkg/cmd/repo/autolink",
+    "github.com/cli/cli/v2/pkg/cmd/ruleset",
+    "github.com/cli/cli/v2/pkg/cmd/release/delete-asset",
+    "github.com/cli/cli/v2/pkg/cmd/preview/prompter",
+    "github.com/cli/cli/v2/pkg/cmd/repo/credits",
+    "github.com/cli/cli/v2/internal/codespaces/rpc/codespace",
+    "github.com/cli/cli/v2/pkg/cmd/repo/sync"
+   ],
+   "target_tokens": 67579
+  }
+ },
+ "struct_meta": {
+  "rule": "2026-10-13 amendment: declaration slice from fail-to-pass tests and task code spans; referenced dependency declarations without bodies",
+  "n_w_decls": 44,
+  "n_selected": 44,
+  "n_roots": 13,
+  "n_dep_refs_all": 79,
+  "n_dep_refs_sel": 79,
+  "selected": [
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.InstallOptions",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.NewCmdInstall",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.allSkillsKey",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.buildInstallPlans",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.checkOverwrite",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.checkUpstreamProvenance",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.collisionError",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.cutLast",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.discoverSkills",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.errSkillsListed",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.existingSkillPrompt",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.filterHiddenDirSkills",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.formatPlanHosts",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.friendlyDir",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.installPlan",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.installProgress",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.installProgressLabel",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.installRun",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.kiroResourcePath",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.listAvailableSkills",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.logConventions",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.mapAgentHostsToIDs",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.mapSkillsToNames",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.matchLocalSkillByName",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.matchSelectedSkills",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.matchSkillByName",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.maxSearchResults",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.parseSkillFromOpts",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.printFileTree",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.printHostHints",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.printPreInstallDisclaimer",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.printReviewHint",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.printTreeDir",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.resolveHosts",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.resolveInstallDir",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.resolveRepoArg",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.resolveScope",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.resolveVersion",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.runLocalInstall",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.selectSkillsWithSelector",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.skillSearchFunc",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.skillSelector",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.truncateDescription",
+   "github.com/cli/cli/v2/pkg/cmd/skills/install.visibilityWaitTimeout"
+  ],
+  "dep_refs_sel": [
+   "github.com/cli/cli/v2/api.Client",
+   "github.com/cli/cli/v2/api.Client.REST",
+   "github.com/cli/cli/v2/api.NewClientFromHTTP",
+   "github.com/cli/cli/v2/context.Remotes",
+   "github.com/cli/cli/v2/git.Client",
+   "github.com/cli/cli/v2/git.ShortSHA",
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry.CommandRecorder",
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry.Event",
+   "github.com/cli/cli/v2/internal/gh/ghtelemetry.EventRecorder",
+   "github.com/cli/cli/v2/internal/ghinstance.CategorizeHost",
+   "github.com/cli/cli/v2/internal/ghrepo.FromFullName",
+   "github.com/cli/cli/v2/internal/ghrepo.FullName",
+   "github.com/cli/cli/v2/internal/ghrepo.Interface",
+   "github.com/cli/cli/v2/internal/prompter.MultiSelectSearchResult",
+   "github.com/cli/cli/v2/internal/prompter.Prompter",
+   "github.com/cli/cli/v2/internal/skills/discovery.DiscoverLocalSkillsWithOptions",
+   "github.com/cli/cli/v2/internal/skills/discovery.DiscoverOptions",
+   "github.com/cli/cli/v2/internal/skills/discovery.DiscoverSkillByPath",
+   "github.com/cli/cli/v2/internal/skills/discovery.DiscoverSkillsWithOptions",
+   "github.com/cli/cli/v2/internal/skills/discovery.FetchDescriptionsConcurrent",
+   "github.com/cli/cli/v2/internal/skills/discovery.FetchRepoVisibility",
+   "github.com/cli/cli/v2/internal/skills/discovery.FindNameCollisions",
+   "github.com/cli/cli/v2/internal/skills/discovery.FormatCollisions",
+   "github.com/cli/cli/v2/internal/skills/discovery.HasHiddenDirSkills",
+   "github.com/cli/cli/v2/internal/skills/discovery.IsSkillPath",
+   "github.com/cli/cli/v2/internal/skills/discovery.IsSpecCompliant",
+   "github.com/cli/cli/v2/internal/skills/discovery.PartitionHiddenDirSkills",
+   "github.com/cli/cli/v2/internal/skills/discovery.RepoVisibility",
+   "github.com/cli/cli/v2/internal/skills/discovery.RepoVisibilityPublic",
+   "github.com/cli/cli/v2/internal/skills/discovery.ResolveRef",
+   "github.com/cli/cli/v2/internal/skills/discovery.ResolvedRef",
+   "github.com/cli/cli/v2/internal/skills/discovery.ShortRef",
+   "github.com/cli/cli/v2/internal/skills/discovery.Skill",
+   "github.com/cli/cli/v2/internal/skills/discovery.Skill.DisplayName",
+   "github.com/cli/cli/v2/internal/skills/discovery.TreeTooLargeError",
+   "github.com/cli/cli/v2/internal/skills/frontmatter.Parse",
+   "github.com/cli/cli/v2/internal/skills/installer.Install",
+   "github.com/cli/cli/v2/internal/skills/installer.InstallLocal",
+   "github.com/cli/cli/v2/internal/skills/installer.LocalOptions",
+   "github.com/cli/cli/v2/internal/skills/installer.Options",
+   "github.com/cli/cli/v2/internal/skills/installer.ResolveGitRoot",
+   "github.com/cli/cli/v2/internal/skills/installer.ResolveHomeDir",
+   "github.com/cli/cli/v2/internal/skills/registry.AgentHelpList",
+   "github.com/cli/cli/v2/internal/skills/registry.AgentHost",
+   "github.com/cli/cli/v2/internal/skills/registry.AgentHost.InstallDir",
+   "github.com/cli/cli/v2/internal/skills/registry.AgentIDs",
+   "github.com/cli/cli/v2/internal/skills/registry.Agents",
+   "github.com/cli/cli/v2/internal/skills/registry.DefaultAgentID",
+   "github.com/cli/cli/v2/internal/skills/registry.FindByID",
+   "github.com/cli/cli/v2/internal/skills/registry.Scope",
+   "github.com/cli/cli/v2/internal/skills/registry.ScopeLabels",
+   "github.com/cli/cli/v2/internal/skills/registry.ScopeProject",
+   "github.com/cli/cli/v2/internal/skills/registry.ScopeUser",
+   "github.com/cli/cli/v2/internal/skills/source.BuildRepoURL",
+   "github.com/cli/cli/v2/internal/skills/source.ParseMetadataRepo",
+   "github.com/cli/cli/v2/internal/skills/source.ParseRepoURL",
+   "github.com/cli/cli/v2/internal/skills/source.ValidateSupportedHost",
+   "github.com/cli/cli/v2/internal/tableprinter.New",
+   "github.com/cli/cli/v2/internal/tableprinter.WithHeader",
+   "github.com/cli/cli/v2/internal/text.Pluralize",
+   "github.com/cli/cli/v2/internal/text.RemoveExcessiveWhitespace",
+   "github.com/cli/cli/v2/internal/text.Truncate",
+   "github.com/cli/cli/v2/pkg/cmdutil.DisableAuthCheckFlag",
+   "github.com/cli/cli/v2/pkg/cmdutil.Factory",
+   "github.com/cli/cli/v2/pkg/cmdutil.FlagErrorf",
+   "github.com/cli/cli/v2/pkg/cmdutil.MutuallyExclusive",
+   "github.com/cli/cli/v2/pkg/cmdutil.StringEnumFlag",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme.Bold",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme.Muted",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme.SuccessIcon",
+   "github.com/cli/cli/v2/pkg/iostreams.ColorScheme.WarningIcon",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.CanPrompt",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.ColorScheme",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.IsStdoutTTY",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.StartProgressIndicatorWithLabel",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.StopProgressIndicator",
+   "github.com/cli/cli/v2/pkg/iostreams.IOStreams.TerminalWidth"
+  ]
+ }
+}

@@ -62,6 +62,7 @@ def main():
     ap.add_argument("--clone", required=True); ap.add_argument("--wt", required=True); ap.add_argument("--since", default="2026-09-01")
     ap.add_argument("--target", type=int, default=24); ap.add_argument("--out", default="instances"); ap.add_argument("--template", required=True)
     ap.add_argument("--max-commits", type=int, default=80); ap.add_argument("--branch", default=None)
+    ap.add_argument("--max-pkgs", type=int, default=2); ap.add_argument("--max-churn", type=int, default=120)
     a = ap.parse_args()
     tpl = json.load(open(a.template, encoding="utf-8")); repo = tpl["repo"]; prefix = repo.replace("/", "__")
     branch = a.branch or next(b for b in ("origin/trunk", "origin/main", "HEAD") if run(["git", "rev-parse", "--verify", b], a.clone).returncode == 0)
@@ -86,10 +87,10 @@ def main():
         if not src or not tst: log(C, "needs_source_and_test_change"); continue
         if any(s == "D" for s, _ in src) or any(s == "R" for s, _ in src + tst): log(C, "deletes_or_renames_source"); continue
         src_dirs = sorted({os.path.dirname(p) for _, p in src}); tst_dirs = sorted({os.path.dirname(p) for _, p in tst})
-        if len(src_dirs) > 2: log(C, "more_than_2_packages", n=len(src_dirs)); continue
+        if len(src_dirs) > a.max_pkgs: log(C, "more_than_2_packages", n=len(src_dirs)); continue
         numstat = git(a.clone, "diff", "--numstat", P, C, "--", *[p for _, p in src])
         churn = sum(int(x.split("\t")[0]) + int(x.split("\t")[1]) for x in numstat.splitlines() if x.strip() and not x.startswith("-"))
-        if churn > 120: log(C, "churn_over_120", churn=churn); continue
+        if churn > a.max_churn: log(C, "churn_over_120", churn=churn); continue
         # M2: parent + child's tests must compile and fail
         run(["git", "checkout", "-q", "-f", P], a.wt); run(["git", "clean", "-fdq"], a.wt)
         test_files = {}
@@ -160,7 +161,7 @@ def main():
                   "task_text": task_text, "task_text_source": src_kind or "rewritten_spec_pending", "task_text_url": url,
                   "gold_patch": gold_patch, "test_patch": test_patch, "test_files": test_files, "write_set": W, "interface_write_set": [],
                   "test_pkgs": tpkgs, "fail_to_pass": f2p, "forward_slice": F, "gold_new_identifiers": sorted(new),
-                  "churn": churn, "cutoff_flags": {"note": f"model cutoffs recorded at analysis; instance postdates {a.since}"},
+                  "churn": churn, "mining_profile": f"pkgs<={a.max_pkgs},churn<={a.max_churn}", "cutoff_flags": {"note": f"model cutoffs recorded at analysis; instance postdates {a.since}"},
                   "validity": {"status": "valid_mined", "checks": "M1-M4 passed by pilot_mine.py", "task_text_review": "pending_author"}})
         json.dump(d, open(os.path.join(a.out, inst_id + ".json"), "w", encoding="utf-8"), indent=1)
         valid += 1; log(C, "valid", instance_id=inst_id, W=W, f2p=f2p, churn=churn, nF=len(F), task=src_kind or "spec_pending")
