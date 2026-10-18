@@ -1,8 +1,0 @@
-[review-r0] claude-opus-5-5 in=45075 out=32091 stop=end_turn 288s
-[revise-r1] claude-opus-5-5 in=48931 out=39564 stop=end_turn 296s
-Numbers in the body (decimals with 2-3 places, comma-grouped integers, dollar amounts) not found in RESULTS.md or tables.tex:
-- none
-(189 distinct numbers checked)
-
-[errata-check] claude-sonnet-5-5 in=54110 out=28774 stop=end_turn 203s
-API spend for the write-up (list prices, no caching): $2.21

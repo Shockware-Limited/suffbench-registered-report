@@ -22,3 +22,13 @@ harness/p3_before_*
 harness/p3_after_*
 harness/results-prepurge-*/
 harness/reverify_lane.sh
+phase23-report/round*/
+phase23-report/review-*.md
+phase23-report/audit-*.md
+phase23-report/body-*.tex
+phase23-report/writeup*.log
+phase23-report/api-log.json
+phase23-report/HANDOFF.md
+phase23-report/REVIEWER-NOTES.md
+phase23-report/ERRATA-CHECK.md
+phase23-report/suffbench-phase123-data.zip
